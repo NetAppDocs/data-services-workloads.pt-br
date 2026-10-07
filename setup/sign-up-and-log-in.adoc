@@ -13,7 +13,71 @@ summary: O Workload Factory está acessível no NetApp Console. Ao começar a us
 [role="lead"]
 A NetApp Workload Factory pode ser acessada pelo NetApp Console. Para usar o NetApp Console, cadastre-se ou faça login com suas credenciais do site de suporte da NetApp ou crie um login do NetApp Console. Se você for a primeira pessoa da sua empresa a se cadastrar, crie uma nova organização como administrador. Se sua empresa já tiver uma organização, cadastre-se ou faça login com suas credenciais existentes do site de suporte da NetApp ou com o single sign-on (SSO) da empresa.
 
-Diretiva não resolvida em <stdin> - include::https://raw.githubusercontent.com/NetAppDocs/console-setup-admin/main/_include/task-sign-up-saas.adoc[]
 
-.Resultado
+
+[[sign-up-for-netapp-console-as-the-initial-organization-administrator]]
+== Cadastre-se na NetApp Console como administrador inicial da organização
+
+Se sua empresa não tiver uma organização do NetApp Console, inscreva-se para criar uma. O primeiro usuário se torna o administrador da organização e gerencia as contas de usuário e as permissões. Você pode atualizar as funções e adicionar mais administradores posteriormente.
+
+.Passos
+. Abra um navegador da web e acesse o  https://console.netapp.com["NetApp Console"^].
+. Se você tiver uma conta no site de suporte da NetApp, insira o endereço de e-mail associado à sua conta diretamente na página *Log in*.
++
+O Console faz seu cadastro como parte deste login inicial com suas credenciais do site de suporte da NetApp.
+
+. Se você quiser se cadastrar criando um login no Console, selecione *Sign up*.
++
+.. Na página de *cadastro*, insira as informações solicitadas e selecione *Avançar*.
++
+
+NOTE: Somente caracteres do alfabeto inglês são permitidos no formulário de inscrição.
+
+.. Verifique sua caixa de entrada para ver se há um e-mail da NetApp com instruções para verificar seu endereço de e-mail.
++
+Verifique seu endereço de e-mail para concluir o cadastro.
+
+
+
+. Após efetuar o login, revise e aceite o Contrato de Licença do Usuário Final.
+. Na página *Boas-vindas*, crie uma organização.
+. Selecione *Vamos começar*.
+
+
++ Como usuário iniciante e administrador da organização, você segue um processo guiado para adicionar recursos de storage, criar um agente do Console e muito mais. link:https://docs.netapp.com/us-en/console-setup-admin/task-console-assistant.html["Aprenda a usar o Console Assistant."^]
+
+.Próximos passos
+Como administrador, após concluir as etapas incluídas no Assistente do Console, você deve planejar sua estratégia de identidade e acesso, adicionar usuários à sua organização e atribuir funções. link:https://docs.netapp.com/us-en/console-setup-admin/task-iam-get-started.html["Saiba mais sobre gerenciamento de identidade e acesso para o NetApp Console"^]
+
+
+
+[[sign-up-or-login-to-netapp-console-when-an-organization-already-exists]]
+== Cadastre-se ou faça login no NetApp Console quando já existir uma organização
+
+Se sua empresa já tem uma organização do NetApp Console, inscreva-se ou faça login para acessá-la. Seu método de inscrição ou login depende de sua empresa usar federação de identidade ou ter credenciais do site de suporte da NetApp. Caso contrário, crie um login do NetApp Console.
+
+.Passos
+. Abra um navegador da web e acesse o  https://console.netapp.com["NetApp Console"^].
+. Se você tem uma NetApp conta no site de suporte da NetApp ou se sua empresa configurou o single sign-on (SSO), insira seu endereço de e-mail associado ou suas credenciais de SSO na página *Log in*. Siga as instruções para concluir o login.
++
+Em ambos os casos, você é inscrito no Console como parte deste login inicial.
+
+. Se você quiser se cadastrar criando um login no Console, selecione *Sign up*.
++
+.. Na página de *cadastro*, insira as informações solicitadas e selecione *Avançar*.
++
+
+NOTE: Somente caracteres do alfabeto inglês são permitidos no formulário de inscrição.
+
+.. Verifique sua caixa de entrada para ver se há um e-mail da NetApp com instruções para verificar seu endereço de e-mail.
++
+Verifique seu endereço de e-mail para concluir o cadastro.
+
+
+
+. Após efetuar o login, revise e aceite o Contrato de Licença do Usuário Final.
+. Se o sistema solicitar que você crie uma organização, feche a caixa de diálogo e informe um administrador do Console para que ele possa adicionar você à sua organização do Console e dar acesso a você. link:https://docs.netapp.com/us-en/console-setup-admin/task-user-settings.html#contact-admin["Aprenda como entrar em contato com um administrador da organização."^]
+
+
+.Próximos passos
 Agora que você está conectado, pode começar a usar o Workload Factory para gerenciar seus sistemas de storage e cargas de trabalho. Para acessar o Workload Factory, selecione *Cargas de Trabalho* no menu principal.
