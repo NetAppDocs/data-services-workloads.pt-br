@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/learn-eda-workloads.html 
+keywords: software builders, development, benefits, eda, electronic design automation, perforce integration, ci, cd 
+summary: Aprenda a usar a integração do Perforce no NetApp Workload Factory para EDA. 
+---
+= Saiba mais sobre a integração do Perforce no Workload Factory para EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A integração do Perforce com pipelines de CI/CD aprimora o processo de desenvolvimento ao automatizar compilações, testes e implantações, resultando em uma entrega de software mais rápida e confiável.
+
+A Integração Contínua e a Entrega Contínua (CI/CD) em EDA é uma ferramenta de criação rápida de ambientes de compilação para desenvolvedores de software. Ela permite a configuração rápida de ambientes de desenvolvimento pessoais, economizando tempo e possibilitando autoatendimento para os desenvolvedores, ao mesmo tempo que capacita as equipes de DevOps a manter o controle da infraestrutura. Usando CI/CD, os desenvolvedores de software podem criar espaços de trabalho rapidamente, sem precisar de storage especializado nem entender a infraestrutura de desenvolvimento.
+
+
+
+[[what-is-cicd]]
+== O que é CI/CD?
+
+Ao usar CI/CD, você pode simplificar a maneira como os desenvolvedores gerenciam e interagem com diferentes versões do seu software. Ele funciona com o Perforce Helix Core para clonar instantaneamente versões de software e criar espaços de trabalho para desenvolvimento, controle de qualidade e CI/CD.
+
+Você pode facilmente criar um projeto e atribuir um volume que represente seu ambiente de software e seus artefatos. À medida que atualiza seu software, você pode tirar snapshots do volume, capturando o estado do seu software naquele momento. Você pode acessar qualquer versão do software instantaneamente, sem precisar resincronizar, economizando tempo e recursos.
+
+Usando os recursos de snapshot e clonagem do NetApp ONTAP, você pode acessar rapidamente diferentes versões do seu software, permitindo desenvolver e lançar atualizações com mais agilidade. Para obter mais informações sobre o Workload Factory, consulte a link:https://docs.netapp.com/us-en/workload-setup-admin/workload-factory-overview.html["Visão geral do Workload Factory"^].
+
+
+
+[[cicd-features]]
+== Recursos de CI/CD
+
+* Crie, edite e remova projetos. Consulte link:manage-projects.html["Gerenciar projetos"].
+* Crie instantâneos de versões de software definidas. Consulte link:version-projects.html["Gerenciar versões do projeto"].
+* Criar e excluir espaços de trabalho (com base em clones). Consulte link:create-workspaces.html["Criar um espaço de trabalho"].
+* Crie políticas de acesso para controlar o acesso a um projeto.
+* Analise a utilização da capacidade de cada projeto.
+* Controle os limites de tamanho e a retenção de clones para cada projeto.
+* Integre com sistemas de controle de versão como o Perforce. Veja link:integrate-perforce.html["Integre com o Perforce"].
+
+
+
+
+[[projects-and-workspaces-in-eda]]
+== Projetos e espaços de trabalho no EDA
+
+Você pode criar um projeto e atribuir um volume que represente seu ambiente de software e seus artefatos. Cada vez que você cria uma nova versão do software, precisa ressincronizar os dados do volume e criar um snapshot do projeto para marcar o estado do volume como uma versão conhecida. O volume de origem do projeto pode receber atualizações contínuas e ter vários snapshots para marcar várias versões. Você pode usar cada snapshot imediatamente como um clone instantâneo, um repositório editável dedicado ou compartilhado disponível para desenvolvedores, QA ou processos de compilação. Um clone no contexto de uma versão específica do software é um espaço de trabalho.
+
+
+
+[[automation-with-workload-factory-codebox]]
+== Automação com o Workload Factory Codebox
+
+O Workload Factory apresenta automação incorporada com o _Codebox_. O Codebox oferece os seguintes benefícios de automação:
+
+* *Geração de trechos de código*: trechos de código de Infraestrutura como Código (IaC) são gerados durante a criação de recursos, permitindo integração perfeita com os fluxos de trabalho de orquestração existentes.
+* *Copiloto de infraestrutura como código*: o Codebox é um copiloto de infraestrutura como código (IaC) que ajuda desenvolvedores e DevOps a gerar código para executar qualquer operação compatível com o Workload Factory.
+* *Visualizador de código e catálogo de automação*: o Codebox oferece um visualizador de código para análise rápida da automação e um catálogo de automação para reutilização futura rápida.
+
+
+
+
+[[cost]]
+== Custo
+
+O uso da funcionalidade de CI/CD do Workload Factory é gratuito.
+
+
+
+[[licensing]]
+== Licenciamento
+
+Não são necessárias licenças especiais da NetApp para usar os recursos de CI/CD do Workload Factory.
+
+
+
+[[regions]]
+== Regiões
+
+O EDA é compatível em todas as regiões comerciais em que o FSx for ONTAP é compatível. https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/["Veja as regiões da Amazon suportadas."^]
+
+As seguintes regiões da AWS não são suportadas:
+
+* Regiões da China
+* Secret Cloud
+* Top Secret Cloud
+
+
+
+
+[[getting-help]]
+== Como obter ajuda
+
+O Amazon FSx for NetApp ONTAP é uma solução primária da AWS. Para obter suporte, use o Support Center no seu AWS Management Console para abrir um caso. Selecione "FSx for ONTAP" e a categoria, depois forneça as informações necessárias.
+
+Para perguntas gerais sobre o Workload Factory ou sobre os aplicativos e serviços do Workload Factory, consulte link:../get-help.html["Obtenha ajuda para o EDA for Workload Factory"].

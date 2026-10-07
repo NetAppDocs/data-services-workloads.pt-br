@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-custom-rules.html 
+keywords: manage custom rules, disable rules, delete rules, rule catalog, byor 
+summary: Visualize, ative, desative e exclua regras arquitetônicas personalizadas do catálogo de regras. 
+---
+= Gerencie regras personalizadas para o NetApp Workload Factory
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+O catálogo de regras é um local centralizado para gerenciar todas as suas regras personalizadas. Você pode visualizar os detalhes de cada regra, verificar seus resultados e ativá-la ou desativá-la.
+
+
+
+[[view-the-rules-catalog]]
+== Veja o catálogo de regras
+
+O catálogo de regras mostra todas as regras que você criou, o status delas, o agendamento e os resultados mais recentes.
+
+.Passos
+. Faça login usando um dos link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["experiências de console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer"] e, em seguida, selecione *Rule builder*.
+. Clique em *Ver suas regras* para abrir o catálogo de regras.
+
+
+
+
+[[view-rule-results]]
+== Ver resultados da regra
+
+Os resultados mostram quais recursos seguem sua regra e quais não.
+
+.Passos
+. No catálogo de regras, clique na regra que você deseja revisar.
+. Selecione a guia *Resultados de todas as execuções*.
+. Selecione **Ver detalhes** para ver os resultados de cada execução.
+
+
+Se a verificação falhou para alguns itens, leia a mensagem de erro para ver o motivo. As razões mais comuns são problemas de conexão, permissões ausentes ou um link que não foi configurado.
+
+
+
+[[edit-a-custom-rule]]
+== Editar uma regra personalizada
+
+Você pode alterar a lógica, o agendamento ou outras configurações de uma regra a qualquer momento. Ao editar uma regra, o construtor de regras é exibido com as configurações atuais da regra.
+
+.Passos
+. No catálogo de regras, clique na regra que você deseja editar.
+. Clique em *Editar*.
++
+A regra passa para o modo de rascunho e o construtor de regras é aberto.
+
+. Edite o prompt da regra ou use a conversa para aprimorá-la.
+. Analise a interpretação atualizada da IA e a definição da regra.
++
+O sistema mostra o que mudou em relação à regra atual, incluindo quaisquer chamadas de API ou lógica.
+
+. Faça um dos seguintes procedimentos, dependendo das alterações feitas:
++
+** Se você fez alterações menores, clique em *Save* para atualizar a regra.
+** Se você fez alterações significativas, clique em *Validar regra* para testar as alterações e, em seguida, clique em *Agendar* para salvar e agendar a regra ou clique em *Salvar como rascunho* para salvar sem agendar.
+** Para descartar as alterações, clique em *Reverter para a versão anterior*. A regra retorna à sua definição original e sai do modo de edição.
+
+
+

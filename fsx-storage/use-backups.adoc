@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/use-backups.html 
+keywords: create backup, volume backup, back up a volume, FSx for ONTAP backup, manual backup, restore from a backup, restore volume 
+summary: Proteja os dados do seu volume contra exclusão acidental, corrupção e outros eventos de perda de dados criando e restaurando backups no NetApp Workload Factory. 
+---
+= Utilize backups para proteger os dados no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Proteja os dados do seu volume contra exclusão acidental, corrupção e outros eventos de perda de dados criando e restaurando backups no NetApp Workload Factory. Você pode configurar um agendamento de backup, criar um backup sob demanda de um volume fora dos seus backups regulares e restaurar um volume a partir de um backup existente para qualquer sistema de arquivos FSx for ONTAP na sua conta AWS.
+
+
+
+[[create-an-on-demand-backup-of-a-volume]]
+== Crie um backup sob demanda de um volume
+
+Crie um backup manual de um volume fora dos backups programados regularmente na NetApp Workload Factory.
+
+.Sobre esta tarefa
+Os backups de volume são feitos por volume, portanto, cada backup contém apenas os dados em um volume específico.
+
+Os backups de volume são incrementais, o que significa que apenas os dados do volume que foram alterados após o backup mais recente são salvos. Isso minimiza o tempo necessário para criar o backup e o armazenamento necessário para o backup, o que reduz os custos de armazenamento ao não duplicar dados.
+
+.Antes de começar
+Para fazer backups dos seus volumes, tanto o volume quanto o seu sistema de arquivos devem ter capacidade de storage SSD disponível suficiente para armazenar o Snapshot de backup. Ao criar um Snapshot de backup, a capacidade de storage adicional consumida pelo Snapshot não pode fazer com que o volume exceda 98% de utilização do storage SSD. Caso isso ocorra, o backup falhará.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações para o volume que você deseja fazer backup.
+. Selecione *Ações de proteção de dados*, *Backups de volume* e, em seguida, *Backup manual*.
+. Na caixa de diálogo de backup manual, insira um nome para o backup.
+. Selecione *Fazer backup*.
+
+
+
+
+[[manage-the-backup-schedule-for-an-fsx-for-ontap-file-system]]
+== Gerencie o agendamento de backup de um sistema de arquivos do FSx for ONTAP
+
+Gerencie o agendamento de backup de um sistema de arquivos FSx for ONTAP no NetApp Workload Factory.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos para o qual você deseja atualizar o agendamento de backup e, em seguida, selecione *Manage*.
+. Em Informações, selecione o ícone de lápis ao lado de *Volume backups*. O ícone de lápis aparece ao lado da seta suspensa quando o cursor do mouse passa sobre a linha *Volume backups*.
+. Na caixa de diálogo *Volume backups*, forneça o seguinte:
++
+.. *Backups automáticos diários*: ative ou desative o recurso. Se desativar o recurso, selecione *Aplicar*. Se ativar o recurso, conclua as etapas a seguir.
+.. *Período de retenção de backup automático*: insira o número de dias que deseja manter os backups automáticos.
+.. *Período diário de backup automático*: selecione *Sem preferência* (um horário de início diário do backup será selecionado para você) ou *Selecionar horário de início para backups diários* e especifique um horário de início.
+.. *Janela de manutenção semanal*: selecione *Sem preferência* (um horário de início para a janela de manutenção semanal será selecionado para você) ou *Selecionar horário de início para a janela de manutenção semanal de 30 minutos* e especifique um horário de início.
+
+
+. Selecione *Aplicar*.
+
+
+
+
+[[restore-a-volume-from-a-backup-in-netapp-workload-factory]]
+== Restaurar um volume a partir de um backup no NetApp Workload Factory
+
+No NetApp Workload Factory, você pode restaurar um volume de um backup para qualquer sistema de arquivos FSx for ONTAP na sua conta da AWS.
+
+O Workload Factory determina se você tem capacidade suficiente para a restauração e pode adicionar automaticamente capacidade de storage SSD caso você não tenha.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações para o volume que você deseja restaurar a partir de um backup.
+. Selecione *Data protection actions*, *Volume backups* e, em seguida, *Restore from a backup*.
+. Na caixa de diálogo Restaurar de um backup, forneça o seguinte:
++
+.. *Sistema de arquivos de destino*: selecione o sistema de arquivos de destino no menu suspenso.
+.. *VM de armazenamento de destino*: selecione a VM de armazenamento de destino no menu suspenso.
+.. *Nome do backup*: selecione o nome do backup no menu suspenso.
+.. *Nome do volume restaurado*: digite o nome do volume restaurado.
+
+
+. Verifique a capacidade do sistema de arquivos para a operação de restauração.
++
+Quando a capacidade do sistema de arquivos é limitada, pode ocorrer o seguinte:
+
++
+** A restauração pode fazer com que a capacidade utilizada ultrapasse o limite que você especificou. Você pode concluir a operação de restauração. Considere link:adjust-file-system-capacity.html["adicionar manualmente a capacidade da camada de storage SSD"]ou selecionar para o NetApp Workload Factory adicionar automaticamente capacidade de storage em SSD.
+** A restauração requer capacidade adicional de SSD. Você deve selecionar a opção para que o Workload Factory adicione automaticamente capacidade à camada de storage SSD para prosseguir.
+
+
+. Selecione *Restaurar*.
+

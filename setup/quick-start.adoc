@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: setup/quick-start.html 
+keywords: quick start 
+summary: Comece a usar o Workload Factory inscrevendo-se e criando uma conta no NetApp Console, além de adicionar as credenciais do seu provedor de nuvem para que o Workload Factory possa gerenciar seus recursos diretamente e otimizar suas cargas de trabalho. 
+---
+= Guia rápido para o NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O NetApp Workload Factory está acessível aos usuários como um serviço de dados de nuvem a partir do NetApp Console. Para começar a usar o Workload Factory, inscreva-se e crie uma conta no NetApp Console, adicionando as credenciais do seu provedor de nuvem para que o Workload Factory possa gerenciar seus recursos diretamente e otimizar suas cargas de trabalho.
+
+Antes de começar, você deve ter uma compreensão de link:learn-about-workload-factory.html["A Workload Factory"].
+
+
+
+[[sign-up-and-log-in-to-workload-factory-from-netapp-console]]
+== Cadastre-se e faça login no Workload Factory pelo NetApp Console
+
+link:sign-up-and-log-in.html["Cadastre-se e faça login no Workload Factory pelo NetApp Console"]
+
+Em seguida, selecione o link *Início rápido* do seu provedor de nuvem para começar.
+
+
+
+[[get-started-with-amazon-fsx-for-netapp-ontap]]
+== Comece a usar o Amazon FSx for NetApp ONTAP
+
+link:../fsx-storage/quick-start-fsx.html["Guia de início rápido para o Amazon FSx for NetApp ONTAP"]
+
+
+
+[[get-started-with-oci-netapp-storage-service]]
+== Comece a usar o OCI NetApp Storage Service
+
+link:../oci/quick-start-oci.html["Guia rápido para o OCI NetApp Storage Service"]
+
+
+
+[[get-started-with-google-cloud-netapp-volumes]]
+== Comece a usar o Google Cloud NetApp Volumes
+
+link:../gcnv/quick-start-gcnv.html["Guia rápido para Google Cloud NetApp Volumes"]

@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/learn-custom-rules.html 
+keywords: custom rules, byor, bring your own rules, fsx, ontap, well architected, organizational standards 
+summary: Aprenda a definir e gerenciar suas próprias regras de arquitetura para aplicar padrões organizacionais juntamente com as melhores práticas da NetApp. 
+---
+= Saiba mais sobre regras personalizadas no NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+As regras personalizadas permitem que você defina, verifique e aplique seus próprios padrões de arquitetura, juntamente com as melhores práticas da NetApp, no painel Well-architected.
+
+
+
+[[overview]]
+== Visão geral
+
+O Construtor de Regras permite que você crie regras personalizadas de boas práticas usando linguagem simples. Essas regras são verificadas em todos os seus recursos.
+
+Regras personalizadas ajudam você a aplicar os padrões, limites de risco e requisitos operacionais da sua organização, aspectos que as regras genéricas do fornecedor podem não abranger completamente.
+
+
+NOTE: Se o administrador da sua conta desativou os recursos de IA, o Construtor de Regras não estará disponível e você não poderá criar regras personalizadas. link:../admin/manage-genai-features.html["Saiba mais sobre como gerenciar recursos de IA"^].
+
+
+
+[[how-custom-rules-work]]
+== Como funcionam as regras personalizadas
+
+As regras personalizadas utilizam um processo guiado por IA que transforma suas instruções em linguagem simples em regras claras e estruturadas. A IA atua como tradutora e revisora. Ela sugere uma regra, explica como entendeu sua solicitação e pede sua aprovação antes que a regra seja salva ou agendada.
+
+Este processo garante que:
+
+* A lógica da regra está claramente definida e verificada quanto a erros
+* Nenhum código de formato livre é executado
+* Você pode ver exatamente o que será avaliado antes de aprovar a regra
+
+
+
+
+[[limitations]]
+== Limitações
+
+As seguintes limitações aplicam-se às regras personalizadas:
+
+* Não há correções automáticas disponíveis. Você deve corrigir os recursos não conformes usando as orientações fornecidas.
+* Cada regra pode verificar apenas um tipo de recurso. Para verificar vários tipos de recurso, crie regras separadas.
+* O intervalo mínimo de avaliação é de 1 hora para evitar exames excessivos.
+* As regras têm acesso somente leitura e não podem fazer alterações no seu ambiente.
+
+
+
+
+[[rule-definition-model]]
+== Modelo de definição de regras
+
+Cada regra personalizada consiste nos seguintes componentes:
+
+Nome da regra:: Um nome definido pelo usuário para a regra.
+Descrição:: Seu motivo para explicar por que essa regra é importante para sua organização.
+Tipo de recurso:: O recurso FSx a ser avaliado (sistema de arquivos, volume ou cache). Atualmente, apenas um tipo de recurso por regra.
+Agendador:: Com que frequência a regra é avaliada (mínimo 1 hora, padrão 24 horas).
+Lógica condicional:: Os critérios específicos a serem verificados.
+Escopo da avaliação:: Quais recursos são avaliados (todos os recursos aplicáveis no escopo).
+Lógica de remediação:: Orientação manual para lidar com recursos não conformes.
+
+
+
+
+[[rule-lifecycle]]
+== Ciclo de vida da regra
+
+As regras personalizadas progridem pelos seguintes estados:
+
+Rascunho:: A regra está sendo criada. Nenhuma avaliação está ocorrendo.
+Execução simulada:: Avaliação única para prever quais recursos seriam afetados. Usada para validação antes do agendamento.
+Agendado (Ativado):: A regra está ativa e é executada conforme a programação definida.
+Desabilitado:: A regra está pausada, mas não excluída. Pode ser reativado.
+Excluído:: A regra foi removida permanentemente.
+
+
+
+
+[[custom-rule-examples]]
+== Exemplos de regras personalizadas
+
+Os exemplos a seguir ilustram regras personalizadas comuns:
+
+*Proteção do volume de produção*:: "Todos os volumes com a tag 'Prod' devem ter uma política de snapshot instalada"
++
+--
+Essa regra cria automaticamente snapshots para proteger os volumes de produção de acordo com os requisitos da empresa.
+
+--
+*Classificação por volume de arquivamento*:: "Todos os volumes com a etiqueta 'Archive' devem ter uma política de tiering definida como 'All'"
++
+--
+Essa regra reduz custos ao mover automaticamente os dados arquivados para um storage mais barato.
+
+--
+*Padrões de nomenclatura do sistema de arquivos*:: "Todos os sistemas de arquivos devem seguir a convenção de nomenclatura 'fsx-{environment}-{application}'"
++
+--
+Esta regra garante que os sistemas de arquivos sigam as convenções de nomenclatura da organização para facilitar o gerenciamento e a alocação de custos.
+
+--
+
+
+
+
+[[what-to-do-next]]
+== O que fazer a seguir
+
+link:create-custom-rule.html["Crie uma regra personalizada"]

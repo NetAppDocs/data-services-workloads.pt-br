@@ -1,0 +1,65 @@
+= 
+:allow-uri-read: 
+
+
+. Na página Criar sistema de arquivos do FSx for ONTAP, selecione *Quick create*.
++
+Você também pode carregar uma configuração salva.
+
+. Em Configuração geral do sistema de arquivos, forneça o seguinte:
++
+.. *Credenciais da AWS*: selecione para adicionar credenciais da AWS no Workload Factory ou continue sem credenciais.
+.. *Nome do sistema de arquivos*: Insira um nome para o sistema de arquivos.
+.. *Região & VPC*: Selecione a região e a VPC para o sistema de arquivos.
+.. *Tipo de implantação*: selecione um tipo de implantação.
++
+*** Implantação de zona de disponibilidade única (Single-AZ): proporciona disponibilidade monitorando falhas de hardware e substituindo automaticamente os componentes da infraestrutura em caso de falha. Garante alta durabilidade replicando automaticamente seus dados dentro de uma zona de disponibilidade para protegê-los contra falhas de componentes.
++
+Essa configuração é recomendada para cargas de trabalho de alto desempenho ou quando as cargas de trabalho começam pequenas e aumentam gradualmente até atingir uma taxa de transferência de 72 GB/s e 2,4 milhões de IOPS.
+
+*** Implantação em múltiplas zonas de disponibilidade (Multi-AZ): proporciona disponibilidade contínua aos dados, mesmo quando uma zona de disponibilidade está indisponível. Um sistema de arquivos Multi-AZ foi projetado para cargas de trabalho de produção essenciais aos negócios que exigem alta disponibilidade para dados de arquivos compartilhados do ONTAP e precisam de storage com replicação incorporada entre zonas de disponibilidade.
++
+Essa configuração de par de HA único é recomendada para cargas de trabalho que exigem até 6 GB/s de taxa de transferência ou 200.000 IOPS.
+
+
+
+.. *Etiquetas*: opcionalmente, você pode adicionar até 50 etiquetas.
+
+
+. Em *Detalhes do sistema de arquivos*, forneça o seguinte:
++
+.. *capacidade de storage SSD*: insira a capacidade de storage e selecione a unidade de capacidade de storage.
++
+*** Para implantações de primeira geração, você não pode diminuir a capacidade após a criação do sistema de arquivos.
+*** Para implantações de segunda geração, você pode aumentar a capacidade após a criação do sistema de arquivos.
+
+
+.. *Credenciais do ONTAP*: opcional. Insira seu nome de usuário e senha do ONTAP. A senha pode ser definida agora ou posteriormente.
++
+Se o usuário que você fornecer não for o usuário fsxadmin e, posteriormente, você precisar redefinir a senha do fsxadmin, poderá fazer isso no console da AWS.
+
+.. *Configuração de SMB/CIFS*: opcional. Se você planeja usar o protocolo SMB/CIFS para acessar volumes, deverá configurar o Active Directory para a VM de armazenamento durante a criação do sistema de arquivos. Forneça os seguintes detalhes para a VM de armazenamento criada para este sistema de arquivos.
++
+... *Domínio do Active Directory ao qual ingressar*: Insira o nome de domínio totalmente qualificado (FQDN) do Active Directory.
+... *Endereços IP de DNS*: insira até três endereços IP de DNS separados por vírgulas.
+... *Nome NetBIOS do servidor SMB*: insira o nome NetBIOS do servidor SMB do objeto de computador do Active Directory a ser criado para sua VM de armazenamento. Este é o nome desta VM de armazenamento no Active Directory.
+... *Nome de usuário*: insira o nome de usuário da conta de serviço no seu Active Directory existente.
++
+Não inclua prefixo ou sufixo de domínio. Para  `EXAMPLE\ADMIN`, use  `ADMIN`.
+
+... *Senha*: digite a senha da conta de serviço.
+... *Unidade organizacional*: opcionalmente, insira o nome da unidade organizacional na qual você pretende criar a conta de computador para o FSx for ONTAP. A OU é o nome do caminho distinto da unidade organizacional à qual você deseja associar o sistema de arquivos.
+... *Grupo de administradores delegados*: opcionalmente, insira o nome do grupo no seu Active Directory que pode administrar seu sistema de arquivos.
++
+Se você estiver usando o AWS Managed Microsoft AD, deverá especificar um grupo, como AWS Delegated FSx Administrators, AWS Delegated Administrators ou um grupo personalizado com permissões delegadas para a unidade organizacional (OU).
+
++
+Se você estiver ingressando em um AD autogerenciado, use o nome do grupo no seu AD. O grupo padrão é `Domain Admins`.
+
+
+
+
+
+. Abra o *Resumo* para revisar a configuração que você definiu. Se necessário, você pode alterar qualquer configuração neste momento antes de salvar ou criar o sistema de arquivos.
+. Salve ou crie o sistema de arquivos.
+

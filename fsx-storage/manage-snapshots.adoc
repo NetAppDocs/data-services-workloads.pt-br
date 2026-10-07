@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-snapshots.html 
+keywords: snapshot, snapshots, manage snapshots, edit snapshots, access snapshots, delete snapshots, remove snapshots 
+summary: Edite as configurações de snapshots, habilite o acesso ao diretório e exclua snapshots para gerenciar seus snapshots e a proteção de dados no Workload Factory. 
+---
+= Gerenciar snapshots de um volume do FSx for ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Edite as configurações de snapshots, habilite o acesso ao diretório e exclua snapshots para gerenciar seus snapshots e a proteção de dados no Workload Factory.
+
+
+
+[[edit-a-snapshot]]
+== Editar um Snapshot
+
+Edite o nome, o rótulo e o período de retenção de um Snapshot. Se o Snapshot ainda não for imutável, você pode torná-lo imutável.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações do volume com o snapshot para editar.
+. Selecione *Ações de proteção de dados* e, em seguida, *Gerenciar Snapshots*.
+. Na página Gerenciar Snapshots, selecione o menu de ações do Snapshot que você deseja editar e, em seguida, selecione *Editar*.
+. Na caixa de diálogo Editar um Snapshot, você pode editar o seguinte:
++
+.. Mude o nome.
+.. Altere o rótulo.
+.. Altere o período de retenção.
+.. Opcional: *torne este Snapshot imutável* para evitar que ele seja excluído durante o período de retenção.
++
+Se o Snapshot já for imutável, você não poderá editar essa configuração.
+
++
+Aceite a declaração referente a Snapshots imutáveis.
+
+
+
+. Selecione *Aplicar*.
+
+
+
+
+[[access-a-snapshot]]
+== Acesse um Snapshot
+
+Habilite o acesso ao diretório de snapshots para permitir que os usuários acessem os snapshots de forma autônoma.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações do volume com o snapshot ao qual você deseja acessar.
+. Selecione *Ações de proteção de dados* e, em seguida, *Gerenciar Snapshots*.
+. Na página Gerenciar instantâneos, selecione o menu de ações do instantâneo que você deseja acessar e, em seguida, selecione *Acessar*.
+. Na caixa de diálogo Acessar Snapshot, selecione *Habilitar acesso ao diretório de Snapshot* para acessar este Snapshot do volume e todos os Snapshots do volume.
++
+** Para volumes NFS: selecione *NFS access path* para visualizar o caminho NFS do snapshot.
+** Para volumes SMB/CIFS: selecione *SMB access path* para visualizar o caminho SMB do Snapshot.
+
+
+. Copie o caminho de acesso.
+. Selecione *Aplicar*.
+
+
+
+
+[[restore-data-from-a-snapshot]]
+== Restaurar dados a partir de um Snapshot
+
+Você tem a opção de restaurar dados de um Snapshot para um volume existente ou para um novo volume.
+
+link:use-snapshots.html["Restaurar um volume a partir de um snapshot"]
+
+
+
+[[delete-a-snapshot]]
+== Excluir um instantâneo
+
+Exclua um Snapshot para liberar espaço.
+
+Os Snapshots imutáveis não podem ser excluídos até o fim do período de retenção.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações do volume com o snapshot que você deseja excluir.
+. Selecione *Ações de proteção de dados* e, em seguida, *Gerenciar Snapshots*.
+. Na página Gerenciar Snapshots, selecione o menu de ações do Snapshot que deseja excluir e, em seguida, selecione *Excluir*.
+. Na caixa de diálogo Excluir Snapshot, digite "delete".
+. Selecione *Excluir* para confirmar a exclusão.
+
+
+.Informações relacionadas
+* link:use-snapshots.html["Criar um snapshot"]
+* link:use-snapshots.html["Criar uma política do Snapshot"]
+* link:use-snapshots.html["Restaurar um volume a partir de um snapshot"]
+

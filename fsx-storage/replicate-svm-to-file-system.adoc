@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/replicate-svm-to-file-system.html 
+keywords: storage VM, SVM, replication, FSx for ONTAP, Workload Factory 
+summary: A replicação de uma VM de storage para outro sistema de arquivos FSx for ONTAP fornece uma camada de proteção para o acesso aos dados em caso de perda de dados. 
+---
+= Replicar uma VM de storage para outro sistema de arquivos FSx for ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A replicação de uma máquina virtual de storage para outro sistema de arquivos do FSx for ONTAP no NetApp Workload Factory fornece uma camada de proteção de acesso aos dados em caso de perda de dados. Essa operação replica todos os volumes em uma máquina virtual de storage para outro sistema de arquivos do FSx for ONTAP.
+
+.Antes de começar
+Para replicar uma VM de armazenamento para outro sistema de arquivos do Amazon FSx for NetApp ONTAP, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos com a VM de armazenamento a ser replicada e, em seguida, selecione *Manage*.
+. Na visão geral do sistema de arquivos, em VMs de storage, selecione *Gerenciar*.
+. Na tela Manage storage VMs, selecione o menu de ações da storage VM para a qual você deseja replicar uma SVM e, em seguida, selecione *Advanced actions* > *Replicate storage VM*.
+. Na página Replicar dados, em Destino da replicação, forneça o seguinte:
++
+.. *FSx for ONTAP file system*: Selecione as credenciais, a região e o nome do FSx for ONTAP file system de destino.
+.. *Nome da VM de armazenamento*: selecione a VM de armazenamento no menu suspenso.
+.. *Nome do volume*: o nome do volume de destino é gerado automaticamente com o seguinte formato `{OriginalVolumeName}_copy`.
+.. *Política de hierarquização*: Selecione a política de hierarquização para os dados armazenados no volume de destino.
++
+_Auto_ é a política de tiering padrão ao criar um volume usando a interface de usuário do Workload Factory FSx for ONTAP. Para obter mais informações sobre as políticas de tiering de volume, consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacidade de storage do volume"^]na documentação do AWS FSx for NetApp ONTAP.
+
+.. *Taxa de transferência máxima*: selecione *Limitada* e insira o limite máximo de transferência em MB/s. Como alternativa, selecione *Ilimitada*.
++
+Sem um limite, o desempenho da rede e dos aplicativos pode diminuir. Como alternativa, recomendamos uma taxa de transferência ilimitada para sistemas de arquivos FSx for ONTAP em workloads críticos, por exemplo, aqueles usados principalmente para recuperação de desastres.
+
+
+
+. Nas configurações de replicação, forneça as seguintes informações:
++
+.. *Intervalo de replicação*: Selecione a frequência com que os snapshots são transferidos do volume de origem para o volume de destino.
+.. *Retenção de longo prazo*: opcionalmente, habilite os snapshots para retenção de longo prazo.
++
+Se você habilitar a retenção de longo prazo, selecione uma política existente ou crie uma nova para definir os Snapshots a serem replicados e a quantidade a ser retida.
+
++
+... Para *Escolher uma política existente*, selecione uma política existente no menu suspenso.
+... Para *Criar uma nova política*, forneça as seguintes informações:
++
+.... *Nome da política*: insira um nome para a política.
+.... *Políticas de Snapshot*: na tabela, selecione a frequência da política de Snapshot e o número de cópias a serem mantidas. Você pode selecionar mais de uma política de Snapshot.
+
+
+
+
+
+
+. Selecione *Criar*.
+
+
+.Resultado
+Todos os volumes dentro da máquina virtual de armazenamento são replicados para o sistema de arquivos de destino.

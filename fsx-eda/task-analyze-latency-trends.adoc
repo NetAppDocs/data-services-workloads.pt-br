@@ -1,0 +1,91 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/task-analyze-latency-trends.html 
+keywords: latency graph, latency visualization, latency trends, breach patterns, latency spikes, latency patterns, time range analysis, breach frequency, iops, throughput 
+summary: Utilize os gráficos interativos para analisar as tendências de latência de volume ao longo do tempo, identificar padrões e acompanhar a eficácia das medidas corretivas. 
+---
+= Analise as tendências de latência para EDA no Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Após a detecção de uma violação de latência, utilize os gráficos para observar como a latência, as IOPS e a taxa de transferência se alteram ao longo do tempo. Isso ajuda você a identificar padrões e validar se a correção melhorou o desempenho.
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+Você precisa ter link:task-configure-latency-monitoring.html["monitoramento de latência configurado"] e pelo menos uma violação detectada. Para visualizar os gráficos, certifique-se de que as credenciais da AWS estejam disponíveis. Para visualizar a análise detalhada da latência dos componentes de QoS, certifique-se de que o sistema de arquivos esteja vinculado.
+
+
+
+[[analyze-latency-trends]]
+== Analisar tendências de latência
+
+A página *Análise detalhada de latência* fornece gráficos de desempenho para ajudar você a analisar o comportamento do volume ao longo do tempo: latência, IOPS e taxa de transferência.
+
+.Sobre esta tarefa
+Os gráficos mostram as métricas do CloudWatch para o volume afetado. Todos os gráficos usam a mesma linha do tempo. Eles exibem automaticamente métricas com base em qual alarme disparou o evento.
+
+Você pode alterar o intervalo de tempo para visualizar o desempenho em diferentes períodos. Você também pode alternar entre Todas, Leitura, Gravação ou Metadados.
+
+A visualização inclui:
+
+* *Gráfico de latência*: Mostra a latência do volume (ms) ao longo do tempo, com linhas de limite de aviso e crítico e marcadores de violação.
+* *Gráfico de IOPS*: mostra o IOPS ao longo do tempo, com limites e marcadores de violação (se configurados).
+* *Gráfico de taxa de transferência*: mostra a taxa de transferência ao longo do tempo para o período selecionado. Se **Metadados** estiver selecionado no filtro, o gráfico de taxa de transferência não exibirá dados.
+* *Linhas de limite*: Linhas horizontais tracejadas mostram os limites de alerta e críticos.
+* *Marcadores de violação*: Marcadores visuais indicam violações detectadas. Passe o cursor sobre um marcador para visualizar a gravidade, o horário da detecção, CloudWatch latência mediana (ms) e a análise dos componentes de latência da QoS.
+
+
+.Passos
+. Na aba *Latência*, selecione o evento na coluna Severity.
++
+O painel de análise de latência é aberto.
+
+. Analise o gráfico de latência e o resumo da violação para o *Período de tempo* e o *Tipo* selecionados.
+. Selecione *Ver análise completa* para abrir *Análise detalhada de latência*.
+. Nos *Gráficos de Latência*, use *Período de tempo* (por exemplo, 72 horas) e *Tipo* (Leitura/Gravação/Metadados) para ajustar os gráficos.
+. Revise os gráficos para:
++
+** *Latência* (ms) com linhas de limite de aviso/crítico
+** *IOPS* com linhas de limite (se configurado)
+** *Taxa de transferência* no mesmo período de tempo
+
+
+. Utilize os marcadores de pico e o resumo da violação (por exemplo, "1 violação crítica detectada neste período") para correlacionar aumentos de latência com alterações de IOPS e taxa de transferência.
+. Altere o intervalo de tempo para revisar outros períodos e procurar padrões.
+. Confira as linhas de tendência para latência, IOPS e taxa de transferência. Os gráficos de IOPS e latência incluem linhas de limite para comparação.
+. Passe o cursor sobre um marcador de violação para visualizar os detalhes da violação (gravidade, horário de detecção, latência mediana CW e componentes de latência QoS).
+. Utilize as informações do gráfico para:
++
+** Veja se os problemas de latência acontecem uma vez ou se ocorrem repetidamente
+** Identifique os horários do dia em que a latência é maior
+** Determine se os picos de latência são de curta ou longa duração
+** Compare eventos de latência com padrões de carga de trabalho ou alterações do sistema
+
+
+
+
+.Resultado
+Você pode ver como a latência do volume muda ao longo do tempo. Isso ajuda você a decidir se deve tomar alguma providência agora, alterar os limites de alerta ou verificar se há problemas no sistema.
+
+
+NOTE: Os gráficos utilizam as métricas do CloudWatch. Estas podem diferir ligeiramente dos componentes de latência reportados pelo QoS, pois são coletadas de maneiras diferentes.
+
+
+
+[[graph-interpretation]]
+== Interpretação de gráficos
+
+Utilize estas dicas ao analisar as alterações no tempo de resposta:
+
+* *Utilize vários períodos de tempo*: Observe os gráficos em diferentes intervalos de tempo para distinguir entre picos breves e desacelerações contínuas. Comece com a visualização de 24 horas para obter contexto geral. Em seguida, amplie para períodos mais curtos para examinar incidentes específicos ou mude para a visualização de 72 horas para identificar padrões diários.
+* *Compare os limites visualmente*: Use as linhas de limite no gráfico para verificar se suas configurações de aviso e crítico se adequam à sua carga de trabalho. Se a latência frequentemente se aproxima do limite, mas não o ultrapassa, o limite pode estar muito alto. Se você observar muitos picos curtos que ultrapassam o limite, mas não afetam as operações, o limite pode estar muito sensível.
+* *Identifique padrões diários*: Use as visualizações de 24 e 72 horas para identificar padrões ao longo do dia. Se picos de latência ocorrerem nos mesmos horários, agende tarefas pesadas para períodos de menor movimento ou adicione mais capacidade para horários de pico.
+* *Diferencie os tipos de picos*: Picos curtos geralmente indicam problemas temporários, como breves disputas por recursos. Latência que permanece alta ao longo do tempo aponta para problemas mais profundos no sistema, como capacidade limitada ou problemas de configuração. Cada situação precisa de uma solução diferente.
+* *Monitore as tendências após as alterações*: Após ajustar os limites, adicionar capacidade ou alterar as configurações, monitore o gráfico por pelo menos 72 horas para garantir que as alterações funcionaram.
+

@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/delete-file-system.html 
+keywords: file system, delete file system, file system deletion 
+summary: Para excluir um sistema de arquivos no NetApp Workload Factory, você deve primeiro excluir todos os volumes, as VMs de storage ou os relacionamentos de replicação associados ao sistema de arquivos. 
+---
+= Excluir um sistema de arquivos no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para excluir um sistema de arquivos no NetApp Workload Factory, você deve primeiro excluir todos os volumes, as VMs de storage ou os relacionamentos de replicação associados ao sistema de arquivos.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos FSx for ONTAP que você deseja excluir.
+. Selecione *Gerenciar*.
+. Na aba *Overview*, selecione o menu de ações.
+. Selecione *Delete*.
+. Na caixa de diálogo Excluir sistema de arquivos do FSx for ONTAP, insira o nome do sistema de arquivos do FSx for ONTAP que você deseja excluir.
+. Selecione *Excluir* para confirmar.
+

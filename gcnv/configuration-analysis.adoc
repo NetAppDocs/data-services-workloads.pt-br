@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: gcnv/configuration-analysis.html 
+keywords: configuration issues, issues, improve, analyze, storage configuration, recommendation, recommendations 
+summary: NetApp Console analisa regularmente as configurações do sistema de storage para determinar se há algum problema de configuração. 
+---
+= Análise de configuração para o Google Cloud NetApp Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O painel de controle bem estruturado no NetApp Console analisa regularmente as configurações do sistema de storage para identificar se há problemas de configuração. Quando problemas são encontrados, o painel mostra quais são os problemas e explica o que precisa ser alterado para garantir que seus sistemas de storage alcancem o desempenho máximo, a eficiência de custos e a conformidade com as melhores práticas.
+
+Principais funcionalidades incluem:
+
+* Análise diária de configuração
+* Validações automáticas de melhores práticas para sistemas de storage NetApp ONTAP e provedores de storage parceiros
+* Observabilidade proativa
+* Insights para ação
+
+
+
+
+[[analysis-requirements]]
+== Requisitos de análise
+
+Para uma análise completa do pool de storage, você deve fazer o seguinte:
+
+* link:create-discover-systems.html["Adicione seu sistema Google Cloud NetApp Volumes ao NetApp Console"^].
+* Conceda permissões de _visualização, planejamento e análise_ na sua conta do Google Cloud.
++
+link:add-credentials.html["Aprenda como conceder permissões a uma conta do Google Cloud"^]
+
+
+
+
+
+[[best-practices-and-recommendations-for-storage-workloads]]
+== Melhores práticas e recomendações para cargas de trabalho de storage
+
+O Workload Factory avalia as configurações de storage em relação às melhores práticas de storage e do ONTAP, bem como à estrutura Google Cloud Well-Architected Framework. A avaliação também recomenda melhorias.
+
+A análise bem arquitetada categoriza as configurações nos seguintes pilares da estrutura: _confiabilidade_ e _excelência operacional_.
+
+
+
+[[reliability]]
+=== Confiabilidade
+
+A confiabilidade garante que as workloads executem suas funções pretendidas de forma correta e consistente, mesmo quando ocorrem interrupções.
+
+* *política do Snapshot*
++
+Agende snapshots locais para backup eficiente e restaurações rápidas. Snapshots são imagens instantâneas de ponto no tempo dos seus volumes.
+
+* *Espaço livre de capacidade de SSD*
++
+O Workload Factory recomenda manter o uso da camada SSD em 80% ou menos. Algumas cargas de trabalho podem exigir capacidade adicional e metas de utilização mais baixas. À medida que o uso excede a capacidade recomendada, o risco de lentidão no desempenho e problemas de serviço aumenta, especialmente se a capacidade não for expandida a tempo. Você pode dispensar isso para um ou mais pools de storage e reativar depois, se necessário.
+
+
+
+
+
+[[operational-excellence]]
+=== Excelência operacional
+
+A excelência operacional concentra-se em fornecer a arquitetura mais ideal e valor comercial.
+
+* *Folga de capacidade do volume*
++
+A Workload Factory recomenda manter o uso do volume abaixo de 80% para reduzir o risco de falta de espaço. Se um volume crescer mais rápido do que o esperado, você pode precisar expandi-lo rapidamente. Isso pode aumentar o risco de impacto em aplicativos, especialmente com crescimento repentino ou em picos. Esse risco é menor quando você usa thin provisioning e gerenciamento de capacidade automático. Você pode dispensar esse aviso para um ou mais volumes e reativá-lo depois, se necessário.
+
+
+
+.O que vem a seguir
+link:improve-configurations.html["Implemente configurações bem arquitetadas do Google Cloud NetApp Volumes"]

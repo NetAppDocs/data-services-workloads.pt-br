@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/create-storage-vm.html 
+keywords: create storage VM, create svm 
+summary: 'Você pode criar uma máquina virtual de armazenamento (SVM) do FSx for ONTAP para fornecer serviços de storage e dados para suas cargas de trabalho no NetApp Workload Factory.' 
+---
+= Crie uma VM de storage para um sistema de arquivos FSx for ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Crie uma máquina virtual de storage (SVM) para um sistema de arquivos FSx for ONTAP a fim de acessar virtualmente os serviços de storage e dados para suas cargas de trabalho no NetApp Workload Factory.
+
+.Sobre esta tarefa
+As VMs de armazenamento são servidores de arquivos isolados que você pode usar para acessar os dados de cada carga de trabalho no Workload Factory Storage. Cada SVM possui suas próprias credenciais administrativas e endpoints para administrar e acessar os dados.
+
+Com SVMs, ao acessar dados no FSx for ONTAP, seus clientes e estações de trabalho montam um volume, compartilhamento CIFS/SMB ou LUN iSCSI hospedados por uma SVM usando o endpoint da SVM (endereço IP).
+
+.Antes de começar
+Verifique o número de VMs de storage compatível por sistema de arquivos. Consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html#max-svms["Gerenciando máquinas virtuais de armazenamento do FSx for ONTAP"^] na documentação da AWS para ver o número máximo de SVMs por sistema de arquivos.
+
+
+
+[[create-a-storage-vm]]
+== Criar uma máquina virtual de armazenamento
+
+Você pode criar uma VM de armazenamento a partir do console do Workload Factory. Você também pode usar as seguintes ferramentas disponíveis no Codebox: API REST, CloudFormation e Terraform. link:../admin/use-codebox.html#how-to-use-codebox["Aprenda a usar o Codebox para automação"^].
+
+
+NOTE: Ao usar o Terraform do Codebox, o código que você copia ou baixa oculta `fsxadmin` e `vsadmin` senhas. Você precisará inserir as senhas novamente ao executar o código.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos e, em seguida, selecione *Manage*.
+. Na visão geral do sistema de arquivos, em Storage VMs, selecione *Create storage VM*.
+. Na página Criar VM de armazenamento, em Configuração da VM de armazenamento, forneça as seguintes informações:
++
+.. *Nome*: insira um nome para a VM de storage.
+.. *Credenciais da VM de armazenamento*: Forneça uma senha para o usuário desta VM de armazenamento `vsadmin` ou use as credenciais de usuário do sistema de arquivos `fsxadmin`.
+.. *Estilo de segurança do volume raiz*: selecione o estilo de segurança do volume raiz de acordo com o tipo de clientes que acessam seus dados: UNIX (clientes Linux), NTFS (clientes Windows) ou Mixed.
+.. *Etiquetas*: opcionalmente, você pode adicionar até 50 etiquetas.
+
+
+. Selecione *Criar*.
+

@@ -1,0 +1,140 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/manage-projects.html 
+keywords: EDA, electronic design automation, project, projects, manage project, create project, edit project, delete project 
+summary: Gerencie projetos de EDA no NetApp Workload Factory for EDA. 
+---
+= Gerencie projetos EDA no Workload Factory para EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode gerenciar projetos de EDA para controlar como seu código e artefatos são gerenciados para cada projeto no NetApp Workload Factory for EDA.
+
+
+
+[[create-a-project]]
+== Criar um projeto
+
+Você pode criar um novo projeto EDA para aproveitar os recursos de proteção de dados do seu FSx for ONTAP sistema de arquivos para seu código e artefatos.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione *CI/CD*.
+. Selecione *Adicionar projeto*.
+. Na página Create project, forneça as seguintes informações:
++
+.. *Nome do projeto*: insira um nome para o projeto.
+.. *Descrição*: insira uma descrição para o projeto.
+.. *Sistema de arquivos*: forneça o seguinte:
++
+... *Credenciais*: Selecione as credenciais da Amazon AWS que deseja usar. O EDA utiliza essas credenciais para descobrir sistemas de arquivos FSx for ONTAP que você pode usar com este projeto e para criar clones e snapshots de projetos.
+... *Região*: Selecione a região em que este sistema de arquivos FSx para ONTAP reside.
+... *FSx for ONTAP file system*: Selecione um FSx for ONTAP file system para usar com este projeto.
++
+Você só pode selecionar sistemas de arquivos que estejam configurados com um link. link:../setup/links-overview.html["Saiba mais sobre links"^].
+
+... *Escolha um volume*: selecione um volume no qual armazenar o projeto; o EDA usa este volume como repositório de software.
++
+Você só pode selecionar volumes configurados como um compartilhamento NFS.
+
+
+
+.. *Políticas operacionais*: estabeleça limites para clones de projetos:
++
+... *Retenção máxima em dias*: insira o número máximo de dias que um clone deve ser mantido. Após esse número de dias, o Workload Factory remove o clone.
+... *Número máximo de clones por usuário ou grupo*: insira o número máximo de clones que podem ser provisionados para um usuário ou grupo.
+... *Tamanho máximo do clone em GiB*: insira o tamanho máximo em GiB de um clone do projeto.
+
+
+.. *Políticas de acesso*: conceda explicitamente acesso ao projeto a usuários ou grupos específicos:
++
+... *Escopo de aplicação da política*: insira endereços IP individuais ou intervalos de endereços IP para limitar o acesso ao projeto somente a esses endereços IP ou intervalos.
++
+Por exemplo: `172.16.0.0/24`
+
+... *Identificadores de usuário ou grupo*: insira os identificadores de usuário ou grupo para limitar o acesso ao projeto apenas a esses usuários ou grupos.
++
+Por exemplo: `User1234`
+
+
+
+
+
+. Selecione *Criar*.
+
+
+.Resultado
+O projeto foi criado e aparece na lista de projetos na página Projetos.
+
+
+
+[[view-existing-projects]]
+== Veja os projetos existentes
+
+Você pode visualizar os projetos existentes criados na NetApp Workload Factory para EDA seguindo estes passos.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione *CI/CD*.
+. Selecione *Ir para a página de projetos*.
+. Veja os projetos existentes listados na página Projects.
+
+
+
+
+[[edit-a-project]]
+== Editar um projeto
+
+Você pode editar as configurações de um projeto a qualquer momento.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione *CI/CD*.
+. Selecione *Ir para a página de projetos*.
+. Na página Projetos, selecione image:icon-action.png["o botão de opção"] para o projeto que deseja editar e, em seguida, selecione *Editar*.
+. Faça as alterações necessárias na configuração do projeto.
+. Selecione *Salvar*.
+
+
+
+
+[[view-a-projects-workspaces]]
+== Veja os espaços de trabalho de um projeto
+
+Um clone ou instantâneo de um projeto é conhecido como espaço de trabalho. Quando você cria um espaço de trabalho, ele é mantido enquanto a política de operação do projeto permitir. Você pode visualizar os espaços de trabalho existentes de um projeto seguindo estas etapas.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione *CI/CD*.
+. Selecione *Ir para a página de projetos*.
+. Na página Projects, escolha um projeto e selecione *View*.
+. Veja o status e os detalhes de todos os espaços de trabalho deste projeto.
+. Se você vir alertas ou avisos para um espaço de trabalho, passe o cursor sobre o ícone de alerta ou aviso para ver o motivo.
+
+
+
+
+[[delete-a-project]]
+== Excluir um projeto
+
+Você pode excluir um projeto quando ele não for mais necessário seguindo estes passos.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione *CI/CD*.
+. Selecione *Ir para a página de projetos*.
+. Na página Projects, selecione image:icon-action.png["o botão de opção"] para o projeto que você deseja excluir.
+. Selecione *Delete*.
+. Na caixa de diálogo de confirmação, selecione *Excluir*.
+
+
+.Resultado
+O projeto é excluído, e todo o código ou artefatos associados ao projeto são removidos do volume. Snapshots e clones do projeto são mantidos.

@@ -1,0 +1,151 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/use-snapshots.html 
+keywords: create snapshot, snapshot 
+summary: Proteja os dados do volume contra exclusão ou corrupção acidental criando e gerenciando snapshots no NetApp Workload Factory. 
+---
+= Use snapshots para proteger dados no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Proteja os dados do volume contra exclusão ou corrupção acidental criando e gerenciando snapshots no NetApp Workload Factory. Você pode criar um snapshot sob demanda de um volume, definir uma política de snapshots para automatizar a criação e retenção para VMs de armazenamento e restaurar um volume a partir de um snapshot existente para recuperar dados em um ponto no tempo específico.
+
+
+
+[[create-an-on-demand-snapshot-of-a-volume]]
+== Crie um snapshot sob demanda de um volume
+
+Crie um snapshot manual de um volume do FSx for ONTAP na NetApp Workload Factory. Snapshots são versões de ponto no tempo do conteúdo do seu volume.
+
+Os Snapshots são recursos de volumes e capturam instantaneamente seus dados, consumindo espaço apenas para dados modificados. Como os dados mudam com o tempo, os Snapshots geralmente consomem mais espaço à medida que envelhecem.
+
+Os volumes do FSx for ONTAP usam just-in-time copy-on-write para que quaisquer arquivos não modificados em Snapshots não consumam nenhuma parte da capacidade do volume.
+
+
+NOTE: Os snapshots não são cópias dos seus dados. Se você deseja fazer cópias dos seus dados, considere usar os recursos de backup de volume ou replicação de volume.
+
+.Antes de começar
+Você precisa associar um link para criar um instantâneo manual de um volume. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"]. Após a associação do link, retorne a esta operação.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos que contém o volume para o qual você deseja criar um snapshot e, em seguida, selecione *Gerenciar*.
+. Na visão geral do sistema de arquivos, selecione a guia *Volumes*.
+. Na aba *Volumes*, selecione o menu de ações do volume que você deseja proteger com Snapshots.
+. Selecione *Ações de proteção de dados* e, em seguida, *Gerenciar Snapshots*.
+. Na página Gerenciar Snapshots, selecione *Criar Snapshot*.
+. Na caixa de diálogo Criar um instantâneo, faça o seguinte:
++
+.. Insira um nome de Snapshot no campo *Snapshot name*.
+.. Opcionalmente, selecione uma etiqueta ou crie uma nova etiqueta.
+.. Defina o *período de retenção* como um número de horas, dias, meses ou anos.
+.. Opcional: *torne este Snapshot imutável* para evitar que ele seja excluído durante o período de retenção.
++
+Aceite a declaração referente a Snapshots imutáveis.
+
+
+
+. Selecione *Criar*.
+
+
+
+
+[[create-a-snapshot-policy-for-storage-vms]]
+== Crie uma política de snapshots para VMs de armazenamento
+
+Crie uma política do Snapshot personalizada para VMs de armazenamento no Workload Factory para gerenciar a criação e a retenção de snapshots. Uma política do Snapshot define como o sistema cria snapshots para uma VM de armazenamento. Você pode criar uma política do Snapshot para uma VM de armazenamento em um sistema de arquivos FSx for ONTAP. Você também pode compartilhar a política entre várias VMs de armazenamento.
+
+Você pode criar uma política personalizada do Snapshot que difere das três políticas incorporadas do Snapshot para o FSx for ONTAP:
+
+* `default`
+* `default-1weekly`
+* `none`
+
+
+Por padrão, cada volume está associado à política do Snapshot do sistema de arquivos `default`. Recomendamos usar essa política para a maioria das cargas de trabalho.
+
+Personalizar uma política permite especificar quando criar Snapshots, quantas cópias manter e como nomeá-las.
+
+.Antes de começar
+* Uma vez criada uma política do Snapshot, sua associação com as VMs de armazenamento não pode ser modificada, mas você sempre pode adicionar ou remover a política dos volumes.
+* Considere o seguinte sobre a capacidade de Snapshot antes de usar Snapshots:
++
+** Para a maioria dos conjuntos de dados, uma capacidade adicional de 20% é suficiente para manter snapshots por até quatro semanas. À medida que os dados envelhecem, seu uso para restaurações torna-se menos provável.
+** Sobrescrever todos os dados em um Snapshot consome uma quantidade significativa de capacidade do volume, o que influencia o provisionamento dessa capacidade.
+
+
+* Para criar uma política de instantâneo personalizada, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"]. Após a associação do link, retorne a esta operação.
+
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos com o volume e, em seguida, selecione *Gerenciar*.
+. Na visão geral do sistema de arquivos, selecione a guia *VMs de armazenamento*.
+. Na guia *Storage VMs*, selecione o menu de ações do volume que você deseja proteger com snapshots agendados, depois *Advanced actions* e, em seguida, *Manage snapshot policies*.
+. Na página de gerenciamento da política do Snapshot, selecione *Criar política do Snapshot*.
+. No campo *Nome da política do Snapshot*, insira um nome para a política do Snapshot.
+. Opcionalmente, insira uma descrição para a política do Snapshot.
+. Em *Agendamento e cópias da política*, selecione quando criar Snapshots. Por exemplo, a cada minuto ou a cada hora.
++
+Você pode selecionar mais de uma frequência.
+
+. Em *Número de cópias*, insira o número de cópias que deseja manter.
++
+O número máximo de cópias é 1.023.
+
+. Opcional: em *Convenção de nomenclatura*, insira um *prefixo* para a política.
+. *O rótulo de retenção* é preenchido automaticamente.
++
+Este rótulo se refere ao SnapMirror, ou rótulo de replicação, que é usado para selecionar apenas snapshots específicos para replicação do sistema de arquivos de origem para o sistema de arquivos de destino.
+
+. Opcional: habilite *Snapshots imutáveis* para quaisquer agendamentos de que você precise, defina o *período de retenção* para cada agendamento e aceite a declaração para continuar.
++
+Habilitar snapshots imutáveis bloqueia todos os snapshots nesta política do Snapshot para impedir a exclusão dos snapshots durante o período de retenção.
+
+. *Compartilhar entre VMs de armazenamento*: ativado por padrão. Quando ativado, a política do Snapshot é compartilhada entre todas as VMs de armazenamento no sistema de arquivos. Desative para criar uma política do Snapshot para uma única VM de armazenamento.
+. Selecione *Criar*.
+
+
+
+
+[[restore-a-volume-from-a-snapshot]]
+== Restaurar um volume a partir de um snapshot
+
+Você pode restaurar dados de um snapshot para um volume existente ou para um novo volume. A operação de restauração permite a recuperação em ponto no tempo quando um volume contém arquivos excluídos ou corrompidos.
+
+A criação de um novo volume a partir de um Snapshot cria uma cópia de um volume inteiro em poucos segundos, independentemente do tamanho do volume. A cópia recém-criada representa um novo volume.
+
+.Antes de começar
+Considere as seguintes limitações antes de criar um volume a partir de um snapshot:
+
+* Você só pode restaurar um volume a partir de um snapshot se tiver uma cópia de snapshot existente do volume.
+* Alterações nos modelos de permissão: se você usar esta operação para alternar o tipo de protocolo de network-attached storage (NAS), o modelo de permissão fornecido pelo estilo de segurança também poderá ser alterado. Você poderá encontrar problemas de permissão de acesso a arquivos, que só poderá corrigir manualmente com acesso de administrador usando as ferramentas do cliente NAS para configuração de permissões.
+
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos com o volume e, em seguida, selecione *Gerenciar*.
+. Na visão geral do sistema de arquivos, selecione a guia *Volumes*.
+. Na aba *Volumes*, selecione o menu de ações do volume que você deseja restaurar a partir de um Snapshot.
+. Selecione *Ações de proteção de dados* e, em seguida, *Gerenciar Snapshots*.
+. Na página Gerenciar Snapshots, selecione o menu de ações do Snapshot que você deseja restaurar e, em seguida, selecione *Restaurar*.
+. Na caixa de diálogo Restaurar volume a partir de um Snapshot, selecione uma das seguintes opções:
++
+** Use o botão de alternância para selecionar *Restaurar como um novo volume*.
++
+No campo *Nome do volume restaurado*, insira um nome exclusivo para o volume a ser restaurado.
+
+** Restaure dados de um Snapshot para um volume existente. Esta operação exclui permanentemente todos os dados modificados após o momento de criação do Snapshot.
++
+Aceite a declaração para prosseguir.
+
+
+
+. Selecione *Restaurar*.
+

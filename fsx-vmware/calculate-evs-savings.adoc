@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/calculate-evs-savings.html 
+keywords: vm workloads, deploy fsx, deploy storage for vms, evs, savings, calculate, tco, regions 
+summary: Calcule quanto você pode economizar usando o Amazon EVS com o FSx for ONTAP. 
+---
+= Explore a economia para o Amazon Elastic VMware Service com NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Explore a economia potencial ao migrar suas cargas de trabalho VMware para o Amazon Elastic VMware Service (EVS). A calculadora permite comparar os custos de usar o Amazon EVS com e sem o Amazon FSx for NetApp ONTAP como armazenamento.
+
+Se a calculadora de economia determinar que o armazenamento mais econômico é o FSx for ONTAP, você pode criar uma avaliação detalhada, que fornece um plano de migração que você pode revisar antes de usar. Em seguida, você pode usar o Codebox para gerar modelos de infraestrutura como código.
+
+
+
+[[explore-savings-for-evs-environments]]
+== Explore as oportunidades de economia para ambientes do Exchange Virtual Server
+
+Siga estes passos para explorar as economias potenciais de uma migração planejada para um ambiente Amazon Exchange Virtual Server.
+
+
+NOTE: Antes de prosseguir, leia o aviso legal na parte inferior da calculadora de economia para entender melhor como as estimativas de preços são calculadas.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *VMware*.
++
+O centro de planejamento é exibido.
+
+. No menu do VMware, selecione *Explorar economias*. A calculadora de economias é exibida.
++
+No painel *Preferências do ambiente*, você pode selecionar sua região de implantação do Exchange Virtual Server e ajustar o TCO e as previsões de economia adequadamente.
+
+. Na lista suspensa *Região*, selecione a região de implantação do Exchange Virtual Server para calcular a economia.
+. Ajuste os seguintes controles deslizantes conforme necessário para ver os cálculos de economia em tempo real para os valores que você escolher. Se estiver usando um teclado, você pode fazer pequenos ajustes usando as teclas de seta:
++
+** *CPU física necessária (contagem)*
+** *Memória física necessária (GiB)*
+** *Armazenamento necessário da VM (TiB)*
+
+
+. Em *plano de faturamento do Exchange Virtual Server*, selecione o plano que você utiliza.
+. Faça um dos seguintes procedimentos:
++
+** Para usar o assistente de migração para link:launch-migration-advisor-evs-manual.html["criar um plano de implantação"]um ambiente Amazon Exchange Virtual Server, selecione *Planejar migração do Exchange Virtual Server*.
+** Selecione *Fechar* para fechar a calculadora de TCO.
+
+
+

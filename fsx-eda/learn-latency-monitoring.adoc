@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/learn-latency-monitoring.html 
+keywords: latency analysis, CloudWatch alarms, volume latency, read latency, write latency, critical events, warning events, latency thresholds, IOPS thresholds, latency monitoring, FSx for ONTAP, root cause analysis, QoS delay center, automated analysis 
+summary: Aprenda como o monitoramento de latência no Workload Factory for EDA ajuda você a detectar e analisar problemas de desempenho com volumes FSx for ONTAP usando análise básica automatizada e análise opcional de IA. 
+---
+= Saiba mais sobre o monitoramento de latência no Workload Factory para EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O monitoramento de latência no Workload Factory for EDA ajuda você a encontrar e corrigir lentidão no desempenho dos seus volumes FSx for ONTAP. Ele rastreia a latência de leitura e gravação usando as métricas do CloudWatch e analisa automaticamente os dados para ajudar a identificar a causa dos problemas de desempenho.
+
+
+
+[[how-latency-monitoring-works]]
+== Como funciona o monitoramento de latência
+
+A análise de latência coleta métricas do CloudWatch para atividade de leitura e gravação em todos os volumes FSx for ONTAP conectados à sua conta AWS. Ela verifica continuamente essas métricas em relação aos limites definidos para detectar problemas de desempenho precocemente.
+
+Se a latência aumentar, o Workload Factory analisa automaticamente as métricas de latência de QoS do ONTAP para identificar a principal causa da lentidão. Para problemas mais complexos envolvendo dados ou componentes do cluster, você pode executar uma análise opcional de IA que fornece a provável causa raiz, identifica os clientes afetados e sugere etapas para resolver o problema.
+
+
+NOTE: Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá usar a análise de IA. Entre em contato com seu administrador ou link:../admin/manage-genai-features.html["Aprenda sobre administração de IA"^].
+
+
+
+[[alert-generation]]
+=== Geração de alertas
+
+Um alerta é acionado somente quando estas condições são verdadeiras durante todo o intervalo de tempo selecionado: a latência permanece acima do limite definido e o IOPS permanece acima do limite definido. Exigir ambas reduz alarmes falsos, garantindo que a alta latência ocorra enquanto o sistema está lidando com carga de trabalho real.
+
+Você pode configurar limites separados para:
+
+* Operações de leitura
+* Operações de gravação
+* Gravidade do aviso
+* Gravidade crítica
+
+
+Todos os eventos detectados aparecem na tabela de eventos de latência. Se as notificações estiverem configuradas, você também receberá um e-mail ou uma mensagem do Amazon SNS com detalhes sobre os volumes afetados. Você pode controlar com que frequência recebe notificações: diariamente por sistema de arquivos ou a cada 20 minutos.
+
+
+
+[[understanding-alerts]]
+== Entendendo alertas
+
+Compreender como os alertas são acionados ajuda a configurar limites adequados e interpretar os resultados.
+
+
+
+[[metrics-collected]]
+=== Métricas coletadas
+
+O sistema coleta as seguintes métricas do CloudWatch para cada volume:
+
+* *Limite de latência de leitura*: Calculado como 1000 * m2/(m1+0.000001), onde m1 = DataReadOperations e m2 = DataReadOperationTime
+* *Limite de latência de escrita*: Calculado como 1000 * m2/(m1+0.000001), onde m1 = DataWriteOperations e m2 = DataWriteOperationTime
+
+
+
+
+[[alert-trigger-conditions]]
+=== Condições de ativação do alerta
+
+Um alerta é acionado quando todas as seguintes condições são atendidas:
+
+* O limite de latência foi excedido para o tipo de operação (leitura ou gravação).
+* O limite de IOPS foi excedido para o tipo de operação.
+* Ambas as condições persistem para todos os pontos de dados dentro do intervalo de tempo configurado.
+
+
+Por exemplo, com os limites de aviso padrão, um alerta de leitura é acionado somente se a latência de leitura exceder 6 ms E o IOPS de leitura exceder 100 ops/seg para todos os pontos de dados dentro de um período de 10 minutos.
+
+
+
+[[event-severity]]
+=== Gravidade do evento
+
+* *Eventos de aviso*: Indicam latência elevada que pode precisar de atenção
+* *Eventos críticos*: Indicam latência grave que requer investigação imediata
+
+
+
+
+[[latency-analysis]]
+== Análise de latência
+
+O Workload Factory oferece dois níveis de análise para ajudar você a solucionar problemas de latência.
+
+
+
+[[basic-analysis]]
+=== Análise básica
+
+Quando ocorre um evento de latência, o Workload Factory executa automaticamente uma análise básica para encontrar a causa. Ele usa as métricas de centro de atraso de QoS do ONTAP para ver qual componente é responsável pela lentidão, como FlexCache, o pool de capacidade, os limites de QoS, os discos, os dados, o cluster ou outro subsistema. Isso identifica rapidamente a origem da latência sem exigir investigação manual.
+
+
+NOTE: Você só poderá visualizar a análise detalhada dos componentes quando houver um link associado ao sistema de arquivos FSx for ONTAP. Caso não haja link, você ainda poderá visualizar gráficos de latência, IOPS e taxa de transferência.
+
+
+NOTE: Os valores de latência da análise de QoS do ONTAP e do CloudWatch podem diferir ligeiramente porque eles coletam dados de maneiras diferentes. A análise básica usa dados do ONTAP para identificar a causa raiz.
+
+
+
+[[ai-analysis]]
+=== Análise AI
+
+Embora uma análise básica possa identificar a origem da latência, situações mais complexas envolvendo dados ou componentes de cluster geralmente exigem uma investigação mais aprofundada. A análise por IA proporciona essa solução de problemas mais detalhada, encontrando problemas como volumes sobrecarregados, configuração inadequada ou a necessidade de adicionar mais capacidade, problemas que uma análise básica pode não detectar.
+
+A disponibilidade da análise por IA depende da configuração da sua conta:
+
+* *NetApp-créditos de IA gerenciados ativados*: você pode executar análises de IA sem configuração adicional do Bedrock.
+* *Desativado pelo administrador*: As opções de IA não estão disponíveis.
+
+
+Se os créditos de IA gerenciados pela NetApp estiverem ativados, mas seu orçamento mensal for atingido, a análise de IA ficará indisponível e uma mensagem será exibida.
+
+Ao executar a análise de IA, o sistema fornece:
+
+* *Possível causa raiz*: Explicação detalhada do que está causando o problema de latência
+* *Clientes afetados*: Lista de nomes de instâncias EC2 impactadas pela latência
+* *Possíveis medidas corretivas*: Duas ou mais ações específicas para resolver o problema
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:task-configure-latency-monitoring.html["Configurar o monitoramento de latência"]
+* link:task-analyze-latency-issues.html["Analisar problemas de latência"]
+* link:task-analyze-latency-trends.html["Analisar tendências de latência"]
+

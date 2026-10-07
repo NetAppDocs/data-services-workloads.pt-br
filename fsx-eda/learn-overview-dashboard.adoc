@@ -1,0 +1,193 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/learn-overview-dashboard.html 
+keywords: cluster overview, cluster dashboard, FSx for ONTAP, cluster health, EMS events, latency events, SSD management, throughput management, capacity automation, capacity recommendations, decision points 
+summary: Aprenda como o painel Visão Geral do Workload Factory para EDA ajuda você a monitorar a integridade, a capacidade e a taxa de transferência do cluster FSx for ONTAP em escala. 
+---
+= Saiba mais sobre o painel de Visão Geral no Workload Factory para EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O painel de Visão Geral oferece aos administradores de TI um local centralizado para monitorar as cargas de trabalho de EDA em vários sistemas de arquivos FSx for ONTAP. Use-o para verificar rapidamente a integridade e o uso do sistema, escolher onde alocar novos volumes ou trabalhos, encontrar volumes ou SVMs que podem precisar ser movidos e ver quando é hora de aumentar a capacidade ou a taxa de transferência.
+
+
+
+[[overview]]
+== Visão geral
+
+O painel Visão geral coleta métricas do CloudWatch para todos os sistemas de arquivos FSx for ONTAP associados às suas credenciais AWS configuradas.
+
+Inclui:
+
+* *Estado de integridade do cluster*: Um resumo na parte superior destaca eventos de latência, uso de SSD, status do modo de throughput, recomendações de capacidade e eventos do ONTAP EMS em seus sistemas de arquivos.
+* *Tabela de clusters*: Uma tabela pesquisável que mostra o uso e o desempenho de cada cluster. Você pode filtrar e classificar os dados, navegar entre as páginas e exportá-los como um arquivo CSV.
+
+
+Isso te ajuda a:
+
+* Adicione novos volumes e reequilibre as cargas de trabalho
+* Planejar a capacidade ou o dimensionamento da taxa de transferência
+* Monitore a saúde do cluster em escala
+* Tome decisões informadas sobre a colocação do volume
+* Identificar clusters que se aproximam dos limites de capacidade
+
+
+
+
+[[dashboard-components]]
+== Componentes do dashboard
+
+
+
+[[cluster-health-status]]
+=== Estado de saúde do cluster
+
+O indicador de integridade do cluster exibe uma visão rápida da atividade nos sistemas de arquivos que você selecionou. Isso aparece somente se pelo menos um link FSx for ONTAP estiver conectado aos seus sistemas de arquivos.
+
+O estado de saúde inclui as seguintes áreas:
+
+*Latência*:: Exibe o número de eventos de latência encontrados nos sistemas de arquivos selecionados. Esta informação aparece somente se o monitoramento de latência estiver ativado.
+*elasticidade do sistema de arquivos*::
++
+--
+* *Capacidade do SSD*: Mostra quantos sistemas de arquivos usam Automate, Recommend ou None para gerenciar a capacidade do SSD.
+* *Taxa de transferência*: Mostra quantos sistemas de arquivos usam Automatizar, Recomendar ou Nenhuma para gerenciar a taxa de transferência.
+
+
+--
+*Eventos ONTAP*:: Exibe o número de eventos EMS detectados, categorizados por Capacidade, Disponibilidade e proteção, e Segurança e outros.
+
+
+
+
+[[clusters-table]]
+=== Tabela de clusters
+
+A tabela de clusters fornece uma visão detalhada de cada sistema de arquivos FSx for ONTAP, filtrada pela sua região ativa e pelas seleções da conta AWS. Os dados são coletados a partir de métricas do CloudWatch.
+
+Utilize a tabela para:
+
+* Identificar sistemas de arquivos próximos do limite de capacidade (coluna de uso de SSD)
+* Compare a demanda de throughput com o throughput provisionado por SKU (coluna P99 de utilização do throughput)
+* Acompanhe métricas de desempenho em vários clusters
+* Verifique o status da configuração do link (coluna Link associado) - A validade da conexão é verificada diariamente
+* Selecione vários clusters para atualizações de parâmetros em massa
+
+
+Selecione um sistema de arquivos para abrir os detalhes do cluster, incluindo informações do cluster, valores de capacidade do SSD e o gráfico de capacidade do SSD ao longo do tempo.
+
+
+
+[[ssd-capacity-management]]
+== Gerenciamento de capacidade de SSD
+
+
+
+[[management-modes]]
+=== Modos de gerenciamento
+
+*Notificar apenas (modo de recomendação)*:: O Workload Factory analisa como você usa seus SSDs e sugere quando aumentar a capacidade. Você revisa essas sugestões e decide se deseja aplicá-las. Isso mantém você no controle total das alterações de capacidade enquanto ainda se beneficia da análise automatizada.
+*Automatizar*:: O Workload Factory adiciona automaticamente mais espaço em SSD quando o uso atinge os limites definidos. Ele gerencia isso sozinho, então não é necessário nenhum trabalho manual. Isso funciona bem para ambientes que preferem o gerenciamento automático.
+*Nenhum*:: Se você não habilitou o gerenciamento de capacidade SSD, o sistema não faz recomendações de capacidade nem executa ações automatizadas. Use esta opção se você quiser gerenciar a capacidade por conta própria.
+
+
+
+
+[[ssd-management-parameters]]
+=== Parâmetros de gerenciamento de SSD
+
+Os parâmetros controlam como o sistema de gerenciamento de capacidade analisa e age de acordo com o uso do seu SSD:
+
+*Limiar* (10-90%):: A porcentagem de uso do SSD que aciona recomendações de capacidade ou ações de automação. Por exemplo, um limite de 80% significa que recomendações ou ações ocorrem quando o uso do SSD atinge 80%. Essa configuração está disponível nos modos Recommend e Automate.
+*Retrospectiva* (1-200 horas):: O período de tempo usado para analisar os padrões históricos de uso do SSD. Um período de análise mais longo fornece mais contexto histórico para as decisões de capacidade. Disponível apenas no modo Automate.
+*Previsão* (1-200 horas):: O período de tempo usado para projetar as necessidades futuras de capacidade. Um período de previsão mais longo planeja mais adiante no futuro para o crescimento da capacidade. Disponível apenas no modo Automate.
+
+
+Você pode definir esses parâmetros para cada sistema de arquivos individualmente ou usar a edição em massa para aplicar as mesmas configurações a vários sistemas de arquivos.
+
+
+
+[[throughput-management]]
+== Gerenciamento de throughput
+
+Você pode configurar o comportamento de aumento elástico de throughput para um ou vários sistemas de arquivos.
+
+
+
+[[management-modes]]
+=== Modos de gerenciamento
+
+*Notificar apenas (modo de recomendação)*:: O Workload Factory avalia a pressão de throughput e fornece recomendações para você aplicar.
+*Automatizar*:: O Workload Factory aumenta a taxa de transferência automaticamente quando as condições configuradas são atendidas.
+*Nenhum*:: Se você não habilitou o gerenciamento de throughput, o sistema não faz recomendações nem executa ações automatizadas. Use esta opção se você quiser gerenciar a capacidade por conta própria.
+
+
+
+
+[[throughput-parameters]]
+=== Parâmetros de taxa de transferência
+
+A caixa de diálogo de configuração de taxa de transferência inclui:
+
+* *Limite de utilização* (50-100%, padrão 80%): percentual de utilização da capacidade de processamento que aciona recomendações ou automação.
+
+
+Os parâmetros avançados de taxa de transferência estão disponíveis em uma seção expansível de *Configuração avançada*.
+
+* *Período de avaliação (horas)* (12-72 horas, padrão 24)
+* *Métricas violadas (%)* (padrão 66%): limite percentual para determinar a violação
+* *Período de violações consecutivas (horas)* (1-5 horas, padrão 2)
+* *Métricas de violação consecutiva (%)* (padrão 95%)
+* *Latência mínima (ms)* (padrão 10 ms)
+* *SKU de capacidade máxima de processamento* (padrão: nenhum)
+
+
+
+
+[[file-system-elasticity-recommendations]]
+== Recomendações de elasticidade do sistema de arquivos
+
+Quando o Workload Factory está no modo Automatizar ou Recomendar, ele verifica automaticamente cada sistema de arquivos FSx for ONTAP e executa um algoritmo de recomendação de capacidade. O sistema realiza verificações periódicas para determinar se a capacidade ou a taxa de transferência do SSD precisam ser ajustadas.
+
+Quando uma recomendação for identificada:
+
+* Você recebe uma notificação imediata com base nas suas configurações de notificação do Workload Factory.
+* Identifique sistemas de arquivos com recomendações filtrando a tabela Clusters.
+* A interface mostra o número total de sistemas de arquivos que atualmente possuem recomendações ativas.
+
+
+A recomendação explica a alteração sugerida e o raciocínio por trás dela, como: _Recomendamos aumentar o tamanho do SSD com base no padrão de utilização do SSD do seu sistema de arquivos._
+
+As notificações são enviadas para eventos de capacidade de storage, incluindo recomendações, aumentos de capacidade bem-sucedidos, alertas de aviso e erros durante verificações de capacidade ou operações de aumento. As notificações de erro explicam a causa, como permissões ausentes, uma atualização do sistema de arquivos já em andamento, um período de espera da AWS após uma alteração recente no storage, atingir a capacidade máxima ou dados do CloudWatch indisponíveis.
+
+
+
+[[understanding-capacity-decision-points]]
+=== Entendendo os pontos de decisão de capacidade
+
+O gráfico de utilização do SSD indica quando o sistema fez recomendações de capacidade ou executou ações automatizadas. Esses indicadores mostram como o algoritmo de gerenciamento de capacidade se comportou ao longo do tempo.
+
+*Pontos de decisão para recomendação*:: Aparecem quando o sistema detecta que é necessária mais capacidade de SSD. Se a capacidade não tiver sido aumentada, esses pontos podem aparecer a cada 30 minutos. O gráfico mostra cada ponto de decisão quando possível. Se o intervalo de tempo selecionado for muito denso, os pontos são agrupados.
+*Pontos de decisão de automação*:: Aparecem quando o sistema de automação tenta aumentar a capacidade do SSD. Indicam se a ação foi bem-sucedida ou falhou.
+
+
+Utilize o gráfico de histórico de uso do SSD para:
+
+* Veja com que frequência você precisa alterar o tamanho do armazenamento
+* Decida se o modo de automação ou o modo de recomendação se adapta melhor aos seus padrões de uso
+* Identifique faltas de armazenamento recorrentes
+* Planeje as necessidades futuras de armazenamento com base no crescimento ao longo do tempo
+* Investigue por que as tentativas de automação falharam
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:task-activate-overview-dashboard.html["Ative o painel de visão geral"]
+* link:task-use-overview-dashboard.html["Use o painel de visão geral"]
+

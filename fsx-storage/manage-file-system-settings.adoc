@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-file-system-settings.html 
+keywords: create fsx tags, create tags, edit fsx tags, fsx tags, reset fsx admin password 
+summary: Adicione, atualize ou remova as tags do sistema de arquivos do FSx for ONTAP para um sistema de arquivos a qualquer momento. 
+---
+= Gerencie as configurações do sistema de arquivos FSx for ONTAP no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gerencie as configurações de um sistema de arquivos do Amazon FSx for NetApp ONTAP no NetApp Workload Factory. Você pode gerenciar tags para o sistema de arquivos, redefinir a senha do fsxadmin quando necessário e atualizar a capacidade de throughput conforme necessário.
+
+
+
+[[manage-fsx-for-ontap-file-system-tags]]
+== Gerencie as tags do sistema de arquivos do Amazon FSx for NetApp ONTAP
+
+As tags ajudam a categorizar seus recursos. Você pode adicionar, editar e remover tags de um sistema de arquivos a qualquer momento no NetApp Workload Factory.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Armazenamento*.
+. No menu Armazenamento, selecione *Inventário*.
+. No *Inventário*, selecione o menu de ações do sistema de arquivos que você deseja atualizar e, em seguida, selecione *Gerenciar tags do sistema de arquivos*.
+. Na caixa de diálogo *Gerenciar tags do sistema de arquivos*, adicione, edite ou remova tags conforme necessário.
++
+O número máximo de tags que você pode aplicar a um sistema de arquivos é 50.
+
+. Selecione *Aplicar*.
+
+
+
+
+[[reset-the-fsxadmin-password-of-an-fsx-for-ontap-file-system]]
+== Redefina a senha do fsxadmin de um sistema de arquivos do Amazon FSx for NetApp ONTAP
+
+Redefina a senha do fsxadmin no NetApp Workload Factory quando necessário.
+
+Se você forneceu um usuário alternativo durante a criação do sistema de arquivos, só poderá redefinir a senha do fsxadmin no console da AWS.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Armazenamento*.
+. No menu Armazenamento, selecione *Inventário*.
+. No *Inventário*, selecione o menu de ações do sistema de arquivos para o qual deseja redefinir a senha do fsxadmin e, em seguida, selecione *Gerenciar*.
+. Na visão geral do sistema de arquivos, selecione o menu de ações.
++
+image:screenshot-reset-fsxadmin-password.png["Uma captura de tela do menu de ações na guia de visão geral de um sistema de arquivos."]
+
+. Selecione *Redefinir a senha do fsxadmin*.
+. Na caixa de diálogo "Redefinir senha do fsxadmin", insira uma nova senha para o fsxadmin e digite-a novamente para confirmar.
+. Selecione *Aplicar*.
+
+
+
+
+[[update-throughput-capacity-for-an-fsx-for-ontap-file-system]]
+== Atualizar a capacidade de processamento para um sistema de arquivos do Amazon FSx for NetApp ONTAP
+
+Atualize a capacidade de throughput de um sistema de arquivos FSx for ONTAP no NetApp Workload Factory, conforme necessário.
+
+Para obter informações sobre os limites de capacidade de throughput, consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/limits.html["Cotas"^]a documentação do AWS FSx for NetApp ONTAP.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Armazenamento*.
+. No menu Armazenamento, selecione *Inventário*.
+. No *Inventário*, selecione o menu de ações do sistema de arquivos para o qual você deseja atualizar a capacidade de throughput e em seguida selecione *Gerenciar*.
+. Em Informações, selecione o ícone de lápis ao lado de *Capacidade de throughput*. O ícone de lápis aparece ao lado da seta do menu suspenso quando o cursor do mouse passa sobre a linha *Capacidade de throughput*.
+. Na caixa de diálogo Capacidade de vazão, selecione a capacidade de vazão de que você precisa.
+. Selecione *Aplicar* para salvar as alterações
+

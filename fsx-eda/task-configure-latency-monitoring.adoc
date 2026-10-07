@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/task-configure-latency-monitoring.html 
+keywords: latency analysis, configure thresholds, CloudWatch alarms, latency monitoring, FSx for ONTAP, warning events, critical events, latency notifications, email notifications, SNS notifications, latency configuration 
+summary: Configure os limites de monitoramento de latência e as configurações de notificação para detectar e responder a problemas de desempenho com volumes FSx for ONTAP. 
+---
+= Configurar o monitoramento de latência no Workload Factory para EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Defina limites de aviso e críticos para latência de leitura e escrita para monitorar o desempenho do volume FSx for ONTAP. Você também pode ativar alertas por e-mail ou Amazon SNS para receber notificações em tempo real quando ocorrerem problemas de latência.
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+Certifique-se de atender aos seguintes requisitos antes de configurar o monitoramento de latência.
+
+
+
+[[aws-credentials-and-permissions]]
+=== Credenciais e permissões da AWS
+
+Você deve adicionar as credenciais da AWS ao Workload Factory com permissões de leitura/gravação. O recurso de monitoramento de latência requer acesso às métricas do CloudWatch para todos os volumes do FSx for ONTAP associados às suas credenciais da AWS.
+
+As permissões de _visualização, planejamento e análise_ não são compatíveis com o monitoramento de latência.
+
+Se você ainda não configurou as credenciais da AWS, consulte link:../fsx-storage/add-credentials.html["Adicionar credenciais da AWS"^].
+
+
+
+[[fsx-for-ontap-file-system]]
+=== Sistema de arquivos FSx para ONTAP
+
+Você precisa de pelo menos um FSx for ONTAP sistema de arquivos com volumes implantados em seu ambiente AWS.
+
+
+
+[[link-to-fsx-for-ontap]]
+=== Link para FSx for ONTAP
+
+Para visualizar a decomposição de componentes na análise básica, você deve associar um link ao sistema de arquivos FSx for ONTAP. Sem um link, você ainda pode visualizar os gráficos de latência, IOPS e taxa de transferência. Se nenhum link já estiver associado, selecione *Associar link* em EDA, escolha se deseja criar um novo link ou associar um link existente e, em seguida, selecione *Continuar* para ir automaticamente para a página de criação de link em Storage workloads.
+
+Para obter instruções sobre como criar e associar links, consulte link:../fsx-storage/create-link.html["Criar um link"^].
+
+
+
+[[turn-on-ai-settings]]
+=== Ative as configurações de IA
+
+Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá usar a análise de IA. Entre em contato com seu administrador ou consulte link:../admin/manage-genai-features.html["Aprenda sobre administração de IA"^].
+
+
+
+[[notification-configuration-optional]]
+=== Configuração de notificações (opcional)
+
+Para receber notificações por e-mail ou Amazon SNS quando eventos de latência forem detectados, configure as preferências de notificação nas configurações do Workload Factory. Consulte <<Configurar notificações de latência>> para obter detalhes.
+
+
+
+[[configure-latency-thresholds]]
+== Configurar limites de latência
+
+Defina limites de aviso e críticos para leitura e gravação. O sistema verifica esses limites continuamente e envia um alerta quando eles são atingidos.
+
+
+NOTE: Defina o limite de eventos críticos acima do limite de aviso. Caso contrário, você não poderá salvar a configuração.
+
+
+NOTE: Os limites de latência definidos no EDA aplicam-se a toda a sua conta por padrão. Você também pode definir limites de latência de volume individuais nas cargas de trabalho de Armazenamento Geral, e essas configurações de volume terão prioridade para esse volume. A atualização dos limites de nível de conta no EDA não alterará nenhuma configuração de nível de volume.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione a guia *Latência*.
+. Na página de configuração de latência do EDA, configure os limites para:
++
+** Latência de leitura (aviso e crítica)
+** Latência de gravação (aviso e crítica)
+** Limiares de IOPS para cada
+** Intervalos de tempo para avaliação
+
+
+. Selecione *Aplicar* para salvar sua configuração.
+
+
+.Resultado
+O Workload Factory coleta métricas de latência para todos os volumes FSx for ONTAP vinculados às suas credenciais da AWS. Os volumes que excedem os limites definidos aparecem na tabela de eventos de latência.
+
+
+
+[[configure-latency-notifications]]
+== Configurar notificações de latência
+
+Configure notificações por e-mail ou Amazon SNS para receber alertas quando for detectada alta latência. Você pode controlar a frequência das notificações com duas opções:
+
+* *Lembre-me todos os dias (Recomendado)*: receba notificações quando ocorrer uma nova violação em qualquer sistema de arquivos. Após enviar uma notificação para um sistema de arquivos, aguarde 24 horas antes de enviar outra notificação para o mesmo sistema de arquivos.
+* *Notifique em qualquer violação de latência (a cada 20 minutos)*: receba uma notificação quando uma violação for detectada, no máximo uma vez a cada 20 minutos.
+
+
+As notificações de latência são enviadas por sistema de arquivos. Quando um ou mais volumes em um sistema de arquivos ultrapassam os limites de latência, você recebe uma única notificação listando todos os volumes afetados.
+
+
+NOTE: Se mais de 10 volumes forem afetados, o e-mail exibirá os 10 primeiros volumes e mostrará quantos volumes adicionais são afetados. Você pode visualizar todos os volumes afetados no console do Workload Factory.
+
+Canais de notificação:
+
+* *E-mail*: Enviado para os endereços de e-mail configurados nas suas configurações de notificação do Workload Factory
+* *Amazon SNS*: Publicado no tópico SNS configurado para integração com outros sistemas
+
+
+Para ativar as notificações, consulte link:../admin/configure-notifications.html#wf-console-email-notifications["Configurar as configurações de notificação"].
+
+
+
+[[manage-latency-configuration]]
+== Gerenciar configuração de latência
+
+Após a configuração, você pode alterar seus limites a qualquer momento.
+
+.Passos
+. Na página *Latência*, selecione *Editar*.
+. Modifique qualquer um dos valores de limite conforme necessário.
++
+
+NOTE: Defina o limite crítico acima do limite de aviso. Se você definir o limite crítico abaixo do limite de aviso, o sistema exibirá um erro.
+
+. Selecione *Apply* para salvar suas alterações.
+
+
+
+
+[[best-practices]]
+== Melhores práticas
+
+Considere estas recomendações ao configurar o monitoramento de latência:
+
+* *Defina limites realistas*: Defina limites que correspondam à sua carga de trabalho. Os valores padrão são um ponto de partida, mas você pode precisar ajustá-los de acordo com o seu ambiente.
+* *Comece com os limites de aviso*: Analise primeiro os alertas de aviso para entender o desempenho normal e depois defina os limites críticos.
+* *Considere cuidadosamente os intervalos de tempo*: Intervalos curtos (5-10 minutos) detectam problemas mais rapidamente, mas podem gerar mais alertas. Intervalos mais longos (15-20 minutos) reduzem alarmes falsos, mas podem detectar problemas mais tarde.
+* *Coordene os limites de IOPS e latência*: Ambas as condições devem ser atendidas. Se o limite de IOPS estiver definido muito alto, o sistema pode não enviar um alerta mesmo quando a latência estiver alta.
+* *Revisar eventos descartados*: revise regularmente por que os eventos foram descartados para verificar se os limites devem ser ajustados ou se os sistemas devem ser aprimorados.
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:learn-latency-monitoring.html["Saiba mais sobre monitoramento de latência"]
+* link:task-analyze-latency-issues.html["Analisar problemas de latência"]
+* link:task-analyze-latency-trends.html["Analisar tendências de latência"]
+

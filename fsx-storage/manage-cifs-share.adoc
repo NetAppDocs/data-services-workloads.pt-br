@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-cifs-share.html 
+keywords: cifs, smb, SMB, CIFS, cifs share, change, update, modify, delete, create 
+summary: O gerenciamento do compartilhamento SMB ou CIFS no Workload Factory inclui a criação, a determinação do acesso de usuários e grupos e a exclusão. 
+---
+= Gerencie o compartilhamento CIFS de um volume no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O gerenciamento do compartilhamento SMB/CIFS de um volume no Workload Factory inclui a criação do compartilhamento SMB/CIFS, a definição dos usuários e grupos aos quais você dará acesso e do nível de permissões que você concederá a eles, bem como a exclusão do compartilhamento SMB/CIFS.
+
+.Antes de começar
+Antes de começar, faça o seguinte:
+
+* Para gerenciar compartilhamentos SMB/CIFS, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+* Determine os usuários ou grupos aos quais conceder acesso e o nível de permissões a serem atribuídos a eles.
+
+
+
+
+[[create-an-smbcifs-share-for-a-volume]]
+== Crie um compartilhamento SMB/CIFS para um volume
+
+Siga as etapas para criar um compartilhamento SMB/CIFS para um volume.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações do volume para o qual você deseja alterar o compartilhamento SMB.
+. Selecione *Ações avançadas* e, em seguida, *Gerenciar compartilhamentos SMB/CIFS*.
+. Na página Gerenciar compartilhamentos SMB/CIFS, selecione *Criar compartilhamento SMB/CIFS*.
+. Na caixa de diálogo Criar compartilhamento SMB/CIFS, forneça as seguintes informações:
++
+.. *Nome*: insira o nome do compartilhamento CIFS.
+.. *Caminho*: defina o caminho usando o nome do volume padrão ou forneça um compartilhamento para um diretório interno.
++
+As entradas de caminho válidas para o nome do volume, por exemplo "avocado", são as seguintes:
+
++
+*** /avocado
+*** /avocado/folder
+*** /avocado/folder/subfolder
+*** /avocado/file-name
++
+Os caminhos válidos para o nome do compartilhamento, por exemplo "Server", são os seguintes:
+
+*** \\Server
+*** \\Server\Projects
+*** \\Server\Projects\Shared resources
+
+
+.. *Permissões*: selecione Controle total, Leitura/Gravação, Leitura ou Sem acesso e, em seguida, insira os usuários ou grupos separados por ponto e vírgula ( ; ). Usuários ou grupos diferenciam maiúsculas de minúsculas, e o domínio do usuário deve ser incluído usando o formato "domain\username".
+
+
+. Selecione *Criar*.
+
+
+
+
+[[change-an-smbcifs-share-for-a-volume]]
+== Alterar um compartilhamento SMB/CIFS de um volume
+
+Siga as etapas para alterar as configurações de compartilhamento SMB/CIFS de um volume.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Na guia *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos com o volume a ser atualizado e, em seguida, selecione *Manage*.
+. Na visão geral do sistema de arquivos, selecione a guia *Volumes*.
+. Na guia Volumes, selecione o menu de ações do volume para o qual deseja alterar o compartilhamento SMB.
+. Selecione *Ações avançadas* e, em seguida, *Gerenciar compartilhamentos SMB/CIFS*.
+. Na página Gerenciar compartilhamentos SMB/CIFS, selecione *Visualizar e editar*.
+. Altere as permissões de acesso SMB/CIFS ou os usuários ou grupos aos quais conceder permissões.
++
+As alterações podem fazer com que os usuários ou grupos atuais percam o acesso ao compartilhamento SMB/CIFS.
+
+. Selecione *Aplicar* para salvar as alterações.
+
+
+
+
+[[delete-an-smbcifs-share-for-a-volume]]
+== Excluir um compartilhamento SMB/CIFS de um volume
+
+Siga as etapas para excluir um compartilhamento SMB/CIFS de um volume.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Na guia *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos com o volume a ser atualizado e, em seguida, selecione *Manage*.
+. Na visão geral do sistema de arquivos, selecione a guia *Volumes*.
+. Na guia Volumes, selecione o menu de ações do volume para o qual deseja alterar o compartilhamento SMB.
+. Selecione *Ações avançadas* e, em seguida, *Gerenciar compartilhamentos SMB/CIFS*.
+. Na página Gerenciar compartilhamentos SMB/CIFS, selecione o menu de ações do compartilhamento SMB/CIFS e, em seguida, selecione *Excluir*.
++
+Excluir o compartilhamento SMB/CIFS o torna indisponível e inacessível para qualquer usuário que queira montá-lo.
+
+. Na caixa de diálogo Excluir compartilhamento SMB/CIFS, selecione *Excluir* para confirmar a exclusão.
+

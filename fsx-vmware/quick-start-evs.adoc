@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/quick-start-evs.html 
+keywords: quick start 
+summary: Comece a usar o assistente de migração do VMware para mover sua infraestrutura atual para o Amazon EVS usando o Amazon FSx for ONTAP como datastores NFS externos. 
+---
+= Guia rápido para migrar para Amazon Exchange Virtual Server usando o assistente de migração de cargas de trabalho do VMware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Comece a usar o assistente de migração do VMware para mover sua infraestrutura atual para o Amazon EVS usando o Amazon FSx for ONTAP como datastores NFS externos.
+
+Antes de começar, você deve ter um entendimento do link:../fsx-storage/permissions-reference-fsx.html["permissões para NetApp Workload Factory"^].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] Faça login no Workload Factory
+[role="quick-margin-para"]
+Você precisará link:../setup/sign-up-and-log-in.html["Crie uma conta no Workload Factory"^] e fazer login no NetApp Console.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"] Adicionar credenciais e permissões
+[role="quick-margin-para"]
+Escolha a opção link:../fsx-storage/permissions-reference-fsx.html["políticas de permissão"] que melhor atenda às suas necessidades.
+
+[role="quick-margin-para"]
+Se você optar por não conceder permissões, poderá começar a usar o Workload Factory for Databases para copiar exemplos de código parcialmente concluídos do link:../fsx-storage/permissions-reference-fsx.html["políticas de permissão"^].
+
+[role="quick-margin-para"]
+Se você optar por conceder permissões, precisará link:../fsx-storage/add-credentials.html["adicionar credenciais a uma conta manualmente"]que inclui selecionar os recursos da carga de trabalho, como Databases e VMware, e criar as políticas do IAM para as permissões necessárias.
+
+[role="quick-margin-para"]
+link:../fsx-storage/add-credentials.html["Aprenda como adicionar credenciais e permissões"^].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Três"] Carregar dados de inventário de VMs
+[role="quick-margin-para"]
+Você pode usar o centro de planejamento para fazer upload de detalhes do inventário sobre seu ambiente de VM atual. Use o script de coleta de dados, o RVTools ou o NetApp Data Infrastructure Insights para capturar sua configuração atual de VM e fazer upload dos dados para o centro de planejamento.
+
+[role="quick-margin-para"]
+link:upload-vm-inventory.html["Aprenda como fazer upload de dados de inventário de VM"^].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatro"] Crie um plano de implantação usando o consultor de migração da VMware
+[role="quick-margin-para"]
+Inicie o assistente de migração do VMware e configure manualmente o ambiente de VM que você deseja criar na infraestrutura do Amazon Elastic VMWare Service, usando um sistema de arquivos do Amazon FSx for ONTAP como datastores NFS externos.
+
+[role="quick-margin-para"]
+link:launch-migration-advisor-evs.html["Aprenda a usar o assistente de migração da VMware para criar um plano de implantação"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Implante o sistema de arquivos recomendado do FSx for ONTAP
+[role="quick-margin-para"]
+Implante o novo sistema de arquivos FSx for ONTAP, que fornecerá os datastores para suas VMs em sua infraestrutura Amazon EC2.
+
+[role="quick-margin-para"]
+link:deploy-fsx-file-system-evs.html["Aprenda como implantar seu novo sistema de arquivos FSx for ONTAP"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"]Analise insights bem arquitetados para o seu ambiente Exchange Virtual Server
+[role="quick-margin-para"]
+Quando seu ambiente Exchange Virtual Server é detectado, o Workload Factory realiza automaticamente verificações diárias bem arquitetadas para identificar problemas de configuração e fornecer recomendações de correção.
+
+[role="quick-margin-para"]
+link:view-evs-well-architected.html["Aprenda como implementar configurações bem arquitetadas"^].

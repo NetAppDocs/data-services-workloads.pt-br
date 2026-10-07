@@ -1,0 +1,271 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/task-use-overview-dashboard.html 
+keywords: cluster overview, filter dashboard, cluster health, capacity recommendations, SSD management, throughput management, bulk edit, decision points, clusters table, ONTAP events, latency events 
+summary: Use o painel Visão geral para monitorar a integridade do cluster, visualizar recomendações de capacidade, gerenciar configurações de SSD e taxa de transferência e analisar tendências de desempenho em seus sistemas de arquivos FSx for ONTAP. 
+---
+= Utilize o painel de Visão Geral no Workload Factory para EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o painel Visão geral para verificar a integridade e a capacidade dos seus sistemas de arquivos FSx for ONTAP. Você pode filtrar os dados, ver recomendações de capacidade, ajustar as configurações de SSD e de taxa de transferência e analisar as tendências de desempenho para ajudar a decidir onde alocar volumes e quando aumentar a capacidade.
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+Você precisa ter link:task-activate-overview-dashboard.html["ativou o painel de Visão geral"] antes de poder usá-lo para monitorar seus sistemas de arquivos.
+
+
+
+[[filter-the-dashboard]]
+== Filtrar o painel
+
+Use os filtros na parte superior do painel para visualizar sistemas de arquivos específicos. Os filtros se aplicam às seções de latência, utilização, eventos ONTAP e à tabela de clusters.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione a guia *Visão geral*.
+. Utilize os filtros disponíveis para refinar sua visualização:
++
+** *Contas da AWS*: filtre por uma ou mais contas da AWS associadas às suas credenciais configuradas
+** *Credenciais*: filtre por credenciais específicas da AWS caso tenha várias configuradas
+** *Regiões*: filtre por uma ou mais regiões da AWS
+
+
+. Ao atualizar as seleções de filtro, todas as informações são atualizadas para mostrar apenas os sistemas de arquivos correspondentes.
+
+
+
+
+[[view-cluster-health-status]]
+== Visualizar o estado de saúde do cluster
+
+Na parte superior do painel, você vê um resumo da integridade e da atividade dos sistemas de arquivos que você selecionou. Isso aparece somente quando pelo menos um link FSx for ONTAP está conectado aos seus sistemas de arquivos.
+
+.Sobre esta tarefa
+O estado de saúde do cluster inclui as seguintes áreas principais:
+
+* *Latência*: Número de eventos de latência detectados
+* *Elasticidade do sistema de arquivos*:
++
+** *Capacidade do SSD*: Mostra quantos sistemas de arquivos usam Automate, Recommend ou None para gerenciar a capacidade do SSD.
+** *Taxa de transferência*: Mostra quantos sistemas de arquivos usam Automatizar, Recomendar ou Nenhuma para gerenciar a taxa de transferência.
+
+
+* *Eventos ONTAP*: Número de eventos EMS por categoria (Capacidade, Disponibilidade e proteção, Segurança e outros)
+
+
+.Passos
+. Verifique o estado de integridade do cluster na parte superior do painel de controle.
+. Para visualizar eventos de latência:
++
+** Selecione *Revisar* para navegar até a aba *Latência*
+** Se o monitoramento de latência não estiver configurado, selecione *Configurar* para definir os limites de latência
++
+Para obter detalhes sobre o monitoramento de latência, consulte link:task-configure-latency-monitoring.html["Configurar o monitoramento de latência"^].
+
+
+
+. Para visualizar eventos do ONTAP para seus sistemas de arquivos FSx for ONTAP, selecione *Revisar*.
++
+O cartão de visualização de eventos do ONTAP exibe o número de eventos EMS por categoria (Capacidade, Disponibilidade e proteção, e Segurança e outros). Para obter uma lista completa dos eventos EMS monitorados, consulte link:https://docs.netapp.com/us-en/ontap-cli-9171/index.html["Documentação do ONTAP CLI"^].
+
+
+
+
+
+[[view-and-apply-capacity-or-throughput-recommendations]]
+== Visualize e aplique recomendações de capacidade ou throughput
+
+O Workload Factory executa automaticamente recomendações para cada sistema de arquivos FSx for ONTAP. Você pode encontrar sistemas de arquivos com recomendações filtrando a tabela Clusters.
+
+.Passos
+. Na tabela *Clusters*, filtre pelas colunas de tempo ou detalhes relevantes.
++
+Os sistemas de arquivos com recomendações de capacidade ou taxa de transferência aparecem no topo da tabela.
+
+. Selecione um nome de sistema de arquivos na tabela para abrir os detalhes do cluster.
+. Analise a recomendação e o gráfico.
++
+A recomendação explica a alteração sugerida e o raciocínio por trás dela. Por exemplo: _Recomendamos aumentar o tamanho do SSD com base no padrão de utilização do SSD do seu sistema de arquivos._
+
++
+O gráfico apresenta o uso atual juntamente com as tendências históricas.
+
+. No canto superior direito do gráfico, selecione o intervalo de tempo para alterar o período exibido.
++
+O gráfico também exibe os pontos de decisão de recomendação e os pontos de decisão de automação (se o modo de automação estiver ativado). Passe o cursor sobre qualquer ponto de decisão para ver detalhes sobre a recomendação de capacidade ou a ação de automação naquele momento.
+
+. Para aplicar a recomendação, siga as orientações fornecidas na mensagem de recomendação.
+
+
+
+
+[[change-ssd-management-mode]]
+== Alterar o modo de gerenciamento do SSD
+
+Para cada sistema de arquivos, escolha como a capacidade do SSD é gerenciada: receba recomendações manuais ou permita o dimensionamento automático.
+
+.Passos
+. Na tabela Clusters, encontre o nome do sistema de arquivos. Ao lado, abra image:icon-action.png["o ícone do menu de ações"] e selecione *Alterar gerenciamento de capacidade de SSD*.
+. Selecione *Ativar gerenciamento de capacidade SSD* e, em seguida, selecione *Aplicar*.
+. Escolha o modo de sua preferência:
++
+** *Notificar apenas (modo de recomendação)*
+** *Automatizar*
+
+
+. Configure os parâmetros de gerenciamento de capacidade do SSD:
++
+** *Limite (%)*: percentual de utilização do SSD que aciona uma recomendação
+** *Período de análise retrospectiva (%)*: período histórico de dados de utilização para análise
+** *Previsão (%)*: projeção de utilização para o planejamento futuro da capacidade
+
+
+. Selecione *Aplicar*.
+
+
+.Resultado
+O sistema de arquivos alterna imediatamente para o novo modo. Se você escolher Recomendar ou Automatizar, o sistema usa as configurações definidas para analisar a capacidade de storage e tomar decisões.
+
+
+
+[[change-throughput-management-mode]]
+== Alterar o modo de gerenciamento de throughput
+
+Para cada sistema de arquivos, escolha como o aumento de taxa de transferência é gerenciado.
+
+.Passos
+. Na guia *Visão geral*, selecione um ou mais sistemas de arquivos na tabela Clusters.
+. Selecione *Alterar gerenciamento de taxa de transferência*.
+. Selecione *Ativar gerenciamento de taxa de transferência* e, em seguida, selecione *Aplicar*.
+. Escolha o modo de sua preferência:
++
+** *Notificar apenas (modo de recomendação)*
+** *Automatizar*
+
+
+. Na caixa de diálogo, configure os parâmetros de gerenciamento de throughput:
++
+** *Janela de avaliação (horas)*: Período de tempo para analisar os padrões de throughput
+** *Métricas violadas (%)*: limite percentual para determinar a violação
+** *Período de violações consecutivas (horas)*: duração de violações consecutivas antes da tomada de providências
+** *Latência mínima (ms)*: limiar de latência usado para determinar o aumento da taxa de transferência
+** *Throughput máximo (SKUs)*: SKU de throughput máximo permitido
+
+
+. Selecione *Aplicar*.
+
+
+.Resultado
+Os sistemas de arquivos selecionados alternam imediatamente para o novo modo de taxa de transferência.
+
+
+
+[[bulk-edit-management-parameters]]
+== Gerenciar parâmetros de edição em massa
+
+Altere as configurações de vários sistemas de arquivos simultaneamente para que as mesmas configurações sejam aplicadas em todos os seus clusters.
+
+.Passos
+. Na aba *Visão geral*, selecione os sistemas de arquivos que deseja editar na tabela.
++
+
+TIP: Você pode selecionar sistemas de arquivos individuais ou usar a caixa de seleção do cabeçalho para selecionar todos os sistemas de arquivos visíveis.
+
+. Selecione *Alterar gerenciamento de capacidade de SSD* ou *Alterar gerenciamento de taxa de transferência* acima da tabela.
+. Escolha o modo de sua preferência.
+. Na caixa de diálogo de edição, ajuste os parâmetros conforme necessário.
++
+Cada campo de parâmetro inclui uma dica de ferramenta que descreve sua finalidade e intervalo válido. A caixa de diálogo indica os valores atuais ou os valores padrão com base na sua seleção.
+
+. Selecione *Aplicar* para aplicar as alterações a todos os sistemas de arquivos selecionados.
+
+
+.Resultado
+Os parâmetros são atualizados para todos os sistemas de arquivos selecionados. Os sistemas de arquivos nos modos Recomendar ou Automatizar utilizam os novos parâmetros imediatamente para análise e tomada de decisão.
+
+
+
+[[analyze-capacity-trends-and-decision-points]]
+== Analisar tendências de capacidade e pontos de decisão
+
+Use o gráfico de utilização do SSD para ver como o uso do storage muda ao longo do tempo e identificar padrões.
+
+.Sobre esta tarefa
+Os pontos de decisão no gráfico indicam quando:
+
+* *Pontos de decisão de recomendação*: O algoritmo de recomendação de capacidade identificou que é necessária capacidade adicional de SSD.
+* *Pontos de decisão da automação*: O sistema de automação tentou aumentar a capacidade do SSD. Esses pontos mostram se a ação foi bem-sucedida ou falhou.
+
+
+.Passos
+. Na guia *Visão geral*, selecione o nome de um sistema de arquivos na tabela.
+. Analise o gráfico de utilização do SSD, que mostra as tendências históricas de capacidade.
+. Selecione diferentes intervalos de tempo para visualizar o comportamento da capacidade em vários períodos.
+. Passe o cursor sobre os pontos de decisão no gráfico para visualizar detalhes sobre recomendações ou ações de automação em momentos específicos.
+. Utilize as informações do gráfico para:
++
+** Entenda com que frequência são necessários ajustes de capacidade
+** Avalie se o modo de automação ou o modo de recomendação se adapta melhor aos seus padrões de carga de trabalho
+** Identificar restrições de capacidade recorrentes
+** Planeje as necessidades futuras de capacidade com base nas tendências de crescimento
+** Solucionar problemas em tentativas de automação malsucedidas
++
+Os motivos comuns para falhas incluem: permissões insuficientes da AWS, atualização do sistema de arquivos já em andamento, armazenamento modificado nas últimas 6 horas, capacidade máxima de SSD atingida ou métricas do CloudWatch indisponíveis.
+
+
+
+
+
+
+
+[[use-the-clusters-table]]
+== Use a tabela de clusters
+
+A tabela de clusters fornece uma visão detalhada de cada sistema de arquivos FSx for ONTAP com métricas de desempenho e uso.
+
+.Passos
+. Na aba *Visão geral*, revise a tabela de clusters.
+. Utilize a caixa de pesquisa para encontrar sistemas de arquivos específicos pelo nome.
+. Selecione os cabeçalhos das colunas para classificar os dados.
+. Use *Uso de SSD* para identificar sistemas de arquivos próximos ao limite de capacidade.
+. Use *Uso de throughput (P99)* para comparar a demanda de throughput com o throughput provisionado pela SKU.
++
+Passe o cursor sobre os cabeçalhos das colunas de throughput para obter detalhes do cálculo.
+
+. Para personalizar as colunas, selecione o ícone de configurações de coluna e escolha quais colunas exibir.
+. Para exportar os dados, selecione o ícone de exportação para baixar um arquivo CSV.
+
+
+
+
+[[best-practices]]
+== Melhores práticas
+
+Considere estas recomendações ao usar o painel de Overview:
+
+* *Monitoramento regular*: Verifique o painel de controle com frequência para identificar tendências antes que se tornem problemas.
+* **Defina limites claros**: Escolha limites de uso de SSD e parâmetros de taxa de transferência que se adequem à sua carga de trabalho e aos seus planos de capacidade.
+* **Use filtros**: aplique filtros de região e de conta para se concentrar nas partes da sua infraestrutura que você deseja revisar.
+* **Analise as recomendações rapidamente**: filtre a tabela Clusters para encontrar sistemas de arquivos com recomendações de capacidade ou taxa de transferência. Verifique-as e aja para evitar a falta de espaço.
+* **Escolha o modo correto**: use o modo **Recomendar** se você quiser aprovar as alterações de capacidade ou de throughput manualmente. Use o modo **Automatizar** se você quiser que o sistema gerencie a capacidade ou o throughput automaticamente.
+* **Observe os pontos de decisão**: verifique os pontos de decisão nos gráficos de capacidade para ver como o sistema está tomando decisões e confirme se as configurações atendem às suas necessidades.
+* **Edição em massa**: ao gerenciar vários sistemas de arquivos, use a edição em massa para manter as configurações consistentes.
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:learn-overview-dashboard.html["Saiba mais sobre o painel de visão geral"]
+* link:task-activate-overview-dashboard.html["Ative o painel de visão geral"]
+* link:task-configure-latency-monitoring.html["Configurar o monitoramento de latência"]
+

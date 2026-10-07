@@ -1,0 +1,501 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/explore-savings-databases.html 
+keywords: cost, savings, compare costs, EBS, FSx for Windows File Server, SQL Server on-premises, on-premises, FSx for ONTAP 
+summary: 'Compare os custos de usar o Amazon Elastic Block Store (EBS), o FSx for Windows File Server e o storage no local de banco de dados do SQL Server com o storage do FSx for ONTAP.' 
+---
+= Explore as economias no NetApp Workload Factory for Databases
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Explore as economias no NetApp Workload Factory for Databases para suas cargas de trabalho de banco de dados, comparando os custos de usar o Microsoft SQL Server no Amazon Elastic Block Store (EBS), no FSx for Windows File Server e o storage no local com o storage do FSx for ONTAP.
+
+
+
+[[about-this-task]]
+== Sobre esta tarefa
+
+Você pode explorar as economias para suas cargas de trabalho de banco de dados no EBS, FSx for Windows File Server e storage no local usando o Dashboard, a guia Inventory ou a guia Explore savings. Em todos os casos, você pode usar a savings calculator para comparar vários componentes de custo da execução de cargas de trabalho do Microsoft SQL Server, como storage, compute, licença SQL, snapshots e clones para suas cargas de trabalho de banco de dados em sistemas de arquivos FSx for ONTAP em comparação com Elastic Block Store (EBS), FSx for Windows File Server e storage no local.
+
+Se o Workload Factory identificar economia de custos no FSx for ONTAP, você pode implantar o Microsoft SQL sobre o FSx for ONTAP diretamente a partir da calculadora de economia no console do Workload Factory. Quando você tiver várias instâncias do Microsoft SQL Server sobre Elastic Block Store, FSx for Windows File Server ou storage no local, recomendaremos uma configuração do FSx for ONTAP com uma única instância do SQL.
+
+.Potencial de economia para todas as cargas de trabalho de banco de dados
+Visite o *Dashboard* de Bancos de Dados no console do Workload Factory para obter uma visão geral da economia potencial ao executar todas as suas cargas de trabalho de banco de dados no FSx for ONTAP. O bloco *Potential savings* mostra suas cargas de trabalho de banco de dados no EBS e FSx for Windows File Server, economia potencial, porcentagem de economia e um gráfico de barras.
+
+image:screenshot-dashboard-potential-savings-tile.png["Uma captura de tela do bloco de economia potencial do painel de bancos de dados no console do Workload Factory. O bloco de economia potencial mostra o número total de cargas de trabalho de banco de dados que você tem no Elastic Block Store e no FSx for Windows File Server, a economia potencial de custos, a porcentagem de economia e uma representação visual em um gráfico de barras."]
+
+.Calculadora de economia
+Você pode utilizar a calculadora de economia para comparar vários componentes de custo da execução de cargas de trabalho do Microsoft SQL Server, como armazenamento, computação, licença SQL, snapshots e clones para suas cargas de trabalho de banco de dados em sistemas de arquivos FSx for ONTAP em comparação com Elastic Block Store (EBS), FSx for Windows File Server e storage no local. Os sistemas de arquivos FSx for ONTAP podem ser a opção mais econômica para suas cargas de trabalho de banco de dados.
+
+A calculadora mostra se o storage para as cargas de trabalho do banco de dados nesses servidores Microsoft SQL Server custaria menos se você usasse um sistema de arquivos FSx for ONTAP. <<Opções da calculadora,Aprenda a usar a calculadora.>>
+
+image:screenshot-ebs-savings-calculator-update.png["Uma captura de tela da página da calculadora de economia mostra, à esquerda, a configuração selecionada do Microsoft SQL Server no Amazon Elastic Block Store, com a opção de personalizar os valores de Snapshot e clone. À esquerda, são exibidos a economia de custos em dólares e a economia percentual, bem como o custo mensal total para usar o Microsoft SQL Server no FSx for ONTAP e o storage do Elastic Block Store."]
+
+
+
+[[sql-server-deployment-analysis]]
+== Análise de implantação do SQL Server
+
+A calculadora verifica sua implantação do SQL Server para garantir que os recursos e recursos utilizados correspondam à edição do SQL Server. Aqui estão os principais fatores e condições que a calculadora verifica antes de recomendar um downgrade para Standard Edition:
+
+.Modelo de implantação
+A calculadora avalia o modelo de implantação e se a edição Enterprise é necessária.
+
+.Recursos alocados
+A calculadora avalia as condições dos seguintes recursos alocados dependentes de licença:
+
+* VCPUs da instância alvo: a instância possui 48 ou menos CPUs virtuais.
+* Alocação de memória: a instância possui 128GB ou menos de memória.
+
+
+.Utilização de recursos empresariais
+A calculadora verifica se alguma das seguintes funcionalidades empresariais está em uso:
+
+* Recursos empresariais em nível de banco de dados
+* Operações de índice online
+* Resource Governor
+* Replicação ponto a ponto ou Oracle
+* Extensões R/Python
+* TempDB otimizado para memória
+
+
+Se a instância do SQL Server avaliada não utilizar nenhum dos recursos Enterprise mencionados acima e atender às restrições de recursos, a calculadora recomendará o downgrade da licença para Standard Edition. A calculadora ajuda você a otimizar os custos de licenciamento do SQL Server sem reduzir o desempenho ou a funcionalidade.
+
+
+
+[[calculator-options]]
+== Opções da calculadora
+
+Há duas opções de calculadora disponíveis para fazer a comparação de custos entre seus sistemas e o FSx for ONTAP: personalização e detecção.
+
+Explore as economias por meio da personalização: você fornece as configurações do Microsoft SQL server no Amazon EC2 com EBS ou FSx for Windows File Server, incluindo a região, o modelo de implantação, a edição do SQL server, a taxa mensal de alterações de dados, a frequência de Snapshot e muito mais.
+
+Explore as economias para hosts detectados: o Workload Factory se conecta aos seus servidores Microsoft SQL existentes e importa os detalhes para a calculadora para comparação automática. Você precisará conceder permissões de _visualização, planejamento e análise_ para usar esta opção da calculadora. Você pode alterar o caso de uso, mas todos os outros detalhes são determinados automaticamente no cálculo.
+
+Além disso, você pode link:../fsx-storage/add-credentials.html["Adicionar credenciais da AWS"^] para melhorar a precisão da análise da calculadora. Selecione *Calcular economia com base nos recursos existentes*. Você será redirecionado para a página Add credentials. Depois de adicionar as credenciais, selecione os recursos existentes para comparar com o FSx for ONTAP e selecione *Explorar economia*.
+
+
+
+[[explore-savings-via-customization]]
+=== Explore economias por meio da personalização
+
+Personalize os campos da calculadora para obter a estimativa de economia mais precisa.
+
+
+
+==== Personalize as economias para hosts do Microsoft SQL Server
+
+Siga as etapas na guia do seu tipo de armazenamento.
+
+[role="tabbed-block"]
+====
+.O Amazon Elastic Block Store (EBS)
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Bancos de Dados, selecione *Explorar economias* e, em seguida, *Microsoft SQL Server no EBS*.
+. Na calculadora de economia, forneça os seguintes detalhes:
++
+.. *Região*: selecione uma região no menu suspenso.
+.. *Modelo de implantação*: selecione um modelo de implantação no menu suspenso.
+.. *Edição do SQL Server*: selecione a edição do SQL Server no menu suspenso.
+.. *taxa de alterações mensais dos dados (%)*: insira a porcentagem de alterações que os dados de clone e de Snapshot apresentam, em média, por mês.
+.. *Frequência de Snapshot*: selecione uma frequência de Snapshot no menu suspenso.
+.. *Número de cópias clonadas*: insira o número de cópias clonadas na configuração do EBS.
+.. *Custo mensal do SQL BYOL ($)*: opcionalmente, insira o custo mensal do SQL BYOL em dólares.
+.. De acordo com as especificações do EC2, forneça o seguinte:
++
+*** *Descrição da máquina*: opcionalmente, insira um nome para descrever a máquina.
+*** *Tipo de instância*: selecione o tipo de instância EC2 no menu suspenso.
+
+
+.. Em Tipos de volume, forneça os seguintes detalhes para pelo menos um tipo de volume. IOPS e taxa de transferência se aplicam a determinados tipos de volumes de disco.
++
+*** *Número de volumes*
+*** *Capacidade de storage por volume (GiB)*
+*** *IOPS provisionados por volume*
+*** *Taxa de transferência MB/s*
+
+
+.. Se você selecionou o modelo de implantação de disponibilidade Always On, forneça detalhes para *Secondary EC2 specifications* e *Volume types*.
+
+
+
+
+--
+.O Amazon FSx for Windows File Server
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Bancos de Dados, selecione *Explorar economias* e, em seguida, *Microsoft SQL Server no FSx for Windows*.
+. Na calculadora de economia, forneça os seguintes detalhes:
++
+.. *Região*: selecione uma região no menu suspenso.
+.. *Modelo de implantação*: selecione um modelo de implantação no menu suspenso.
+.. *Edição do SQL Server*: selecione a edição do SQL Server no menu suspenso.
+.. *taxa de alterações mensais dos dados (%)*: insira a porcentagem de alterações que os dados de clone e de Snapshot apresentam, em média, por mês.
+.. *Frequência de Snapshot*: selecione uma frequência de Snapshot no menu suspenso.
+.. *Número de cópias clonadas*: insira o número de cópias clonadas na configuração do EBS.
+.. *Custo mensal do SQL BYOL ($)*: opcionalmente, insira o custo mensal do SQL BYOL em dólares.
+.. Nas configurações do FSx for Windows File Server, forneça o seguinte:
++
+*** *Tipo de implantação*: selecione o tipo de implantação no menu suspenso.
+*** *Tipo de armazenamento*: o armazenamento SSD é o tipo de armazenamento suportado.
+*** *capacidade total de storage*: insira a capacidade de storage e selecione a unidade de capacidade para a configuração.
+*** *IOPS de SSD provisionados*: insira o número de IOPS de SSD provisionados para a configuração.
+*** *Taxa de transferência (MB/s)*: insira a taxa de transferência em MB/s.
+
+
+.. Em Especificações do EC2, selecione o *Tipo de instância* no menu suspenso.
+
+
+
+
+--
+====
+Após fornecer os detalhes da configuração do seu host de banco de dados, revise os cálculos e as recomendações apresentadas na página.
+
+Além disso, role até o final da página para visualizar o relatório selecionando uma das seguintes opções:
+
+* *Exportar PDF*
+* *Enviar por e-mail*
+* *Veja os cálculos*
+
+
+Para mudar para o FSx para ONTAP, siga as instruções para <<Implante o Microsoft SQL Server no AWS EC2 usando o FSx for ONTAP,Implantar Microsoft SQL Server no AWS EC2 usando FSx para sistemas de arquivos ONTAP>>.
+
+
+
+==== Personalize as economias para hosts Oracle no EBS
+
+Personalize os campos da calculadora para obter a estimativa de economia mais precisa para seus hosts Oracle em execução no Amazon Elastic Block Store (EBS).
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Bancos de Dados, selecione *Explorar economias* e, em seguida, *Oracle no EBS*.
+. Na calculadora de economia, forneça os seguintes detalhes:
++
+.. *Região*: selecione uma região no menu suspenso.
+.. *Modelo de implantação*: selecione um modelo de implantação no menu suspenso.
+.. *Edição Oracle*: selecione a edição Oracle no menu suspenso.
+.. *taxa de alterações mensais dos dados (%)*: insira a porcentagem de alterações que os dados de clone e de Snapshot apresentam, em média, por mês.
+.. *Frequência de Snapshot*: selecione uma frequência de Snapshot no menu suspenso.
+.. *Número de cópias clonadas*: insira o número de cópias clonadas na configuração do EBS.
+.. *Custo mensal do Oracle BYOL ($)*: opcionalmente, insira o custo mensal do Oracle BYOL em dólares.
+.. De acordo com as especificações do EC2, forneça o seguinte:
++
+*** *Descrição da máquina*: opcionalmente, insira um nome para descrever a máquina.
+*** *Tipo de instância*: selecione o tipo de instância EC2 no menu suspenso.
+
+
+.. Em Tipos de volume, forneça os seguintes detalhes para pelo menos um tipo de volume. IOPS e taxa de transferência se aplicam a determinados tipos de volumes de disco.
++
+*** *Número de volumes*
+*** *Capacidade de storage por volume (GiB)*
+*** *IOPS provisionados por volume*
+*** *Taxa de transferência MB/s*
+
+
+.. Se você selecionou o modelo de implantação de disponibilidade Always On, forneça detalhes para *Secondary EC2 specifications* e *Volume types*.
+
+
+
+
+Após fornecer os detalhes da configuração do seu host de banco de dados, revise os cálculos e as recomendações apresentadas na página.
+
+Além disso, role até o final da página para visualizar o relatório selecionando uma das seguintes opções:
+
+* *Exportar PDF*
+* *Enviar por e-mail*
+* *Veja os cálculos*
+
+
+
+
+[[explore-savings-for-detected-hosts]]
+=== Explore as economias para hosts detectados
+
+O Workload Factory insere as características do host detectadas para que você possa explorar oportunidades de economia automaticamente.
+
+.Antes de começar
+Antes de começar, atenda aos seguintes pré-requisitos:
+
+* link:../fsx-storage/add-credentials.html["Conceder permissões de _visualização, planejamento e análise_"^] na sua conta da AWS para detectar o Elastic Block Store (EBS) e os sistemas FSx for Windows na guia *Explore savings* e mostrar o cálculo da economia na calculadora de economia.
+* Para obter recomendações de tipo de instância e melhorar a precisão de custos, faça o seguinte:
++
+.. Conceda permissões ao Amazon CloudWatch e ao AWS Compute Optimizer.
++
+... Faça login no AWS Management Console e abra o serviço IAM.
+... Edite a política para a função do IAM. Copie e adicione as seguintes permissões do Amazon CloudWatch e do AWS Compute Optimizer.
++
+[source, json]
+----
+{
+"Version": "2012-10-17",
+"Statement": [
+  {
+   "Effect": "Allow",
+   "Action": "compute-optimizer:GetEnrollmentStatus",
+   "Resource": "*"
+  },
+  {
+   "Effect": "Allow",
+   "Action": "compute-optimizer:PutRecommendationPreferences",
+   "Resource": "*"
+  },
+  {
+   "Effect": "Allow",
+   "Action": "compute-optimizer:GetEffectiveRecommendationPreferences",
+   "Resource": "*"
+  },
+  {
+   "Effect": "Allow",
+   "Action": "compute-optimizer:GetEC2InstanceRecommendations",
+   "Resource": "*"
+  },
+  {
+   "Effect": "Allow",
+   "Action": "autoscaling:DescribeAutoScalingGroups",
+   "Resource": "*"
+  },
+  {
+   "Effect": "Allow",
+   "Action": "autoscaling:DescribeAutoScalingInstances",
+   "Resource": "*"
+  }
+]
+}
+----
+
+
+.. Inscreva a conta faturável da AWS no AWS Compute Optimizer.
+
+
+
+
+
+
+==== Explore as economias para hosts do Microsoft SQL Server detectados
+
+Siga as etapas na guia do seu tipo de armazenamento.
+
+[role="tabbed-block"]
+====
+.O Amazon Elastic Block Store (EBS)
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Databases, selecione *Explorar economias*.
+. Em Explorar economias, selecione a guia *SQL Server no Elastic Block Store (EBS)*.
++
+Se o Workload Factory detectar EBS hosts, você será redirecionado para a guia Explorar economias. Se ele não detectar EBS hosts, você será redirecionado para a calculadora para <<Explore economias por meio da personalização,explore economias com a personalização>>.
+
+. Em *Explore savings*, selecione um ou mais hosts de banco de dados em execução no EBS e, em seguida, selecione *Explore savings*.
+. Caso necessário, autentique o host do banco de dados com credenciais do SQL Server, credenciais do Windows ou adicionando as permissões ausentes do SQL Server.
++
+Se a página *Explorar economias* não carregar os dados após a autenticação bem-sucedida, selecione a guia *Inventário* para recarregar os dados e, em seguida, selecione a guia *Explorar economias* novamente.
+
+. Na calculadora de economia, você pode fornecer os seguintes detalhes sobre clones e snapshots em seu armazenamento EBS para obter uma estimativa de economia de custos mais precisa.
++
+.. *Frequência de Snapshot*: selecione uma frequência de Snapshot no menu.
+.. *Frequência de atualização dos clones*: selecione a frequência com que os clones são atualizados no menu.
+.. *Número de cópias clonadas*: insira o número de cópias clonadas na configuração do EBS.
+.. *taxa de alterações*: insira a porcentagem de alteração média por mês dos dados de clone e Snapshot.
+.. *Adicionar hosts*: opcionalmente, selecione até cinco hosts EBS detectados para incluir no cálculo da economia.
++
+O Workload Factory consolida vários hosts do SQL Server em uma única recomendação de configuração do FSx for ONTAP para otimizar a economia de custos, a menos que os hosts EBS selecionados excedam os limites de throughput, capacidade ou IOPS de um único sistema de arquivos do FSx for ONTAP.
+
+
+
+
+
+--
+.O Amazon FSx for Windows File Server
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Databases, selecione *Explorar economias*.
+. Em Explorar economias, selecione a guia *SQL Server on FSx for Windows*.
++
+Se o Workload Factory detectar hosts FSx para Windows, você será redirecionado para a guia Explorar economias. Se não detectar hosts FSx para Windows, você será redirecionado para a calculadora para <<Explore economias por meio da personalização,explore economias com a personalização>>.
+
+. Na guia Explore savings, selecione *Explore savings* do host do banco de dados que usa o armazenamento do FSx for Windows File Server.
+. Caso necessário, autentique o host do banco de dados com credenciais do SQL Server, credenciais do Windows ou adicionando as permissões ausentes do SQL Server.
++
+Se a página *Explorar economias* não carregar os dados após a autenticação bem-sucedida, selecione a guia *Inventário* para recarregar os dados e, em seguida, selecione a guia *Explorar economias* novamente.
+
+. Na calculadora de economia, opcionalmente, forneça os seguintes detalhes sobre clones (cópias de sombra) e snapshots no seu armazenamento FSx for Windows para obter uma estimativa de economia de custos mais precisa.
++
+.. *Frequência de Snapshot*: selecione uma frequência de Snapshot no menu.
++
+Se o Workload Factory detectar shadow copies do FSx for Windows, ele definirá o valor padrão como *Daily*. Se não detectar shadow copies, ele definirá o valor padrão como *No snapshot frequency*.
+
+.. *Frequência de atualização dos clones*: selecione a frequência com que os clones são atualizados no menu.
+.. *Número de cópias clonadas*: insira o número de cópias clonadas na configuração do FSx for Windows.
+.. *taxa de alterações*: insira a porcentagem de alteração média por mês dos dados de clone e Snapshot.
+
+
+
+
+--
+.O Microsoft SQL Server on-premises
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Databases, selecione *Explorar economias*.
+. Em Explorar economias, selecione o tipo de mecanismo *Microsoft SQL Server*.
+. Em seguida, selecione a guia *SQL Server on-premises*.
+. Na guia SQL Server no local, selecione *Script de avaliação* > *Informações do script de avaliação* e revise as informações fornecidas.
+. Selecione *Download assessment script*.
++
+O script é uma ferramenta de coleta de dados baseada em PowerShell. Ele coleta e carrega dados de configuração e desempenho do SQL Server para o Workload Factory. O consultor de migração avalia os dados e planeja a implantação do FSx para ONTAP no seu ambiente SQL Server.
+
+. Execute o script no host do SQL Server com um usuário que tenha privilégios suficientes.
+. Selecione *Carregar resultados do script* na guia SQL Server no local do NetApp Workload Factory.
+. Na guia SQL Server no local, selecione até cinco hosts de banco de dados e, em seguida, selecione *Explorar economias* para executar uma análise de custos do(s) host(s) SQL Server no local em comparação com FSx for ONTAP.
+. Na calculadora de economia, selecione a região do host on-premises.
+. Opcionalmente, forneça os seguintes detalhes sobre clones (cópias de sombra) e snapshots no seu ambiente de banco de dados local para uma estimativa mais precisa de economia de custos.
++
+.. *Frequência de Snapshot*: selecione uma frequência de Snapshot no menu.
++
+Se o Workload Factory detectar shadow copies do FSx for Windows, ele definirá o valor padrão como *Daily*. Se não detectar shadow copies, ele definirá o valor padrão como *No snapshot frequency*.
+
+.. *Frequência de atualização dos clones*: selecione a frequência com que os clones são atualizados no menu.
+.. *Número de cópias clonadas*: insira o número de cópias clonadas na configuração local.
+.. *taxa de alterações*: insira a porcentagem de alteração média por mês dos dados de clone e Snapshot.
+
+
+. Para obter resultados mais precisos, atualize as informações de computação e os detalhes de armazenamento e desempenho.
++
+O Workload Factory consolida vários hosts SQL Server no local em uma única recomendação de configuração do FSx for ONTAP para otimizar a economia de custos, a menos que os hosts no local selecionados excedam os limites de throughput, capacidade ou IOPS para um único sistema de arquivos FSx for ONTAP.
+
+
+
+.Remoção de host local
+Após analisar a economia de um host local do Microsoft SQL server, você tem a opção de remover o registro do host local do Workload Factory. Selecione o menu de ações do host local do Microsoft SQL Server e, em seguida, selecione *Excluir*.
+
+--
+====
+Após fornecer os detalhes da configuração do seu host de banco de dados, revise os cálculos e as recomendações apresentadas na página.
+
+Além disso, role até o final da página para visualizar o relatório selecionando uma das seguintes opções:
+
+* *Exportar PDF*
+* *Enviar por e-mail*
+* *Veja os cálculos*
+
+
+Para mudar para o FSx para ONTAP, siga as instruções para <<Implante o Microsoft SQL Server no AWS EC2 usando o FSx for ONTAP,Implantar Microsoft SQL Server no AWS EC2 usando FSx para sistemas de arquivos ONTAP>>.
+
+
+
+==== Explore as economias para hosts Oracle detectados
+
+Siga as etapas na guia do seu tipo de armazenamento.
+
+[role="tabbed-block"]
+====
+.O Amazon Elastic Block Store (EBS)
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Databases, selecione *Explorar economias*.
+. Em Explorar economias, selecione a guia *Oracle no Elastic Block Store (EBS)*.
++
+Se o Workload Factory detectar EBS hosts, você será redirecionado para a guia Explorar economias. Se ele não detectar EBS hosts, você será redirecionado para a calculadora para <<Explore economias por meio da personalização,explore economias com a personalização>>.
+
+. Em *Explore savings*, selecione um ou mais hosts de banco de dados em execução no EBS e, em seguida, selecione *Explore savings*.
+. Caso necessário, autentique o host do banco de dados com as credenciais Oracle ou adicionando as permissões Oracle que estiverem faltando.
++
+Se a página *Explorar economias* não carregar os dados após a autenticação bem-sucedida, selecione a guia *Inventário* para recarregar os dados e, em seguida, selecione a guia *Explorar economias* novamente.
+
+. Na calculadora de economia, você pode fornecer os seguintes detalhes sobre clones e snapshots em seu armazenamento EBS para obter uma estimativa de economia de custos mais precisa.
++
+.. *Frequência de Snapshot*: selecione uma frequência de Snapshot no menu.
+.. *Frequência de atualização dos clones*: selecione a frequência com que os clones são atualizados no menu.
+.. *Número de cópias clonadas*: insira o número de cópias clonadas na configuração do EBS.
+.. *taxa de alterações*: insira a porcentagem de alteração média por mês dos dados de clone e Snapshot.
+.. *Adicionar hosts*: opcionalmente, selecione até cinco hosts EBS detectados para incluir no cálculo da economia.
++
+O Workload Factory consolida vários hosts Oracle em uma única recomendação de configuração do FSx for ONTAP para otimizar a economia de custos, a menos que os hosts EBS selecionados excedam os limites de throughput, capacidade ou IOPS para um único sistema de arquivos FSx for ONTAP.
+
+
+
+
+
+--
+.Oracle Server no local
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Databases, selecione *Explorar economias*.
+. Em Explorar economias, selecione o tipo de mecanismo *Microsoft SQL Server*.
+. Em seguida, selecione a guia *Oracle Server on-premises*.
+. Na guia Oracle Server on-premises, selecione *Script de avaliação* > *Informações do script de avaliação* e revise as informações fornecidas.
+. Selecione *Download assessment script*.
++
+O script é uma ferramenta de coleta de dados baseada em PowerShell. Ele coleta dados de configuração e desempenho do Oracle Server.
+
+. Execute o script no host Oracle com um usuário que tenha privilégios suficientes.
+. Selecione *Carregar resultados do script* e, em seguida, carregue o arquivo de saída do script para o console do NetApp Workload Factory. O migration advisor avalia os dados e planeja a implantação do Amazon FSx for NetApp ONTAP para o seu ambiente Oracle Server.
+. Na guia Oracle Server no local, selecione o Oracle Server no local e, em seguida, selecione *Explore savings* para executar uma análise de custos em relação ao FSx for ONTAP.
+. Na calculadora de economia, selecione a região do host on-premises.
+. Opcionalmente, forneça os seguintes detalhes sobre clones (cópias de sombra) e snapshots no seu ambiente de banco de dados local para uma estimativa mais precisa de economia de custos.
++
+.. *Frequência de Snapshot*: selecione uma frequência de Snapshot no menu.
++
+Se o Workload Factory detectar shadow copies do FSx for Windows, ele definirá o valor padrão como *Daily*. Se não detectar shadow copies, ele definirá o valor padrão como *No snapshot frequency*.
+
+.. *Frequência de atualização dos clones*: selecione a frequência com que os clones são atualizados no menu.
+.. *Número de cópias clonadas*: insira o número de cópias clonadas na configuração local.
+.. *taxa de alterações*: insira a porcentagem de alteração média por mês dos dados de clone e Snapshot.
+
+
+. Para obter resultados mais precisos, atualize as informações de computação e os detalhes de armazenamento e desempenho.
++
+O Workload Factory consolida vários bancos de dados Oracle locais em uma única recomendação de configuração do FSx for ONTAP para otimizar a economia de custos, a menos que os bancos de dados locais selecionados excedam os limites de taxa de transferência, capacidade ou IOPS para um único sistema de arquivos FSx for ONTAP.
+
+
+
+.Remoção de host local
+Após analisar as opções de economia para um host Oracle local, você tem a opção de remover o registro do host local do Workload Factory. Selecione o menu de ações do host Oracle local e, em seguida, selecione *Excluir*.
+
+--
+====
+Após fornecer os detalhes da configuração do seu host de banco de dados, revise os cálculos e as recomendações apresentadas na página.
+
+Além disso, role até o final da página para visualizar o relatório selecionando uma das seguintes opções:
+
+* *Exportar PDF*
+* *Enviar por e-mail*
+* *Veja os cálculos*
+
+
+
+
+[[deploy-microsoft-sql-server-on-aws-ec2-using-fsx-for-ontap]]
+== Implante o Microsoft SQL Server no AWS EC2 usando o FSx for ONTAP
+
+Se você quiser mudar para o FSx for ONTAP para obter economia de custos, clique em *Create* para criar as configurações recomendadas diretamente do assistente *Create new Microsoft SQL server* ou clique em *Save* para salvar as configurações recomendadas para mais tarde.
+
+
+NOTE: O Workload Factory não oferece suporte para salvar ou criar vários sistemas de arquivos do FSx for ONTAP.
+
+.Métodos de implantação
+Com as permissões de _criação de host de banco de dados_, você pode implantar o novo Microsoft SQL server na AWS EC2 usando o FSx for ONTAP diretamente do Workload Factory. Você também pode copiar o conteúdo da janela Codebox e implantar a configuração recomendada usando um dos métodos do Codebox.
+
+Sem permissões, você pode copiar o conteúdo da janela do Codebox e implantar a configuração recomendada usando um dos métodos do Codebox.
+
+.Informações relacionadas
+link:../fsx-storage/permissions-reference-fsx.html["Referência de permissões do Workload Factory FSx for ONTAP"^]

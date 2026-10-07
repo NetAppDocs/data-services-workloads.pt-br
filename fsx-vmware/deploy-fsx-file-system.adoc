@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/deploy-fsx-file-system.html 
+keywords: vm workloads, deploy fsx, deploy storage for vms 
+summary: Após verificar se o sistema de arquivos recomendado do FSx for ONTAP, ou os sistemas de arquivos em alguns casos, atende aos seus requisitos exatos, você pode usar o Workload Factory para implantar o sistema em seu ambiente AWS. 
+---
+= Implante o sistema de arquivos FSx for ONTAP recomendado
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Após verificar se o sistema de arquivos FSx for ONTAP recomendado (ou vários sistemas de arquivos, em alguns casos) atende aos seus requisitos exatos, você pode usar o Workload Factory para implantar o sistema no seu ambiente AWS.
+
+Dependendo da política e das permissões que você adicionou à sua conta do Workload Factory, você pode implantar completamente o sistema de arquivos FSx for ONTAP usando o Workload Factory (usando o modo de leitura/gravação). Se você tiver menos permissões (modo somente leitura) ou nenhuma permissão (modo básico), precisará usar as informações do CloudFormation no Codebox e implantar o sistema de arquivos FSx for ONTAP por conta própria na AWS.
+
+.Requisitos para implantações no VMware Cloud on AWS
+* Para implantar sistemas de arquivos FSx for ONTAP, você deve estar usando o VMware Cloud on AWS Software-Defined Data Center (SDDC) versão 1.20 ou superior.
+* Você não deve implantar o sistema de arquivos do FSx for ONTAP na mesma VPC usada durante a implantação do SDDC. Em vez disso, você deve implantá-lo em uma nova Amazon VPC que você possui para habilitar a integração do VMware Cloud on AWS com Amazon FSx for NetApp ONTAP.
+* Você deve implantar o sistema de arquivos FSx for ONTAP na mesma região da AWS que seu SDDC.
+
+
+.Passos
+. Na parte inferior da página *Revisar plano*, selecione *Implantar*, e a página Criar um sistema de arquivos FSx for ONTAP será exibida.
++
+A maioria dos campos que definem seu sistema de arquivos FSx for ONTAP já está preenchida com base nas informações fornecidas, mas há alguns campos que você precisa preencher nesta página.
+
++
+Você pode usar a opção Criação rápida ou Criação avançada. A Criação avançada oferece alguns parâmetros de armazenamento adicionais que você pode personalizar. link:../fsx-storage/create-discover-systems.html["Saiba o que essas duas opções oferecem"].
+
+. *Credenciais da AWS*: selecione ou adicione credenciais que darão ao Workload Factory as permissões necessárias para criar seu sistema de arquivos do FSx for ONTAP diretamente. Você também pode selecionar o código do CloudFormation no Codebox e implantar você mesmo o sistema de arquivos do FSx for ONTAP na AWS.
+. *Nome do sistema de arquivos*: Insira o nome que você deseja usar para este sistema de arquivos do FSx for ONTAP.
+. *Etiquetas*: opcionalmente, você pode adicionar etiquetas para categorizar este sistema de arquivos FSx for ONTAP.
+. Na seção "Rede & segurança", insira as seguintes informações:
++
+.. *Região e VPC*: selecione a região e a VPC onde o sistema de arquivos FSx for ONTAP será implantado.
++
+Se você estiver implantando no VMware Cloud on AWS, certifique-se de implantá-lo em uma VPC diferente da VPC onde o VMware Cloud on AWS está implantado.
+
+.. *Grupo de segurança*: ao usar a opção *Advanced create*, você pode selecionar o grupo de segurança padrão para a VPC do FSx for ONTAP, para que todo o tráfego possa acessar o sistema de arquivos do FSx for ONTAP.
++
+Você pode adicionar uma regra de entrada que restringe quais outros serviços da AWS podem acessar o sistema de arquivos do FSx for ONTAP. Isso bloqueará a quantidade de serviços que ficam abertos. Estas são as portas e os protocolos mínimos:
+
++
+[cols="15,10,55"]
+|===
+| Protocolos | Portas | Propósito 
+
+
+| TCP, UDP | 111 | Portmapper (usado para negociar quais portas são usadas nas solicitações NFS) 
+
+
+| TCP, UDP | 635 | NFS mountd (recebe solicitações de montagem NFS) 
+
+
+| TCP, UDP | 2049 | Tráfego de rede NFS 
+
+
+| TCP, UDP | 4045 | Network Lock Manager (NLM, lockd): gerencia solicitações de bloqueio. 
+
+
+| TCP, UDP | 4046 | Monitor de status da rede (NSM, statd): notifica os clientes NFS sobre reinicializações do servidor para gerenciamento de bloqueios. 
+|===
+.. *Zona de disponibilidade*: selecione a zona de disponibilidade e a sub-rede.
++
+Para evitar cobranças por tráfego entre zonas de disponibilidade, você deve selecionar a mesma zona de disponibilidade em que seu VMware SDDC está implantado.
+
+.. *Criptografia*: ao usar a opção *Advanced create*, você pode selecionar o nome da chave de criptografia da AWS na lista suspensa.
+.. *Controle de acesso ao datastore*: ao usar a opção *Criação avançada*, você pode selecionar se todos os hosts podem acessar os datastores ou se apenas determinados nós do cluster vSphere em uma sub-rede específica podem acessar os datastores.
+
+
+. Na seção "Detalhes do sistema de arquivos", insira as seguintes informações:
++
+.. *Credenciais do ONTAP*: insira e confirme a senha do ONTAP.
+.. *Credenciais da VM de armazenamento* (somente para criação avançada): insira e confirme a senha da VM de armazenamento. A senha pode ser específica para este sistema de arquivos, ou você pode usar a mesma senha inserida para as credenciais do ONTAP.
+
+
+. Na seção *Resumo*, você pode ver o sistema de arquivos do FSx for ONTAP e a configuração do datastore que o consultor de migração do VMware projetou com base nas suas informações.
+. Selecione *Criar* para implantar o sistema de arquivos do FSx for ONTAP. Esse processo pode levar até 2 horas.
++
+Opcionalmente, na janela Codebox, você pode selecionar *Redirecionar para CloudFormation* para criar o sistema de arquivos usando uma stack do CloudFormation.
+
++
+Em ambos os casos, você pode monitorar o progresso da criação no CloudFormation.
+
+
+
+.Resultado
+O sistema de arquivos do FSx for ONTAP foi implantado.

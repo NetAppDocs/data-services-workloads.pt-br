@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: gcnv/create-discover-systems.html 
+keywords: Google Cloud NetApp Volumes, gcnv, volumes, create system, delete system, access key, secret key, region, availability zones, discover, storage capacity, iops, throughput, security group, security, NetApp Console 
+summary: Crie ou descubra sistemas de storage de nuvem para adicionar e gerenciar volumes e serviços de dados adicionais a partir do NetApp Console. 
+---
+= Crie ou descubra sistemas do Google Cloud NetApp Volumes no NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Descubra os sistemas do Google Cloud NetApp Volumes e gerencie volumes e serviços de dados adicionais a partir do NetApp Console.
+
+
+
+[[discover-an-existing-cloud-storage-system]]
+== Descubra um sistema de storage de nuvem existente
+
+Descubra seus sistemas de armazenamento na página Discoverable systems.
+
+.Antes de começar
+Forneça suas credenciais para o Google Cloud NetApp Volumes no Workload Factory.
+
+.Sobre esta tarefa
+Você pode descobrir um sistema de storage de nuvem apenas uma vez em uma conta e vinculá-lo a um espaço de trabalho. O sistema de storage pode ser removido depois e associado novamente a um espaço de trabalho diferente.
+
+.Passos
+. No menu do NetApp Console, selecione *Storage*, depois *Management* e, em seguida, *Discoverable systems*.
+. A contagem dos sistemas de storage de nuvem descobertos é exibida. Selecione *Descobrir*.
+. Selecione um ou mais sistemas de storage e selecione *Discover* para adicioná-los à página Systems.
+
+
+[NOTE]
+====
+* Se você selecionar um sistema de storage sem nome, será solicitado que você insira um nome para o sistema.
+* Se você selecionar um sistema de storage que não tem as credenciais necessárias para gerenciá-lo pelo Console, receberá uma solicitação para selecionar credenciais com as permissões necessárias.
+
+
+====
+.Resultado
+O Console exibe seu sistema detectado na página Systems. Você pode gerenciar seus sistemas de storage de várias maneiras, como a partir de Cargas de trabalho no NetApp Console e usando o ONTAP System Manager ou as ferramentas de gerenciamento de storage do seu provedor de nuvem.

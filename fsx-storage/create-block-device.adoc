@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/create-block-device.html 
+keywords: create block device, create lun, iscsi protocol 
+summary: Crie dispositivos de bloco para atender aos seus requisitos de aplicativos LOB. 
+---
+= Crie um dispositivo de bloco para um sistema de arquivos na NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Crie dispositivos de bloco para atender aos seus requisitos de aplicativos LOB. Você pode criar dispositivos de bloco em um volume existente, criar um novo volume para o novo dispositivo de bloco ou criar um novo volume a partir de um snapshot para o novo dispositivo de bloco.
+
+.Sobre esta tarefa
+Somente volumes FlexVol são compatíveis com dispositivos de bloco no NetApp Workload Factory. Você pode criar dispositivos de bloco usando o protocolo iSCSI.
+
+O tamanho do bloco deve ser menor que o tamanho disponível do FlexVol volume.
+
+.Antes de começar
+* Você precisa associar um link para criar dispositivos de bloco. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Depois de associar o link, retorne a esta operação.
+
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No FSx for ONTAP, selecione o sistema de arquivos para o qual você deseja criar um dispositivo de bloco e, em seguida, selecione a guia *Block devices*.
+. Selecione *Criar dispositivo de bloco*.
+. Em *Detalhes do volume*, faça o seguinte:
++
+.. *Nome do volume*: selecione uma das seguintes opções.
++
+*** Crie um novo volume e insira o nome do volume.
+*** Selecione um volume existente.
+*** Criar a partir de um instantâneo de volume. Selecione o nome do volume de origem e o nome do instantâneo. Somente volumes sem dispositivos de bloco estão disponíveis.
+
+
+.. *Nome do agregado*: Selecione o agregado que hospedará o novo volume.
+.. *VM de storage*: selecione uma VM de storage.
+.. *Estilo de volume*: o estilo de volume padrão é *FlexVol*.
+.. *Tamanho do volume*: insira o tamanho do volume e selecione a unidade. O tamanho máximo por FlexVol volume é de 100 TiB.
+.. *Volume com crescimento automático*: opcionalmente, habilite o volume com crescimento automático para permitir que o volume aumente de tamanho automaticamente quando atingir a capacidade. O tamanho máximo de crescimento é de 300 TiB.
+.. *Etiquetas*: opcionalmente, adicione etiquetas para ajudar a organizar e categorizar seu dispositivo de bloco.
+
+
+. Em *Detalhes do dispositivo de bloco*, faça o seguinte:
++
+.. *Nome do dispositivo de bloco*: insira um nome para o dispositivo de bloco.
+.. *Tamanho do dispositivo de bloco*: insira o tamanho do dispositivo de bloco e selecione a unidade. O tamanho do dispositivo de bloco deve ser menor que o tamanho do volume disponível.
+
+
+. Em *Acesso*, faça o seguinte:
++
+.. *configuração de iSCSI*: selecione uma das seguintes opções.
++
+*** *Criar novo grupo de iniciadores*: forneça o sistema operacional do host, o nome do grupo de iniciadores e adicione um ou mais iniciadores de host com nome qualificado iSCSI (IQN).
+*** *Mapear grupo de iniciadores existente*: selecione um grupo de iniciadores existente, forneça o sistema operacional do host e selecione um ou mais iniciadores de host com nome qualificado iSCSI (IQN).
+
+
+
+
+. Em *Eficiência e proteção*, faça o seguinte:
++
+.. *Eficiência de storage*: ativada por padrão. Selecione para desativar o recurso.
++
+O ONTAP alcança eficiência de storage utilizando recursos de deduplicação e compressão. A deduplicação elimina blocos de dados duplicados. A compressão de dados comprime os blocos de dados para reduzir a quantidade de storage físico necessária.
+
+.. *política do Snapshot*: Selecione a política do Snapshot para especificar a frequência e a retenção dos Snapshots.
++
+A seguir, estão as políticas padrão da AWS. Para exibir as políticas de snapshot existentes, você deve link:create-link.html["associar um link"^].
+
++
+`default`:: Essa política cria automaticamente Snapshots de acordo com a seguinte programação, excluindo as cópias mais antigas para dar lugar às mais recentes:
++
+--
+*** No máximo seis Snapshots por hora tirados cinco minutos após a hora.
+*** No máximo dois Snapshots diários obtidos de segunda-feira a sábado, 10 minutos após a meia-noite.
+*** No máximo dois Snapshots semanais tirados todos os domingos, 15 minutos após a meia-noite.
++
+
+NOTE: Os horários de Snapshot são baseados no fuso horário do sistema de arquivos, que por padrão é o Tempo Universal Coordenado (UTC). Para obter informações sobre como alterar o fuso horário, consulte link:https://library.netapp.com/ecmdocs/ECMP1155684/html/GUID-E26E4C94-DF74-4E31-A6E8-1D2D2287A9A1.html["Exibição e configuração do fuso horário do sistema"^] na documentação de suporte da NetApp.
+
+
+
+--
+`default-1weekly`:: Essa política funciona da mesma forma que a `default` política, exceto que ela retém apenas um Snapshot da programação semanal.
+`none`:: Esta política não cria nenhum Snapshot. Você pode atribuir esta política a volumes para impedir que Snapshots automáticos sejam criados.
+
+
+.. *Política de hierarquização*: selecione a política de hierarquização para os dados armazenados no volume.
++
+_Balanced (Auto)_ é a política de tiering padrão ao criar um volume usando o console do Workload Factory. Para obter mais informações sobre políticas de tiering de volume, consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacidade de storage do volume"^] na documentação do AWS FSx for NetApp ONTAP. Observe que o Workload Factory usa nomes baseados em casos de uso no console do Workload Factory para políticas de tiering e inclui os nomes das políticas de tiering do FSx for ONTAP entre parênteses.
+
+.. *ARP/AI*: NetApp A Proteção Autônoma contra Ransomware com IA (ARP/AI) é ativada por padrão quando um link é associado ao sistema de arquivos. link:ransomware-protection.html["Saiba mais sobre ARP/AI"]. Aceite a declaração para prosseguir.
++
+Se a funcionalidade não estiver disponível, é por um dos seguintes motivos:
+
++
+*** Não existe um link associado ao sistema de arquivos. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+*** Volumes com arquivos imutáveis e volumes com o protocolo NVMe não são compatíveis com ARP/AI.
+*** O sistema de arquivos já possui uma política ARP/AI.
+
+
+
+
+. Selecione *Criar*.
+
+
+.Informações relacionadas
+link:manage-block-storage.html["Gerencie o armazenamento em blocos para um FSx for ONTAP sistema de arquivos"]

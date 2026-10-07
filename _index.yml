@@ -1,0 +1,74 @@
+---
+indexpage:
+  title: Documentação do NetApp Workload Factory
+  summary: Comece a usar o NetApp Workload Factory para que você aproveite ao máximo
+    suas cargas de trabalho de storage de nuvem. Após a conclusão da configuração,
+    você poderá criar, otimizar e gerenciar seus sistemas de storage para suas cargas
+    de trabalho, explorar a economia de custos, usar o copiloto de infraestrutura
+    como código incorporado para automação em todas as plataformas e gerenciar suas
+    cargas de trabalho no Workload Factory.
+  keywords: Workload Factory, fsx, account, credentials, users, permissions, log in,
+    calculator, codebox
+  lead: Comece a usar o NetApp Workload Factory para que você possa aproveitar ao
+    máximo suas cargas de trabalho ao usar o Amazon FSx for NetApp ONTAP e o OCI NetApp
+    Storage Service. Depois que a configuração for concluída, você poderá criar, otimizar
+    e gerenciar sistemas de arquivos do FSx for ONTAP para suas cargas de trabalho,
+    explorar a economia de custos com o FSx for ONTAP, usar o copilot incorporado
+    de Infrastructure-as-Code para automação em todas as plataformas e gerenciar suas
+    cargas de trabalho no Workload Factory.
+  tiles:
+  - title: Comece agora
+    links:
+    - title: Notas de lançamento
+      url: "/whats-new.html"
+    - title: Saiba mais sobre o NetApp Workload Factory
+      url: "/setup/learn-about-workload-factory.html"
+    - title: Início rápido
+      url: "/setup/quick-start.html"
+    - title: Cadastre-se e faça login
+      url: "/setup/sign-up-and-log-in.html"
+  - title: Permissões
+    links:
+    - title: Permissões para Amazon FSx for NetApp ONTAP
+      url: "/fsx-storage/permissions-reference-fsx.html"
+    - title: Permissões para o OCI NetApp Storage Service
+      url: "/oci/permissions-oci.html"
+  - title: Use o Workload Factory para seu provedor de nuvem
+    links:
+    - title: Amazon FSx for NetApp ONTAP
+      url: "/fsx-storage/learn-fsx-ontap.html"
+    - title: Google Cloud NetApp Volumes
+      url: "/gcnv/learn-netapp-volumes.html"
+    - title: O OCI NetApp Storage Service
+      url: "/oci/learn-about-oci.html"
+  - title: Administrar o Workload Factory
+    links:
+    - title: Configurar notificações
+      url: "/admin/configure-notifications.html"
+    - title: Gerencie recursos de IA
+      url: "/admin/manage-genai-features.html"
+    - title: Automatize tarefas usando o Codebox
+      url: "/admin/use-codebox.html"
+  - title: Cargas de trabalho bem arquitetadas
+    links:
+    - title: Aprenda sobre cargas de trabalho bem arquitetadas
+      url: "/admin/well-architected-workloads.html"
+    - title: Implementar cargas de trabalho do FSx for ONTAP bem arquitetadas
+      url: "/fsx-storage/improve-configurations.html"
+    - title: Implemente cargas de trabalho bem arquitetadas do Google Cloud NetApp
+        Volumes
+      url: "/gcnv/improve-configurations.html"
+  - title: Conhecimento e suporte
+    links:
+    - title: Cadastre-se para receber suporte
+      url: "/register-support.html"
+    - title: Obtenha ajuda
+      url: "/get-help.html"
+  - title: Blogs e comunidade
+    links:
+    - title: NetApp Console
+      url: https://www.netapp.com/console
+    - title: NetApp Data Services
+      url: https://www.netapp.com/data-services/
+    - title: Comunidade NetApp
+      url: https://community.netapp.com/

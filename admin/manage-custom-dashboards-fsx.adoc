@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: admin/manage-custom-dashboards-fsx.html 
+keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog 
+summary: Acesse seu catálogo de dashboards para visualizar, atualizar e excluir dashboards personalizados no Workload Factory. 
+---
+= Gerencie painéis personalizados no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gerencie seus painéis personalizados a partir do catálogo de painéis. Lá, você pode visualizar detalhes, compartilhar painéis, atualizar dados ou excluir painéis que não precisa mais.
+
+.Sobre esta tarefa
+Você pode visualizar e gerenciar dashboards personalizados no catálogo de dashboards. Dashboards privados são visíveis apenas para você, enquanto dashboards públicos são visíveis para todos os usuários da sua conta do Workload Factory. Cada dashboard exibe detalhes básicos, como o nome do criador, a data de criação e um rótulo de visibilidade (Privado ou Público).
+
+Os painéis personalizados são somente leitura. Eles não podem alterar suas configurações de armazenamento ou carga de trabalho.
+
+.Antes de começar
+Você precisa ter pelo menos um painel personalizado em sua conta do Workload Factory.
+
+
+
+[[access-the-dashboard-catalog]]
+== Acesse o catálogo do dashboard
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. No menu do NetApp Console, selecione *Cargas de trabalho* > *Visão geral das cargas de trabalho* > *Painéis personalizados*.
++
+O catálogo de dashboards mostra todos os dashboards personalizados da sua conta do Workload Factory.
+
+. Revise a lista do dashboard.
+
+
+
+
+[[change-dashboard-visibility]]
+== Alterar a visibilidade do dashboard
+
+Torne o painel público para compartilhá-lo com sua equipe. Torne-o privado para parar de compartilhá-lo.
+
+.Passos
+. Na página *Painéis personalizados*, localize o painel que você deseja atualizar.
+. No menu suspenso *Ações* image:icon-action.png["O ícone de três pontos que abre o menu de ações"] desse painel, selecione uma das seguintes opções:
++
+** *Compartilhar painel* - Torna o painel visível para todos os usuários da sua conta do Workload Factory
+** *Alterar para painel privado* - Torna o painel visível apenas para você
+
+
+
+
+.Resultado
+O painel de controle é atualizado imediatamente. O indicador de visibilidade no cartão do painel mostra o status atual.
+
+
+
+[[refresh-dashboard-data]]
+== Atualizar dados do dashboard
+
+Os dados do painel são carregados quando você abre um painel. Você pode atualizá-lo para ver as informações mais recentes.
+
+O painel de controle recarrega os dados das suas cargas de trabalho. A hora da última atualização muda para mostrar quando os dados foram atualizados.
+
+
+
+[[delete-a-dashboard]]
+== Excluir um dashboard
+
+Exclua os painéis que você não precisa mais. Essa ação é permanente e não pode ser desfeita.
+
+.Passos
+. Na página *Painéis personalizados*, localize o painel que você deseja remover.
+. No menu suspenso *Ações* desse painel, selecione *Excluir*.
+. Confirme a exclusão.
+
+
+.Resultado
+O painel de controle é removido permanentemente da sua conta do Workload Factory e todos os usuários perdem o acesso a ele.
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:create-custom-dashboard-fsx.html["Crie painéis personalizados adicionais"]
+* link:troubleshoot-custom-dashboards-fsx.html["Solucionar problemas de painéis personalizados"]
+

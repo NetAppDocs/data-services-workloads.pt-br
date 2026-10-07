@@ -1,0 +1,184 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-snapshot-policy.html 
+keywords: manage snapshot policy, change snapshot policy, assign snapshot policy, remove snapshot policy, snapshot policies, snapshot schedule, update, snapshot long-term retention, enable long-term retention 
+summary: Gerencie as políticas do Snapshot para volumes do FSx for ONTAP no Workload Factory. Uma política do Snapshot define como o sistema cria Snapshots para um volume. 
+---
+= Gerencie políticas de snapshots para volumes no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gerencie as políticas do Snapshot para volumes do FSx for ONTAP no Workload Factory. Uma política do Snapshot define como o sistema cria Snapshots para um volume.
+
+As operações de gerenciamento de Snapshot, como atribuir, alterar e excluir políticas do Snapshot para volumes em um sistema de arquivos FSx for ONTAP, são gerenciadas no nível da máquina virtual de armazenamento. As políticas do Snapshot podem ser compartilhadas com uma única máquina virtual de armazenamento ou com todas as máquinas virtuais de armazenamento.
+
+Algumas tarefas de gerenciamento exigem que você associe um link ao sistema de arquivos FSx for ONTAP. link:../setup/links-overview.html["Saiba mais sobre os links do Workload Factory"^].
+
+Por padrão, cada volume está associado à política do Snapshot do sistema de arquivos `default`. Recomendamos usar essa política para a maioria das cargas de trabalho.
+
+
+
+[[assign-a-snapshot-policy-to-a-volume]]
+== Atribua uma política do Snapshot a um volume
+
+Você pode atribuir uma política do Snapshot a um único volume para criar Snapshots agendados para esse volume.
+
+.Antes de começar
+Você precisa associar um link para atribuir uma política de instantâneo. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Armazenamento*.
+. No menu Armazenamento, selecione *Inventário*.
+. Selecione o menu de ações do sistema de arquivos que contém o volume ao qual você deseja atribuir uma política do Snapshot e, em seguida, selecione *Gerenciar*.
+. Na visão geral do sistema de arquivos, selecione a guia *VMs de armazenamento*.
+. Na guia *VMs de armazenamento*, selecione o menu de ações da VM de armazenamento que contém o volume a ser protegido com snapshots agendados, depois *Ações avançadas* e, em seguida, *Gerenciar políticas do Snapshot*.
+. Na página de gerenciamento da política do Snapshot, selecione o menu de ações da política do Snapshot e, em seguida, selecione *Atribuir política ao volume*.
+. Na caixa de diálogo Atribuir política do Snapshot, selecione uma política do Snapshot para atribuir ao volume e revise o agendamento da política.
++
+Se a política contiver Snapshots imutáveis e você quiser usá-la, aceite a declaração.
+
+. Selecione *Atribuir*.
+
+
+.Resultado
+A política do Snapshot é atribuída ao volume.
+
+
+
+[[change-a-snapshot-policy]]
+== Alterar uma política do Snapshot
+
+Você pode alterar o nome da política do Snapshot, o agendamento e o número de cópias a serem retidas, além de habilitar ou desabilitar Snapshots imutáveis. Não é possível habilitar ou desabilitar o compartilhamento de políticas entre VMs de armazenamento. Essa opção está disponível somente durante a criação da política do Snapshot.
+
+.Antes de começar
+Para exibir as políticas de instantâneo existentes, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Armazenamento*.
+. No menu Armazenamento, selecione *Inventário*.
+. Selecione o menu de ações do sistema de arquivos e então selecione *Gerenciar*.
+. Na visão geral do sistema de arquivos, selecione a guia *VMs de armazenamento*.
+. Na guia *VMs de armazenamento*, selecione o menu de ações da VM de armazenamento que contém o volume a ser protegido com snapshots agendados, depois *Ações avançadas* e, em seguida, *Gerenciar políticas do Snapshot*.
+. Na página de gerenciamento da política do Snapshot, selecione o menu de ações da política do Snapshot que você deseja alterar e, em seguida, selecione *Editar*.
+. Na caixa de diálogo Editar política do Snapshot, faça as alterações necessárias na política do Snapshot.
+. Selecione *Aplicar*.
+
+
+.Resultado
+A política do Snapshot foi atualizada.
+
+
+
+[[enable-immutable-snapshots]]
+== Ativar Snapshots imutáveis
+
+Bloqueie os Snapshots para evitar que sejam excluídos durante o período de retenção.
+
+.Antes de começar
+Você precisa associar um link para habilitar snapshots imutáveis. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações do volume para o qual deseja bloquear os snapshots.
+. Selecione *Ações de proteção de dados*, *Snapshots* e, em seguida, *Tornar um Snapshot imutável*.
+. Na caixa de diálogo "Tornar um Snapshot imutável", faça o seguinte:
++
+.. *Nome do Snapshot*: selecione o Snapshot a ser bloqueado.
+.. Defina o *período de retenção* em número de horas, dias, meses ou anos.
+.. Aceite a declaração.
+
+
+. Selecione *Aplicar*.
+
+
+.Resultado
+O Snapshot do volume agora está bloqueado.
+
+
+
+[[enable-long-term-snapshot-retention-in-netapp-workload-factory]]
+== Habilite a retenção de snapshots de longo prazo no NetApp Workload Factory
+
+No NetApp Workload Factory, você pode habilitar Snapshots para retenção de longo prazo, o que permite replicar Snapshots específicos para recuperação de desastres de longo prazo.
+
+A retenção de longo prazo permite que os serviços empresariais continuem a operar mesmo em caso de falha do local, oferecendo failover transparente de aplicações usando uma cópia secundária.
+
+As mesmas etapas se aplicam para habilitar e editar Snapshots para retenção de longo prazo.
+
+Quando um cluster ONTAP local é o destino da relação de replicação, não há suporte para alterar snapshots para retenção de longo prazo.
+
+
+NOTE: A edição da retenção de longo prazo não está disponível ao replicar dados e configurações de máquinas virtuais de armazenamento.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No menu *FSx for ONTAP*, selecione *Inventory* e, em seguida, selecione o menu de ações do sistema de arquivos que você deseja atualizar e, por fim, selecione *Manage*.
+. Na visão geral do sistema de arquivos, selecione a guia *Relações de replicação*.
+. Na guia "Relacionamentos de replicação", selecione o menu de ações da programação do relacionamento de replicação que você deseja alterar.
+. Selecione *Editar retenção de longo prazo*.
+. Na caixa de diálogo Edit long-term retention, ative ou desative os Snapshots para retenção de longo prazo.
+. Se você optar por desativar os Snapshots para retenção de longo prazo, selecione *Aplicar* para concluir esta operação.
+. Se você optar por ativar os snapshots para retenção de longo prazo, escolha entre selecionar uma política existente ou criar uma nova política.
++
+.. Para usar uma política existente, selecione-a no menu suspenso.
+.. Para criar uma nova política, forneça o seguinte:
++
+... *Nome da política*: insira um nome para a política.
+... *Políticas do Snapshot*: selecione uma ou mais políticas do Snapshot.
+... *Cópias a manter*: insira o número de cópias de snapshot a serem mantidas no sistema de arquivos de destino.
+
+
+
+
+. Selecione *Aplicar*.
+
+
+
+
+[[remove-a-snapshot-policy-from-a-volume]]
+== Remover uma política do Snapshot de um volume
+
+Remova uma política do Snapshot de um volume porque você não quer mais snapshots do volume ou porque quer excluir uma política do Snapshot atribuída a vários volumes. Para <<Excluir uma política do Snapshot,excluir uma política do Snapshot>> atribuída a mais de um volume, você deve removê-la manualmente de todos os volumes.
+
+.Antes de começar
+Você precisa associar um link para remover uma política de instantâneo. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No menu *FSx for ONTAP*, selecione *Inventory* e, em seguida, selecione o menu de ações do sistema de arquivos que você deseja atualizar e, por fim, selecione *Manage*.
+. Na visão geral do sistema de arquivos, selecione a guia *VMs de armazenamento*.
+. Na guia *VMs de armazenamento*, selecione o menu de ações da VM de armazenamento que contém o volume a ser protegido com snapshots agendados, depois *Ações avançadas* e, em seguida, *Gerenciar políticas do Snapshot*.
+. Na página de gerenciamento da política do Snapshot, selecione o menu de ações da política do Snapshot e, em seguida, selecione *Atribuir política ao volume*.
+. Na caixa de diálogo Assign snapshot policy, selecione *None* para remover a política do Snapshot.
+. Selecione *Atribuir*.
+
+
+.Resultado
+A política do Snapshot é removida do volume.
+
+
+
+[[delete-a-snapshot-policy]]
+== Excluir uma política do Snapshot
+
+Exclua uma política do Snapshot quando você não precisar mais dela.
+
+Quando uma política do Snapshot é atribuída a mais de um volume, você deve manualmente <<Remover uma política do Snapshot de um volume,remova-o>> de todos os volumes para excluir a política do Snapshot. Como alternativa, você pode <<Atribua uma política do Snapshot a um volume,atribuir uma política do Snapshot diferente>> aos volumes.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No menu *FSx for ONTAP*, selecione *Inventory* e, em seguida, selecione o menu de ações do sistema de arquivos que você deseja atualizar e, por fim, selecione *Manage*.
+. Na visão geral do sistema de arquivos, selecione a guia *VMs de armazenamento*.
+. Na guia *VMs de armazenamento*, selecione o menu de ações da VM de armazenamento com a política do Snapshot que você deseja excluir, depois *Ações avançadas* e, em seguida, *Gerenciar políticas do Snapshot*.
+. Na página de gerenciamento da política do Snapshot, selecione o menu de ações da política do Snapshot que você deseja excluir e, em seguida, selecione *Excluir*.
+. Na caixa de diálogo Excluir, selecione *Excluir* para excluir a política.
+

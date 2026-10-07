@@ -1,0 +1,9 @@
+= 
+:allow-uri-read: 
+
+
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos que deseja atualizar e, em seguida, selecione *Gerenciar*.
+. Na visão geral do sistema de arquivos, selecione a guia *Relações de replicação*.
+. Na guia Relações de replicação, selecione o menu de ações da relação de replicação que deseja inicializar.
+. Selecione *Inicializar*.
+

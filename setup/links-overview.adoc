@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: setup/links-overview.html 
+keywords: links, accounts, connectivity, 
+summary: Um link da Workload Factory cria uma relação de confiança e conectividade entre uma conta da Workload Factory e um ou mais sistemas de storage de nuvem. 
+---
+= Saiba mais sobre os links do NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um link do NetApp Workload Factory cria uma relação de confiança e conectividade entre uma conta do Workload Factory e um ou mais sistemas de storage de nuvem. Isso permite monitorar e gerenciar determinados recursos do sistema de storage diretamente das chamadas de API REST do ONTAP que não estão disponíveis por meio da API do seu provedor de nuvem.
+
+Você não precisa de um link para começar a usar o Workload Factory, mas em alguns casos você precisará criar um link para desbloquear todos os recursos e funcionalidades do Workload Factory.
+
+
+
+[[why-links-are-beneficial]]
+== Por que links são benéficos
+
+Os links são vantajosos porque permitem que o Workload Factory execute operações que não estão disponíveis nativamente por meio da API do seu provedor de nuvem. Os links possibilitam recursos avançados do ONTAP e automação, o que aprimora o gerenciamento dos seus sistemas de storage de nuvem.
+
+Aqui estão alguns benefícios de usar links:
+
+* O link permite que o NetApp Console envie comandos do ONTAP diretamente para o seu sistema de storage de nuvem, trazendo recursos avançados do ONTAP que vão além do que o seu provedor de nuvem oferece nativamente.
+* Os links aproveitam funções remotas sem servidor para executar código em resposta a eventos. Essa abordagem sem servidor elimina a dependência de uma instância em execução na sua VPC.
+
+
+
+
+[[how-links-work]]
+== Como funcionam os links
+
+Os links utilizam serviços remotos de computação sem servidor, como o AWS Lambda e o Oracle Cloud Infrastructure Functions. Esses serviços executam código em resposta a eventos e gerenciam automaticamente os recursos de computação necessários para esse código. Os links que você cria fazem parte da sua conta NetApp e estão associados à conta do provedor de nuvem correspondente.
+
+Após criar um link, você pode associá-lo a um ou mais sistemas de storage de nuvem. Cada sistema de storage de nuvem pode ser associado a apenas um link na mesma conta NetApp. Se você tiver várias contas NetApp, um único sistema de storage de nuvem pode ser associado a links adicionais em contas NetApp diferentes.
+
+Você cria e associa links na página Links do NetApp Console para seus sistemas de storage de nuvem.
+
+Você pode autenticar links usando credenciais armazenadas no serviço de credenciais do Workload Factory ou com o serviço de credenciais do seu provedor de nuvem. O Workload Factory não oferece suporte à alteração dos modos de autenticação.
+
+
+
+[[costs]]
+== Custos
+
+Cada transação realizada pelo serviço de computação sem servidor do seu provedor de nuvem gera uma cobrança. Como ele atua como um intermediário entre os dois sistemas, há uma cobrança quando o serviço envia uma solicitação para a API REST do ONTAP em um sistema de arquivos e quando envia a resposta de volta para o Workload Factory.
+
+* link:https://aws.amazon.com/lambda/pricing/["Saiba mais sobre os custos relacionados ao uso do AWS Lambda"^]
+* link:https://www.oracle.com/cloud/cloud-native/functions/["Saiba mais sobre os custos relacionados ao uso do Oracle Cloud Infrastructure Functions"^]
+
+
+
+
+[[when-a-link-is-required]]
+== Quando um link for necessário
+
+O Workload Factory requer um link para exibir algumas informações e executar algumas tarefas. Se você tentar realizar uma operação que requer um link e não tiver associado um link ao sistema de storage de nuvem, o Workload Factory notificará você de que a operação requer um link.
+
+As funcionalidades que requerem um link incluem:
+
+* Status de arquitetura adequada das configurações do sistema de storage de nuvem para manutenção proativa, confiabilidade e otimização de custo-benefício
+* Monitoramento e alerta de eventos do ONTAP EMS
+* O NetApp Autonomous Ransomware Protection (ARP/AI)
+* Observabilidade holística aprimorada da capacidade em sistemas de storage de nuvem
+* Replicação de dados de volumes e máquinas virtuais de armazenamento, gerenciamento e monitoramento
+* Provisionamento e gerenciamento de compartilhamentos SMB/CIFS e políticas de exportação NFS
+* Gerenciamento de volumes iSCSI em um sistema de storage em nuvem
+* Criação e gerenciamento de políticas de snapshots para SLA de proteção personalizado
+* Aprimoramentos no gerenciamento de inodes para o gerenciamento automático de capacidade
+* Crescimento automático de volume para escalonamento elástico
+* Criação e gerenciamento de clones instantâneos e no local para clonagem de dados
+* Exibição de métricas adicionais diretamente do seu sistema de storage de nuvem, como a versão do sistema
+* Exibindo detalhes da LIF da storage VM e do cluster, incluindo funções, endpoints, nós, endereços IP e status
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+Aprenda como criar e associar links para:
+
+* link:../fsx-storage/create-link.html["Amazon FSx for NetApp ONTAP"]
+* link:../oci/create-link.html["O OCI NetApp Storage Service"]
+

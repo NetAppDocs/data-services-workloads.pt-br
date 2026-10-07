@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/change-tiering-policy.html 
+keywords: tiering policy, change tier, change tiers, tier policy update 
+summary: Altere a política de armazenamento em camadas na NetApp Workload Factory para realocar os dados da camada de storage primário de alto desempenho para a camada de storage do pool de capacidade secundário. 
+---
+= Alterar a política de hierarquização de um volume no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+No NetApp Workload Factory, você pode alterar a política de tiering para realocar automaticamente os dados da camada de storage primário de alto desempenho para a camada de storage do pool de capacidade secundário.
+
+.Sobre esta tarefa
+Você pode alterar a política de armazenamento em camadas de um volume a qualquer momento. A política de armazenamento em camadas é definida para cada volume individualmente.
+
+A escolha de onde seus dados são armazenados tem implicações na sua economia de custos.
+
+O FSx for ONTAP tem duas camadas para armazenar dados de volume:
+
+* *Camada de storage SSD*: esta camada de storage primário é para os dados que você acessa com mais frequência, também conhecidos como dados _quentes_. Armazenar dados na camada de storage primário é mais caro do que na camada de storage secundário.
+* *Camada de storage do pool de capacidade*: esta camada de storage secundário destina-se a dados arquivados ou dados acessados com pouca frequência, também conhecidos como dados _frios_.
+
+
+Consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html#storage-tiers["Gerenciamento da capacidade de storage"^] na documentação do AWS para FSx for NetApp ONTAP para obter mais informações sobre os níveis de armazenamento.
+
+.Antes de começar
+Analise as políticas de tiering disponíveis antes de alterar a política de tiering.
+
+* *Equilibrado (Automático)*: política de disposição em camadas padrão ao criar um volume usando a interface de usuário. Mantém os dados acessados com frequência na camada de storage SSD e dispõe em camadas os dados acessados com pouca frequência e os Snapshots para a camada de storage do pool de capacidade após o término do período de resfriamento. Recomendado para cargas de trabalho primárias em geral.
+* *Otimizado para custo (Todos)*: agrupa todos os Snapshots e dados na camada de storage do pool de capacidade. Recomendado para destinos secundários.
+* *Otimizado para desempenho (somente Snapshots)*: organiza em camadas apenas os dados de Snapshot na camada de storage do pool de capacidade. Recomendado para cargas de trabalho de baixa latência, como bancos de dados de missão crítica.
+* *Nenhum*: mantém os dados do volume na camada de armazenamento SSD, impedindo que sejam movidos para a camada de armazenamento do pool de capacidade.
+
+
+Observe que algumas políticas de armazenamento em camadas possuem um período mínimo de resfriamento associado, que define o tempo, ou _dias de resfriamento_, durante o qual dados de usuário em um volume devem permanecer inativos para serem considerados "frios" e movidos para a camada de armazenamento do pool de capacidade. O período de resfriamento começa quando os dados são gravados no disco.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer* > *FSx for ONTAP*.
+. Selecione o menu de ações do volume para o qual você deseja alterar a política de tiering.
+. Selecione *Ações avançadas* e, em seguida, *Alterar política de tiering*.
+. Na página Alterar política de camadas, selecione para copiar a política de camadas do volume de origem ou selecione uma das seguintes políticas de camadas:
++
+** *Equilibrado (Automático)*: insira o número de dias de resfriamento.
+** *Otimizado em termos de custo (Todos)*
+** *Otimizado para desempenho (somente Snapshots)*: insira o número de dias de resfriamento.
+** *Nenhum*
+
+
+. Selecione *Aplicar*.
+

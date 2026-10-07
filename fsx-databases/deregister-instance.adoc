@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/deregister-instance.html 
+keywords: Microsoft SQL Server instance, PostgreSQL server instance, Oracle database, deregister instance, unregister instance, remove instance 
+summary: Cancele o registro de um recurso se você não quiser mais implantar ou monitorar recursos no console do Workload Factory. 
+---
+= Cancelar o registro de um recurso no NetApp Workload Factory para Bancos de Dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cancele o registro de um recurso, como uma instância do Microsoft SQL Server ou um banco de dados Oracle, se você não quiser mais implantar ou monitorar recursos no console do NetApp Workload Factory. O cancelamento do registro de recursos também remove a quantidade de capacidade de storage do FSx for ONTAP usada pela instância.
+
+Você pode registrar o recurso novamente.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Bancos de dados, selecione *Inventário*.
+. No Inventário, selecione o tipo de mecanismo: *o Microsoft SQL Server*, *o Oracle* ou *o PostgreSQL*.
+. Localize o recurso que você deseja cancelar o registro, selecione o menu de ação e, em seguida, selecione *Cancelar registro*.
+

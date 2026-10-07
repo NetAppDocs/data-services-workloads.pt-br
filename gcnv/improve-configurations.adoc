@@ -1,0 +1,132 @@
+---
+sidebar: sidebar 
+permalink: gcnv/improve-configurations.html 
+keywords: improve configurations, optimize configurations, implement best practices, well-architected storage pool, Google Cloud NetApp Volumes, GCNV 
+summary: O Workload Factory analisa as configurações do Google Cloud NetApp Volumes, fornecendo insights e recomendações para ajudar você a alcançar a excelência operacional. 
+---
+= Implemente configurações bem arquitetadas do Google Cloud NetApp Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Usando insights e recomendações da análise de configuração, aproveite a NetApp para implementar as melhores práticas para os seus Google Cloud NetApp Volumes pool de storage em execução no Google Cloud storage. Você pode revisar facilmente o status bem arquitetado, conhecer os problemas nas suas configurações e receber recomendações para melhorar a arquitetura de qualquer pool de storage que não esteja otimizado para confiabilidade, segurança, desempenho e custo.
+
+link:configuration-analysis.html["Saiba mais sobre a análise de configuração e o status de arquitetura bem projetada."]
+
+
+
+[[about-this-task]]
+== Sobre esta tarefa
+
+NetApp analisa as implantações de pool de storage do Google Cloud NetApp Volumes no Google Cloud diariamente. A análise diária fornece o status de arquitetura bem definida, além de insights e recomendações para ajudar você a entender problemas de configuração, garantindo que seus pools de storage sigam as melhores práticas.
+
+Após a conclusão da análise diária, o painel exibe o número total de recursos bem arquitetados, o número de recursos em estado crítico e o número de recursos em estado de alerta. As configurações são categorizadas pelos pilares da estrutura bem arquitetada: confiabilidade, excelência operacional, otimização de custos, eficiência de desempenho e segurança. O painel também inclui uma tabela que lista todas as configurações, o status bem arquitetado dessas configurações, a gravidade, a categoria, o tipo de recurso (volume ou pool de storage), os recursos impactados e a opção de visualizar a recomendação quando a configuração não estiver otimizada.
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+* Você precisa link:https://console.netapp.com/add-working-environment/choose-type["adicionar um Google Cloud NetApp Volumes pool de storage"] acessar o NetApp Console para visualizar o status da arquitetura adequada e as recomendações para problemas de configuração.
+
+
+
+
+[[view-recommendations-for-configuration-issues]]
+== Veja recomendações para problemas de configuração
+
+Você pode visualizar as recomendações para problemas de configuração após a conclusão da análise diária. As recomendações explicam as melhores práticas e os riscos potenciais de configurações não otimizadas. Você também pode baixar um arquivo CSV das recomendações.
+
+.Passos
+. Faça login no link:https://console.netapp.com/home["NetApp Console"^].
+. No menu NetApp Console, selecione *Workloads* e depois *Well-architected*.
+. No painel de controle Well-architected, selecione *Visualizar* para qualquer configuração.
++
+Opcionalmente, faça o download de um arquivo CSV com as recomendações para todas as configurações.
+
+. Analise a recomendação.
+
+
+
+
+[[dismiss-a-configuration-analysis]]
+== Descartar uma análise de configuração
+
+Interrompa a análise de configuração para um Google Cloud NetApp Volumes pool de storage ou para volumes selecionados. Você pode reiniciar a análise quando necessário.
+
+[role="tabbed-block"]
+====
+.Descartar uma análise de configuração para um pool de storage
+--
+.Passos
+. Faça login no link:https://console.netapp.com/home["NetApp Console"^].
+. No menu NetApp Console, selecione *Workloads* e depois *Well-architected*.
+. No painel de controle Well-architected, selecione *Visualizar* para qualquer configuração.
+. Em Configurações, identifique a configuração que não se aplica ao seu ambiente e selecione *Dismiss*.
+. Na caixa de diálogo Dispensar configuração, selecione *Dispensar* para interromper a análise de configuração.
+
+
+--
+.Descartar uma análise de configuração para um volume
+--
+.Passos
+. Faça login no link:https://console.netapp.com/home["NetApp Console"^].
+. No menu NetApp Console, selecione *Workloads* e depois *Well-architected*.
+. No painel de controle Well-architected, selecione *Visualizar* para qualquer configuração.
+. Em Configurações, identifique a configuração que deseja descartar para os volumes selecionados e, em seguida, selecione *View*.
+. Identifique os volumes a serem descartados da análise de configuração.
++
+** Para um volume: selecione o menu de ações e depois selecione *Dispensar volume*.
+** Para vários volumes: selecione os volumes e, em seguida, selecione *Ignorar* ao lado de Bulk action.
+
+
+. Selecione *Ignorar* para interromper a análise da configuração.
+. Na caixa de diálogo Dispensar volumes, selecione *Dispensar* para confirmar.
+
+
+--
+====
+.Resultado
+A análise de configuração é interrompida para o pool de storage ou volumes selecionados.
+
+Você pode reativar a análise a qualquer momento.
+
+
+
+[[reactivate-a-dismissed-configuration-analysis]]
+== Reative uma análise de configuração descartada
+
+Reative uma análise de configuração descartada a qualquer momento. Você pode selecionar uma ou mais configurações para reativar.
+
+[role="tabbed-block"]
+====
+.Reative uma análise de configuração para um pool de storage
+--
+.Passos
+. Faça login no link:https://console.netapp.com/home["NetApp Console"^].
+. No menu NetApp Console, selecione *Workloads* e depois *Well-architected*.
+. Selecione *Dismissed configurations*.
+. Identifique a configuração que você deseja reativar e selecione *Reativar*.
+
+
+--
+.Reative uma análise de configuração para um volume
+--
+.Passos
+. Faça login no link:https://console.netapp.com/home["NetApp Console"^].
+. No menu NetApp Console, selecione *Workloads* e depois *Well-architected*.
+. Selecione *Dismissed configurations*.
+. Identifique o(s) volume(s) para reativar a partir da análise de configuração.
++
+** Para um volume: selecione o menu de ações e então selecione *Reativar volume*.
+** Para vários volumes: selecione os volumes e, em seguida, selecione *Reativar* ao lado de Bulk action.
+
+
+
+
+--
+====
+.Resultado
+O sistema reativa a análise de configuração. Uma nova análise ocorre diariamente.

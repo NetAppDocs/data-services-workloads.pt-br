@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/access-data.html 
+keywords: access data, mount point, mount volumes, mount clients, on-premises 
+summary: Você pode acessar seus sistemas de arquivos do FSx for ONTAP a partir do ambiente local, montando volumes para clientes NAS e montando LUNs iSCSI para clientes SAN. 
+---
+= Acesse os dados do seu sistema de arquivos FSx for ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode acessar seus sistemas de arquivos do FSx for ONTAP a partir do ambiente local, montando volumes para clientes NAS e montando LUNs iSCSI para clientes SAN.
+
+link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html["Acessando dados"^] na documentação do Amazon FSx for NetApp ONTAP, você encontra tópicos sobre como acessar dados para sua referência.
+
+Você também pode obter o ponto de montagem dos volumes na NetApp Workload Factory.
+
+
+
+[[get-mount-point-for-volumes-in-netapp-workload-factory]]
+== Obtenha o ponto de montagem para volumes no NetApp Workload Factory
+
+Obtenha o ponto de montagem de um volume para montar um compartilhamento em um compartilhamento CIFS ou em um cliente NFS.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer* > *FSx for ONTAP*.
+. Selecione o menu de ações do volume, depois *Ações básicas* e depois *Exibir comando de montagem*.
+. Na caixa de diálogo do comando Montar, selecione *Copiar* para copiar o comando do ponto de montagem NFS ou do compartilhamento CIFS. Você deverá inserir o comando copiado no seu terminal.
+. Selecione *Fechar*.
+
+
+
+
+[[connect-to-nas-clients]]
+== Conecte-se a clientes NAS
+
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-linux-client.html["Montar um volume em clientes Linux"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-windows-client.html["Montar um volume nos clientes Windows"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-mac-client.html["Montar um volume em clientes macOS"^]
+
+
+
+
+[[connect-to-san-clients]]
+== Conecte-se a clientes SAN
+
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/mount-iscsi-luns-linux.html["Montar uma LUN iSCSI em clientes Linux"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/mount-iscsi-windows.html["Montar uma LUN iSCSI em clientes Windows"^]
+

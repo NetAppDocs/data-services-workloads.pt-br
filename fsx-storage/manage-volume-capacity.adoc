@@ -1,0 +1,232 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-volume-capacity.html 
+keywords: volume size, rebalance volume capacity, adjust volume capacity, volume autogrow, manage volume capacity, FlexVol volume, FlexGroup volume 
+summary: Aprenda a gerenciar a capacidade de volume, incluindo o ajuste manual do tamanho do volume e o uso de volume com crescimento automático no NetApp Workload Factory. 
+---
+= Gerencie a capacidade de volume no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A capacidade do volume deve ser ajustada conforme as necessidades mudam. Você pode ajustar o tamanho do volume manualmente ou ativar o volume com crescimento automático para que o NetApp Workload Factory gerencie a capacidade do volume para você. Verifique o balanceamento da capacidade do volume FlexVol ou FlexGroup e reequilibre a capacidade do volume para distribuir os arquivos uniformemente entre todos os volumes FlexVol em um nó ou entre todos os componentes, de modo que todos os nós participem da carga de trabalho de um único volume FlexGroup.
+
+
+
+[[edit-volume-autogrow]]
+== Editar volume com crescimento automático
+
+Ative o volume com crescimento automático para permitir que o NetApp Workload Factory gerencie a capacidade do volume para você. Você pode desativá-lo a qualquer momento.
+
+
+NOTE: O volume com crescimento automático não é compatível com volumes iSCSI.
+
+.Antes de começar
+Para ativar o volume com crescimento automático, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações para o volume que você deseja modificar.
+. Selecione *Ações básicas* e em seguida *Definir volume com crescimento automático*.
+. Na caixa de diálogo Set autogrow, ative o volume com crescimento automático para expandir automaticamente a capacidade do volume até que ele atinja o tamanho máximo. Esse recurso acomoda o aumento do uso de dados, garantindo operações ininterruptas.
++
+Especifique o tamanho máximo de crescimento do volume e a unidade. O tamanho máximo de crescimento não pode ser menor que o tamanho do volume atual.
+
+. Selecione *Aplicar*.
+
+
+
+
+[[adjust-volume-capacity-manually]]
+== Ajuste a capacidade de volume manualmente
+
+Você pode ajustar a capacidade do volume aumentando ou diminuindo o tamanho provisionado de um volume. A tabela a seguir mostra os tamanhos mínimo e máximo de volume por tipo de volume:
+
+[cols="1,1,1"]
+|===
+| Tipo de volume | Tamanho mínimo | Tamanho máximo 
+
+
+| FlexVol volume | 20 MiB | 300 TiB 
+
+
+| Volume FlexGroup | 800 GiB | 2 PiB 
+|===
+Para um LUN iSCSI, aumentar o tamanho do volume também aumenta o tamanho do LUN do host. Após aumentar a capacidade do volume, siga o procedimento fornecido pelo sistema operacional do host para descobrir o novo tamanho do LUN e expandir o sistema de arquivos do LUN.
+
+A redução do tamanho do volume é suportada apenas para volumes NFS e SMB/CIFS.
+
+.Antes de começar
+Para ajustar a capacidade de volume, você precisa associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
+. Selecione o menu de ações para o volume que você deseja modificar.
+. Selecione *Ações básicas* e depois *Ajustar capacidade do volume*.
+. Na caixa de diálogo Ajustar capacidade do volume, defina a *Capacidade provisionada* e a unidade.
+. Selecione *Ajustar* para aplicar as alterações.
+
+
+
+
+[[rebalance-volume-capacity-for-flexvol-and-flexgroup-volumes]]
+== Reequilibrar a capacidade de volume para FlexVol e FlexGroup volumes
+
+O rebalanceamento da capacidade do volume é compatível com volumes FlexVol e volumes FlexGroup. O rebalanceamento de um volume redistribui a capacidade quando desequilíbrios surgem ao longo do tempo devido à adição de novos arquivos e ao crescimento dos arquivos. Depois de iniciar manualmente a operação de rebalanceamento, selecionamos os arquivos e os movemos automaticamente e sem interrupções. As operações de transferência de volume consomem recursos do sistema de arquivos.
+
+Cada tipo de volume e as operações de rebalanceamento diferem da seguinte forma.
+
+.Volumes FlexVol
+Os volumes FlexVol são contêineres lógicos que oferecem flexibilidade no gerenciamento de dados, permitindo expansão, contração, movimentação e cópia eficiente. Eles podem ser usados em ambientes NAS e SAN.
+
+Um FlexVol volume pode ser balanceado em relação a outros FlexVol volumes em um nó de um sistema de arquivos do FSx for ONTAP. Se o sistema de arquivos tiver apenas um único FlexVol volume, o rebalanceamento não será possível. Quando o sistema de arquivos tem mais de um FlexVol volume por nó e um único FlexVol volume é selecionado, o FlexVol volume é balanceado no contexto de todos os FlexVols, mas apenas o volume selecionado pode ser movido.
+
+.Volumes FlexGroup
+Os volumes FlexGroup, por outro lado, são contêineres NAS com escalabilidade horizontal projetados para alto desempenho e distribuição de carga automática. Eles consistem em vários volumes membros (constituintes) que compartilham o tráfego de forma transparente. Os volumes FlexGroup oferecem capacidade massiva, excedendo os limites do FlexVol, com até 60 PB de capacidade e 400 bilhões de arquivos. Eles simplificam o gerenciamento ao oferecer um único contêiner de namespace.
+
+Em um sistema de arquivos FSx for ONTAP com escalabilidade horizontal com dois ou mais pares de alta disponibilidade (HA), a capacidade é distribuída entre vários componentes. Cada componente é um contêiner que define o tamanho máximo de um único arquivo. O FSx for ONTAP distribui os arquivos entre todos os componentes de maneira uniforme, para que todos os nós participem da carga de trabalho de um único volume FlexGroup.
+
+Quando os constituintes não estão distribuídos uniformemente por todos os nós, o desempenho do volume FlexGroup diminui.
+
+A verificação do equilíbrio da capacidade do volume FlexGroup inclui a avaliação do layout atual dos constituintes. Quando você reequilibra a capacidade do volume, o NetApp Workload Factory projeta um novo layout de constituintes com um número par de constituintes para distribuir os dados uniformemente entre todos os pares de HA. O serviço executa o plano de reequilíbrio, o que, por sua vez, melhora as operações de leitura e gravação.
+
+
+NOTE: O rebalanceamento não é suportado para volumes SAN como iSCSI e NVMe.
+
+
+
+[[check-the-balance-of-your-volumes]]
+=== Verifique o equilíbrio dos seus volumes
+
+Verifique o equilíbrio dos volumes FlexVol ou FlexGroup em um sistema de arquivos FSx for ONTAP.
+
+.Antes de começar
+* FlexGroup o balanceamento de volume está disponível apenas para sistemas de arquivos do FSx for ONTAP que usam uma implantação com escalabilidade horizontal com pelo menos dois pares de HA.
+* Para verificar o saldo de um volume, você deve link:create-link.html["criar e associar um link ou associar um link existente ao sistema de arquivos"^]. Após a associação do link, retorne a esta operação.
+
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos que contém os volumes a serem rebalanceados e, em seguida, selecione *Manage*.
+. Na visão geral do sistema de arquivos, selecione a guia *Volumes*.
+. Na aba Volumes, selecione *Verificar equilíbrio do volume* na parte superior da tabela.
+. Na janela de balanceamento de volume, verifique o status do balanceamento de:
++
+** Volumes FlexGroup
+** Volumes FlexVol
++
+Quando um volume está desequilibrado, considere <<Reequilibrar a capacidade do volume,reequilibrando-o>>.
+
+
+
+
+
+
+
+[[rebalance-volume-capacity]]
+=== Reequilibrar a capacidade do volume
+
+Reequilibre um ou mais volumes desequilibrados.
+
+
+NOTE: Um administrador da Workload Factory pode <<Interrompa uma operação de reequilíbrio de volume,interromper o reequilíbrio>> durante a operação.
+
+.Antes de começar
+* <<Verifique o equilíbrio dos seus volumes,Verifique o equilíbrio de um volume>> antes de reequilibrar os volumes.
+* Para reequilibrar um volume, você deve link:create-link.html["criar e associar um link ou associar um link existente ao sistema de arquivos"^]. Após a associação do link, retorne a esta operação.
+* Observe que os snapshots existentes nos volumes que você rebalanceia tornam-se parciais e não podem ser usados para restaurar os dados do volume, mas novos snapshots criados após o rebalanceamento podem ser usados para restaurar os dados do volume.
+* FlexVol volumes devem ser reequilibrados de preferência em conjunto para equilibrar todos os recursos dos volumes de maneira uniforme. Volumes desmarcados não participam ativamente do processo de balanceamento.
+
+
+[role="tabbed-block"]
+====
+.FlexVol volume
+--
+Uma FlexVol volume pode ser balanceada em relação a outras FlexVol volumes dentro de um nó em um sistema de arquivos do FSx for ONTAP. Quando o sistema de arquivos tem mais de uma FlexVol volume por nó e uma única FlexVol volume é selecionada, a FlexVol volume é balanceada no contexto de todas as FlexVols, mas somente a volume selecionada pode ser movida.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos que contém o volume a ser rebalanceado e, em seguida, selecione *Manage*.
+. Na visão geral do sistema de arquivos, selecione a guia *Volumes*.
+. Na aba Volumes, selecione *Verificar equilíbrio do volume* na parte superior da tabela.
+. Na janela de balanceamento de volumes, opcionalmente selecione *distribuição de dados* no resumo de balanceamento do FlexVol para ver a capacidade usada por agregado.
+. Selecione *Rebalance* para reequilibrar um ou mais volumes desequilibrados.
+. No assistente de rebalanceamento, siga os passos.
++
+.. *Taxa máxima de transferência*: opcional. Desativada por padrão. Ative a limitação para restringir a largura de banda da movimentação de um volume no seu sistema de arquivos e para reduzir a velocidade do tráfego de replicação de volumes de saída.
++
+Insira o valor de limitação em MB/s.
+
++
+Selecione *Next*.
+
+.. Analise os layouts atuais e propostos de todos os volumes FlexVol e, em seguida, selecione *Avançar*.
+.. Analise cuidadosamente o que irá acontecer e a nota antes de iniciar a operação de rebalanceamento.
+
+
+. Selecione *Reequilibrar*.
+
+
+.Resultado
+O FlexVol volume é reequilibrado. Quando a operação for concluída, o sistema de arquivos retornará ao seu valor original.
+
+--
+.Volume FlexGroup
+--
+Os dados são redistribuídos entre os volumes membro para reequilibrar o volume FlexGroup. Com base no layout escolhido, a operação de reequilíbrio pode adicionar volumes membro do FlexGroup e aumentar o tamanho dos volumes provisionados.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos que contém o volume a ser rebalanceado e, em seguida, selecione *Manage*.
+. Na visão geral do sistema de arquivos, selecione a guia *Volumes*.
+. Na aba Volumes, selecione *Verificar o equilíbrio do FlexGroup* na parte superior da tabela.
+. Na janela de balanceamento do FlexGroup, selecione *Rebalance* para rebalancear um ou mais volumes desbalanceados.
+. No assistente Rebalance, selecione o layout de distribuição de dados de sua preferência.
++
+** *Otimizado para desempenho* (recomendado): aumenta o número de volumes membros do FlexGroup e o tamanho provisionado do volume. Segue as melhores práticas da NetApp.
+** *Restrito*: suporta volumes em uma relação de replicação. O número de volumes membros do FlexGroup e o tamanho dos volumes provisionados permanecem os mesmos. Selecionado por padrão se todos os volumes selecionados participarem de uma relação de replicação.
+** *Manual*: selecione o número desejado de volumes membros do FlexGroup por par de HA. Dependendo da sua seleção, o número de volumes membros do FlexGroup e o tamanho provisionado do volume podem aumentar.
+
+
+. *Limitação de largura de banda*: opcional. Desativada por padrão. Ative a limitação de largura de banda para limitar a largura de banda da movimentação de um volume no seu sistema de arquivos e reduzir a velocidade do tráfego de replicação de volume de saída.
++
+Insira o valor de limitação em MB/s.
+
+. Selecione uma visualização de comparação de layouts e, em seguida, selecione *Avançar*.
++
+** Comparação do layout de volume
+** Comparação de layout do FSx for ONTAP
+
+
+. Opcionalmente, faça o download de uma lista de movimentações de volume antes de rebalancear.
+. Selecione *Reequilibrar*.
+
+
+.Resultado
+Os volumes membros do FlexGroup são movidos um de cada vez durante o rebalanceamento. Quando a operação for concluída, o sistema de arquivos será reduzido ao valor original.
+
+--
+====
+
+
+[[stop-a-volume-rebalance-operation]]
+=== Interrompa uma operação de reequilíbrio de volume
+
+Interrompa uma operação de rebalanceamento a qualquer momento; ela não é disruptiva. Interromper a operação aborta as movimentações de volume em andamento.
+
+Você pode iniciar outra operação de rebalanceamento mais tarde.
+
+.Passos
+. Após iniciar a operação de rebalanceamento, na página Volume balance, selecione *Parar rebalanceamento*.
+. Na caixa de diálogo Parar rebalanceamento, selecione *Parar*.
+
+
+.Resultado
+A operação de reequilíbrio de volume para, e as movimentações de volume ativas são abortadas.

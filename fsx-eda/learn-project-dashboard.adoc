@@ -1,0 +1,148 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/learn-project-dashboard.html 
+keywords: projects dashboard, AWS tags, CloudWatch, FSx for ONTAP, Workload Factory, EDA, electronic design automation, volume details, capacity utilization, throughput utilization, IOPS utilization, custom filters 
+summary: Aprenda como o painel de Projetos no Workload Factory para EDA ajuda você a monitorar e analisar o uso de capacidade de storage do projeto em sistemas de arquivos e volumes do FSx para ONTAP. 
+---
+= Saiba mais sobre o painel de controle de Projetos no Workload Factory para EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O painel de controle de Projetos permite que administradores de TI e gerentes de projeto vejam como os projetos utilizam o armazenamento nos sistemas de arquivos e volumes do Amazon FSx para ONTAP. Ele exibe padrões de uso de armazenamento para que você possa identificar os projetos que mais consomem recursos, monitorar custos e ajustar o armazenamento antes que problemas de capacidade ou desempenho afetem as simulações de EDA.
+
+
+
+[[how-the-projects-dashboard-works]]
+== Como funciona o painel de controle de Projects
+
+O painel de Projetos exibe as métricas do CloudWatch para todos os volumes do FSx for ONTAP vinculados às suas credenciais da AWS. Você pode criar até cinco filtros usando tags da AWS para organizar e visualizar os dados por projeto, equipe, aplicativo ou outras categorias.
+
+O painel de controle ajuda você a:
+
+* Planeje a capacidade e entenda os custos
+* Use os dados para decidir como alocar recursos
+* Identifique projetos que utilizam muitos recursos
+* Acompanhe os custos por projeto ou equipe
+* Ajuste o armazenamento antes que ocorram problemas
+
+
+Para monitoramento de desempenho de latência proativo, consulte link:learn-latency-monitoring.html["Saiba mais sobre monitoramento de latência"].
+
+
+
+[[cloudwatch-metrics-collected]]
+=== CloudWatch métricas coletadas
+
+O painel de controle coleta e exibe as seguintes métricas do CloudWatch:
+
+* *Capacidade provisionada*: Métrica em nível de volume que representa a capacidade de storage provisionada.
+* *Capacidade utilizada*: Métrica em nível de volume que representa a capacidade de storage utilizada.
+* *Taxa de transferência média/máxima*: Calculada como a média ou o valor máximo da soma de DataReadBytes e DataWriteBytes durante o período de tempo especificado.
+* *IOPS médio/máximo*: Calculado como a média ou o máximo da soma de DataReadOperations, DataWriteOperations e MetadataOperations durante o período de tempo especificado.
+
+
+
+
+[[custom-filters]]
+== Filtros personalizados
+
+Os filtros personalizados ajudam você a organizar os dados do painel de controle de acordo com a forma como sua organização funciona. Defina filtros por projeto, equipe ou centro de custos para que você possa encontrar rapidamente os dados de que precisa sem precisar vasculhar informações não relacionadas. Isso torna mais fácil planejar a capacidade, acompanhar os custos e monitorar o desempenho.
+
+Você pode configurar até cinco filtros personalizados com base em suas tags da AWS.
+
+* *Nome do rótulo do filtro*: o nome de exibição que aparece no dashboard
+* *Nome da chave de tag da AWS*: A chave de tag da AWS real usada em seus recursos
+* *Tipo de seleção*: seleção única ou seleção múltipla
+
+
+Se você não configurar nenhum filtro personalizado, os filtros padrão — sistema de arquivos, tipo de volume e intervalo de tempo — ainda estarão disponíveis, assim você pode visualizar e usar seus painéis.
+
+
+
+[[aws-tags]]
+=== Tags da AWS
+
+As tags da AWS são metadados para seus recursos da AWS. Elas ajudam você a categorizar seus recursos da AWS de diferentes maneiras, por exemplo, por projeto, aplicação ou unidade de negócios.
+
+Para usar filtros personalizados, adicione tags da AWS aos seus volumes do FSx para ONTAP que atendam às suas necessidades, como tags para projetos, equipes ou unidades de negócios.
+
+Para mais detalhes sobre tags, consulte https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/what-are-tags.html["O que são tags?"^] e https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html["Referência da API do AWS Resource Groups Tagging"^].
+
+
+
+[[volume-details]]
+== Detalhes do volume
+
+O painel de controle oferece modos de visualização para ajudar você a analisar suas métricas de storage em diferentes níveis de detalhe.
+
+
+
+[[total-view]]
+=== Visão total
+
+A visualização Total (padrão) mostra métricas combinadas de todos os volumes que correspondem aos filtros selecionados. Ela oferece uma visão geral rápida do desempenho geral do armazenamento, incluindo capacidade total, IOPS e taxa de transferência.
+
+Use esta visualização para:
+
+* Compreender as tendências gerais
+* Planeje as necessidades futuras de capacidade
+* Relatório sobre o consumo total de recursos em todos os projetos ou equipes
+
+
+
+
+[[volume-view]]
+=== Visualização de volume
+
+A visualização de volumes mostra o desempenho de volumes individuais ao longo do tempo. Ela exibe os 10 principais volumes para cada métrica. Isso ajuda você a ver quais volumes usam mais recursos e como eles se comportam durante o período selecionado.
+
+Use esta visualização para:
+
+* Descubra o que está prejudicando o desempenho
++
+** Identifique os volumes de armazenamento que podem precisar ser redimensionados
+** Veja quais projetos ou cargas de trabalho estão utilizando mais recursos
+
+
+
+
+
+
+==== Métricas de volume exibidas
+
+Ao visualizar volumes individuais, o painel exibe os 10 maiores volumes do total de volumes para cada métrica:
+
+* *Capacidade de volume utilizada*: Mostra os volumes com a maior capacidade de storage atualmente utilizada.
+* *IOPS*: Exibe os volumes com a maior média de IOPS durante o período selecionado.
+* *Taxa de transferência*: Exibe os volumes com a maior taxa de transferência média durante o período selecionado.
+
+
+
+NOTE: O painel exibe apenas os 10 principais volumes para cada métrica. Se você tiver mais de 10 volumes, alguns volumes podem não ser exibidos na visualização detalhada.
+
+Quando os mesmos volumes aparecem em várias métricas, o painel usa as mesmas cores na legenda para que você possa acompanhar facilmente esses volumes em diferentes métricas.
+
+
+
+==== Dados de volume interativos
+
+Passe o cursor sobre o gráfico para ver os valores exatos em momentos específicos. Isso ajuda você a associar as alterações de desempenho a eventos ou períodos de tempo. Os dados detalhados podem ajudar você a encontrar problemas de desempenho, confirmar que as otimizações funcionaram e explicar o uso de recursos a outras pessoas.
+
+Ao passar o cursor sobre qualquer linha de volume nos gráficos, você pode visualizar:
+
+* *Capacidade utilizada do volume*: Nome do volume, capacidade utilizada naquele momento e capacidade alocada
+* *IOPS*: Nome do volume, IOPS médio para o intervalo de tempo e IOPS máximo para o intervalo de tempo
+* *Taxa de transferência*: Nome do volume, taxa de transferência média para o intervalo de tempo e taxa de transferência máxima para o intervalo de tempo
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:task-configure-project-dashboard.html["Configurar o dashboard de Projects"]
+* link:task-use-project-dashboard.html["Use o painel de controle de projetos"]
+

@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/analyze-error-logs.html 
+keywords: analyze error logs, errors, error severity, Microsoft SQL Server error logs, Oracle database error logs, smart analysis, Agentic AI 
+summary: Analise os logs de erro no Workload Factory for Databases. 
+---
+= Analise logs de erros no NetApp Workload Factory for Databases
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o analisador inteligente de logs de erros para interpretar automaticamente os logs de erros dos bancos de dados Microsoft SQL Server e Oracle, para que você possa identificar e resolver problemas rapidamente. A análise baseada em IA Agentic requer integração com o Amazon Bedrock.
+
+
+
+[[about-this-task]]
+== Sobre esta tarefa
+
+A análise e correção de logs de erro ajudam a manter a saúde e o desempenho de instâncias do SQL Server e bancos de dados Oracle. Interpretar logs de erro de forma eficaz exige análise cuidadosa e conhecimento especializado. O monitoramento manual, a detecção de erros e a análise da causa raiz são processos demorados e propensos a erros. Esses desafios podem atrasar a resolução de problemas, aumentar o tempo de inatividade e gerar ineficiências operacionais. O analisador inteligente de logs de erro resolve esses desafios com os seguintes benefícios principais:
+
+* Agrupamento inteligente: consolida erros de forma inteligente por singularidade, gravidade e categoria, simplificando o processo de resolução de problemas para soluções mais rápidas e eficazes.
+* Investigação orientada por IA: utiliza IA para analisar erros de forma proativa, fornecendo informações claras e práticas para acelerar a identificação de problemas sem exigir conhecimento especializado profundo.
+* Enriquecimento de erros: aprimora os registros de erros com referências externas, oferecendo clareza contextual para melhorar a compreensão e a tomada de decisões.
+* Remediação de melhores práticas: oferece recomendações de remediação personalizadas para cargas de trabalho do SQL Server executadas no FSx for ONTAP, capacitando usuários de todos os níveis de habilidade a resolver problemas com confiança.
+
+
+Sempre que você usar o analisador de logs de erros, manterá controle total sobre seu ambiente e, ao mesmo tempo, se beneficiará de análises avançadas de IA.
+
+Para usar o analisador de logs de erros, você precisa ativar o Amazon Bedrock, selecionar o modelo que o Workload Factory utiliza, criar um endpoint privado para se conectar ao Amazon Bedrock, adicionar permissões e criar uma licença corporativa.
+
+link:https://aws.amazon.com/bedrock/pricing/["Preços do Amazon Bedrock"^]
+
+
+NOTE: Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá usar a análise de IA. Entre em contato com seu administrador ou link:../admin/manage-genai-features.html["Aprenda sobre administração de IA"^].
+
+
+
+[[data-privacy-and-security]]
+=== Privacidade de dados e segurança
+
+O recurso garante privacidade de dados e segurança com as seguintes medidas:
+
+.Soberania de dados
+Os dados de log e as agregações permanecem na sua conta da AWS, comunicados por meio de um endpoint VPC privado (Amazon Bedrock), garantindo que não haja exposição à internet pública.
+
+.Sem treinamento de IA
+Os dados do cliente não são usados para treinar ou aprimorar modelos. O Amazon Bedrock processa os logs em tempo real, mas não usa seus dados para treinamento. Os resultados são armazenados em seu ambiente apenas para referência. Para mais detalhes, consulte a link:https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html["Documentação de proteção de dados do Amazon Bedrock"^].
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+Para usar o analisador de logs de erro, você precisa atender aos seguintes pré-requisitos:
+
+* Você precisa link:../fsx-storage/add-credentials.html["conceder permissões de _visualização, planejamento e análise_"^] em sua conta da AWS para criar um novo host de banco de dados no Workload Factory.
+* link:../fsx-databases/register-instance.html["Registre os recursos"^] na Workload Factory.
+* Os seguintes pré-requisitos também devem ser atendidos. Você deverá concluir esses pré-requisitos como parte das etapas para analisar erros de log.
++
+** *Ativação do Amazon Bedrock*
++
+O Amazon Bedrock é necessário para que o agente de IA executado no host SQL Server ou Oracle do Workload Factory possa se conectar perfeitamente ao Bedrock e buscar insights com base em IA para os logs de erro identificados.
+
+** *Redes*
++
+O endpoint de VPC do Amazon Bedrock garante a comunicação privada do seu host SQL Server ou Oracle com as APIs do Amazon Bedrock e elimina a exposição pública à internet. Certifique-se de que o endpoint de VPC do Amazon Bedrock esteja associado à sub-rede do host SQL Server ou Oracle (exemplo: vpce-050cb2f33a1380ffd).
+
+** *Permissões do AWS IAM*
++
+As seguintes permissões são necessárias para a função de perfil da instância do EC2 associada ao host SQL Server ou Oracle e para as credenciais da AWS associadas ao Workload Factory.
+
++
+*** Função de perfil de instância EC2 com permissão "bedrock:InvokeModel"
++
+Essa permissão permite que a instância EC2 no host SQL Server ou Oracle correspondente invoque modelos Bedrock para investigação proativa de erros e orientação para correção. Esse perfil também garante acesso seguro à IA para insights personalizados.
+
+*** Credenciais da AWS associadas ao Workload Factory: permissões "bedrock:GetFoundationModelAvailability" e "bedrock:ListInferenceProfiles"
++
+Essas permissões verificam a disponibilidade e a configuração do modelo na região do host do SQL Server ou do Oracle e garantem um desempenho confiável e específico da região.
+
+
+
+** *Permissão de usuário do Oracle*
++
+A seguinte permissão concede acesso de leitura a alertas de diagnóstico estendidos, permitindo a extração de detalhes de erro/rastreamento dos logs para detecção e remediação de padrões com IA: `V$DIAG_ALERT_EXT`. Essa permissão é necessária apenas para bancos de dados Oracle.
+
+
+
+
+
+
+
+[[analyze-error-logs]]
+== Analise os logs de erro
+
+Use o console do Workload Factory para analisar os logs de erros do SQL Server.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Bancos de dados, selecione *Inventário*.
+. No Inventário, selecione o *Microsoft SQL Server* ou o *Oracle* como tipo de mecanismo de banco de dados.
+. Na guia Instâncias, localize a instância específica do SQL Server ou o banco de dados Oracle que deseja analisar e selecione *Investigar erros* no menu.
+. Na guia *Investigação de erros*, conclua os seguintes pré-requisitos conforme descrito no console:
++
+** O Amazon Bedrock
+** Rede: ponto de extremidade privado para o Amazon Bedrock
+** Permissões para a função de perfil da instância EC2
+** Credenciais associadas ao Workload Database Management (wlmdb)
+
+
+. Quando os pré-requisitos forem atendidos, selecione *Investigar agora* para usar o analisador de logs de erros e obter informações sobre os logs de erros do SQL Server.
++
+Após a verificação, o console exibe os erros, fornecendo uma visão abrangente dos problemas detectados pelo Smart error log analyzer.
+
+. Use filtros para refinar os erros exibidos com base em critérios como gravidade, período e código de erro, ou por tags relacionadas à infraestrutura, como computação, armazenamento, rede e segurança.
+. Analise as informações detalhadas sobre o erro, incluindo a mensagem de erro original, a explicação baseada em IA e as etapas de correção sugeridas para resolver os erros.
+

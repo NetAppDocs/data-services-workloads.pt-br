@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: admin/troubleshoot-custom-dashboards-fsx.html 
+keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, failed to load, dashboard not loading 
+summary: Corrija problemas comuns com painéis personalizados, incluindo falhas de configuração, problemas de carregamento de dados e problemas de acesso. 
+---
+= Solucione problemas de dashboards personalizados no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use essas informações para resolver problemas comuns que você pode encontrar ao criar ou usar painéis personalizados.
+
+
+
+[[dashboard-creation-failed]]
+== Falha na criação do dashboard
+
+**Problema:** Você vê a mensagem de erro "Falha ao entender a solicitação e gerar o código" ao criar um painel.
+
+**Causa:** O sistema não conseguiu entender sua solicitação ou não conseguiu criar a visualização a partir do seu prompt.
+
+**Solução:** Tente o seguinte:
+
+* Reescreva sua solicitação com detalhes mais claros sobre o que você deseja monitorar.
+* Comece com um dos prompts de exemplo em link:create-custom-dashboard-fsx.html["Crie um painel personalizado"].
+* Divida as necessidades complexas de monitoramento em vários painéis mais simples.
+* Especifique as cargas de trabalho, métricas, intervalos de tempo ou dimensões que você deseja monitorar.
+
+
+
+
+[[dashboard-failed-to-load-data]]
+== Falha ao carregar os dados do painel
+
+**Problema:** O painel foi criado, mas apresenta erros ao carregar dados.
+
+**Causa:** Isso geralmente ocorre devido a problemas de permissão ou fontes de dados indisponíveis.
+
+**Solução:**
+
+* **Verifique as permissões:** Certifique-se de que sua conta do Workload Factory tenha acesso de leitura às cargas de trabalho e aos recursos usados pelo painel. Revise os requisitos de permissões em link:learn-custom-dashboards-fsx.html#aws-credentials-and-permissions["Credenciais e permissões da AWS"].
+* **Verifique as credenciais:** Confirme se suas credenciais da AWS são válidas e não expiraram. Consulte link:../fsx-storage/add-credentials.html["Adicionar credenciais da AWS"] para obter detalhes.
+
+
+
+
+[[dashboard-not-loading-or-loading-slowly]]
+== O painel de controle não está carregando ou está carregando lentamente
+
+**Problema:** O painel de controle carrega lentamente ou alguns widgets não aparecem.
+
+**Causa:** O carregamento lento pode ser causado por problemas de rede, grandes quantidades de dados ou atrasos temporários no serviço.
+
+**Solução:**
+
+* **Verifique sua conexão com a internet:** Certifique-se de que sua conexão com a internet esteja estável.
+* **Atualize seu navegador:** Tente atualizar a página para verificar se o painel carrega corretamente.
+* **Limpe o cache e os cookies do seu navegador:** Isso pode ajudar a resolver problemas de carregamento causados por dados desatualizados ou corrompidos.
+* **Aguarde e tente novamente:** Se o problema continuar, aguarde alguns minutos e tente novamente.
+
+
+
+
+[[missing-dashboards]]
+== Painéis ausentes
+
+**Problema:** Um painel que você criou não está mais listado no catálogo de painéis.
+
+**Causa:** Outro usuário na sua conta do Workload Factory pode tê-lo excluído.
+
+**Solução:**
+
+* Certifique-se de estar conectado à conta correta do Workload Factory.
+* Pergunte a outros usuários da sua conta se alguém excluiu o dashboard.
+* Se necessário, recrie o dashboard usando os requisitos originais.
+
+
+Todos os usuários de uma conta do Workload Factory podem visualizar e excluir painéis personalizados. Coordene-se com sua equipe ao gerenciar painéis compartilhados.
+
+
+
+[[additional-help]]
+== Ajuda adicional
+
+Se você continuar enfrentando problemas com painéis personalizados, consulte link:../get-help.html["Obtenha ajuda"] para obter informações sobre como entrar em contato com o suporte da NetApp.

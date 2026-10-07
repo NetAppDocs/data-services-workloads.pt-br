@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/quick-start-databases.html 
+keywords: requirements, setup, quick start, getting started, getting started with databases, getting started with workload factory for databases 
+summary: Comece a usar o NetApp Workload Factory for Databases para utilizar trechos de código de Infrastructure-as-Code, descobrir hosts, gerenciar recursos e muito mais. 
+---
+= Guia de início rápido para a NetApp Workload Factory for Databases
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Com NetApp Workload Factory for Databases, você pode começar imediatamente com permissões de _visualização, planejamento e análise_. Se você quiser usar o Workload Factory para descobrir hosts, gerenciar recursos e muito mais, você pode começar em poucos passos.
+
+Você precisa ter uma conta da AWS para usar o Databases.
+
+Siga estes passos para começar.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] Faça login no NetApp Workload Factory
+[role="quick-margin-para"]
+Você precisará link:../setup/sign-up-and-log-in.html["inscreva-se"^] e fazer login no NetApp Console.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"] Adicione credenciais e permissões para a carga de trabalho de bancos de dados
+[role="quick-margin-para"]
+link:../fsx-storage/add-credentials.html["Adicionar credenciais a uma conta manualmente"^] que inclui selecionar a capacidade de carga de trabalho do banco de dados e escolher a link:../fsx-storage/permissions-reference-fsx.html["políticas de permissão"^] que melhor atende às suas necessidades.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Três"] Descubra ou implemente recursos
+[role="quick-margin-para"]
+Com credenciais e políticas do IAM, você pode descobrir recursos de banco de dados existentes no inventário ou link:create-sql-database-server.html["implantar o Microsoft SQL Server"] ou link:create-postgresql-server.html["implantar um servidor PostgreSQL"]. O inventário fornece uma interface unificada para gerenciar recursos.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatro"] Explore oportunidades de redução de custos
+[role="quick-margin-para"]
+Quando você tem bancos de dados em execução localmente ou na AWS com armazenamento no Amazon Elastic Block Store (EBS) ou no FSx for Windows File Server, você pode link:explore-savings-databases.html["use a calculadora de economia do Explore"]analisar custos e planejar migrações de forma eficaz.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Implementar configurações de banco de dados bem arquitetadas
+[role="quick-margin-para"]
+O Workload Factory for Databases analisa regularmente as implementações do Microsoft SQL Server e do Oracle no storage do Amazon FSx for NetApp ONTAP a partir do painel Well-architected. Para solucionar problemas no painel Well-architected dos seus recursos de banco de dados, você primeiro precisa link:register-instance.html["registrar instâncias"].
+
+[role="quick-margin-para"]
+Após registrar as instâncias, você pode visualizar o status de arquitetura adequada e tomar medidas para link:optimize-configurations.html["implementar configurações de banco de dados bem arquitetadas"] no Workload Factory.
+
+.O que vem a seguir
+Quando você tiver registrado recursos com o storage do sistema de arquivos o FSx for ONTAP no seu inventário de Bancos de Dados, você poderá link:create-sql-database.html["criar um banco de dados de usuários"] ou link:create-sandbox-clone.html["clone seu host para criar um sandbox"].

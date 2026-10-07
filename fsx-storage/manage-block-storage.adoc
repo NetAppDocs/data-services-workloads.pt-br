@@ -1,0 +1,221 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-block-storage.html 
+keywords: block storage, manage block storage, igroups, block devices, view details, clone, client access, delete block device 
+summary: Gerencie o armazenamento em blocos para um sistema de arquivos FSx for ONTAP no NetApp Workload Factory. 
+---
+= Gerencie o armazenamento em blocos de um sistema de arquivos no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use NetApp Workload Factory para simplificar o gerenciamento de seus recursos de storage em bloco, incluindo igroups e dispositivos de bloco, e controlar o acesso do cliente para FSx for ONTAP block devices para proporcionar desempenho ideal e minimizar custos.
+
+.Sobre esta tarefa
+A partir do console do Workload Factory, você pode gerenciar grupos de iniciadores (igroups) para controlar o acesso de clientes a dispositivos de bloco. Você também pode visualizar detalhes do dispositivo de bloco, aumentar a capacidade, criar clones, gerenciar o acesso de clientes, arquivar dados de dispositivos de bloco inativos e excluir dispositivos de bloco.
+
+Verifique o diagrama de armazenamento em blocos para verificar o seguinte:
+
+* Conexões de cliente
+* Status do dispositivo de bloco
+* Relação nó-cliente
+* Possíveis conexões incorretas de clientes
+
+
+.Antes de começar
+* Você deve associar um link para gerenciar igroups. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Depois de associar o link, retorne a esta operação.
+* Você deve ter um igroup ou dispositivo de bloco existente para visualizar e gerenciar.
+
+
+
+
+[[manage-igroups]]
+== Gerenciar igroups
+
+Você pode visualizar detalhes dos igroups, gerenciar o acesso do cliente e excluir igroups.
+
+
+
+[[manage-client-access-for-an-igroup]]
+=== Gerenciar o acesso de clientes para um igroup
+
+Gerencie o acesso de clientes para um igroup existente a qualquer momento.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Em *FSx for ONTAP*, selecione a guia *Block devices*.
+. Selecione o tipo de recurso *Initiator groups (igroups)* para visualizar os igroups existentes.
+. Acesse o menu de ações do dispositivo de bloco e selecione *Gerenciar acesso do cliente*.
+. Revise os detalhes de acesso do cliente exibidos para o igroup.
+. Para fazer alterações no acesso do cliente, selecione *Editar acesso do cliente*.
+. Na caixa de diálogo *Editar acesso do cliente*, você pode editar o seguinte:
++
+** *nome do grupo*
+** *descrição do igroup*
+** *Nome da Storage VM*
+** *Nome do dispositivo de bloco*
+** *Tipo de sistema operacional*
+** *Iniciadores do host*
+
+
+. Selecione *Aplicar*.
+
+
+
+
+[[delete-an-igroup]]
+=== Excluir um igroup
+
+Exclua um igroup quando ele não for mais necessário.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Em *FSx for ONTAP*, selecione a guia *Block devices*.
+. Selecione o tipo de recurso *Initiator groups (igroups)* para visualizar os igroups existentes.
+. Acesse o menu de ações do dispositivo de bloco e selecione *Excluir grupo de iniciador*.
+. Na caixa de diálogo Excluir grupo iniciador (igroup), digite "delete" para confirmar que deseja excluir o igroup e, em seguida, selecione *Excluir*.
+
+
+
+
+[[manage-block-devices-for-an-igroup]]
+== Gerenciar dispositivos de bloco para um igroup
+
+Dispositivos de bloco, ou LUNs (números de unidade lógica), são volumes com sistemas de arquivos em um ambiente SAN, acessíveis a hosts por uma rede.
+
+Você pode gerenciar dispositivos de bloco para sistemas de arquivos FSx for ONTAP que usam o protocolo iSCSI.
+
+
+
+[[view-block-device-details]]
+=== Ver detalhes do dispositivo de bloco
+
+Visualize os detalhes de um dispositivo de bloco existente a qualquer momento.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Em *FSx for ONTAP*, selecione a guia *Block devices*.
+. Acesse o menu de ações do dispositivo de bloco e selecione *Exibir detalhes*.
++
+Você vê informações gerais, de consumo, de acesso e de proteção do dispositivo de bloco.
+
+
+
+
+
+[[manage-client-access-for-a-block-device]]
+=== Gerencie o acesso do cliente a um dispositivo de bloco
+
+Você pode gerenciar o acesso do cliente a um dispositivo de bloco existente a qualquer momento, criando igroups e adicionando ou removendo dispositivos de bloco e iniciadores de host.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Em *FSx for ONTAP*, selecione a guia *Block devices*.
+. Acesse o menu de ações do dispositivo de bloco e selecione *Gerenciar acesso do cliente*.
+. Se não existir nenhum igroup, crie um novo igroup selecionando *Map igroup > Create igroup* e, em seguida, faça o seguinte:
++
+.. *Nome do dispositivo de bloco*: insira um nome de dispositivo de bloco. Você pode selecionar vários dispositivos de bloco para associar ao igroup.
+.. *Tipo de sistema operacional*: selecione o tipo de sistema operacional.
+.. *nome do igroup*: insira um nome de igroup.
+.. *descrição do igroup*: opcionalmente, insira uma descrição do igroup.
+.. *Iniciadores do host*: insira um ou mais iniciadores do host. Esses iniciadores devem seguir o formato qualificado iSCSI (IQN).
+.. Selecione *Criar*.
+
+
+. Se um igroup já existir, selecione *Mapear igroup > Mapear igroup existente* para adicionar ou remover dispositivos de bloco e iniciadores de host do igroup e, em seguida, selecione *Mapear*.
+
+
+
+
+[[increase-the-capacity-of-a-block-device]]
+=== Aumentar a capacidade de um dispositivo de bloco
+
+Aumente a capacidade de um dispositivo de bloco existente a qualquer momento.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Em *FSx for ONTAP*, selecione a guia *Block devices*.
+. Acesse o menu de ações do dispositivo de bloco e selecione *Aumentar capacidade*.
+. Insira a nova capacidade para o dispositivo de bloco e selecione a unidade.
+. Selecione *Aumentar* para aplicar as alterações.
+
+
+
+NOTE: Após aumentar o tamanho do dispositivo de bloco, siga o procedimento fornecido pelo seu sistema operacional host para detectar o novo tamanho e expandir o sistema de arquivos.
+
+
+
+[[clone-a-block-device]]
+=== Clonar um dispositivo de bloco
+
+Você pode criar um clone de um dispositivo de bloco existente a qualquer momento. Um clone de dispositivo de bloco é uma cópia gravável do dispositivo de bloco original que compartilha os mesmos blocos de dados até que sejam feitas alterações no original ou no clone. Clonar um dispositivo de bloco é uma maneira rápida e eficiente de criar cópias reutilizáveis de seus dados sem consumir capacidade de storage.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Em *FSx for ONTAP*, selecione a guia *Block devices*.
+. Acesse o menu de ações do dispositivo de bloco e selecione *Clonar dispositivo de bloco*.
+. Na caixa de diálogo Clonar dispositivo de bloco, insira um nome para o dispositivo de bloco clonado.
+. Opcionalmente, habilite a exclusão automática para excluir automaticamente o dispositivo de bloco clonado quando o volume estiver com pouco espaço.
+. *Configuração iSCSI*: Opcional. Para conectar o clone do dispositivo de bloco aos iniciadores do host, crie um novo grupo de iniciadores ou mapeie-o para um grupo de iniciadores existente.
++
+** *Criar um novo grupo de iniciadores*: Selecione esta opção para criar um novo grupo de iniciadores para o clone do dispositivo de bloco. Insira os seguintes detalhes:
++
+... *Sistema operacional do host*: selecione o tipo de sistema operacional do host.
+... *Nome do grupo iniciador*: Insira um nome de igroup.
+... *Iniciadores do host*: insira um ou mais iniciadores do host. Esses iniciadores devem seguir o formato qualificado iSCSI (IQN).
+
+
+** *Mapear para um grupo de iniciadores existente*: Selecione esta opção para mapear o clone do dispositivo de bloco para um grupo de iniciadores existente. Selecione um ou mais grupos de iniciadores para mapear o dispositivo de bloco.
+
+
+. Selecione *Clonar* para criar o clone do dispositivo de bloco.
+
+
+
+
+[[archive-the-data-of-an-inactive-block-device]]
+=== Arquivar os dados de um dispositivo de bloco inativo
+
+Dispositivos de bloco que não estão mais mapeados para um cliente ou que não foram usados por sete dias consecutivos são classificados como dispositivos de bloco inativos. Você pode arquivar os dados de um dispositivo de bloco inativo na camada de pool de capacidade para recuperar capacidade de SSD.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Em *FSx for ONTAP*, selecione a guia *Block devices*.
+. Em Dispositivos órfãos, selecione *Visualizar e recuperar capacidade*.
+. Na tela Recuperar espaço para dispositivos de bloco não utilizados, selecione um ou mais dispositivos de bloco para arquivar os dados e recuperar a capacidade.
+. Selecione *Archive*.
+
+
+
+
+[[delete-a-block-device]]
+=== Excluir um dispositivo de bloco
+
+Dispositivos de bloco que não estão mapeados para um cliente ou que não são usados por sete dias são dispositivos de bloco inativos. Esta operação desmapeia e exclui o dispositivo de bloco selecionado. Se o volume FlexVol do host não contiver nenhum dispositivo de bloco, Workload Factory o exclui.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. Em *FSx for ONTAP*, selecione a guia *Block devices*.
+. Em Dispositivos órfãos, selecione *Visualizar e recuperar capacidade*.
+. Na tela Recuperar espaço para dispositivos de bloco não utilizados, selecione um ou mais dispositivos de bloco para arquivar os dados e recuperar a capacidade.
+. Selecione *Delete*.
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:create-igroup.html["Crie um igroup para um sistema de arquivos FSx for ONTAP"]
+* link:create-block-device.html["Criar um dispositivo de bloco para um sistema de arquivos do FSx for ONTAP"]
+

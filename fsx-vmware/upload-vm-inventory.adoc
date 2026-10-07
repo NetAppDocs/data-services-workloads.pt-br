@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/upload-vm-inventory.html 
+keywords: vm workloads, capture vm details 
+summary: Você pode usar o Planning Center para fazer upload de informações sobre seu ambiente VMware atual. 
+---
+= Carregue dados de inventário de VMs para o NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de criar um plano de migração, você precisa carregar os dados do inventário de VM.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *VMware*.
++
+O centro de planejamento é exibido. No centro de planejamento, você pode carregar seus dados de inventário de VMs, ver carregamentos anteriores de dados de inventário e planejar uma migração usando qualquer um dos conjuntos de dados de inventário de VMs.
+
+. Selecione *Carregar inventário de VMs*.
+. Escolha qual método de coleta de dados usar:
+
+
+[role="tabbed-block"]
+====
+.Use o RVTools (avaliação rápida)
+--
+O RVTools é um aplicativo Windows que interage com o VCenter e o servidor ESX (5.x a 8.0) para coletar informações sobre seus ambientes virtuais VMware. Ele reúne informações sobre VMs, CPU, memória, discos, clusters, hosts ESX, datastores e muito mais. Você pode exportar essas informações para um arquivo xlsx para usar com o migration advisor.
+
+link:https://www.dell.com/en-us/shop/vmware/sl/rvtools["Saiba mais sobre o RVTools"^]
+
+.Passos
+. Selecione o bloco *RVTools* e selecione *Avançar*.
++
+A página *Prepare for AWS Cloud onboarding* é exibida.
+
+. Insira um nome para o conjunto de dados do inventário de VM que você criará.
+. Baixe e instale o RVTools 4.4.2 ou superior a partir de link:https://www.dell.com/en-us/shop/vmware/sl/rvtools["Site do RVTools"^]
+. Inicie o RVTools e faça login no o VCenter Server de destino.
++
+Isso coletará informações sobre esse VCenter Server.
+
+. Exporte suas informações do VMware para um arquivo xlsx ou xls.
++
+Consulte o capítulo sobre "parâmetros de linha de comando" no link:https://www.dell.com/en-us/shop/vmware/sl/rvtools["A documentação do RVTools está localizada na seção Recursos"^] para obter detalhes.
+
+. Selecione image:button-upload-file.png["o botão de upload"] e escolha o arquivo RVTools que você exportou.
+. Selecione *Upload*.
+. Selecione *Concluir*.
+
+
+--
+.Use o coletor de dados (planejamento detalhado)
+--
+O script do coletor de VM do NetApp Migration advisor reúne informações de configuração de VM do seu vCenter, de forma semelhante ao que o RVTools coleta; no entanto, ele captura dados atuais de desempenho da VM para fornecer estatísticas reais de IOPS de leitura e gravação e de throughput. Você pode usar o script em um dos dois modos:
+
+* Coleta de dados por hora
+* Coleta diária de dados
+
+
+Você precisa iniciar o Migration advisor para copiar o script do coletor de VM da janela Codebox.
+
+.Antes de começar
+O sistema onde você executará o script de coleta deve atender aos seguintes requisitos:
+
+* O Microsoft PowerShell 7.0 ou superior deve estar instalado. Consulte o https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.4["Documentação do Microsoft PowerShell"^] se você precisar instalar o PowerShell.
+* O VMware PowerCLI precisa estar instalado. Consulte a https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.install.doc/GUID-F02D0C2D-B226-4908-9E5C-2E783D41FE2D.html["Documentação do VMware PowerCLI"^] se você precisar instalar o PowerCLI.
+* A verificação do certificado SSL deve ser desativada.
+* PowerShell deve permitir a execução de scripts não assinados.
+
+
+Observe que, se você planeja coletar estatísticas de longo prazo de suas VMs (estatísticas diárias), é necessário ter ativado o nível de estatísticas 3 ou superior na console de gerenciamento do vSphere (ambiente de gerenciamento VMware).
+
+.Passos
+. Selecione o bloco *Coletor de dados* e selecione *Avançar*.
++
+A janela Codebox aparece no lado direito da página.
+
+. Na janela Codebox, selecione image:button-download-codebox.png["o botão de download"] para salvar o script de coleta de dados do Migration advisor (chamado "list-vms.ps1") no sistema de destino ou selecione image:button-copy-codebox.png["o botão de copiar"] para copiar o script e colá-lo no sistema apropriado.
+. Siga estes passos para capturar as configurações das suas VMs atuais:
++
+.. Faça login no sistema onde você baixou o coletor de dados, no qual o PowerShell e o PowerCLI estão instalados.
+.. Conecte-se ao seu servidor VMware vCenter executando o seguinte comando:
++
+[source, console]
+----
+Connect-VIServer -server <server_IP>
+----
++
+Substitua <server_IP> pelo endereço IP ou nome do host do seu servidor VMware.
+
+.. Execute o script de coleta de dados que você baixou e especifique a opção de coleta de dados para estatísticas de VM "hourly" ou "daily".
++
+[source, console]
+----
+./list-vms.ps1 -PerformanceStatisticsTimePeriod <LastHour | LastDay>
+----
++
+onde:
+
++
+*** *LastHour* coleta dados de IOPS e taxa de transferência da última hora em intervalos de 20 segundos.
+*** *LastDay* coleta dados de IOPS e taxa de transferência das últimas 24 horas em intervalos de 5 minutos.
+
+
+
+
++
+Opcionalmente, você pode executar o script de coleta de dados sem especificar nenhuma opção; isso permite que você selecione o período de coleta de dados no menu interativo.
+
++
++ O script gera um arquivo compactado com um carimbo de data/hora no nome no diretório de trabalho atual. O arquivo .zip contém uma lista de todas as VMs e suas propriedades, juntamente com seus dados de IOPS e taxa de transferência.
+
+. Selecione *Upload*.
+
+
+--
+.Use NetApp Data Infrastructure Insights (planejamento detalhado)
+--
+O NetApp Data Infrastructure Insights é uma ferramenta de monitoramento de infraestrutura de nuvem que oferece visibilidade completa da sua infraestrutura. Você precisa habilitar a comunicação temporária via API entre o assistente de migração e o Data Infrastructure Insights para que o assistente de migração possa coletar informações sobre sua infraestrutura VMware.
+
+https://docs.netapp.com/us-en/data-infrastructure-insights/["Saiba mais sobre o Data Infrastructure Insights"^]
+
+.Passos
+. Selecione o bloco *Data Infrastructure Insights* e selecione *Avançar*.
++
+A página *Prepare for AWS Cloud onboarding* é exibida.
+
+. Insira um nome para o conjunto de dados do inventário de VM que você criará.
+. Insira o endpoint do locatário para o Data Infrastructure Insights.
++
+Este deve ser o URL que você usa para acessar o Data Infrastructure Insights.
+
+. Se você ainda não gerou um token de acesso à API para o Data Infrastructure Insights, siga as instruções na página para criar um. Caso contrário, cole seu token de acesso à API na caixa de texto *Inserir token de acesso à API*.
+. Selecione *Upload*.
++
+O Workload Factory coleta informações do Data Infrastructure Insights.
+
+
+
+--
+====
+.Qual é o próximo passo?
+Gerencie os dados carregados do seu inventário de VMs no centro de planejamento ou crie um plano de implantação.
+
+* link:explore-planning-center.html["Explore o centro de planejamento de cargas de trabalho da VMware"]
+* link:launch-onboarding-advisor.html["Crie um plano de implantação do Amazon VMware Cloud"]
+* link:launch-migration-advisor-evs.html["Criar um plano de implantação do Amazon Elastic VMware Service"]
+* link:launch-onboarding-advisor-native.html["Criar um plano de implantação do Amazon EC2"]
+* link:launch-migration-advisor-gcve.html["Crie um plano de implantação do Google Cloud VMware Engine"]
+

@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/version-projects.html 
+keywords: snapshot, clone, project, protect, API, version, versions, versioning 
+summary: Gerencie versões de seus projetos EDA usando snapshots e clones. 
+---
+= Gerenciar versões do Workload Factory para projetos EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Trabalhe com diferentes versões de seus projetos EDA criando snapshots e clones sob demanda diretamente do Workload Factory. Os snapshots e clones de um projeto são armazenados no sistema de arquivos associado ao projeto no momento em que ele foi criado. Você também pode gerenciar snapshots e clones usando o  https://console.workloads.netapp.com/api-doc["API REST do Workload Factory"^].
+
+
+
+[[create-a-snapshot-of-a-project]]
+== Criar um snapshot de um projeto
+
+Você pode criar um instantâneo de um projeto seguindo estes passos.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione *CI/CD*.
+. Selecione *Ir para a página de projetos*.
+. Na página Projetos, selecione image:icon-action.png["o botão de opção"] para o projeto do qual você deseja criar um snapshot.
+. No menu que aparecer, selecione *Criar um instantâneo*.
+. Na caixa de diálogo *Criar instantâneo*, escolha um nome para o instantâneo e selecione *Criar*.
+
+
+
+
+[[create-a-clone-of-a-project]]
+== Criar um clone de um projeto
+
+Clone um projeto EDA a partir de um snapshot seguindo estes passos. Ao criar um clone, um novo volume editável é criado para conter o clone.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione *CI/CD*.
+. Selecione *Ir para a página de projetos*.
+. Na página Projects, selecione image:icon-action.png["o botão de opção"] para o projeto que deseja clonar.
+. No menu que aparecer, selecione *Criar um clone*.
+. Na caixa de diálogo *Criar clone*, faça o seguinte:
++
+.. Insira um nome para o clone.
++
+O nome padrão para o clone é o nome do projeto com um sufixo contendo a data e hora atuais.
+
+.. Selecione um snapshot para usar como base para o clone.
+.. Selecione *Criar*.
+
+
+
+
+.Resultado
+O Workload Factory cria um novo clone do projeto, e o clone aparece como um novo projeto na página Projects.

@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/track-costs.html 
+keywords: cost, consumption, Cost Explorer 
+summary: Monitore os custos e gere relatórios para os recursos do seu sistema de arquivos FSx for ONTAP no NetApp Workload Factory. 
+---
+= Monitore custos e obtenha relatórios de recursos no NetApp Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Monitore os custos e o uso do sistema de arquivos FSx for ONTAP em uma visão consolidada no console do NetApp Workload Factory. Os dados de custo ajudam você a gerenciar orçamentos e otimizar recursos com eficiência. O Workload Factory também gera relatórios de custos para seus recursos do sistema de arquivos FSx for ONTAP que você pode compartilhar com as partes interessadas.
+
+
+
+[[about-this-task]]
+== Sobre esta tarefa
+
+O Workload Factory monitora os custos e o uso do sistema de arquivos FSx for ONTAP obtendo dados de custo do AWS Cost Explorer. Os seguintes detalhes de custo são monitorados: tipo de uso, SKU de uso, tipo de implantação, uso e custo total.
+
+Para recursos exclusivos, o Workload Factory calcula os custos combinando o uso real do nível de desempenho, uma parcela proporcional dos custos do nível de desempenho alocada ao espaço provisionado, mas não utilizado, as alocações de desempenho distribuídas por capacidade e o uso do pool de capacidade. Cada componente é multiplicado pelo seu preço por unidade para essa dimensão, e os resultados são somados para determinar o custo total de cada recurso.
+
+No painel de custos, você pode filtrar os dados de custo e uso por contas da AWS, credenciais, uma ou mais regiões e intervalos de tempo para entender o consumo do seu sistema de arquivos FSx for ONTAP. Os dados são sempre exibidos em uma taxa mensal.
+
+Obtemos dados de custo e utilização dos recursos do seu sistema de arquivos FSx for ONTAP no AWS Cost Explorer usando as seguintes permissões: `ce:GetCostAndUsage` e `ce:GetTags`. Calculamos o custo total usando a API do AWS Cost Explorer e nossas estimativas.
+
+As chaves de tag de alocação da AWS e os valores das chaves de tag adicionam uma camada adicional de filtragem para identificar custos específicos. Uma _tag_ consiste em uma chave e um valor. Para filtrar por chaves de tag e valores de chave de tag, atribua tags aos seus sistemas de arquivos FSx for ONTAP. link:https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html["Saiba mais sobre as tags de alocação de custos da AWS."^]
+
+Além dos dados de custo exibidos no painel de Custos, você pode gerar relatórios de custo para seus recursos do sistema de arquivos FSx for ONTAP. Os dados no relatório de custo mostram informações para sistemas de arquivos e volumes específicos. O relatório é um arquivo PDF para download que você pode compartilhar com as partes interessadas.
+
+
+
+[[track-costs]]
+== Acompanhe os custos
+
+Os custos exibidos no painel de custos do console do Workload Factory são baseados nos dados do AWS Cost Explorer, que são atualizados a cada 24 horas.
+
+.Antes de começar
+Certifique-se de que você atende aos seguintes requisitos:
+
+* Você precisa link:add-credentials.html["conceda credenciais com a política de permissão _visualizar, planejar e analisar_"^] no Workload Factory para rastrear os custos do FSx para ONTAP.
+* Para filtrar por tags de alocação da AWS, certifique-se de que seus sistemas de arquivos FSx for ONTAP tenham tags atribuídas a eles.
+
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No menu *FSx for ONTAP*, selecione *Cost*.
+. No painel de custos, filtre os dados de custo e capacidade dos seus recursos FSx for ONTAP fornecendo o seguinte:
++
+.. *Contas da AWS*: selecione as contas para as quais você deseja visualizar os dados de custo.
+.. *Credenciais*: selecione as credenciais com permissões de _visualização, planejamento e análise_.
+.. *Regiões*: selecione as regiões da AWS para as quais você deseja visualizar os dados de custo.
+.. *Intervalo de dados de custo*: selecione o intervalo de tempo para visualizar os dados de custo.
+.. *Chave de tag de alocação*: (Opcional) Selecione uma chave de tag de alocação e seu valor para gerar um relatório de custos detalhado para todos os sistemas de arquivos FSx for ONTAP associados à tag AWS.
+.. *Valores da tag de alocação*: (Opcional) Selecione o valor da chave da tag de alocação que está associado à chave da tag de alocação para gerar um relatório de custos detalhado para todos os sistemas de arquivos FSx for ONTAP associados à tag da AWS.
+
+
+. Veja os *Detalhes de custo* dos seus recursos do FSx for ONTAP.
+
+
+
+
+[[generate-cost-reports-for-your-fsx-for-ontap-resources]]
+== Gere relatórios de custos para seus recursos FSx for ONTAP
+
+Gere relatórios de custos para recursos específicos do sistema de arquivos FSx for ONTAP para compartilhar com as partes interessadas.
+
+.Passos
+. No painel de custos, selecione *Gerar relatório*.
+. Na tela de Relatório, forneça as seguintes informações:
++
+.. *Sistema de arquivos*: Selecione um ou mais sistemas de arquivos FSx for ONTAP para incluir no relatório.
+.. *Volume*: (Opcional) selecione um ou mais volumes para incluir no relatório.
+
+
+
+
+.Resultado
+Um relatório em PDF é gerado e pode ser baixado.

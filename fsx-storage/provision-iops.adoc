@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/provision-iops.html 
+keywords: iops, SSD, provision, allocate 
+summary: Provisione IOPS de SSD automática ou manualmente para um sistema de arquivos FSx for ONTAP. 
+---
+= Provisionar IOPS de SSD para um sistema de arquivos FSx for ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Provisione IOPS de SSD automaticamente ou manualmente para um sistema de arquivos FSx for ONTAP na NetApp Workload Factory.
+
+.Sobre esta tarefa
+Você pode habilitar o provisionamento automático de IOPS de SSD para um sistema de arquivos FSx ou provisionar IOPS manualmente.
+
+As IOPS provisionadas automaticamente são calculadas como três IOPS por GiB.
+
+Se você provisionar IOPS manualmente, talvez precise aumentar as IOPS antes de link:adjust-file-system-capacity.html["aumentar a capacidade do sistema de arquivos"].
+
+Para obter informações sobre os limites de IOPS, consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/limits.html["Cotas"^] na documentação do AWS FSx for NetApp ONTAP.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Storage* > *FSx for ONTAP*.
+. No *FSx for ONTAP*, selecione o menu de ações do sistema de arquivos para o qual deseja provisionar IOPS e, em seguida, selecione *Manage*.
+. Em Informações, selecione o ícone de lápis que aparece ao lado da seta do menu suspenso quando o cursor do mouse passa sobre a linha *Alocação de IOPS*.
+. Na caixa de diálogo Provisioned IOPS, selecione *Automatic* ou *User provisioned*.
+. Se você selecionar *Provisionado pelo usuário*, insira o *valor de IOPS* desejado.
+. Selecione *Aplicar*.
+

@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/register-instance.html 
+keywords: manage, register, Microsoft SQL Server instance, Oracle database, manage database, manage instance 
+summary: Registre recursos para que você possa monitorar o status dos recursos, a utilização de recursos, a proteção e o desempenho do storage no NetApp Workload Factory for Databases. 
+---
+= Registre recursos no NetApp Workload Factory for Databases
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Registre instâncias do Microsoft SQL Server e bancos de dados do Oracle para que você possa gerenciar seus recursos, criar bancos de dados e clones de sandbox, executar análises de logs de erros e otimizar configurações no NetApp Workload Factory for Databases.
+
+Você só pode registrar seus recursos se eles forem executados no armazenamento do sistema de arquivos FSx for ONTAP.
+
+
+
+[[about-the-task]]
+== Sobre a tarefa
+
+Registrar uma instância (SQL Server) ou banco de dados (Oracle) envolve duas etapas: autenticação da instância ou banco de dados e preparação. A autenticação é o processo de verificação das credenciais da instância ou do banco de dados. A preparação inclui a instalação dos módulos AWS, NetApp e PowerShell na instância ou no banco de dados, para atender aos requisitos mínimos dos recursos do Workload Factory for Databases, como link:create-sql-database.html["criando um banco de dados"], link:create-sandbox-clone.html["criando uma sandbox"], link:analyze-error-logs.html["análise de log de erro"] ou link:optimize-configurations.html["a avaliação well-architected"].
+
+Workload Factory suporta apenas o registro e gerenciamento de instâncias do Microsoft SQL Server e bancos de dados Oracle. Dependendo das credenciais da conta AWS que você selecionar no Workload Factory, hosts PostgreSQL aparecem no Inventory. Atualmente, Workload Factory suporta instâncias PostgreSQL não registradas executando apenas em sistemas operacionais Amazon Linux.
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+Você deve fazer o seguinte antes de registrar uma instância ou banco de dados:
+
+* Certifique-se de que os hosts dos recursos que você deseja registrar apareçam no inventário. link:../fsx-storage/add-credentials.html["Conceda permissões de _operações e remediação_"^] na sua conta da AWS.
+* Associe um link ao sistema de arquivos FSx for ONTAP que hospeda os recursos que você deseja registrar. link:../fsx-storage/create-link.html["Aprenda como associar um link existente ou criar e associar um novo link."^] Após a associação do link, retorne a esta operação.
+
+
+
+
+[[registering-an-instance-in-a-private-network]]
+=== Registrando uma instância em uma rede privada
+
+Para registrar uma instância ou banco de dados em uma rede privada sem conectividade externa, disponibilize os endpoints necessários na VPC e associe-os às sub-redes relevantes. Permita a porta 443 no Grupo de Segurança para endpoints da interface.
+
+* `S3 Gateway/endpoint`
+* `ssm`
+* `ssmmessages`
+* `fsx`
++
+Se você utiliza um servidor proxy para conexões EC2 de saída, permita o acesso a estes domínios para operações de gerenciamento:
+
+* ``.microsoft.com`` (SQL Server)
+* ``.powershellgallery.com`` (SQL Server)
+* ``.aws.amazon.com``
+* ``.amazonaws.com``
+
+
+
+
+[[register-a-microsoft-sql-server-instance]]
+== Registre uma instância do Microsoft SQL Server
+
+O registro de uma instância possui duas etapas: autenticação da instância e preparação. Você pode registrar uma única instância ou várias instâncias.
+
+O NetApp Workload Factory oferece suporte ao registro para Failover Cluster Instance (FCI) e implantação Standalone para Microsoft SQL Server.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Bancos de dados, selecione *Inventário*.
+. No Inventário, selecione *Microsoft SQL Server* como o tipo de mecanismo.
+. Selecione a aba *Instâncias*.
+. Selecione para registrar uma única instância ou várias instâncias.
+. Para autenticar instâncias (etapa 1), faça o seguinte e selecione *Next*:
++
+.. Selecione *Usar as mesmas credenciais para todas as instâncias* ou *Gerenciar credenciais manualmente*.
+.. Autentique Microsoft SQL Server e Windows fornecendo informações de nome de usuário e senha.
++
+Se as instâncias forem autenticadas, selecione *Next*.
+
+
+
+. Para preparar (passo 2), certifique-se de que a(s) instância(s) atendam aos requisitos mínimos.
++
+Para atender aos requisitos mínimos, a instância deve ter os módulos AWS e NetApp PowerShell e os módulos PowerShell 7 instalados, e você deve concluir os pré-requisitos para pelo menos um dos recursos listados em Verificação de pré-requisitos.
+
++
+.. Revise os pré-requisitos na *visualização de verificação de pré-requisitos*.
++
+Você deve concluir todos os pré-requisitos para uma única funcionalidade, como *Revisar problemas e recomendações bem arquitetados*, para registrar a instância.
+
+.. Selecione *Detalhes da configuração* para cada funcionalidade para saber mais sobre os pré-requisitos da funcionalidade e siga as instruções na tela para concluir quaisquer pré-requisitos que estejam faltando para uma funcionalidade.
++
+Para habilitar o Workload Factory para link:optimize-configurations.html["revisar e corrigir problemas bem arquitetados"], conclua todos os pré-requisitos em *Revisar problemas e recomendações bem arquitetados* e *Corrigir problemas bem arquitetados*.
+
+
+
+. Após concluir todos os pré-requisitos, *registre* a(s) instância(s).
+
+
+.Resultado
+A inscrição da instância é iniciada. Selecione a guia *Monitoramento de tarefas* para acompanhar o progresso.
+
+
+
+[[register-an-oracle-database]]
+== Registre um banco de dados Oracle
+
+O registro de uma instância possui duas etapas: autenticação de banco de dados e preparação. Você pode registrar uma única instância ou vários bancos de dados.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bancos de dados*.
+. No menu Bancos de dados, selecione *Inventário*.
+. No Inventory, selecione *Oracle* como o tipo de mecanismo.
+. Selecione a aba *Bancos de Dados*.
+. Selecione para registrar um único banco de dados ou vários bancos de dados.
+. Para autenticar bancos de dados (etapa 1), faça o seguinte e selecione *Avançar*:
++
+.. Selecione *Usar as mesmas credenciais para todas as instâncias* ou *Gerenciar credenciais manualmente*.
+.. Autentique o usuário do Oracle e o usuário do Automatic Storage Management (ASM) grid (se aplicável) fornecendo o nome de usuário e a senha.
++
+Se os bancos de dados estiverem autenticados, selecione *Next*.
+
+
+
+. Para preparar (etapa 2), certifique-se de que o(s) banco(s) de dados atendam aos pré-requisitos necessários. Se todos os módulos necessários estiverem instalados e os pré-requisitos forem atendidos, selecione *Next* para registrar o banco de dados. Caso contrário, siga estas etapas.
++
+.. Revise os pré-requisitos na *visualização de verificação de pré-requisitos*.
++
+Você deve concluir todos os pré-requisitos para uma única funcionalidade, como *Revisar problemas e recomendações bem arquitetados*, para registrar o banco de dados.
+
+.. Selecione *Detalhes da configuração* para cada funcionalidade para saber mais sobre os pré-requisitos da funcionalidade e siga as instruções na tela para concluir quaisquer pré-requisitos que estejam faltando para uma funcionalidade.
++
+Para ter Workload Factory link:optimize-configurations.html["revisar e corrigir problemas bem arquitetados"] para seus bancos de dados, conclua todos os pré-requisitos listados em *Review well-architected issues and recommendations* e *Fix well-architected issues* capabilities.
+
+
+
+. Após concluir os pré-requisitos, *registre* o(s) banco(s) de dados.
+
+
+.Resultado
+O registro no banco de dados foi iniciado. Selecione a guia *Monitoramento de tarefas* para acompanhar o progresso.
+
+.O que vem a seguir
+Após o cadastro, você pode realizar essas tarefas.
+
+* Visualize bancos de dados do inventário
+* link:create-sql-database.html["Criar um banco de dados"]
+* link:create-sandbox-clone.html["Criar um clone do banco de dados (sandbox)"]
+* link:optimize-configurations.html["Obtenha uma avaliação completa e bem arquitetada das configurações do banco de dados"]
+

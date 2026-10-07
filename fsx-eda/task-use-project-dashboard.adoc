@@ -1,0 +1,135 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/task-use-project-dashboard.html 
+keywords: dashboard, AWS tags, CloudWatch, FSx for ONTAP, Workload Factory, EDA, volume details, top volumes, capacity utilization, throughput utilization, IOPS utilization, filter dashboard 
+summary: Use o painel de controle de Projetos para monitorar o uso de armazenamento, filtrar dados por projetos ou equipes e analisar o desempenho do volume para otimizar a alocação de recursos. 
+---
+= Utilize o painel de controle de Projetos no Workload Factory para EDA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o painel de controle de Projetos para monitorar o uso de storage em seus sistemas de arquivos e volumes do FSx for ONTAP. Filtre os dados por projeto, equipe ou aplicativo. Visualize o desempenho geral e por volume para ajudar a planejar a capacidade e usar os recursos de forma mais eficiente.
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+Você deve ter link:task-configure-project-dashboard.html["filtros personalizados configurados"] para o painel de Projetos. Se você ainda não configurou filtros personalizados, pode usar os filtros padrão (sistema de arquivos, tipo de volume e intervalo de tempo).
+
+
+
+[[filter-the-dashboard]]
+== Filtrar o painel
+
+A filtragem permite que você se concentre em grupos específicos de recursos de storage. Isso facilita a identificação de tendências, a detecção de problemas e a criação de relatórios para as partes interessadas. Ao usar vários filtros em conjunto, você pode responder a perguntas específicas, como: "Quanto storage a equipe do projeto ASIC está usando?" ou "Quais volumes na região US-West têm o maior número de IOPS?"
+
+.Sobre esta tarefa
+Você pode filtrar as informações exibidas no painel usando uma combinação de filtros padrão e quaisquer filtros personalizados que você tenha configurado.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
+. Selecione *Projects*.
+. Selecione os filtros que deseja aplicar dentre as opções disponíveis:
++
+** Filtros padrão (sistema de arquivos, tipo de volume, intervalo de tempo)
+** Quaisquer filtros personalizados que você tenha configurado
+
+
+. Selecione o ícone de atualização para atualizar as informações do painel com base nas seleções de filtro.
+. Para obter uma explicação das informações exibidas em um cartão, selecione o ícone de informações desse cartão.
+
+
+
+
+[[view-volume-details]]
+== Ver detalhes do volume
+
+Analisar o desempenho do volume total e dos volumes individuais ajuda você a planejar a capacidade e melhorar o desempenho. A visualização Total mostra as tendências gerais. A visualização de Volume ajuda você a encontrar volumes específicos que podem precisar de atenção, ajuste ou mais recursos.
+
+
+
+[[view-aggregated-volume-metrics]]
+=== Visualizar métricas de volume agregadas
+
+A visualização Total mostra métricas combinadas de todos os volumes que correspondem aos seus filtros.
+
+.Passos
+. Abra a aba **Projects** e certifique-se de que a aba **Total** esteja selecionada. Esta é a visualização padrão.
+. Analise as métricas exibidas:
++
+** Capacidade combinada em todos os volumes
+** IOPS agregados
+** Taxa de transferência agregada
+
+
+. Use esta visualização para observar tendências e planejar quanta capacidade você precisará no futuro.
+
+
+
+
+[[view-individual-volume-performance]]
+=== Veja o desempenho de volume individual
+
+A visualização de Volume mostra como cada volume está performando ao longo do tempo. Ela destaca os 10 principais volumes para cada métrica.
+
+.Passos
+. Na aba **Projects**, selecione a aba **Volume**.
+. Analise as métricas do volume:
++
+** *Capacidade de volume utilizada*: Mostra os volumes com a maior capacidade atualmente em uso
+** *IOPS*: Exibe os volumes com a maior média de IOPS durante o período selecionado
+** *Taxa de transferência*: Exibe os volumes com a maior taxa de transferência média durante o período selecionado
++
+
+NOTE: Se você tiver mais de 10 volumes, o restante não aparecerá na visualização detalhada.
+
+
+
+. Passe o cursor sobre qualquer linha de volume nos gráficos para visualizar informações detalhadas:
++
+** *Capacidade utilizada do volume*: Nome do volume, capacidade utilizada naquele momento e capacidade alocada
+** *IOPS*: Nome do volume, IOPS médio para o intervalo de tempo e IOPS máximo para o intervalo de tempo
+** *Taxa de transferência*: Nome do volume, taxa de transferência média para o intervalo de tempo e taxa de transferência máxima para o intervalo de tempo
+
+
+. Use a legenda para identificar cada volume. Os mesmos volumes usam as mesmas cores em todas as métricas para que você possa rastreá-los facilmente.
+
+
+.Resultado
+Utilize esses dados para:
+
+* Analisar padrões de uso
+* Identifique possíveis gargalos
+* Encontre volumes que possam precisar ser redimensionados
+* Veja quais projetos ou cargas de trabalho utilizam mais recursos
+
+
+
+
+[[best-practices]]
+== Melhores práticas
+
+Considere estas recomendações ao usar o painel de controle de Projects:
+
+* Verifique o painel regularmente para identificar padrões antes que eles se transformem em problemas.
+* Utilize vários filtros simultaneamente para responder a perguntas específicas sobre como os recursos estão sendo usados.
+* Analise ambas as perspectivas: use Total para planejar a capacidade e Volume para encontrar e corrigir problemas.
+* Altere o intervalo de tempo para verificar se as mudanças são normais ou fazem parte de uma tendência crescente.
+* Registre os níveis normais de desempenho para que seja mais fácil identificar comportamentos incomuns posteriormente.
+* Utilize o que você aprende com os dados para ajustar recursos, redimensionar volumes ou melhorar o desempenho antes que as cargas de trabalho sejam afetadas.
+
+
+
+
+[[related-information]]
+== Informações relacionadas
+
+* link:learn-project-dashboard.html["Saiba mais sobre o painel de controle de Projects"]
+* link:task-configure-project-dashboard.html["Configurar o dashboard de Projects"]
+* link:learn-latency-monitoring.html["Saiba mais sobre monitoramento de latência"]
+
