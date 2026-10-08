@@ -74,6 +74,7 @@ As funcionalidades que requerem um link incluem:
 * Criação e gerenciamento de clones instantâneos e no local para clonagem de dados
 * Exibição de métricas adicionais diretamente do seu sistema de storage de nuvem, como a versão do sistema
 * Exibindo detalhes da LIF da storage VM e do cluster, incluindo funções, endpoints, nós, endereços IP e status
+* Detalhamento dos componentes para eventos de latência
 
 
 
