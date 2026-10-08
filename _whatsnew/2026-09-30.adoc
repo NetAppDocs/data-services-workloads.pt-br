@@ -15,3 +15,5 @@ A versão inicial do OCI NetApp Storage Service (OCI NSS) para o Workload Factor
 === Documentação do Workload Factory para usuários do NetApp Console
 
 Você pode encontrar documentação detalhada do Workload Factory no NetApp Console, incluindo guias para onboarding, descoberta do sistema, gerenciamento de credenciais e criação e associação de links.
+
+link:https://docs.netapp.com/us-en/data-services-workloads/index.html["Documentação do Workload Factory para o NetApp Console"]
