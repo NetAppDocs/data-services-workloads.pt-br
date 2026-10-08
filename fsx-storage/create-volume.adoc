@@ -87,6 +87,7 @@ NOTE: Ao usar o Terraform do Codebox, o código que você copia ou baixa oculta 
 . Na página Criar volume, em Detalhes gerais, forneça as seguintes informações:
 +
 .. *Nome do volume*: insira um nome para o volume.
+.. *Carga de trabalho*: selecione a carga de trabalho associada ao volume.
 .. *Nome da VM de armazenamento*: opcionalmente, insira um nome para a VM de armazenamento.
 .. *Estilo de volume*: selecione o volume *FlexVol* ou *FlexGroup*.
 +

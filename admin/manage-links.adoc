@@ -15,6 +15,8 @@ Gerencie os links que você associou à sua conta do Workload Factory. Você pod
 
 link:../setup/links-overview.html["Saiba mais sobre links."]
 
+A interface de usuário notifica você automaticamente quando uma versão mais recente do link estiver disponível e fornece instruções de atualização.
+
 
 
 [[view-the-links-associated-with-your-account]]
