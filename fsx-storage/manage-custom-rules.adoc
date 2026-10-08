@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: fsx-storage/manage-custom-rules.html 
-keywords: manage custom rules, disable rules, delete rules, rule catalog, byor 
-summary: Visualize, ative, desative e exclua regras arquitetônicas personalizadas do catálogo de regras. 
+keywords: manage rules, edit rules, disable rules, delete rules, rule catalog, byor 
+summary: Visualize, edite, ative, desative e exclua regras arquitetônicas personalizadas do catálogo de regras. 
 ---
-= Gerencie regras personalizadas para o NetApp Workload Factory
+= Gerencie regras personalizadas para o Workload Factory no NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Visualize, ative, desative e exclua regras arquitetônicas personalizad
 
 
 [role="lead"]
-O catálogo de regras é um local centralizado para gerenciar todas as suas regras personalizadas. Você pode visualizar os detalhes de cada regra, verificar seus resultados e ativá-la ou desativá-la.
+O catálogo de regras é um local centralizado para gerenciar todas as suas regras personalizadas. Você pode revisar os detalhes das regras, editá-las, verificar os resultados e controlar se as regras serão executadas de acordo com uma programação.
 
 
 
@@ -49,24 +49,94 @@ Se a verificação falhou para alguns itens, leia a mensagem de erro para ver o 
 [[edit-a-custom-rule]]
 == Editar uma regra personalizada
 
-Você pode alterar a lógica, o agendamento ou outras configurações de uma regra a qualquer momento. Ao editar uma regra, o construtor de regras é exibido com as configurações atuais da regra.
+Você pode renomear uma regra a qualquer momento. Você também pode editar a descrição, o tipo de recurso, o agendamento, a gravidade, a lógica da condição, o escopo da avaliação e as orientações de correção de uma regra.
+
+Você pode renomear uma regra no catálogo de regras ou no cartão de detalhes da regra. Para editar qualquer outra configuração da regra, comece pelo catálogo de regras.
 
 .Passos
 . No catálogo de regras, clique na regra que você deseja editar.
-. Clique em *Editar*.
+. Faça um dos seguintes procedimentos:
 +
-A regra passa para o modo de rascunho e o construtor de regras é aberto.
-
-. Edite o prompt da regra ou use a conversa para aprimorá-la.
-. Analise a interpretação atualizada da IA e a definição da regra.
+** Para renomear a regra, atualize o nome da regra no catálogo ou no cartão de detalhes da regra.
+** Para editar outras configurações de regras, clique em *Editar*.
 +
-O sistema mostra o que mudou em relação à regra atual, incluindo quaisquer chamadas de API ou lógica.
+A regra é aberta no modo de chat com todo o seu histórico.
 
-. Faça um dos seguintes procedimentos, dependendo das alterações feitas:
+
+
+. Solicite as alterações que deseja fazer, ou atualize a solicitação no chat.
 +
-** Se você fez alterações menores, clique em *Save* para atualizar a regra.
-** Se você fez alterações significativas, clique em *Validar regra* para testar as alterações e, em seguida, clique em *Agendar* para salvar e agendar a regra ou clique em *Salvar como rascunho* para salvar sem agendar.
-** Para descartar as alterações, clique em *Reverter para a versão anterior*. A regra retorna à sua definição original e sai do modo de edição.
+Caso a criação da regra tenha falhado anteriormente, você pode continuar a partir dessa regra e atualizar sua solicitação no chat.
+
+. Analise a explicação atualizada e o resumo das alterações.
++
+O sistema mostra o que mudou em relação à regra atual antes de você salvá-la.
+
+. Se a regra estiver em modo de rascunho, selecione *Validate rule* para testar a lógica atualizada.
+. Faça um dos seguintes procedimentos:
++
+** Para manter as alterações, clique em *Salvar* para substituir a regra atual. Se você alterou a programação, salve a programação atualizada. Se você não alterou a programação, ela permanecerá a mesma.
+** Para descartar as alterações, clique em *Descartar alterações*. A regra retorna à versão anterior e sai do modo de edição.
 
 
 
+
+Enquanto você edita uma regra, ela aparece como *Em edição* para você. Outros usuários ainda veem a regra agendada atual e as execuções agendadas continuam normalmente até que você salve as alterações.
+
+
+
+[[pause-a-rule]]
+== Pausar uma regra
+
+Pause uma regra para interromper as avaliações sem excluir a regra. As regras pausadas permanecem no catálogo e podem ser reiniciadas a qualquer momento.
+
+.Passos
+. No catálogo de regras, clique na regra que você deseja pausar.
+. Faça um dos seguintes procedimentos:
++
+** Para pausar uma regra agendada, clique em *Pausar* e confirme. A regra para de ser executada conforme o agendamento.
+** Para retomar uma regra pausada, clique em *Retomar* e confirme. A regra retoma as avaliações regulares.
+
+
+
+
+
+
+[[delete-a-custom-rule]]
+== Excluir uma regra personalizada
+
+Exclua uma regra permanentemente quando não precisar mais dela. Esta ação não pode ser desfeita.
+
+.Passos
+. No catálogo de regras, clique na regra que você deseja excluir.
+. Clique em *Delete*.
+. Confirme que você deseja excluir a regra permanentemente.
+
+
+.Resultado
+A regra foi removida do catálogo. Todo o histórico de avaliações foi apagado.
+
+
+
+[[run-a-quick-test]]
+== Faça um teste rápido
+
+Execute um teste rápido a qualquer momento para verificar a conformidade atual sem precisar esperar pela próxima execução agendada.
+
+.Passos
+. No catálogo de regras, clique na regra que você deseja avaliar.
+. Clique em *Validar*.
++
+O sistema avalia todos os recursos em escopo com base na lógica da regra.
+
+. Analise os resultados para verificar o status atual de conformidade.
+
+
+Os testes são auditados e constam no histórico de avaliação da regra.
+
+
+
+[[what-to-do-next]]
+== O que fazer a seguir
+
+link:../fsx-storage/learn-custom-rules.html["Saiba mais sobre regras personalizadas"]

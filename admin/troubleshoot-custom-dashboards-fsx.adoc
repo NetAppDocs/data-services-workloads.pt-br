@@ -25,7 +25,7 @@ Use essas informações para resolver problemas comuns que você pode encontrar 
 **Solução:** Tente o seguinte:
 
 * Reescreva sua solicitação com detalhes mais claros sobre o que você deseja monitorar.
-* Comece com um dos prompts de exemplo em link:create-custom-dashboard-fsx.html["Crie um painel personalizado"].
+* Comece com um dos prompts de exemplo em link:../admin/create-custom-dashboard-fsx.html["Crie um painel personalizado"].
 * Divida as necessidades complexas de monitoramento em vários painéis mais simples.
 * Especifique as cargas de trabalho, métricas, intervalos de tempo ou dimensões que você deseja monitorar.
 
@@ -41,7 +41,7 @@ Use essas informações para resolver problemas comuns que você pode encontrar 
 
 **Solução:**
 
-* **Verifique as permissões:** Certifique-se de que sua conta do Workload Factory tenha acesso de leitura às cargas de trabalho e aos recursos usados pelo painel. Revise os requisitos de permissões em link:learn-custom-dashboards-fsx.html#aws-credentials-and-permissions["Credenciais e permissões da AWS"].
+* **Verifique as permissões:** Certifique-se de que sua conta do Workload Factory tenha acesso de leitura às cargas de trabalho e aos recursos usados pelo painel. Consulte o link:../admin/learn-custom-dashboards-fsx.html#aws-credentials-and-permissions["requisitos de permissão"].
 * **Verifique as credenciais:** Confirme se suas credenciais da AWS são válidas e não expiraram. Consulte link:../fsx-storage/add-credentials.html["Adicionar credenciais da AWS"] para obter detalhes.
 
 
@@ -85,4 +85,4 @@ Todos os usuários de uma conta do Workload Factory podem visualizar e excluir p
 [[additional-help]]
 == Ajuda adicional
 
-Se você continuar enfrentando problemas com painéis personalizados, consulte link:../get-help.html["Obtenha ajuda"] para obter informações sobre como entrar em contato com o suporte da NetApp.
+Se você continuar tendo problemas com painéis personalizados, consulte link:../get-help.html["Obtenha ajuda"] para obter informações sobre como entrar em contato com o suporte da NetApp.

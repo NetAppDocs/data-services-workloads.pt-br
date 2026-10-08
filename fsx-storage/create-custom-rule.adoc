@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: fsx-storage/create-custom-rule.html 
-keywords: create custom rule, custom rules, fsx, ontap, well architected, rule builder 
+keywords: create custom rule, byor, custom rules, fsx, ontap, well architected, rule builder 
 summary: Crie uma regra arquitetural personalizada usando linguagem natural para aplicar os padrões da sua organização para FSx for ONTAP. 
 ---
-= Crie uma regra personalizada no NetApp Workload Factory
+= Crie uma regra personalizada para o Workload Factory no NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,68 +14,18 @@ summary: Crie uma regra arquitetural personalizada usando linguagem natural para
 
 
 [role="lead"]
-Crie regras personalizadas descrevendo-as em linguagem simples. O construtor de regras com IA no NetApp Workload Factory transforma sua solicitação em uma regra validada que verifica seus recursos do FSx for ONTAP.
+Crie regras personalizadas para verificar seus recursos do FSx for ONTAP no Workload Factory. Descreva as regras em linguagem simples, e o construtor de regras com IA transformará sua solicitação em uma regra validada.
+
+.Sobre esta tarefa
+O processo de configuração de regras guia você por cada etapa: criação da regra, revisão de como a IA a interpretou e verificação dos resultados antes de agendar revisões periódicas. Você mantém o controle durante todo o processo. O sistema sugere uma regra com base na sua solicitação, mas nada acontece até que você a aprove.
 
 
+NOTE: Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá criar ou editar regras personalizadas. Entre em contato com seu administrador ou link:../admin/manage-genai-features.html["Aprenda sobre administração de IA"^].
 
-[[about-this-task]]
-== Sobre esta tarefa
-
-O processo de criação de regras guia você por todas as etapas: definição da regra, revisão de como a IA a interpretou e verificação dos resultados antes de agendar avaliações regulares. Você mantém o controle em cada etapa. O sistema sugere uma regra com base no seu prompt, mas nada avança até que você a confirme.
-
-
-NOTE: Se o administrador da sua conta desativou os recursos de IA, você não poderá criar regras personalizadas. Entre em contato com seu administrador ou link:../admin/manage-genai-features.html["Aprenda sobre administração de IA"^].
-
-
-
-[[limitations]]
-=== Limitações
-
-As seguintes limitações aplicam-se às regras personalizadas:
-
-* Não há correções automáticas disponíveis. Você deve corrigir os recursos não conformes usando as orientações fornecidas.
-* Cada regra pode verificar apenas um tipo de recurso. Para verificar vários tipos de recurso, crie regras separadas.
-* O intervalo mínimo de avaliação é de 1 hora para evitar exames excessivos.
-* As regras têm acesso somente leitura e não podem fazer alterações no seu ambiente.
-
-
-
-
-[[custom-rule-examples]]
-=== Exemplos de regras personalizadas
-
-Os exemplos a seguir ilustram regras personalizadas comuns:
-
-*Proteção do volume de produção*:: "Todos os volumes com a tag 'Prod' devem ter uma política de snapshot instalada"
-+
---
-Essa regra cria automaticamente snapshots para proteger os volumes de produção de acordo com os requisitos da empresa.
-
---
-*Classificação por volume de arquivamento*:: "Todos os volumes com a etiqueta 'Archive' devem ter uma política de tiering definida como 'All'"
-+
---
-Essa regra reduz custos ao mover automaticamente os dados arquivados para um storage mais barato.
-
---
-*Padrões de nomenclatura do sistema de arquivos*:: "Todos os sistemas de arquivos devem seguir a convenção de nomenclatura 'fsx-{environment}-{application}'"
-+
---
-Esta regra garante que os sistemas de arquivos sigam as convenções de nomenclatura da organização para facilitar o gerenciamento e a alocação de custos.
-
---
-
-
-
-
-[[before-you-begin]]
-== Antes de começar
-
-Antes de criar e executar regras personalizadas, certifique-se de ter o seguinte:
-
-* Você configurou credenciais da AWS com acesso somente leitura. link:add-credentials.html["Adicione as credenciais da AWS ao Workload Factory"^].
-* Você possui credenciais ONTAP com permissões de visualizador. link:add-credentials.html["Adicione as credenciais da ONTAP ao Workload Factory"^].
-* Você tem um link ou um agente do Console configurado para conectividade com o sistema de storage de nuvem. link:create-link.html["Criar e associar um link"] ou link:https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html#agent-console-deploy["implantar um agente do Console"^].
+.Antes de começar
+* Você configurou credenciais da AWS com acesso somente leitura.
+* Você possui credenciais ONTAP com permissões de visualizador.
+* Você tem um link ou agente configurado para conectividade FSx for ONTAP.
 * Você entende que a criação de regras personalizadas utiliza o serviço de IA Bedrock da NetApp.
 
 
@@ -84,12 +34,9 @@ Antes de criar e executar regras personalizadas, certifique-se de ter o seguinte
 [[create-a-rule]]
 == Criar uma regra
 
-Use o Rule builder para criar regras personalizadas de boas práticas usando linguagem simples. Essas regras são verificadas em todos os seus recursos.
-
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
-. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *Bem arquitetadas*.
-. No menu Bem-arquitetado, selecione *Rule builder*.
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer"] e, em seguida, selecione Cargas de trabalho > Bem arquitetado > Construtor de regras.
 +
 Ao abrir o construtor de regras, são exibidos exemplos de prompts para ajudar você a escrever sua regra personalizada. Você pode selecionar *Copiar prompt* para copiar um exemplo de prompt para a caixa de texto da caixa de diálogo de IA.
 
@@ -114,16 +61,20 @@ A IA analisa sua solicitação e gera uma definição de regra.
 
 O construtor de regras exibe:
 
-* *Interpretação analisada*: Como a IA entendeu seu prompt em linguagem simples.
-* *Definição de regra*: A regra estruturada que inclui o tipo de recurso, a lógica da condição e os critérios de avaliação.
-* *Justificativa*: Por que a IA interpretou sua solicitação dessa maneira.
-* *Indicador de confiança*: o grau de confiança que o sistema tem na interpretação.
+Interpretação analisada:: Como a IA entendeu sua solicitação em linguagem simples.
+Definição de regra:: A regra estruturada, incluindo o tipo de recurso, a lógica da condição e os critérios de avaliação.
+Raciocínio:: Por que a IA interpretou seu prompt dessa maneira.
+Indicador de confiança:: O grau de confiança do sistema na interpretação.
 
 
 .Passos
 . Revise a interpretação para garantir que ela corresponda ao que você pretendia.
+. Verifique se a definição da regra está correta. Se a interpretação não estiver clara ou estiver incorreta, o sistema poderá fazer perguntas como:
 +
-Verifique se a definição da regra está correta. Se a interpretação for obscura ou incorreta, o sistema poderá fazer perguntas como: * Qual recurso deve ser verificado? * Qual valor ou limite define a conformidade? * Com que frequência a regra deve ser executada?
+** Qual recurso deve ser verificado?
+** Que valor ou limite define a conformidade?
+** Com que frequência a regra deve ser executada?
+
 
 . Responda às perguntas de esclarecimento da IA.
 +
@@ -137,7 +88,7 @@ A IA pode pedir que você escolha entre várias opções para entender melhor o 
 [[test-the-rule]]
 == Teste a regra
 
-Antes de agendar a regra, execute um teste único para ver quais recursos ele afetará.
+Antes de salvar ou agendar a regra, execute um teste para verificar quais recursos ela afetará.
 
 .Passos
 . Selecione *Validar regra*.
@@ -146,17 +97,10 @@ O sistema avalia todos os recursos dentro do escopo com base na sua lógica de r
 
 . Revise os resultados da validação:
 +
-** *Recursos avaliados*: número total de recursos verificados
-** *Em conformidade*: Recursos que atendem aos critérios da regra
-** *Não conformes*: Recursos que não atendem aos critérios
-** *Avaliações com falha*: Recursos que não puderam ser avaliados (com detalhes do erro)
-
-
-. Se alguns recursos falharam na avaliação, verifique os motivos do erro:
-+
-** *Erros de credencial da AWS*: permissões somente leitura podem ser insuficientes para determinados recursos
-** *Erros de conectividade*: o link ou o agente podem não estar configurados para determinados sistemas de arquivos
-** *Erros de permissão do ONTAP*: o usuário visualizador pode não ter acesso a determinados recursos
+** Recursos avaliados: número total de recursos verificados
+** Em conformidade: recursos que atendem aos critérios da regra
+** Não conformes: recursos que não atendem aos critérios
+** Avaliações com falha: recursos que não puderam ser avaliados (com detalhes do erro)
 
 
 
@@ -166,36 +110,24 @@ O sistema avalia todos os recursos dentro do escopo com base na sua lógica de r
 [[save-or-schedule-the-rule]]
 == Salvar ou agendar a regra
 
-Após testar sua regra, você pode salvá-la como rascunho ou configurá-la para ser executada regularmente.
+Após validar a sua regra, você pode salvá-la como rascunho ou configurá-la para ser executada regularmente.
 
 .Passos
 . Faça um dos seguintes procedimentos:
 +
-** Para agendar avaliações regulares, defina a frequência de avaliação (mínimo de 1 hora, padrão de 24 horas) e selecione *Schedule*. A regra é ativada e executada na programação definida.
-** Para salvar sem agendar, selecione *Salvar como rascunho*. A regra é salva, mas não é avaliada até que você a agende.
-** Para descartar a regra, selecione *Descartar* para cancelar a criação da regra e começar novamente.
+** Para agendar avaliações regulares, defina a frequência de avaliação e selecione *Agendar*. A regra é ativada e executada na programação definida.
+** Para salvar após a validação sem agendamento, selecione *Salvar como rascunho*. A regra é salva, mas não é avaliada até que você a agende.
+** Para excluir a regra, selecione *Excluir*.
 
 
 
 
 .Resultado
-Sua regra personalizada foi criada e está listada no catálogo de regras. Se você definir um agendamento, ele verificará seus recursos do FSx for ONTAP na frequência especificada.
-
-
-
-[[troubleshooting]]
-== Solução de problemas
-
-Nenhum sistema de arquivos disponível:: Configure suas credenciais da AWS e certifique-se de que seu ambiente tenha pelo menos um sistema de arquivos FSx for ONTAP. O construtor de regras precisa de um sistema de arquivos para aplicar regras.
-Interpretação de baixa confiança:: São necessárias mais informações. Responda às perguntas ou reformule sua pergunta com detalhes claros sobre o tipo de recurso, limites e condições.
-Falhas parciais de validação:: Verifique quais recursos falharam e por quê. Causas comuns são a falta de configurações de link ou agente ou permissões insuficientes. Corrija o problema e valide novamente.
-Prompt ambíguo:: Seja mais específico sobre o que você deseja verificar. Inclua o tipo de recurso, a condição e o limite. Consulte os exemplos de prompts para obter ajuda.
-A regra tem como alvo vários tipos de recursos:: Crie uma regra separada para cada tipo de recurso. Apenas um tipo de recurso por regra é suportado.
-
+Sua regra personalizada foi criada e está listada no catálogo de regras. Se você definir um agendamento, ele verificará seus recursos do FSx for ONTAP na frequência especificada. Se você editar a regra posteriormente, o sistema guiará você pelas mesmas etapas, chat, revisão, aprovação e validação, antes de salvar a versão atualizada.
 
 
 
 [[what-to-do-next]]
 == O que fazer a seguir
 
-link:manage-custom-rules.html["Gerenciar regras personalizadas"]
+link:../fsx-storage/manage-custom-rules.html["Gerenciar regras personalizadas"]

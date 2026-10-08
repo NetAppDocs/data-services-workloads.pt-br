@@ -277,9 +277,7 @@
   <block id="5af1607522ddad534f7fc3e5976684e5" category="paragraph">Depois de criado, você pode atualizar o painel para ver os dados atualizados.</block>
   <block id="a8f8e9b8eb3f376a4b560c169094087e" category="paragraph">Lembre-se de que os painéis personalizados são, por definição, somente leitura e não podem fazer alterações nas configurações de armazenamento ou de workload.</block>
   <block id="21b694dc2503eab08ab245a8bcfe9f1c" category="inline-link-macro">Aprenda sobre administração de IA</block>
-  <block id="1981f9412416cf6cd4df691ce6b82265" category="admonition">Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá criar painéis. Entre em contato com seu administrador ou <block ref="51cc9b1bceb3cdf8e5a226d8fb6d37eb" category="inline-link-macro-rx"></block>.</block>
   <block id="1490f3908001d2cdf7587ba480973340" category="section-title">Crie um painel de controle</block>
-  <block id="1589e8533c432499ad85efd268dd750c" category="list-text">No menu do NetApp Console, selecione *Cargas de trabalho* &gt; *Visão geral das cargas de trabalho* &gt; *Painéis personalizados*.</block>
   <block id="f1dcf9e30698fcfe356b412b3f1f523c" category="paragraph">Se este for o seu primeiro painel, você verá uma tela em branco com prompts de exemplo para ajudar você a começar. Você pode selecionar *Copiar prompt* para copiar um exemplo de prompt para a caixa de texto da caixa de diálogo de IA.</block>
   <block id="2e752336fdbff2abb5e9bf262bd0dbdd" category="list-text">Selecione *Criar novo painel*.</block>
   <block id="28d14a36109f19e020789b18ad010e52" category="list-text">Na caixa de diálogo de IA, descreva o que você deseja monitorar.</block>
@@ -292,9 +290,7 @@
   <block id="871affa3441567ce8c578a244f4fa377" category="paragraph">Seu painel está sendo criado. Isso pode levar alguns instantes.</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Resultado</block>
   <block id="fa2935cab9052ead8bda54e043c876e7" category="inline-link-macro">Aprenda como alterar a visibilidade do painel</block>
-  <block id="5ea00850c689f7da39c4db94cd187857" category="paragraph">Seu painel personalizado foi criado e adicionado ao catálogo de painéis. Por padrão, o painel é privado e visível apenas para você. Você pode alterar a visibilidade para pública se quiser compartilhá-lo com outros usuários na sua conta do Workload Factory. <block ref="289ea80c835498b9548bdc48b7cf5ae9" category="inline-link-macro-rx"></block>.</block>
   <block id="863d814c29385fa8ebfd13bc1c1c7e96" category="inline-link-macro">Saiba mais sobre como configurar notificações</block>
-  <block id="c9db1966c96002c79c43ee5507b95b7c" category="paragraph">Você receberá uma notificação quando seu painel estiver pronto. Caso não seja possível criá-lo, você receberá uma notificação com um link para tentar novamente. <block ref="19fa6c73a4251f43a74dc700e68a79f1" category="inline-link-macro-rx"></block>.</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">O que vem a seguir</block>
   <block id="fb3b6f147b0a44a08f4c961dc053571e" category="paragraph">Após a criação, você pode:</block>
   <block id="86d47ec5cc124c99638dc3c2f21c96e0" category="list-text">Altere a visibilidade do painel para compartilhar com sua equipe</block>
@@ -302,11 +298,8 @@
   <block id="7bff2130a08698224667671d85a34ed4" category="list-text">Exclua painéis que você não precisa mais</block>
   <block id="ed5184af3d39b3e314759db5b95ba675" category="list-text">Veja os detalhes do painel, incluindo quem o criou e quando foi atualizado pela última vez</block>
   <block id="d10995cac5dfc264a5da7f4abec9025d" category="inline-link-macro">Gerencie seus painéis personalizados</block>
-  <block id="c6b1282f7bfcab2471a26abec56e02af" category="list-text"><block ref="c6b1282f7bfcab2471a26abec56e02af" category="inline-link-macro-rx"></block></block>
   <block id="1703fc0755f2533bd9d727fa0298c500" category="inline-link-macro">Solucionar problemas de painéis personalizados</block>
-  <block id="42f7b5e86648dfe662db00ae0b30eae7" category="list-text"><block ref="42f7b5e86648dfe662db00ae0b30eae7" category="inline-link-macro-rx"></block></block>
   <block id="b765164d0d63341925efe41eda98a9b0" category="summary">Crie painéis de controle com inteligência artificial personalizados para suas cargas de trabalho e prioridades, a fim de obter maior visibilidade operacional sem ficar limitado por visualizações predefinidas.</block>
-  <block id="71a8c05eab4e4008080f227b779ca449" category="doc">Aprenda sobre dashboards personalizados para o FSx for ONTAP no NetApp Workload Factory</block>
   <block id="7eb72e0c632d43245022c759c6dabf4f" category="paragraph">Como administrador de nuvem e armazenamento, os painéis personalizados oferecem uma visão clara dos sistemas e cargas de trabalho que você gerencia. Eles permitem criar e personalizar visualizações que correspondam ao seu trabalho, prioridades e objetivos de negócios, em vez de ficar limitado a layouts predefinidos.</block>
   <block id="959c71c7e92856ead7b3a708f6c721c2" category="paragraph">Painéis personalizados usam IA para criar visualizações personalizadas do seu ambiente Workload Factory. Basta descrever o que você deseja monitorar em linguagem simples e o sistema cria automaticamente gráficos visuais com base nas suas necessidades.</block>
   <block id="f1e11e6b7c8b037c77a4a7c91acba439" category="paragraph">Todos os membros da sua conta do Workload Factory podem visualizar todos os painéis personalizados. Essa configuração compartilhada ajuda as equipes a colaborar e a visualizar as mesmas informações operacionais em toda a sua organização.</block>
@@ -328,7 +321,6 @@
   <block id="7341b20ff1ddefe079f968d8d4436714" category="list-text">*Painéis privados*: Somente você pode visualizar esses painéis. Use-os para monitoramento pessoal, testes ou trabalho em andamento.</block>
   <block id="71c6aa9812ec2db21553218b51c3d261" category="list-text">*Painéis públicos*: Todos os membros da sua conta do Workload Factory podem visualizar esses painéis. Use-os para compartilhar visualizações de monitoramento e manter sua equipe alinhada em relação às cargas de trabalho, prioridades e objetivos de negócios.</block>
   <block id="0f72bd1a783a9d1e54bd0e1af11e9b72" category="paragraph">Cada cartão do painel mostra se o painel é privado ou público, assim você pode ver rapidamente quais painéis são compartilhados.</block>
-  <block id="f3cf67ccb99f00593ef15c799619319e" category="paragraph"><block ref="289ea80c835498b9548bdc48b7cf5ae9" category="inline-link-macro-rx"></block>.</block>
   <block id="18b34a0dd090bb7f1f01f6f3d0d42c52" category="section-title">Considerações e limitações</block>
   <block id="97911b3c54a4e826b34c1f79026316c5" category="section-title">Credenciais e permissões da AWS</block>
   <block id="6344c74fd8e5c3678a14327105887b61" category="paragraph">Para criar ou visualizar painéis personalizados, você precisa das permissões corretas do AWS IAM para os recursos que deseja monitorar. Certifique-se de que a conta Workload Factory tenha acesso de leitura às fontes de dados usadas pelos painéis.</block>
@@ -338,7 +330,6 @@
   <block id="d65de0ffa05b31f0beebf22d3e28dbde" category="section-title">Link para FSx for ONTAP</block>
   <block id="ee01e7a77a5b8f6475723b4e66eca889" category="paragraph">O Workload Factory requer um link para se conectar aos sistemas de arquivos Amazon FSx for ONTAP. Um link cria uma relação de confiança e conectividade entre o Workload Factory e um ou mais sistemas de arquivos Amazon FSx for ONTAP. Isso permite que você monitore e gerencie determinados recursos do sistema de arquivos diretamente pelas chamadas da API REST do ONTAP, que não estão disponíveis pela API do Amazon FSx for ONTAP.</block>
   <block id="68cd2ca9724f378c0a2815415eeecfbd" category="inline-link-macro">Saiba como criar um link</block>
-  <block id="232e3bd00f6c8f524e871620adb4285f" category="paragraph"><block ref="09d2f2e6f3fb5ec04917bb58f408754d" category="inline-link-macro-rx"></block>.</block>
   <block id="edc83c82b6a6439e121df7b8dfc618e7" category="section-title">Design somente leitura</block>
   <block id="9596530d51115869eabe2f1148109fcb" category="paragraph">Os painéis personalizados são somente leitura. Eles não podem alterar suas configurações de armazenamento ou carga de trabalho. Isso permite que você monitore seu sistema sem alterar nada acidentalmente.</block>
   <block id="e646e16bee8b32e6ea29e30d01970a6c" category="section-title">Limitações</block>
@@ -356,9 +347,7 @@
   <block id="489342efbcb2cab8832e0e763b340653" category="list-text">O ARP deve estar habilitado em todos os volumes.</block>
   <block id="cce78dc6ebbec7385a01f2146d6d01c8" category="section-title">Próximos passos</block>
   <block id="dfc2a77d9b383cd28cba1a1e99f9a378" category="inline-link-macro">Crie um painel personalizado</block>
-  <block id="0d31ec9338481ac9d70aba81ed6a3dcd" category="list-text"><block ref="0d31ec9338481ac9d70aba81ed6a3dcd" category="inline-link-macro-rx"></block></block>
   <block id="62403e3fa28afe128e2c0e15bf0333f7" category="inline-link-macro">Gerencie painéis personalizados</block>
-  <block id="ecb7db8454bf763909a485516115aa9b" category="list-text"><block ref="ecb7db8454bf763909a485516115aa9b" category="inline-link-macro-rx"></block></block>
   <block id="adf67e3c15ea92cdb089cbb8d3dced6b" category="summary">Se você não precisar mais de um conjunto de credenciais, poderá excluí-las do NetApp Workload Factory. Você só pode excluir credenciais que não estejam associadas a um sistema de arquivos FSx for ONTAP.</block>
   <block id="b088f0038dd9646dd61cd1cf0cae1489" category="doc">Remover credenciais do NetApp Workload Factory</block>
   <block id="2f13edc244ce3aa63a739bc5418cd67f" category="paragraph">Se você não precisar mais de um conjunto de credenciais, poderá excluí-las do Workload Factory. Você só pode excluir credenciais que não estejam associadas a um sistema de arquivos FSx for ONTAP.</block>
@@ -369,7 +358,6 @@
   <block id="90b29202abc7a1c38c887ae166296c46" category="summary">Acesse seu catálogo de dashboards para visualizar, atualizar e excluir dashboards personalizados no Workload Factory.</block>
   <block id="526aa50fb911c91291e959f7543639b0" category="doc">Gerencie painéis personalizados no NetApp Workload Factory</block>
   <block id="3ba405e1d72777e360f3b281ce3ba5b9" category="paragraph">Gerencie seus painéis personalizados a partir do catálogo de painéis. Lá, você pode visualizar detalhes, compartilhar painéis, atualizar dados ou excluir painéis que não precisa mais.</block>
-  <block id="4765f204e5de83ae87fec00c7c5b7589" category="paragraph">Você pode visualizar e gerenciar dashboards personalizados no catálogo de dashboards. Dashboards privados são visíveis apenas para você, enquanto dashboards públicos são visíveis para todos os usuários da sua conta do Workload Factory. Cada dashboard exibe detalhes básicos, como o nome do criador, a data de criação e um rótulo de visibilidade (Privado ou Público).</block>
   <block id="a83695a886882e5b4baf753ee607f66f" category="paragraph">Os painéis personalizados são somente leitura. Eles não podem alterar suas configurações de armazenamento ou carga de trabalho.</block>
   <block id="76fc0fde7a5041f5e2df3b114841202c" category="paragraph">Você precisa ter pelo menos um painel personalizado em sua conta do Workload Factory.</block>
   <block id="19f40b5f5943ee4953075403d9783061" category="section-title">Acesse o catálogo do dashboard</block>
@@ -385,7 +373,6 @@
   <block id="7e3cce2609a225eafd019dfc30a9437a" category="paragraph">O painel de controle é atualizado imediatamente. O indicador de visibilidade no cartão do painel mostra o status atual.</block>
   <block id="9e3f16aef1d22400bdae48c5cb77b00f" category="section-title">Atualizar dados do dashboard</block>
   <block id="4e424a1ad37782627141d4d50f79b586" category="paragraph">Os dados do painel são carregados quando você abre um painel. Você pode atualizá-lo para ver as informações mais recentes.</block>
-  <block id="6835e72df37e141c78401ea8d4bfcf90" category="paragraph">O painel de controle recarrega os dados das suas cargas de trabalho. A hora da última atualização muda para mostrar quando os dados foram atualizados.</block>
   <block id="74ee9feffcb1603b7eeb47c099c0e5a5" category="section-title">Excluir um dashboard</block>
   <block id="e54360b7371199d6607f76cd1ae6ad17" category="paragraph">Exclua os painéis que você não precisa mais. Essa ação é permanente e não pode ser desfeita.</block>
   <block id="3325f3a5c13a73bb87ed2dabebb0b6a3" category="list-text">Na página *Painéis personalizados*, localize o painel que você deseja remover.</block>
@@ -393,12 +380,8 @@
   <block id="b26a5fa549c938ffb56d20623c3f69c0" category="list-text">Confirme a exclusão.</block>
   <block id="22e8351c82677bcc78bd23d6fb170bc8" category="paragraph">O painel de controle é removido permanentemente da sua conta do Workload Factory e todos os usuários perdem o acesso a ele.</block>
   <block id="9537d9160ef701530bdd875698475957" category="inline-link-macro">Crie painéis personalizados adicionais</block>
-  <block id="955c1a1cd93a476dfbcc96e2d337dabc" category="list-text"><block ref="955c1a1cd93a476dfbcc96e2d337dabc" category="inline-link-macro-rx"></block></block>
   <block id="f7b22a19823cae9bc6664fece0b96115" category="summary">Controle o acesso aos recursos de IA baseados em Bedrock no Workload Factory. Você pode desativar os recursos de IA ou usar o AWS Bedrock gerenciado pela NetApp.</block>
-  <block id="1aaa6ae8dc8943b938e73e20b3d28d07" category="doc">Gerencie os recursos de IA para FSx for ONTAP na NetApp Workload Factory</block>
-  <block id="85c7bc155798813a7f9165f8ac043607" category="paragraph">Controle o acesso aos recursos de IA para o FSx for ONTAP no Workload Factory. Você pode desativar os recursos de IA ou usar o AWS Bedrock gerenciado pela NetApp.</block>
   <block id="00e95115c994386ef85f1864db952bca" category="section-title">Sobre os recursos de IA</block>
-  <block id="5a41793d075495dfb423bb395a189adf" category="paragraph">O Workload Factory inclui diversos recursos com tecnologia de IA que melhoram sua experiência, como Ask Me, painéis personalizados e analisadores para EMS, logs de banco de dados e latência.</block>
   <block id="46918c8c585299e7a785eed266de3f97" category="paragraph">Como administrador do Workload Factory, você pode controlar como esses recursos usam IA na página de configurações de IA.</block>
   <block id="50f33d14f129e4548c1c270fd6725a78" category="section-title">Opções de configuração</block>
   <block id="5787d906b76d8323ff398ce17924ceda" category="paragraph">Escolha uma destas opções de configuração:</block>
@@ -408,10 +391,8 @@
   <block id="9a0258efc499c889c5f1af73bbaf4364" category="list-text">Os créditos de uso mensais são compartilhados em toda a sua organização</block>
   <block id="2c8b8060f9331f918beb8261403785ec" category="list-text">Nenhuma configuração adicional da AWS é necessária</block>
   <block id="1ee78c04d8b078adcb0fca6be60af5a2" category="list-text">Recursos do GenAI desativados</block>
-  <block id="8828805c938d7fc1a48fbf3585c37b14" category="list-text">Desativa todos os recursos de IA. Os usuários não poderão mais usar o Ask Me, analisadores, painéis personalizados, criador de regras ou outras ferramentas com tecnologia de IA.</block>
   <block id="396640080b08108896efb48796063406" category="list-text">Recomendamos que um administrador da conta configure os recursos de IA.</block>
   <block id="6b7af6c72f84f0f7380106617c11be78" category="section-title">Configurar recursos de IA</block>
-  <block id="0b9ce81b2ccc278e75862730529db903" category="list-text">No menu do NetApp Console, selecione *Cargas de trabalho* &gt; *Administração* &gt; *Configurações de IA*.</block>
   <block id="ef1f959eefc1f11cf2aec294261e066f" category="list-text">Na página *Configurações de IA*, selecione sua configuração preferida:</block>
   <block id="7530dc640ec2dd92a9e70b8484867369" category="list-text">*NetApp-managed Bedrock (Recomendado)*: use o NetApp-managed AWS Bedrock.</block>
   <block id="053d266af64b45b2a2fbc0eeccc99297" category="list-text">*Recursos de IA desativados*: Desative todos os recursos de IA.</block>
@@ -440,7 +421,6 @@
   <block id="686efa14a6d0381010005caff3820d5a" category="inline-link-macro">Saiba mais sobre os recursos do Workload Factory</block>
   <block id="15776a498e04d3e0bd78a1478d9c287a" category="list-text"><block ref="15776a498e04d3e0bd78a1478d9c287a" category="inline-link-macro-rx"></block></block>
   <block id="1d37f129240a0035a4c1f8d424382c89" category="inline-link-macro">Saiba mais sobre painéis personalizados</block>
-  <block id="d117d4fd605dbd7dc4026e925fc36ba0" category="list-text"><block ref="d117d4fd605dbd7dc4026e925fc36ba0" category="inline-link-macro-rx"></block></block>
   <block id="196a1b1d4d7eff75b0b7bc0f6fa282e7" category="inline-link-macro">Adicionar credenciais da AWS</block>
   <block id="8feef39480c2e9a61121221ad1a6e6fc" category="list-text"><block ref="8feef39480c2e9a61121221ad1a6e6fc" category="inline-link-macro-rx"></block></block>
   <block id="b8646f09ea34b75c077cfea12f75617b" category="inline-link-macro">Referência de permissões</block>
@@ -541,15 +521,12 @@
   <block id="0687519296941b7aa068cbc5e70a1c22" category="paragraph">**Causa:** O sistema não conseguiu entender sua solicitação ou não conseguiu criar a visualização a partir do seu prompt.</block>
   <block id="83b9aaf1b6b5ef7884e24699dc7f7511" category="paragraph">**Solução:** Tente o seguinte:</block>
   <block id="894b21673f7a949e53a381985a55de87" category="list-text">Reescreva sua solicitação com detalhes mais claros sobre o que você deseja monitorar.</block>
-  <block id="1a5b38b4e731948856a46b57ba7acacb" category="list-text">Comece com um dos prompts de exemplo em <block ref="0d31ec9338481ac9d70aba81ed6a3dcd" category="inline-link-macro-rx"></block>.</block>
   <block id="6e8565abed03ed302a07467257865757" category="list-text">Divida as necessidades complexas de monitoramento em vários painéis mais simples.</block>
   <block id="28ceb1134c8420a708d78605ab459972" category="list-text">Especifique as cargas de trabalho, métricas, intervalos de tempo ou dimensões que você deseja monitorar.</block>
   <block id="7b0923a8ddaa6864688d6afeed5bde9f" category="section-title">Falha ao carregar os dados do painel</block>
   <block id="6cf9da3bc18ab877793e971ea5fdf80d" category="paragraph">**Problema:** O painel foi criado, mas apresenta erros ao carregar dados.</block>
   <block id="423c766e8a7076c3dd890fe7460b5785" category="paragraph">**Causa:** Isso geralmente ocorre devido a problemas de permissão ou fontes de dados indisponíveis.</block>
   <block id="6342c16a39a9eb2f31fa733eb76963b7" category="paragraph">**Solução:**</block>
-  <block id="5c7f8468c6375df4cef5ecb5f18b113c" category="list-text">**Verifique as permissões:** Certifique-se de que sua conta do Workload Factory tenha acesso de leitura às cargas de trabalho e aos recursos usados pelo painel. Revise os requisitos de permissões em <block ref="85406e0d04c8df1dc17be4dd86713ac5" category="inline-link-macro-rx"></block>.</block>
-  <block id="9f91001f68a6708181c9064ef06f2a03" category="list-text">**Verifique as credenciais:** Confirme se suas credenciais da AWS são válidas e não expiraram. Consulte <block ref="8feef39480c2e9a61121221ad1a6e6fc" category="inline-link-macro-rx"></block> para obter detalhes.</block>
   <block id="a82708a710bdc7f66cc4d1b5721a359c" category="section-title">O painel de controle não está carregando ou está carregando lentamente</block>
   <block id="7b8a6ade8ac0e93d1993c6d3ee222a27" category="paragraph">**Problema:** O painel de controle carrega lentamente ou alguns widgets não aparecem.</block>
   <block id="c66f626cb62bfd00b1514c2f1a4ec699" category="paragraph">**Causa:** O carregamento lento pode ser causado por problemas de rede, grandes quantidades de dados ou atrasos temporários no serviço.</block>
@@ -565,7 +542,6 @@
   <block id="62ad02c42e5e548dcaf80a64c2d0eefd" category="list-text">Se necessário, recrie o dashboard usando os requisitos originais.</block>
   <block id="1e2b52bc0d9b39d605af8ef1990be5ab" category="paragraph">Todos os usuários de uma conta do Workload Factory podem visualizar e excluir painéis personalizados. Coordene-se com sua equipe ao gerenciar painéis compartilhados.</block>
   <block id="e2a43aebbf3f114c3e1dfc54b469c13e" category="section-title">Ajuda adicional</block>
-  <block id="40c027613b25b5acd817da4656c22bd8" category="paragraph">Se você continuar enfrentando problemas com painéis personalizados, consulte <block ref="12b3578a80c78dee4be855cedba97ff4" category="inline-link-macro-rx"></block> para obter informações sobre como entrar em contato com o suporte da NetApp.</block>
   <block id="c61544abe563251eb7477b6292b382e4" category="summary">Você pode usar o CloudShell de qualquer lugar da interface de usuário do NetApp Workload Factory para emitir comandos da AWS CLI ou da ONTAP CLI.</block>
   <block id="2cc12a89b9145b8d67b684667bcb6e3e" category="doc">Use o CloudShell na NetApp Workload Factory</block>
   <block id="bdd3829c4c5d30727b854efad6656ed4" category="paragraph">Abra CloudShell para executar comandos da CLI da AWS ou do ONTAP de qualquer lugar no console do NetApp Workload Factory.</block>
@@ -1921,7 +1897,6 @@
   <block id="9c26918e454ba2268c8c93c41218c570" category="list-text">Acompanhe métricas de desempenho em vários clusters</block>
   <block id="ff552e5da914068f0d9d4064c2f6fb85" category="list-text">Verifique o status da configuração do link (coluna Link associado) - A validade da conexão é verificada diariamente</block>
   <block id="88b77b6c01adce036032ab7bf374a7a9" category="list-text">Selecione vários clusters para atualizações de parâmetros em massa</block>
-  <block id="94e78450902ff8802101a87715f2120e" category="paragraph">Selecione um sistema de arquivos para abrir os detalhes do cluster, incluindo informações do cluster, valores de capacidade do SSD e o gráfico de capacidade do SSD ao longo do tempo.</block>
   <block id="c6e9c9061d9167583226901e02ffb03e" category="section-title">Gerenciamento de capacidade de SSD</block>
   <block id="f8ea6e988f609d0e7b256e12ea4d4718" category="section-title">Modos de gerenciamento</block>
   <block id="7ae10da71cdf204162f214a176b66232" category="list-text">*Notificar apenas (modo de recomendação)*</block>
@@ -1955,15 +1930,12 @@
   <block id="622a5b145e5cdfd92b8124baf3f8e5d7" category="list-text">*Latência mínima (ms)* (padrão 10 ms)</block>
   <block id="4067af77fe7df9f9047c8c4eeb9490b5" category="list-text">*SKU de capacidade máxima de processamento* (padrão: nenhum)</block>
   <block id="e4612c732ae1c64db60c83cb8cae8381" category="section-title">Recomendações de elasticidade do sistema de arquivos</block>
-  <block id="cc8b8287cb9875fcd93e6deecaaa1c10" category="paragraph">Quando o Workload Factory está no modo Automatizar ou Recomendar, ele verifica automaticamente cada sistema de arquivos FSx for ONTAP e executa um algoritmo de recomendação de capacidade. O sistema realiza verificações periódicas para determinar se a capacidade ou a taxa de transferência do SSD precisam ser ajustadas.</block>
   <block id="1f9c155d60450baccee27bca630b6497" category="paragraph">Quando uma recomendação for identificada:</block>
   <block id="c3a8bcc1273489aff39484b64fd9efe7" category="list-text">Você recebe uma notificação imediata com base nas suas configurações de notificação do Workload Factory.</block>
   <block id="1c5b8d97751372161e201f333f1b4f62" category="list-text">Identifique sistemas de arquivos com recomendações filtrando a tabela Clusters.</block>
   <block id="a3eb814e72de4d40c0767efe37beafe1" category="list-text">A interface mostra o número total de sistemas de arquivos que atualmente possuem recomendações ativas.</block>
   <block id="68c65b2650d813b072f0481727b3e600" category="paragraph">A recomendação explica a alteração sugerida e o raciocínio por trás dela, como: _Recomendamos aumentar o tamanho do SSD com base no padrão de utilização do SSD do seu sistema de arquivos._</block>
-  <block id="7c3b540ce616a2a72155e6240f74714c" category="paragraph">As notificações são enviadas para eventos de capacidade de storage, incluindo recomendações, aumentos de capacidade bem-sucedidos, alertas de aviso e erros durante verificações de capacidade ou operações de aumento. As notificações de erro explicam a causa, como permissões ausentes, uma atualização do sistema de arquivos já em andamento, um período de espera da AWS após uma alteração recente no storage, atingir a capacidade máxima ou dados do CloudWatch indisponíveis.</block>
   <block id="fa0b4e3f4266abe4ec93e3058cfcd2aa" category="section-title">Entendendo os pontos de decisão de capacidade</block>
-  <block id="1b07a2acaea0fa364496ba3afb977975" category="paragraph">O gráfico de utilização do SSD indica quando o sistema fez recomendações de capacidade ou executou ações automatizadas. Esses indicadores mostram como o algoritmo de gerenciamento de capacidade se comportou ao longo do tempo.</block>
   <block id="c27f88e562f3ed3c4000570673348297" category="list-text">*Pontos de decisão para recomendação*</block>
   <block id="25dc82340ec038ecbda8ab79823e242a" category="list-text">Aparecem quando o sistema detecta que é necessária mais capacidade de SSD. Se a capacidade não tiver sido aumentada, esses pontos podem aparecer a cada 30 minutos. O gráfico mostra cada ponto de decisão quando possível. Se o intervalo de tempo selecionado for muito denso, os pontos são agrupados.</block>
   <block id="153ea1a28a0f56dba57777e1680e1f76" category="list-text">*Pontos de decisão de automação*</block>
@@ -2165,11 +2137,8 @@
   <block id="ee58964f46df645da6108475c6d86f30" category="list-text">Selecione *Ativar* para ativar o painel e iniciar a coleta de métricas.</block>
   <block id="7b76cd809591b8cb2b82a5d96bf92502" category="paragraph">O Workload Factory começa a coletar métricas do CloudWatch para todos os sistemas de arquivos FSx for ONTAP vinculados às suas credenciais da AWS. O painel é preenchido conforme as métricas ficam disponíveis. Uma notificação aparece enquanto a coleta de dados ainda está em andamento.</block>
   <block id="b7b10c1304f383232f064dc193d3492b" category="paragraph">Após ativar o dashboard, você pode:</block>
-  <block id="84dbb7b1eccc71ff5f71a7198ff13b68" category="list-text"><block ref="2cfa6ed38cd9b96055529b98595c7f05" category="inline-link-macro-rx"></block>para monitorar a saúde e a capacidade do cluster</block>
   <block id="2733df4f5d332cf0fbf7a918cce60410" category="inline-link-macro">Ative e configure os modos de gerenciamento de capacidade do SSD</block>
-  <block id="806c2769f2f8cebfc3e1fb594f627f17" category="list-text"><block ref="4f6b89d6de6199c28054a07fffc78ba6" category="inline-link-macro-rx"></block> (Recomendar, Automatizar ou Nenhuma)</block>
   <block id="c3bb386a8cfadc37852e3ce68761e026" category="inline-link-macro">Ative e configure os modos de gerenciamento de taxa de transferência</block>
-  <block id="ef059ce8f7b1372dd14393349e748478" category="list-text"><block ref="5d06130fa1ae401255bccec02e322846" category="inline-link-macro-rx"></block> (Recomendar, Automatizar ou Nenhuma)</block>
   <block id="f872ab9156293273da8e58555b68ca2e" category="list-text">Configure filtros para focar em regiões específicas ou contas AWS</block>
   <block id="94865ed9933801afc860536ada02e496" category="summary">Visualize e analise eventos de latência para encontrar problemas de desempenho com volumes FSx for ONTAP. Use análise básica e, opcionalmente, análise de IA para identificar a causa raiz e correções sugeridas.</block>
   <block id="7c7708c4a86b73bb59e5e08ced5293bf" category="doc">Analise problemas de latência no Workload Factory para EDA</block>
@@ -2333,8 +2302,6 @@
   <block id="c71e0da6508887a77f334a554ab5495a" category="summary">Use o painel Visão geral para monitorar a integridade do cluster, visualizar recomendações de capacidade, gerenciar configurações de SSD e taxa de transferência e analisar tendências de desempenho em seus sistemas de arquivos FSx for ONTAP.</block>
   <block id="79181b2c6ed46060150e77e4602bc886" category="doc">Utilize o painel de Visão Geral no Workload Factory para EDA</block>
   <block id="4c3cb97ad8dafb44b4527de840549941" category="paragraph">Use o painel Visão geral para verificar a integridade e a capacidade dos seus sistemas de arquivos FSx for ONTAP. Você pode filtrar os dados, ver recomendações de capacidade, ajustar as configurações de SSD e de taxa de transferência e analisar as tendências de desempenho para ajudar a decidir onde alocar volumes e quando aumentar a capacidade.</block>
-  <block id="f4d32e19fbe53c2c3a060145a3cb089e" category="inline-link-macro">ativou o painel de Visão geral</block>
-  <block id="b989d81a69fe7883dca4d1012f53d338" category="paragraph">Você precisa ter <block ref="38c0848a99095f730ae7166b7cd5884e" category="inline-link-macro-rx"></block> antes de poder usá-lo para monitorar seus sistemas de arquivos.</block>
   <block id="26949f06981e97a3e3cda29668de2aff" category="section-title">Filtrar o painel</block>
   <block id="3add6a53fd27e48c56df398ecbb78292" category="paragraph">Use os filtros na parte superior do painel para visualizar sistemas de arquivos específicos. Os filtros se aplicam às seções de latência, utilização, eventos ONTAP e à tabela de clusters.</block>
   <block id="e8f3159a468f02961bca7416aa632c34" category="list-text">Utilize os filtros disponíveis para refinar sua visualização:</block>
@@ -2352,7 +2319,6 @@
   <block id="45cd3072594a40004f1648f957b11b4f" category="list-text">Para visualizar eventos de latência:</block>
   <block id="9bab24fe4c951c13841b658922a21a8b" category="list-text">Selecione *Revisar* para navegar até a aba *Latência*</block>
   <block id="d88a1f1774fe796edce9fbdb30450768" category="list-text">Se o monitoramento de latência não estiver configurado, selecione *Configurar* para definir os limites de latência</block>
-  <block id="3fc40acdeffa85e640e04decb4a3c8a1" category="paragraph">Para obter detalhes sobre o monitoramento de latência, consulte <block ref="9fa375caf288330dba08fd0144ac3746" category="inline-link-macro-rx"></block>.</block>
   <block id="fc28c48860928b711f31c63cbbeac8d0" category="list-text">Para visualizar eventos do ONTAP para seus sistemas de arquivos FSx for ONTAP, selecione *Revisar*.</block>
   <block id="b89294c44923d00aeca4413b78b17341" category="inline-link-macro">Documentação do ONTAP CLI</block>
   <block id="1c9d8ee06541dbbb5c46a2f2dcb0188e" category="paragraph">O cartão de visualização de eventos do ONTAP exibe o número de eventos EMS por categoria (Capacidade, Disponibilidade e proteção, e Segurança e outros). Para obter uma lista completa dos eventos EMS monitorados, consulte <block ref="95232132a00f2412cfd89d25359e73da" category="inline-link-macro-rx"></block>.</block>
@@ -2369,9 +2335,6 @@
   <block id="37b5b20fd94de2275a255ae79e7ac8f0" category="list-text">Para aplicar a recomendação, siga as orientações fornecidas na mensagem de recomendação.</block>
   <block id="95138c66b91ee03084dfba9068536d5e" category="section-title">Alterar o modo de gerenciamento do SSD</block>
   <block id="5b9d5469c481b2fd86bb70731779a54a" category="paragraph">Para cada sistema de arquivos, escolha como a capacidade do SSD é gerenciada: receba recomendações manuais ou permita o dimensionamento automático.</block>
-  <block id="6d8ccfb06da581a2d86feacefa3b4869" category="inline-image-macro">o ícone do menu de ações</block>
-  <block id="c9eecdb0eb0ca75174ea4d40e628f365" category="list-text">Na tabela Clusters, encontre o nome do sistema de arquivos. Ao lado, abra <block ref="db26b5e8c520e1d883813594c799d7f7" category="inline-image-macro-rx" type="image"></block> e selecione *Alterar gerenciamento de capacidade de SSD*.</block>
-  <block id="c7ac58faf1984cf107f3421908d2207c" category="list-text">Selecione *Ativar gerenciamento de capacidade SSD* e, em seguida, selecione *Aplicar*.</block>
   <block id="b689124bbd04a08329d8f616990fa06d" category="list-text">Escolha o modo de sua preferência:</block>
   <block id="da35cbad278570472c076b6042a5b528" category="list-text">Configure os parâmetros de gerenciamento de capacidade do SSD:</block>
   <block id="166c4a53ef8fc50b9b03ca91c1c677bc" category="list-text">*Limite (%)*: percentual de utilização do SSD que aciona uma recomendação</block>
@@ -2382,40 +2345,16 @@
   <block id="86161e58ce8677bff58de719cb9f29a8" category="paragraph">Para cada sistema de arquivos, escolha como o aumento de taxa de transferência é gerenciado.</block>
   <block id="441fc54d05bba2a603a05c500cf068c7" category="list-text">Na guia *Visão geral*, selecione um ou mais sistemas de arquivos na tabela Clusters.</block>
   <block id="0231f044766e71e4fe49a62ba8e8bbbe" category="list-text">Selecione *Alterar gerenciamento de taxa de transferência*.</block>
-  <block id="652aab445f49bb41fa3e8774b5719cf2" category="list-text">Selecione *Ativar gerenciamento de taxa de transferência* e, em seguida, selecione *Aplicar*.</block>
-  <block id="16393cf33b95f8ff007d76d513b875d7" category="list-text">Na caixa de diálogo, configure os parâmetros de gerenciamento de throughput:</block>
   <block id="083678f0efe5919237188ee0ee5d0b90" category="list-text">*Janela de avaliação (horas)*: Período de tempo para analisar os padrões de throughput</block>
   <block id="ed38b15c549d9cd41a86a3787f5fee23" category="list-text">*Métricas violadas (%)*: limite percentual para determinar a violação</block>
-  <block id="5e1e1daa7e6d115a54180e147895003e" category="list-text">*Período de violações consecutivas (horas)*: duração de violações consecutivas antes da tomada de providências</block>
   <block id="91455d18a42b79b1a34df0d97bfbaffd" category="list-text">*Latência mínima (ms)*: limiar de latência usado para determinar o aumento da taxa de transferência</block>
   <block id="0a2daf37cc4cac8c9a3da95290e9a399" category="list-text">*Throughput máximo (SKUs)*: SKU de throughput máximo permitido</block>
   <block id="6b482ace535080820ca5dea3bb557cb6" category="paragraph">Os sistemas de arquivos selecionados alternam imediatamente para o novo modo de taxa de transferência.</block>
-  <block id="be76a5f710c434b57d7bb9106913548d" category="section-title">Gerenciar parâmetros de edição em massa</block>
-  <block id="399db4c92643ea16a6e10865b34f5b4f" category="paragraph">Altere as configurações de vários sistemas de arquivos simultaneamente para que as mesmas configurações sejam aplicadas em todos os seus clusters.</block>
-  <block id="cc009bfb1b3b40af528a54a164d8b953" category="list-text">Na aba *Visão geral*, selecione os sistemas de arquivos que deseja editar na tabela.</block>
-  <block id="8cd7391e66f29fd726ffdf9a59961f54" category="admonition">Você pode selecionar sistemas de arquivos individuais ou usar a caixa de seleção do cabeçalho para selecionar todos os sistemas de arquivos visíveis.</block>
-  <block id="93343e8a72e86eb0283fa9c6fb77b48b" category="list-text">Selecione *Alterar gerenciamento de capacidade de SSD* ou *Alterar gerenciamento de taxa de transferência* acima da tabela.</block>
-  <block id="b97c770bb654f2ef0b93eb759a99c159" category="list-text">Escolha o modo de sua preferência.</block>
-  <block id="a707a072d0b2b11d2c3e5a2160f9cd48" category="list-text">Na caixa de diálogo de edição, ajuste os parâmetros conforme necessário.</block>
-  <block id="43c2e4748a7a87eb44a6cb86329b0750" category="paragraph">Cada campo de parâmetro inclui uma dica de ferramenta que descreve sua finalidade e intervalo válido. A caixa de diálogo indica os valores atuais ou os valores padrão com base na sua seleção.</block>
-  <block id="3f254e874f94d9cc6daffdbea2c76012" category="list-text">Selecione *Aplicar* para aplicar as alterações a todos os sistemas de arquivos selecionados.</block>
-  <block id="80c68bda2149e685b2c9d4a63c1abe0b" category="paragraph">Os parâmetros são atualizados para todos os sistemas de arquivos selecionados. Os sistemas de arquivos nos modos Recomendar ou Automatizar utilizam os novos parâmetros imediatamente para análise e tomada de decisão.</block>
   <block id="84a7874f129070a914f70dd3d70a6716" category="section-title">Analisar tendências de capacidade e pontos de decisão</block>
   <block id="65bd457971cf8d44b2a0e065d040b668" category="paragraph">Use o gráfico de utilização do SSD para ver como o uso do storage muda ao longo do tempo e identificar padrões.</block>
   <block id="4dbca2bab9fb0222adee0d079e0d2127" category="paragraph">Os pontos de decisão no gráfico indicam quando:</block>
   <block id="232af3ec8ca37d39f0b49ddb6c81830a" category="list-text">*Pontos de decisão de recomendação*: O algoritmo de recomendação de capacidade identificou que é necessária capacidade adicional de SSD.</block>
   <block id="adcae559988943cef6bf4b9ce78904b2" category="list-text">*Pontos de decisão da automação*: O sistema de automação tentou aumentar a capacidade do SSD. Esses pontos mostram se a ação foi bem-sucedida ou falhou.</block>
-  <block id="322cceacdd52c951c88a1d93df7f0dd8" category="list-text">Na guia *Visão geral*, selecione o nome de um sistema de arquivos na tabela.</block>
-  <block id="c7967065af6ac7703ee14f60f2812ccb" category="list-text">Analise o gráfico de utilização do SSD, que mostra as tendências históricas de capacidade.</block>
-  <block id="6f6089a81e1a8064861733b4969654d6" category="list-text">Selecione diferentes intervalos de tempo para visualizar o comportamento da capacidade em vários períodos.</block>
-  <block id="8d33ce28efafbfe7600930c556bcfd55" category="list-text">Passe o cursor sobre os pontos de decisão no gráfico para visualizar detalhes sobre recomendações ou ações de automação em momentos específicos.</block>
-  <block id="4d43a6d1e695bf0a99e5bc33d3ca3fda" category="list-text">Utilize as informações do gráfico para:</block>
-  <block id="8aa0b0a22cf225f503177c8f1de7df3c" category="list-text">Entenda com que frequência são necessários ajustes de capacidade</block>
-  <block id="dc036d0aefd6c43f7e0e90f879128e16" category="list-text">Avalie se o modo de automação ou o modo de recomendação se adapta melhor aos seus padrões de carga de trabalho</block>
-  <block id="274e06045627d8934cd9bb52e8c64f53" category="list-text">Identificar restrições de capacidade recorrentes</block>
-  <block id="38e979158d55ae25a36aba4d97b0a8b4" category="list-text">Planeje as necessidades futuras de capacidade com base nas tendências de crescimento</block>
-  <block id="2814ccd9bf1ef1faffa5931e29ee7f74" category="list-text">Solucionar problemas em tentativas de automação malsucedidas</block>
-  <block id="aaf7b326d4aad005d3ebd721670545d4" category="paragraph">Os motivos comuns para falhas incluem: permissões insuficientes da AWS, atualização do sistema de arquivos já em andamento, armazenamento modificado nas últimas 6 horas, capacidade máxima de SSD atingida ou métricas do CloudWatch indisponíveis.</block>
   <block id="e307894bdae8efc4f4fdacf666cf2573" category="section-title">Use a tabela de clusters</block>
   <block id="27e86a81d2f78cd7f4181479163bbbeb" category="paragraph">A tabela de clusters fornece uma visão detalhada de cada sistema de arquivos FSx for ONTAP com métricas de desempenho e uso.</block>
   <block id="88dc1144edaa697995919551780b6e93" category="list-text">Na aba *Visão geral*, revise a tabela de clusters.</block>
@@ -2435,7 +2374,6 @@
   <block id="7780e54da604364e93f91b1ab2a73f3e" category="list-text">**Observe os pontos de decisão**: verifique os pontos de decisão nos gráficos de capacidade para ver como o sistema está tomando decisões e confirme se as configurações atendem às suas necessidades.</block>
   <block id="88a7c4b8bd498e193a117097af5581b1" category="list-text">**Edição em massa**: ao gerenciar vários sistemas de arquivos, use a edição em massa para manter as configurações consistentes.</block>
   <block id="526ad94042b150fca39290f6bef86a67" category="inline-link-macro">Saiba mais sobre o painel de visão geral</block>
-  <block id="91b5f8f96066d41fb5057458a69d5f81" category="list-text"><block ref="91b5f8f96066d41fb5057458a69d5f81" category="inline-link-macro-rx"></block></block>
   <block id="1fa1c236c7c4e85b71969a980c4956d3" category="summary">Use o painel de controle de Projetos para monitorar o uso de armazenamento, filtrar dados por projetos ou equipes e analisar o desempenho do volume para otimizar a alocação de recursos.</block>
   <block id="dcc687e70127f35861ac1fa0778b7f6a" category="doc">Utilize o painel de controle de Projetos no Workload Factory para EDA</block>
   <block id="0828a499bedded78f0e58a1aaac8fc54" category="paragraph">Use o painel de controle de Projetos para monitorar o uso de storage em seus sistemas de arquivos e volumes do FSx for ONTAP. Filtre os dados por projeto, equipe ou aplicativo. Visualize o desempenho geral e por volume para ajudar a planejar a capacidade e usar os recursos de forma mais eficiente.</block>
@@ -2940,38 +2878,16 @@
   <block id="3b40a61896ac7bb071b70913553072f1" category="inline-link-macro">Gerencie o armazenamento em blocos para um FSx for ONTAP sistema de arquivos</block>
   <block id="a0e2ae9ee4d99470514827717a4caba4" category="paragraph"><block ref="a0e2ae9ee4d99470514827717a4caba4" category="inline-link-macro-rx"></block></block>
   <block id="502e4764bf709decaf10769de6bc6d35" category="summary">Crie uma regra arquitetural personalizada usando linguagem natural para aplicar os padrões da sua organização para FSx for ONTAP.</block>
-  <block id="4049afdb7ff78ea7ac28f61f9f797fd8" category="doc">Crie uma regra personalizada no NetApp Workload Factory</block>
-  <block id="5043959279a8a7130fead37731434f76" category="paragraph">Crie regras personalizadas descrevendo-as em linguagem simples. O construtor de regras com IA no NetApp Workload Factory transforma sua solicitação em uma regra validada que verifica seus recursos do FSx for ONTAP.</block>
-  <block id="4a43e7c1c8d139e6a6dad318b5a9cefb" category="paragraph">O processo de criação de regras guia você por todas as etapas: definição da regra, revisão de como a IA a interpretou e verificação dos resultados antes de agendar avaliações regulares. Você mantém o controle em cada etapa. O sistema sugere uma regra com base no seu prompt, mas nada avança até que você a confirme.</block>
-  <block id="350427d39e7ed0f683e8f1c404ec8d1d" category="admonition">Se o administrador da sua conta desativou os recursos de IA, você não poderá criar regras personalizadas. Entre em contato com seu administrador ou <block ref="ba4e701e567767978f2b4fc32c409de8" category="inline-link-macro-rx"></block>.</block>
-  <block id="1c3732fbe04e93a2e86e149b248e9fd0" category="paragraph">As seguintes limitações aplicam-se às regras personalizadas:</block>
-  <block id="f49daa2f924ab7cc9649449db3950201" category="list-text">Não há correções automáticas disponíveis. Você deve corrigir os recursos não conformes usando as orientações fornecidas.</block>
-  <block id="7c7854f0cd9e8cf85ade395e732f419d" category="list-text">Cada regra pode verificar apenas um tipo de recurso. Para verificar vários tipos de recurso, crie regras separadas.</block>
-  <block id="a2dac8d044c9463b44de62bfef46ffc3" category="list-text">O intervalo mínimo de avaliação é de 1 hora para evitar exames excessivos.</block>
-  <block id="fa79d87dc9bd4ce86b2fe88eb0b009f8" category="list-text">As regras têm acesso somente leitura e não podem fazer alterações no seu ambiente.</block>
   <block id="2090e30be5c37fb6b5aa40aa26a83dea" category="section-title">Exemplos de regras personalizadas</block>
-  <block id="d272586227e521ec436cb6d107bc72ba" category="paragraph">Os exemplos a seguir ilustram regras personalizadas comuns:</block>
-  <block id="ee7f53b205e43e7a5017510113ca16f8" category="list-text">*Proteção do volume de produção*</block>
   <block id="31ba253c12166670e96f9fc69476b594" category="list-text">"Todos os volumes com a tag 'Prod' devem ter uma política de snapshot instalada"</block>
   <block id="6136cd3669246561542587bb4d5eac4c" category="paragraph">Essa regra cria automaticamente snapshots para proteger os volumes de produção de acordo com os requisitos da empresa.</block>
-  <block id="d806e9e618419f7699287ac2bf68844c" category="list-text">*Classificação por volume de arquivamento*</block>
   <block id="654b13cdd2897fd4260df3602f80ebbf" category="list-text">"Todos os volumes com a etiqueta 'Archive' devem ter uma política de tiering definida como 'All'"</block>
   <block id="3756e2c2d7cd023d9845fbb763b174a9" category="paragraph">Essa regra reduz custos ao mover automaticamente os dados arquivados para um storage mais barato.</block>
-  <block id="e3ea153fbcf2ab9a530ac273d13d87b1" category="list-text">*Padrões de nomenclatura do sistema de arquivos*</block>
   <block id="269acf14c942e18c7f92dabf12bccaf5" category="list-text">"Todos os sistemas de arquivos devem seguir a convenção de nomenclatura 'fsx-{environment}-{application}'"</block>
   <block id="bf0fa31d0a55270b5b0783d82f5a26b2" category="paragraph">Esta regra garante que os sistemas de arquivos sigam as convenções de nomenclatura da organização para facilitar o gerenciamento e a alocação de custos.</block>
   <block id="aa5bf59269969e22f1e91f0116790d69" category="paragraph">Antes de criar e executar regras personalizadas, certifique-se de ter o seguinte:</block>
-  <block id="45be4c4082a75641f5cf09a1154f1a35" category="list-text">Você configurou credenciais da AWS com acesso somente leitura. <block ref="0c8d805d1564d3a241abc10cd617ddd7" category="inline-link-macro-rx"></block>.</block>
-  <block id="b03a5834e0c7d0443ad6e81c5dbc0c80" category="inline-link-macro">Adicione as credenciais da ONTAP ao Workload Factory</block>
-  <block id="b32bd70485f5cd4564a8bb64cad83248" category="list-text">Você possui credenciais ONTAP com permissões de visualizador. <block ref="8c5843ad463a4380d4aee234d9c63357" category="inline-link-macro-rx"></block>.</block>
-  <block id="26857cd503604f9b1af321699f33fd88" category="inline-link-macro">Criar e associar um link</block>
-  <block id="70926b3739e479d17c8fa7038918d40e" category="inline-link-macro">implantar um agente do Console</block>
-  <block id="c451917ff78847232a6e9ad1a2e5ce75" category="list-text">Você tem um link ou um agente do Console configurado para conectividade com o sistema de storage de nuvem. <block ref="f19f5082e51b44f6df48e1dc4b4843cb" category="inline-link-macro-rx"></block> ou <block ref="c0b60e44058ef23cb425372e66b4c6eb" category="inline-link-macro-rx"></block>.</block>
   <block id="fadf874162a190084750a51220f07180" category="list-text">Você entende que a criação de regras personalizadas utiliza o serviço de IA Bedrock da NetApp.</block>
   <block id="536d32f8526dd0faea40f78af4cad034" category="section-title">Criar uma regra</block>
-  <block id="8359d1f482d547a2e4629ea9efc70b35" category="paragraph">Use o Rule builder para criar regras personalizadas de boas práticas usando linguagem simples. Essas regras são verificadas em todos os seus recursos.</block>
-  <block id="5c831e6d1d52edfcb0f3153ac4d08fc8" category="list-text">Selecione o menu <block ref="d0893c56792da060977c8f5dd5abb05a" category="inline-image-macro-rx" type="image"></block>, *Cargas de trabalho* &gt; *Bem arquitetadas*.</block>
-  <block id="9e0430dcbcdaff60b125b83d5a4885ff" category="list-text">No menu Bem-arquitetado, selecione *Rule builder*.</block>
   <block id="3f87c61ee7c070ec896e14d55b132e25" category="paragraph">Ao abrir o construtor de regras, são exibidos exemplos de prompts para ajudar você a escrever sua regra personalizada. Você pode selecionar *Copiar prompt* para copiar um exemplo de prompt para a caixa de texto da caixa de diálogo de IA.</block>
   <block id="ab99baf0da39867076eea6e470865275" category="list-text">No campo *Criar uma regra*, insira a descrição da sua regra em linguagem natural. Seja o mais específico possível sobre:</block>
   <block id="d8eefaf38d3f8455541df01bc5d6831b" category="list-text">Qual o tipo de recurso que você está verificando (sistema de arquivos, volume ou cache).</block>
@@ -2983,47 +2899,17 @@
   <block id="15fc6fdd1dd9d66889237c7e8a75d290" category="paragraph">A IA analisa sua solicitação e gera uma definição de regra.</block>
   <block id="1c88936123899b4423b51efeb098f008" category="section-title">Revise a interpretação da IA</block>
   <block id="28ea3f4811ef4cb7fc2b7f08d6fce5a7" category="paragraph">O construtor de regras exibe:</block>
-  <block id="ac95e11bdbe6b7951bc4176d753eecdb" category="list-text">*Interpretação analisada*: Como a IA entendeu seu prompt em linguagem simples.</block>
-  <block id="7754266bb34a8d80acb7e15270b99ec3" category="list-text">*Definição de regra*: A regra estruturada que inclui o tipo de recurso, a lógica da condição e os critérios de avaliação.</block>
-  <block id="7c2fe3e0d58f228cda5f45d633432f17" category="list-text">*Justificativa*: Por que a IA interpretou sua solicitação dessa maneira.</block>
-  <block id="76aee06db0fa09e15fccb38736a4bcf7" category="list-text">*Indicador de confiança*: o grau de confiança que o sistema tem na interpretação.</block>
   <block id="f89784f298e9f6255c6acd2f32b4051a" category="list-text">Revise a interpretação para garantir que ela corresponda ao que você pretendia.</block>
-  <block id="c0a47630db46adfc611696cbc6259777" category="paragraph">Verifique se a definição da regra está correta. Se a interpretação for obscura ou incorreta, o sistema poderá fazer perguntas como: * Qual recurso deve ser verificado? * Qual valor ou limite define a conformidade? * Com que frequência a regra deve ser executada?</block>
   <block id="f7dd96479a94850934674d003fe54f52" category="list-text">Após responder a todas as perguntas, selecione *Continuar* para criar sua regra.</block>
   <block id="66178252f08edeeeeda7bfc5ebf5227b" category="section-title">Teste a regra</block>
-  <block id="0362b2cfbfe0db96dc282024dbd64841" category="paragraph">Antes de agendar a regra, execute um teste único para ver quais recursos ele afetará.</block>
   <block id="e0924f9cecf28912d6b59208f0ee9242" category="list-text">Selecione *Validar regra*.</block>
   <block id="87d68b4e906936ea67c73d25fddbb199" category="paragraph">O sistema avalia todos os recursos dentro do escopo com base na sua lógica de regras.</block>
   <block id="6ad0887ee719e958ea66bc1d5ca7ed60" category="list-text">Revise os resultados da validação:</block>
-  <block id="0c1a6881568187ba2218c2798723b963" category="list-text">*Recursos avaliados*: número total de recursos verificados</block>
-  <block id="4b5e8fb3a43e71540bec48dd1195e60d" category="list-text">*Em conformidade*: Recursos que atendem aos critérios da regra</block>
-  <block id="149dc40e624cd47605b5908752da1597" category="list-text">*Não conformes*: Recursos que não atendem aos critérios</block>
-  <block id="222d82b8b5728640234e4566d39a549c" category="list-text">*Avaliações com falha*: Recursos que não puderam ser avaliados (com detalhes do erro)</block>
-  <block id="6844f9bfd3027da2003f968152f2a47a" category="list-text">Se alguns recursos falharam na avaliação, verifique os motivos do erro:</block>
-  <block id="277990b13713bd5d1349cb0637866450" category="list-text">*Erros de credencial da AWS*: permissões somente leitura podem ser insuficientes para determinados recursos</block>
-  <block id="1bb9a202a6c7284b2727618b6b42d1bf" category="list-text">*Erros de conectividade*: o link ou o agente podem não estar configurados para determinados sistemas de arquivos</block>
-  <block id="6601c2de36f9d2c2a63a21c9170e4bae" category="list-text">*Erros de permissão do ONTAP*: o usuário visualizador pode não ter acesso a determinados recursos</block>
   <block id="24a910eeb4468fa91fa54136e064eb5d" category="section-title">Salvar ou agendar a regra</block>
-  <block id="8c7715e49e638258c4536fec9aff1f6e" category="paragraph">Após testar sua regra, você pode salvá-la como rascunho ou configurá-la para ser executada regularmente.</block>
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">Faça um dos seguintes procedimentos:</block>
-  <block id="8c080127194fcaf624649c3bab095baa" category="list-text">Para agendar avaliações regulares, defina a frequência de avaliação (mínimo de 1 hora, padrão de 24 horas) e selecione *Schedule*. A regra é ativada e executada na programação definida.</block>
-  <block id="988a89425a3c56162fa9fed77217603a" category="list-text">Para salvar sem agendar, selecione *Salvar como rascunho*. A regra é salva, mas não é avaliada até que você a agende.</block>
-  <block id="f3448dd91675f24e9473969b2f303b47" category="list-text">Para descartar a regra, selecione *Descartar* para cancelar a criação da regra e começar novamente.</block>
-  <block id="8e89c0ba0d3b83aea36ecc1be4cfe4fb" category="paragraph">Sua regra personalizada foi criada e está listada no catálogo de regras. Se você definir um agendamento, ele verificará seus recursos do FSx for ONTAP na frequência especificada.</block>
   <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">Solução de problemas</block>
-  <block id="ad7ea03a306fd66841c171a6885f7b14" category="list-text">Nenhum sistema de arquivos disponível</block>
-  <block id="9f6cf15e71e56dca004ae4af5511fdc6" category="list-text">Configure suas credenciais da AWS e certifique-se de que seu ambiente tenha pelo menos um sistema de arquivos FSx for ONTAP. O construtor de regras precisa de um sistema de arquivos para aplicar regras.</block>
-  <block id="15a9422f3948ed951664141901f605d9" category="list-text">Interpretação de baixa confiança</block>
-  <block id="d901db1e2096f8ef858f5f7e7e04f829" category="list-text">São necessárias mais informações. Responda às perguntas ou reformule sua pergunta com detalhes claros sobre o tipo de recurso, limites e condições.</block>
-  <block id="ce332e562b5422b101c4ea54a309f0c9" category="list-text">Falhas parciais de validação</block>
-  <block id="a4bffcd84e8416b02d243a51aa82cb84" category="list-text">Verifique quais recursos falharam e por quê. Causas comuns são a falta de configurações de link ou agente ou permissões insuficientes. Corrija o problema e valide novamente.</block>
-  <block id="7720c57b7119d10e920558f513246c98" category="list-text">Prompt ambíguo</block>
-  <block id="57aa8a34f1c34817409a7bb0fcc62dde" category="list-text">Seja mais específico sobre o que você deseja verificar. Inclua o tipo de recurso, a condição e o limite. Consulte os exemplos de prompts para obter ajuda.</block>
-  <block id="319de2ebfe72521f2551d5fa11e01fd5" category="list-text">A regra tem como alvo vários tipos de recursos</block>
-  <block id="9614a11d3defd26388181526016cb85d" category="list-text">Crie uma regra separada para cada tipo de recurso. Apenas um tipo de recurso por regra é suportado.</block>
   <block id="3f710cadb0123c693533da68aaf5b596" category="section-title">O que fazer a seguir</block>
   <block id="79d32aa7b3e52f3c6db178577378b427" category="inline-link-macro">Gerenciar regras personalizadas</block>
-  <block id="f571cd95e32f7c421382198bc0dd0eae" category="paragraph"><block ref="f571cd95e32f7c421382198bc0dd0eae" category="inline-link-macro-rx"></block></block>
   <block id="7335bfe9e44aaa30f676443b169c4028" category="summary">Saiba mais sobre os cofres cibernéticos da NetApp e como implementar uma arquitetura de cofre cibernético para proteger seus dados contra ransomware e ameaças cibernéticas.</block>
   <block id="08d70d11ddeec80d88a5f51591578656" category="doc">Proteja seus dados do FSx for ONTAP com um cofre cibernético</block>
   <block id="c20c451e413ebde26a765cbbc0c15afc" category="paragraph">Um volume de cofre cibernético é um local de storage isolado e seguro usado para armazenar cópias de backup dos seus dados, protegendo-os contra ataques de ransomware e outras ameaças cibernéticas. Como parte da criação do cofre, você criará um volume de cofre cibernético, desativará todos os protocolos de cliente, configurará uma relação de replicação entre o volume de origem e o volume do cofre cibernético e criará Snapshots imutáveis no volume do cofre cibernético.</block>
@@ -3596,44 +3482,13 @@
   <block id="90bf65e5861f1213fc5134e7f7138cc3" category="paragraph">O Workload Factory reativa a análise de configuração e executa uma nova análise todos os dias.</block>
   <block id="05becc6908f11b950a10c1285ad8e610" category="summary">Aprenda a definir e gerenciar suas próprias regras de arquitetura para aplicar padrões organizacionais juntamente com as melhores práticas da NetApp.</block>
   <block id="ce6ef2ffcadf69c1dc27dcb9da2d801d" category="doc">Saiba mais sobre regras personalizadas no NetApp Console</block>
-  <block id="b01cf57846bbc28ff99c21c4bc5bf95e" category="paragraph">As regras personalizadas permitem que você defina, verifique e aplique seus próprios padrões de arquitetura, juntamente com as melhores práticas da NetApp, no painel Well-architected.</block>
-  <block id="1bf27748c4595ac68f24c9ca81ac41bf" category="paragraph">O Construtor de Regras permite que você crie regras personalizadas de boas práticas usando linguagem simples. Essas regras são verificadas em todos os seus recursos.</block>
-  <block id="a14942c110e79e05bc4f2c080b767a9b" category="paragraph">Regras personalizadas ajudam você a aplicar os padrões, limites de risco e requisitos operacionais da sua organização, aspectos que as regras genéricas do fornecedor podem não abranger completamente.</block>
-  <block id="002c98034b4e47541ee4b33aac974174" category="admonition">Se o administrador da sua conta desativou os recursos de IA, o Construtor de Regras não estará disponível e você não poderá criar regras personalizadas. <block ref="16a6e53f632272dd159a18488d3ece68" category="inline-link-macro-rx"></block>.</block>
   <block id="2d5a2d8915799663f0b12f296909b0d7" category="section-title">Como funcionam as regras personalizadas</block>
-  <block id="d269a3644b7db5fd4dd7893dafcb7c46" category="paragraph">As regras personalizadas utilizam um processo guiado por IA que transforma suas instruções em linguagem simples em regras claras e estruturadas. A IA atua como tradutora e revisora. Ela sugere uma regra, explica como entendeu sua solicitação e pede sua aprovação antes que a regra seja salva ou agendada.</block>
-  <block id="2798be4150461330610447e77c4b94bc" category="paragraph">Este processo garante que:</block>
-  <block id="878df2e7c1f458ab6c7a2aa10a79a91d" category="list-text">A lógica da regra está claramente definida e verificada quanto a erros</block>
-  <block id="2de539a5ac80425a29aa3efc4546d6bd" category="list-text">Nenhum código de formato livre é executado</block>
-  <block id="a279bdea3d93ab7f5ebfed278530b951" category="list-text">Você pode ver exatamente o que será avaliado antes de aprovar a regra</block>
-  <block id="da7a7207ece80c733dd995304be2e71b" category="section-title">Modelo de definição de regras</block>
-  <block id="bac8c4aaf2611263b9e58729fcd77b06" category="paragraph">Cada regra personalizada consiste nos seguintes componentes:</block>
-  <block id="a4257b70dd090b12a16890a8df21a097" category="list-text">Nome da regra</block>
-  <block id="c183586d821a9b142dd656b18e6abd05" category="list-text">Um nome definido pelo usuário para a regra.</block>
-  <block id="33d8c05440f61966e844b1f1f9bdfdbc" category="list-text">Seu motivo para explicar por que essa regra é importante para sua organização.</block>
-  <block id="34b13a905e7f65d5c27af25f75b92e1a" category="list-text">O recurso FSx a ser avaliado (sistema de arquivos, volume ou cache). Atualmente, apenas um tipo de recurso por regra.</block>
-  <block id="ffaac1794c6af94dc7e1b21a4c194523" category="list-text">Agendador</block>
-  <block id="7689948dd9ffc86e8e4279d74f40440a" category="list-text">Com que frequência a regra é avaliada (mínimo 1 hora, padrão 24 horas).</block>
-  <block id="eef94a037f518dee839a80817e6c370d" category="list-text">Lógica condicional</block>
-  <block id="3ec042014c07c06e08f1132a2736a67b" category="list-text">Os critérios específicos a serem verificados.</block>
-  <block id="69971bc4f2fcec5885c890771737ab96" category="list-text">Escopo da avaliação</block>
-  <block id="f9352c661007f5c20648b8667e3e2c2e" category="list-text">Quais recursos são avaliados (todos os recursos aplicáveis no escopo).</block>
-  <block id="383f1fcec1ec1cc242da70cbe9e75353" category="list-text">Lógica de remediação</block>
-  <block id="fa89a084a4db5e99f8289cf816f86093" category="list-text">Orientação manual para lidar com recursos não conformes.</block>
   <block id="3414a9edc41238183f8bcc3192e49adf" category="section-title">Ciclo de vida da regra</block>
   <block id="990ef24c1b7e8a2bf1d9ad948d75e88c" category="paragraph">As regras personalizadas progridem pelos seguintes estados:</block>
   <block id="f03ab16cd58372c77ba45a3d9a5a1cb9" category="list-text">Rascunho</block>
-  <block id="7edfa45546f16ea439072c85ed022ded" category="list-text">A regra está sendo criada. Nenhuma avaliação está ocorrendo.</block>
-  <block id="a42abfa6ff4f9bd0c4d682a01cec4455" category="list-text">Execução simulada</block>
-  <block id="df76323d34c18ca92f80a38fd9da8d33" category="list-text">Avaliação única para prever quais recursos seriam afetados. Usada para validação antes do agendamento.</block>
-  <block id="9c039c6e29eb59991bbe3702d2de1aed" category="list-text">Agendado (Ativado)</block>
-  <block id="12401e69cfee8012efd57dfa07ccda49" category="list-text">A regra está ativa e é executada conforme a programação definida.</block>
   <block id="b9f5c797ebbf55adccdd8539a65a0241" category="list-text">Desabilitado</block>
-  <block id="9bfd2521cfb729dd925cf45079242073" category="list-text">A regra está pausada, mas não excluída. Pode ser reativado.</block>
   <block id="5fe6005bf6e415c950c011fb65f12b8f" category="list-text">Excluído</block>
-  <block id="82ec5f7cc11035152c40e48c55c05b0d" category="list-text">A regra foi removida permanentemente.</block>
   <block id="cff2e3f5566a6d8510f1c58ca5513eb3" category="inline-link-macro">Crie uma regra personalizada</block>
-  <block id="385442535e80145b437f6d2ceb94114a" category="paragraph"><block ref="385442535e80145b437f6d2ceb94114a" category="inline-link-macro-rx"></block></block>
   <block id="a6ea8698bb0a2a5be6c2039333230f0d" category="summary">O Amazon FSx for NetApp ONTAP é um serviço totalmente gerenciado que permite aos clientes iniciar e executar sistemas de arquivos como backend de storage para suas cargas de trabalho na Workload Factory.</block>
   <block id="cf48e68a514aaa28472879638d1a7d1f" category="doc">Saiba mais sobre o Amazon FSx for NetApp ONTAP no NetApp Workload Factory</block>
   <block id="e09c57ba3be0669d8a1f0b37718a2e2f" category="paragraph">O Amazon FSx for NetApp ONTAP é um serviço de storage de dados totalmente gerenciado, baseado em nuvem, que oferece recursos avançados de gerenciamento de dados e desempenho altamente escalável. O FSx for ONTAP permite que você crie e gerencie sistemas de arquivos como backend de storage para todas as suas cargas de trabalho no NetApp Workload Factory.</block>
@@ -3807,9 +3662,6 @@
   <block id="dd3ba3038bdde3ca3d4a9a2397052b60" category="list-text">Na página Gerenciar compartilhamentos SMB/CIFS, selecione o menu de ações do compartilhamento SMB/CIFS e, em seguida, selecione *Excluir*.</block>
   <block id="dc782d3e46ef3bd4b9ae294af16366b0" category="paragraph">Excluir o compartilhamento SMB/CIFS o torna indisponível e inacessível para qualquer usuário que queira montá-lo.</block>
   <block id="73d6e57b628ed920f4ce69e52d8df9d7" category="list-text">Na caixa de diálogo Excluir compartilhamento SMB/CIFS, selecione *Excluir* para confirmar a exclusão.</block>
-  <block id="2f7453885ba13ef684e6cd780fb74164" category="summary">Visualize, ative, desative e exclua regras arquitetônicas personalizadas do catálogo de regras.</block>
-  <block id="8514e73d9c66f38925285d9bebb2a243" category="doc">Gerencie regras personalizadas para o NetApp Workload Factory</block>
-  <block id="0a7f0abf34857702447ced5ee72899a5" category="paragraph">O catálogo de regras é um local centralizado para gerenciar todas as suas regras personalizadas. Você pode visualizar os detalhes de cada regra, verificar seus resultados e ativá-la ou desativá-la.</block>
   <block id="d8bb2214730133a5475bf68bf933cdeb" category="section-title">Veja o catálogo de regras</block>
   <block id="12dc6c12cd959eea202fab9d01a2ef04" category="paragraph">O catálogo de regras mostra todas as regras que você criou, o status delas, o agendamento e os resultados mais recentes.</block>
   <block id="e1cf2ece0db166d8b4c6b87f20794e11" category="inline-image-macro">O ícone do menu hambúrguer</block>
@@ -3822,17 +3674,7 @@
   <block id="f4e2484ce7f636995f87d4460bb472cf" category="list-text">Selecione **Ver detalhes** para ver os resultados de cada execução.</block>
   <block id="13b595cf2341f5678ff3130cc1287485" category="paragraph">Se a verificação falhou para alguns itens, leia a mensagem de erro para ver o motivo. As razões mais comuns são problemas de conexão, permissões ausentes ou um link que não foi configurado.</block>
   <block id="12a0a2265c24db72f6aaae801b9ef08e" category="section-title">Editar uma regra personalizada</block>
-  <block id="116b3452f6f173fec30f1c3fdc6abf00" category="paragraph">Você pode alterar a lógica, o agendamento ou outras configurações de uma regra a qualquer momento. Ao editar uma regra, o construtor de regras é exibido com as configurações atuais da regra.</block>
   <block id="c581903f7e0dde27bf4a83cc84f27b43" category="list-text">No catálogo de regras, clique na regra que você deseja editar.</block>
-  <block id="4a1938d0e423380a1497b6177cf5dc1c" category="list-text">Clique em *Editar*.</block>
-  <block id="98e7c69fc0402a63a6188811c74d5241" category="paragraph">A regra passa para o modo de rascunho e o construtor de regras é aberto.</block>
-  <block id="33866fc7f5559365b0589d4a8bc41091" category="list-text">Edite o prompt da regra ou use a conversa para aprimorá-la.</block>
-  <block id="d9f6e2c38d2693ba00ab2675a59dd016" category="list-text">Analise a interpretação atualizada da IA e a definição da regra.</block>
-  <block id="7f377d9cf47a3f190040ea3efc10335f" category="paragraph">O sistema mostra o que mudou em relação à regra atual, incluindo quaisquer chamadas de API ou lógica.</block>
-  <block id="1e953a8680ae41072abb4bd1012ad3b4" category="list-text">Faça um dos seguintes procedimentos, dependendo das alterações feitas:</block>
-  <block id="531b7098c8d3a0630df416551c1eabcf" category="list-text">Se você fez alterações menores, clique em *Save* para atualizar a regra.</block>
-  <block id="30a70c42d21ecc5c129ccf20f303ec75" category="list-text">Se você fez alterações significativas, clique em *Validar regra* para testar as alterações e, em seguida, clique em *Agendar* para salvar e agendar a regra ou clique em *Salvar como rascunho* para salvar sem agendar.</block>
-  <block id="c4201ee0fd07b804ee782357c70d2e27" category="list-text">Para descartar as alterações, clique em *Reverter para a versão anterior*. A regra retorna à sua definição original e sai do modo de edição.</block>
   <block id="c5ef40517475cde4aa83a5451658e49f" category="summary">Adicione, atualize ou remova as tags do sistema de arquivos do FSx for ONTAP para um sistema de arquivos a qualquer momento.</block>
   <block id="3dd4ca2c61c588825f3e69d7851510b5" category="doc">Gerencie as configurações do sistema de arquivos FSx for ONTAP no NetApp Workload Factory</block>
   <block id="f120bfb32fdc034593c753c46a030312" category="section-title">Gerencie as tags do sistema de arquivos do Amazon FSx for NetApp ONTAP</block>
@@ -5998,20 +5840,10 @@
   <block id="4783fc8cfe1d67f67a21a8d696efba01" category="list-text"><block ref="4783fc8cfe1d67f67a21a8d696efba01" category="inline-link-rx"></block></block>
   <block id="691c4c4e7aae91b9ba1765ff8bbe5163" category="inline-link">Documentação do Copy and Sync do NetApp Console</block>
   <block id="1b49be3f67267d403496193d78233d91" category="list-text"><block ref="1b49be3f67267d403496193d78233d91" category="inline-link-rx"></block></block>
-  <block id="7c9227c0b3486490a4814fe5ca042183" category="summary">Comece a usar o Google Cloud NetApp Volumes configurando o Google Cloud e, em seguida, criando um sistema.</block>
   <block id="b0aa4fa8dc6511816bb58aa5617d1ee5" category="doc">Guia rápido para Google Cloud NetApp Volumes</block>
-  <block id="a213ab2be24278e031afba73382d0cf1" category="paragraph">Comece a usar o Google Cloud NetApp Volumes configurando o Google Cloud e, em seguida, criando um sistema.</block>
-  <block id="15adadcc8bf8dcb5404e0fe11af44772" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="313399230f51e71d885069f73138c41a" category="inline-link-macro-rx"></block></block>
-  <block id="91b07957ce4b7cb970c3aaa153fddf0c" category="paragraph">Crie uma conta de serviço no Google.</block>
   <block id="c14bbe70b91bf5d6b061027d2a7d5c35" category="inline-link-macro">Atribuir funções</block>
-  <block id="a8028c06a9224ed3ab0f9316a3fb7bc7" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="e1bc4ca4196f069d6cfddda77094a4ac" category="inline-link-macro-rx"></block></block>
-  <block id="e1f998e938cc77602c685ea4489861e5" category="paragraph">Para começar a trabalhar com o Google Cloud NetApp Volumes, você precisa ter as permissões apropriadas e a função Google Cloud NetApp Volumes admin ou Google Cloud NetApp viewer atribuída a você.</block>
-  <block id="1082b67e395cc89d61a139c7ce68374f" category="inline-image-macro">Uma captura de tela da função do Google Cloud NetApp Volumes.</block>
-  <block id="c1718ab208b6eab475574a990a36a0b8" category="paragraph"><block ref="c1718ab208b6eab475574a990a36a0b8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="aaea90d2749395beb16f5340fe5cc964" category="paragraph">No NetApp Console, atribua as funções corretas aos membros.</block>
   <block id="770e6e1d37ec8e564116ac215a622e66" category="inline-link-macro">Adicionar um sistema</block>
-  <block id="7e68ee8ea5a2fb297454d49c5a880f4b" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="3c542c966df5afd0ff43e76a8b69feae" category="inline-link-macro-rx"></block></block>
-  <block id="05c5a25d7a79c44ec89bb64914a00a71" category="paragraph">No NetApp Console, clique em *Adicionar sistema*, depois em *Google Cloud Platform*, em seguida em *Google Cloud NetApp Volumes* e, por fim, em *Descobrir*. Forneça os detalhes sobre a conta de serviço e o projeto do Google Cloud.</block>
   <block id="19e4ef4e4ed4623b5e0397bb68bc60c0" category="summary">O NetApp Console precisa de acesso à API do Google Cloud NetApp Volumes e das permissões corretas por meio de uma conta de serviço do Google Cloud.</block>
   <block id="f0eefed66af669fe08a145bb3c570ac3" category="paragraph">O NetApp Console precisa das permissões corretas por meio de uma conta de serviço do Google Cloud.</block>
   <block id="bc50bdbbe9eebcafb5a89e4937b64930" category="paragraph">Conclua as seguintes tarefas para que o NetApp Console possa acessar seu projeto do Google Cloud.</block>
@@ -6814,4 +6646,269 @@
   <block id="9a90fd93ba397d5f48de07251acc1808" category="list-text">Detalhamento dos componentes para eventos de latência</block>
   <block id="1df7d27de080cb3c4560fbfcb9b950a2" category="inline-link-macro">Documentação do Workload Factory para o NetApp Console</block>
   <block id="865cb26d81d670b59ffd115deff750d1" category="paragraph"><block ref="865cb26d81d670b59ffd115deff750d1" category="inline-link-macro-rx"></block></block>
+  <block id="12e6f15d6e11849eda04741c878ee336" category="admonition">Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá criar painéis. Entre em contato com seu administrador ou <block ref="55cc8ba0b3cffc5a9d61e1691feb56d9" category="inline-link-macro-rx"></block>.</block>
+  <block id="2e73b76e7b232c5b1f77e0a5880d5ad5" category="list-text">Selecione o menu <block ref="d1917ed039a7bd34b3d1373e5ffc5ece" category="inline-image-macro-rx" type="image"></block> e, em seguida, selecione *Visão geral das cargas de trabalho* &gt; *Painéis personalizados*.</block>
+  <block id="3fc036b2c292290b8cd3e3dd22515be4" category="paragraph">Seu painel personalizado foi criado e adicionado ao catálogo de painéis. Por padrão, o painel é privado e visível apenas para você. Você pode alterar a visibilidade para pública se quiser compartilhá-lo com outros usuários na sua conta do Workload Factory. <block ref="7f05a2d9425c37de5e57a44940ff0962" category="inline-link-macro-rx"></block>.</block>
+  <block id="e9f973e77c8ea51b19afbc2f814be860" category="paragraph">Você receberá uma notificação quando seu painel estiver pronto. Caso não seja possível criá-lo, você receberá uma notificação com um link para tentar novamente. <block ref="f2f02b956f17500aef24321ad05c7e30" category="inline-link-macro-rx"></block>.</block>
+  <block id="b2174789d5314bb12b464a8d03a18be6" category="list-text">Edite os painéis para alterar o que eles exibem, incluindo métricas, gráficos e intervalos de tempo</block>
+  <block id="126ca7c8fdb99a80b6510a42ef44ab9f" category="list-text"><block ref="126ca7c8fdb99a80b6510a42ef44ab9f" category="inline-link-macro-rx"></block></block>
+  <block id="571a6725cec558792e7b13f29f5e9d9c" category="list-text"><block ref="571a6725cec558792e7b13f29f5e9d9c" category="inline-link-macro-rx"></block></block>
+  <block id="2c8d2ace24ab724b2b9846dfbd1113fb" category="summary">Descubra como os agentes de IA do Workload Factory podem analisar seu ambiente, identificar riscos e maneiras de melhorar o desempenho e tomar medidas por você com sua aprovação.</block>
+  <block id="a4988f1624f7fc0b4eaabf35a45c6593" category="doc">Saiba mais sobre os agentes de IA no NetApp Workload Factory</block>
+  <block id="44930f32325dbab8392ff7743e877c7e" category="paragraph">O Workload Factory AIOps usa IA para analisar seu ambiente e recomendar melhorias. Se você aprovar, ele também poderá executar ações usando as credenciais e permissões que você configurou.</block>
+  <block id="d509ca4bf93c965b1cd7121948d79351" category="admonition">Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá usar os agentes. Entre em contato com seu administrador ou <block ref="55cc8ba0b3cffc5a9d61e1691feb56d9" category="inline-link-macro-rx"></block>.</block>
+  <block id="29e96b144158fa2cf3ed37b1696584a9" category="paragraph">Certifique-se de que sua conta do Workload Factory tenha credenciais da AWS e as permissões do IAM de que os agentes precisam para os recursos que acessam. Se você habilitar o modo de leitura e gravação, essas permissões também deverão permitir alterações compatíveis.</block>
+  <block id="3b8e3eff2b9d5a25eecc8e879fab9225" category="section-title">Uso e privacidade dos dados</block>
+  <block id="823764ac349552585c033c832c9a9119" category="paragraph">Seus dados não são usados para treinar modelos de IA. Os agentes usam suas credenciais para acessar recursos da AWS com segurança por meio de APIs padrão da AWS e respondem com base no seu ambiente real. Todas as atividades dos agentes seguem as políticas de privacidade da NetApp e os controles de segurança da AWS.</block>
+  <block id="a9ad35f78cf699132ce97296208021d6" category="section-title">Por que usar agentes de IA</block>
+  <block id="0dcc2bd50249549545f604062e32c8d1" category="paragraph">Os agentes de IA ajudam você a trabalhar com mais eficiência no Workload Factory:</block>
+  <block id="08b88087b00df48c7dcec290d2085d9d" category="list-text">Obtenha respostas e recomendações com base no seu ambiente.</block>
+  <block id="f41dc5b513f7a5678f949fafbb672e71" category="list-text">Identificar riscos e oportunidades de otimização.</block>
+  <block id="45747fdf81b9f650b9ab26706866db24" category="list-text">Solucione problemas e execute ações aprovadas em um único fluxo de trabalho.</block>
+  <block id="6fd44b1c4edd80ad7b595f1fcb4c7483" category="list-text">Execute verificações agendadas e receba atualizações no histórico do chat.</block>
+  <block id="54ba8fb885319acf274731794ecf9b35" category="list-text">Trabalhe em ambientes do FSx for ONTAP e do Google Cloud NetApp Volumes.</block>
+  <block id="4eeb2bca1dddd7a796d908c266d60075" category="section-title">Acesse os agentes de IA</block>
+  <block id="e6478bab5c49062e219e1290c4442eed" category="list-text">Da homepage Ask Me</block>
+  <block id="b3c72178808d9fa6e9c876b76d5d1928" category="list-text">Na página inicial do Ask Me, selecione *Explore Agents*. O painel lateral dos agentes de IA é aberto com uma mensagem de boas-vindas apresentando os recursos dos agentes.</block>
+  <block id="99b503a5e4373b0bc3054a025797d268" category="list-text">A partir dos links de redirecionamento dos agentes</block>
+  <block id="54fd5f6787cd568e4b9880863150bb93" category="list-text">Ao usar o **Ask Me** ou outros recursos, você poderá ver links que redirecionam você para os agentes para obter assistência mais avançada.</block>
+  <block id="98ff5af4adf0662fa0278d6e7332c116" category="section-title">Como funcionam os agentes de IA</block>
+  <block id="31fe269c620fcf2562efe2871e4398f8" category="section-title">Como os agentes acessam seu ambiente</block>
+  <block id="d6356702d2caa14ca196fe664fc1853e" category="inline-link-macro">Configurações dos agentes</block>
+  <block id="9707c726221d376ab19585baff504e36" category="paragraph">Os agentes só podem acessar recursos quando estiverem incluídos no seu escopo atual do Workload Factory e forem compatíveis com as credenciais selecionadas em <block ref="282e73cd725615cc6b76a3c0f60eeeeb" category="inline-link-macro-rx"></block>. Os agentes só podem operar onde ambos os controles se aplicam. Os recursos que eles podem acessar também dependem das permissões atribuídas às suas credenciais da AWS. Por padrão, todas as credenciais estão selecionadas, mas você pode restringir isso a um subconjunto das suas credenciais configuradas.</block>
+  <block id="f19cfe1072c3d3c974b0cdafbcdde1ef" category="paragraph">Suas atribuições atuais incluem:</block>
+  <block id="676cd33769e7c44db0294ca1bdc4a818" category="list-text">*Contas da AWS*: quais contas da AWS os agentes podem acessar.</block>
+  <block id="8f7fd41f1486852019ec1e81297e4749" category="list-text">*Credenciais*: quais credenciais os agentes podem usar.</block>
+  <block id="db9be091d62e76416638fd7987fac0d3" category="list-text">*Regiões*: quais regiões da AWS os agentes podem acessar.</block>
+  <block id="9ea7586a1a950d81f272e8403a8f6cbe" category="paragraph">Os filtros no Workload Factory definem o escopo da página atual, como as contas e regiões da AWS em exibição. As configurações dos agentes controlam quais credenciais os agentes podem usar dentro desse escopo. O acesso aos recursos também depende das permissões do IAM atribuídas a essas credenciais.</block>
+  <block id="28dec2f4988032196e5673d255d3c391" category="admonition">Selecionar uma credencial em *Agents settings* não concede permissões adicionais da AWS. Certifique-se de que as credenciais tenham as permissões do IAM necessárias para que os agentes acessem os recursos que você deseja que eles analisem ou gerenciem.</block>
+  <block id="54a2d462b3304eb93c5cfe391a9e67bf" category="section-title">Modo somente leitura (padrão)</block>
+  <block id="dd8585af3d55da47f5760a15f3d8be48" category="paragraph">Por padrão, os agentes operam em modo somente leitura. Nesse modo, eles podem:</block>
+  <block id="1b539d90e247bf7cc195a2d8096208d6" category="list-text">Responda a perguntas sobre o seu ambiente.</block>
+  <block id="0f896edbba7d346551c186acd1309a44" category="list-text">Analise seus sistemas de arquivos, bancos de dados e cargas de trabalho do FSx for ONTAP.</block>
+  <block id="6705aab6526bc219af2bdc50b636aa94" category="list-text">Identifique riscos, configurações incorretas e oportunidades de otimização.</block>
+  <block id="e863933d9a2c33d982a9403853ef5c8f" category="list-text">Apresente recomendações para melhorar o desempenho, a disponibilidade, a proteção e a relação custo-benefício.</block>
+  <block id="0da32bbd416014e9a050dd9753a5f97c" category="list-text">Solucionar problemas e sugerir medidas corretivas.</block>
+  <block id="5c5d131e2fde1dde32d484bb16b397d5" category="paragraph">Eles não podem alterar recursos no modo somente leitura. Se você solicitar uma ação que precise de acesso de gravação, o agente explicará a limitação e fornecerá links para as configurações do agente.</block>
+  <block id="c43e0775dbe854488f7416962d78486c" category="section-title">Modo de leitura e gravação (opcional)</block>
+  <block id="a87dff151959e2568b226abf5e272ac7" category="paragraph">Você pode habilitar os recursos de leitura e gravação em <block ref="282e73cd725615cc6b76a3c0f60eeeeb" category="inline-link-macro-rx"></block>. Nesse modo, os agentes explicam cada ação compatível e exigem sua aprovação antes de fazer qualquer alteração.</block>
+  <block id="601c01875f07f976aec59310ce582da5" category="paragraph">Esse processo de aprovação se aplica a todas as experiências do agente, incluindo integrações com o Slack e o NetApp Console.</block>
+  <block id="dbe095e1cf28fb37bfc9bc65e6db07ec" category="section-title">O que os usuários veem quando os agentes de IA não têm dados ou atividade</block>
+  <block id="02a1c40d157b16f6b4bb75e05fed5d20" category="paragraph">Se os agentes não tiverem credenciais, ainda poderão fornecer orientações gerais. No entanto, não poderão analisar seus recursos nem oferecer informações específicas sobre seu ambiente.</block>
+  <block id="1d85daa8d058598d6553a1e930e88b37" category="doc">Saiba mais sobre painéis personalizados no NetApp Workload Factory</block>
+  <block id="ca4bc65d09babb8dda4e8bb6392755ee" category="admonition">Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá criar ou editar painéis. Entre em contato com seu administrador ou <block ref="55cc8ba0b3cffc5a9d61e1691feb56d9" category="inline-link-macro-rx"></block>.</block>
+  <block id="3dacf374ca39e9d1e2ccd73b21e8d75a" category="paragraph">Você pode editar painéis do catálogo e atualizar o nome, a descrição, a categoria ou a solicitação de monitoramento do painel antes de decidir se deseja salvar a versão revisada.</block>
+  <block id="8f44990f66d79c05eb2b8e612e7e18b5" category="admonition">Somente o criador do painel pode editá-lo. Enquanto você estiver editando, outros usuários não poderão ver suas alterações até que você as salve.</block>
+  <block id="6e47cea976f64eef97bd90c4f38440f6" category="paragraph"><block ref="7f05a2d9425c37de5e57a44940ff0962" category="inline-link-macro-rx"></block>.</block>
+  <block id="6535de0ace4a848cab5b62382b0150fa" category="paragraph"><block ref="5f8157906d4be6e00d0ca91a518bfa54" category="inline-link-macro-rx"></block>.</block>
+  <block id="e353446964aabeb4012c8f3074fb20a4" category="list-text"><block ref="e353446964aabeb4012c8f3074fb20a4" category="inline-link-macro-rx"></block></block>
+  <block id="b43e84f96f0b4efcf44900b53939ded4" category="list-text"><block ref="b43e84f96f0b4efcf44900b53939ded4" category="inline-link-macro-rx"></block></block>
+  <block id="40b5b336cde586af18464c8514adcf84" category="summary">Configure as configurações dos agentes de IA, como o modo de operação, as permissões de acesso, as instruções personalizadas e os níveis de detalhamento das respostas, para controlar como os agentes funcionam no seu ambiente do Workload Factory.</block>
+  <block id="c97e3b8fd990844d5f1d9fbc0c4a1a58" category="doc">Gerencie as configurações dos agentes de IA no NetApp Workload Factory</block>
+  <block id="027abdce98c3533464664728631b1841" category="paragraph">Configure o funcionamento dos agentes de IA no seu ambiente do Workload Factory. Você pode escolher como os agentes operam, decidir quais credenciais eles podem usar, adicionar prompts personalizados e ajustar os níveis de detalhamento das respostas.</block>
+  <block id="9de8087bd8bdadfe4e3bb629bc47ce3b" category="list-text">Recomendamos que um administrador da conta configure as configurações dos agentes.</block>
+  <block id="127bc47c2c22a1c1b4353c48f309430d" category="list-text">Antes de ativar o modo de leitura e gravação, certifique-se de compreender os riscos de segurança envolvidos em permitir que os agentes executem ações para você.</block>
+  <block id="66116bea1fd8f0082a35b3207ff3f729" category="admonition">Se o administrador da sua conta desativou os recursos de IA, os agentes de IA não estarão disponíveis. <block ref="646cadbb9cfc9d23560c447c51098225" category="inline-link-macro-rx"></block>.</block>
+  <block id="a7f61a64f2ed965b18a4239b5377a37f" category="section-title">Configurações dos agentes de acesso</block>
+  <block id="aa9106dd7dbce448bc6eb071ef2c9112" category="list-text">Acesse as configurações dos Agents usando um destes métodos:</block>
+  <block id="d92f9415529b85cb7482af295b940c55" category="list-text">No menu, selecione *Administração*, *Configurações* e, em seguida, *Agentes*.</block>
+  <block id="4eff4baef0601b15c7b18727d2be80c1" category="list-text">Na experiência de chat dos agentes, selecione o link para *Configurações de agentes*.</block>
+  <block id="cc565804a9c219fe2f3854136c730f29" category="section-title">Configurar o modo de operação dos agentes</block>
+  <block id="44d28331c753ec749031ccccf1d70880" category="paragraph">Escolha se os agentes operam em modo somente leitura ou em modo de leitura e gravação.</block>
+  <block id="c1754028c55cdf3e2e13a700bdd9f2ab" category="paragraph">O modo de operação dos agentes determina quais ações os agentes podem executar:</block>
+  <block id="a84826751ef0f28a9bca5de4cfd244cb" category="list-text">Os agentes podem visualizar e analisar seus dados, mas não podem alterar seus recursos. Eles podem responder a perguntas, identificar riscos, fornecer recomendações e ajudar a solucionar problemas.</block>
+  <block id="7e6277284f05e2d4cf99020f4156281c" category="list-text">Modo de leitura e gravação</block>
+  <block id="08805adb79ed6abfef5a9b183fdd826a" category="list-text">Os agentes podem realizar ações em seu nome usando as credenciais que você escolher. Antes de realizar qualquer ação, eles mostram um resumo e aguardam sua aprovação. Eles não realizarão nenhuma ação sem sua aprovação.</block>
+  <block id="6092eef047a776cf1ae032fce2fe1ff0" category="list-text">Na página *Configurações de agentes*, acesse a seção *Modo de agentes*.</block>
+  <block id="ae1c7cee2bb050e0f57e3431296b4490" category="list-text">Selecione o modo de operação.</block>
+  <block id="9be8b23c1b30a5412be369acebac3129" category="section-title">Selecione as credenciais para acesso dos agentes</block>
+  <block id="bed4ed0551e8d0bd53e2940df4d0dd60" category="paragraph">Escolha quais credenciais da AWS os agentes podem usar para acessar seu ambiente de nuvem. Por padrão, todas as credenciais estão selecionadas, mas você pode restringir isso a um subconjunto das suas credenciais configuradas.</block>
+  <block id="ad7a6d84190cb018bcb20040ba7aa840" category="paragraph">Você pode selecionar nenhuma, uma, algumas ou todas as suas credenciais configuradas. Se você selecionar nenhuma credencial, os agentes poderão responder a perguntas gerais, mas não poderão analisar recursos no seu ambiente.</block>
+  <block id="04320da953584028ea1a9fef64f0a0ac" category="list-text">Na página *Configurações de agentes*, acesse a seção *Credenciais*.</block>
+  <block id="a685a78df1473e416ec4f5dd1d5e55ca" category="list-text">Na lista suspensa *Nome das credenciais*, selecione quais credenciais os agentes podem usar.</block>
+  <block id="4df13cb466a3becbc8b94f5c683e4d88" category="paragraph">Caso nenhuma credencial esteja configurada, você verá uma opção para adicionar credenciais à sua conta do Workload Factory.</block>
+  <block id="f2ab6dda5dcaf24c6ffbc9828ce53e7e" category="section-title">Integração com o Slack</block>
+  <block id="a83e309e3bc8e3235a652fcff10e1a49" category="paragraph">Você pode conectar os agentes ao Slack e interagir com eles diretamente no seu espaço de trabalho do Slack.</block>
+  <block id="47d254476d408dfbd41fb01b874a3e59" category="paragraph">Para obter informações sobre como configurar a integração com o Slack, visite a documentação da integração com o Slack ou entre em contato com seu representante da NetApp sobre os agentes.</block>
+  <block id="66e18fcdb18961698dac90fe1128ccaf" category="section-title">Adicionar um prompt personalizado</block>
+  <block id="944ca360f82b24c3e6cdba37ae9655ff" category="paragraph">Adicione diretrizes, preferências ou regras personalizadas para os agentes seguirem ao responder às suas solicitações.</block>
+  <block id="2499325dea2f4195ca3a4812ba2de0a4" category="paragraph">Um prompt personalizado ajuda a orientar como os agentes respondem para que sigam as políticas, a linguagem e os fluxos de trabalho da sua organização. Ele se aplica a todas as interações dos agentes.</block>
+  <block id="1d0aa8e6f1b6bf319e12bda616651aff" category="paragraph">O campo de prompt personalizado está vazio por padrão. Você pode adicionar, modificar ou remover o prompt personalizado a qualquer momento.</block>
+  <block id="e72865f9318e142476270f1893312be0" category="list-text">Na página *Configurações de agentes*, acesse a seção *Solicitação personalizada*.</block>
+  <block id="7e9ec3a59392a9dc66594a6c8668926e" category="list-text">No campo de texto, insira suas diretrizes personalizadas para os agentes.</block>
+  <block id="f1caaeb9dcd13d22145262ee4d9928c4" category="paragraph">Por exemplo, você pode definir regras de nomenclatura, formatos de resposta preferenciais ou políticas da empresa que os agentes devem seguir.</block>
+  <block id="f28546d1f8eb515bb452998faef01dd0" category="paragraph">Os agentes usarão seu prompt personalizado juntamente com seus recursos incorporados ao responder às suas solicitações.</block>
+  <block id="2f618527204802cdc7e0635d88da47f9" category="paragraph">Para alterar ou remover o prompt personalizado, volte a esta página, edite a caixa de texto e selecione *Aplicar*.</block>
+  <block id="87856c473606410336b82bb7e93ec084" category="section-title">Configure as opções de detalhamento</block>
+  <block id="52b5a4685cfb3e3d513b7d409b3f610c" category="paragraph">Escolha quanto detalhe os agentes compartilham sobre seu raciocínio e uso de ferramentas.</block>
+  <block id="fc1633b3da679875551048103029e4c3" category="paragraph">As opções de detalhamento permitem que você veja mais informações sobre como os agentes chegam às suas respostas e quais ferramentas eles usam para coletar informações:</block>
+  <block id="f1a4ff7ec8fc7f3d10af7f489e6dcfbd" category="list-text">Raciocínio detalhado</block>
+  <block id="23d5becf46b121e67317963fda10fb1d" category="list-text">Quando ativados, os agentes explicam como chegam às suas respostas e tomam decisões. Isso ajuda você a entender por que eles recomendam determinadas ações ou chegam a conclusões específicas.</block>
+  <block id="c4b6900e9ca5e303fc19fb9394ea3c86" category="list-text">Ferramentas detalhadas e verbosas</block>
+  <block id="806c4a6030ee5638bad868ac296edc46" category="list-text">Quando ativados, os agentes mostram quais ferramentas e APIs usam para coletar dados e realizar análises. Isso ajuda você a entender como eles interagem com seu ambiente.</block>
+  <block id="ba309604a791da2fbf6b620fc085c387" category="paragraph">Ambas as opções estão desativadas por padrão para manter as respostas concisas. Ative-as quando precisar de mais transparência ou estiver solucionando problemas no comportamento dos agentes.</block>
+  <block id="cd9b6d5e3d6f46f09890d134dcd76b6f" category="list-text">Na página *Configurações de agentes*, acesse a seção *Nível de detalhamento*.</block>
+  <block id="5af9190832e86a39b32955d77e972b2e" category="list-text">Selecione as opções de detalhamento que você deseja ativar.</block>
+  <block id="6ef261950960e68b5c274dbb2ad858c2" category="paragraph">Você pode visualizar e gerenciar dashboards personalizados no catálogo de dashboards. Dashboards privados são visíveis apenas para você, enquanto dashboards públicos são visíveis para todos os usuários da sua conta do Workload Factory. Cada dashboard exibe detalhes básicos, como o nome do criador, a data de criação e um rótulo de visibilidade (Privado ou Público).</block>
+  <block id="94ab7238c8d6eb39314e6dc172cba073" category="list-text">No menu, selecione *Visão geral das cargas de trabalho* e depois *Painéis personalizados*.</block>
+  <block id="09716803bbab78d4545cc7210ae61d90" category="paragraph">O painel de controle recarrega os dados das suas cargas de trabalho.</block>
+  <block id="d2258a9653c6a977efeeb955b27c66e9" category="section-title">Editar painéis</block>
+  <block id="4e2f12e496523d85bae4a969657d45aa" category="paragraph">Você pode editar um painel para alterar o que ele exibe, incluindo as métricas, os gráficos e os intervalos de tempo.</block>
+  <block id="b13bad0dcb6df4e403e8e2af9058dfe5" category="list-text">Na página *Painéis personalizados*, localize o painel que você deseja editar.</block>
+  <block id="d431f68c965a7131bbc2f48128983c25" category="list-text">No menu *Ações* desse dashboard, selecione *Editar dashboard*.</block>
+  <block id="63f40ecf20824ff6d561a306d3a25fd1" category="list-text">Na caixa de diálogo com a IA, descreva as alterações que você deseja fazer.</block>
+  <block id="3184c7e78934ef4b37ea845f1d56789a" category="paragraph">Esse processo é semelhante à criação de um novo painel. Você pode alterar as cargas de trabalho, métricas ou intervalos de tempo que o painel monitora.</block>
+  <block id="f66306510aaf399aef8bdf649739a15e" category="list-text">Revise as alterações e selecione **Salvar**.</block>
+  <block id="89806ea6a9ed9b0bb6cb322f912aff65" category="paragraph">O painel de controle é atualizado com suas alterações. A data da última modificação também é atualizada.</block>
+  <block id="665b56adc96ec0ae170583f2c939549f" category="list-text"><block ref="665b56adc96ec0ae170583f2c939549f" category="inline-link-macro-rx"></block></block>
+  <block id="dbc831d32bec483a9698bd8ffbae773b" category="doc">Gerencie recursos de IA no NetApp Workload Factory</block>
+  <block id="13bb649429b18adc1dadc0ed391c5bc2" category="paragraph">Controle o acesso aos recursos de IA no Workload Factory. Você pode desativar os recursos de IA ou usar o AWS Bedrock gerenciado pela NetApp.</block>
+  <block id="17f306dd010c4f9182635b5f5e336fa1" category="paragraph">O Workload Factory inclui diversos recursos com tecnologia de IA que aprimoram sua experiência, como o Ask Me, agentes de IA, painéis personalizados, o Rule builder e analisadores para EMS, logs de banco de dados e latência.</block>
+  <block id="cbdbc1bacc2d0ff55d93219e225f857a" category="list-text">Desativa todos os recursos de IA. Os usuários não poderão mais usar o Ask Me, o AI Agent, analisadores, painéis personalizados, o criador de regras ou outras ferramentas com tecnologia de IA.</block>
+  <block id="3f0879fc8845a02f07ea71a0a584847e" category="list-text">No menu, selecione *Administração* e depois *Configurações de IA*.</block>
+  <block id="d558bf5c801444e8a41fb205b6481939" category="list-text"><block ref="d558bf5c801444e8a41fb205b6481939" category="inline-link-macro-rx"></block></block>
+  <block id="7822184101da98dc9a2f973bcc0b1e57" category="list-text">Comece com um dos prompts de exemplo em <block ref="e353446964aabeb4012c8f3074fb20a4" category="inline-link-macro-rx"></block>.</block>
+  <block id="1d66ae30886d42b24d56159b752d6ad9" category="inline-link-macro">requisitos de permissão</block>
+  <block id="f5237f85c76e5020d5a264239e68fa44" category="list-text">**Verifique as permissões:** Certifique-se de que sua conta do Workload Factory tenha acesso de leitura às cargas de trabalho e aos recursos usados pelo painel. Consulte o <block ref="7190815f23bdebc2d96fb2bc5298d03f" category="inline-link-macro-rx"></block>.</block>
+  <block id="105342799c8c2abdc941b4b9e9d21842" category="list-text">**Verifique as credenciais:** Confirme se suas credenciais da AWS são válidas e não expiraram. Consulte <block ref="8feef39480c2e9a61121221ad1a6e6fc" category="inline-link-macro-rx"></block> para obter detalhes.</block>
+  <block id="5ee789356e4b622b0a26bc4b948f1f1d" category="paragraph">Se você continuar tendo problemas com painéis personalizados, consulte <block ref="12b3578a80c78dee4be855cedba97ff4" category="inline-link-macro-rx"></block> para obter informações sobre como entrar em contato com o suporte da NetApp.</block>
+  <block id="05d2715aacab706b61cab6ab5eae577f" category="paragraph">Selecione um sistema de arquivos para visualizar os detalhes do cluster, incluindo informações do cluster, capacidade do SSD e gráficos. Na visualização de detalhes do cluster, use as opções *Throughput* e *SSD Capacity* para alternar entre as visualizações.</block>
+  <block id="44ad493c3ed3456875890a0633967832" category="paragraph">A visualização de taxa de transferência mostra a taxa de transferência do cliente e a utilização de recursos. A visualização de capacidade do SSD mostra as tendências de uso do SSD e as recomendações de capacidade.</block>
+  <block id="0575d3bb4ddf703c8919e95c56fd6669" category="paragraph">Quando o Workload Factory está no modo Automate ou Recommend, ele verifica automaticamente cada sistema de arquivos do FSx for ONTAP e recomenda alterações de capacidade. Ele verifica regularmente o sistema para determinar se a capacidade ou a taxa de transferência do SSD devem ser ajustadas. Quando o gerenciamento está habilitado, a página de detalhes do sistema de arquivos exibe a capacidade e a taxa de transferência do SSD, juntamente com tendências históricas e pontos de ajuste recomendados.</block>
+  <block id="3b39aa368232f477c3b4544b63a58a94" category="paragraph">O gráfico de utilização do SSD mostra quando o sistema recomendou alterações na capacidade ou fez ajustes automáticos. Esses marcadores indicam como o sistema gerenciou a capacidade ao longo do tempo. Se o gerenciamento de capacidade de SSD estiver desativado, o gráfico mostrará apenas o uso passado e não exibirá recomendações nem ações automáticas.</block>
+  <block id="4e7a79cbed5a3ae9b9dcf1a054cdccae" category="list-text"><block ref="c3a254114142556a33ac5d002cb96077" category="inline-link-macro-rx"></block>para monitorar a saúde e a capacidade do cluster</block>
+  <block id="099c26f0b4268db2c6beff338b00f523" category="list-text"><block ref="cfa2a4e1b7a54130891d0ec0a2ab7571" category="inline-link-macro-rx"></block> (Recomendar, Automatizar ou Nenhuma)</block>
+  <block id="0610ec46d221095ea1a6664708b315d4" category="list-text"><block ref="9e799615dd4f243d7b7e498891d56424" category="inline-link-macro-rx"></block> (Recomendar, Automatizar ou Nenhuma)</block>
+  <block id="9b1d1bb5e9e50d21cba2409290825e8f" category="inline-link-macro">Ative o painel de Visão Geral</block>
+  <block id="0077ec0b7e54059f97c44de562d456b9" category="paragraph">Você deve <block ref="a74bf2d8f2388227184d8bdfb1fffa90" category="inline-link-macro-rx"></block> antes de poder usá-lo para monitorar seus sistemas de arquivos.</block>
+  <block id="37e179077423d083a73e4ed1b7712584" category="paragraph">Para obter detalhes sobre o monitoramento de latência, consulte <block ref="83cf55f201b976d4d05be16a638a6c43" category="inline-link-macro-rx"></block>.</block>
+  <block id="cc23b0ef8b8c73f4efb0ced4281250f3" category="list-text">Na tabela Clusters, localize e selecione o nome do sistema de arquivos e selecione *Alterar gerenciamento de capacidade do SSD*.</block>
+  <block id="66237dc10c2943c0563d26d3f0b6b230" category="list-text">*Recomendar*</block>
+  <block id="d9a44929e0eea557983dbb6917008a70" category="list-text">Selecione *Ativar gerenciamento de throughput*.</block>
+  <block id="1cbae666f242dee35d801763ff6c587f" category="list-text">Em *Limite de utilização (%)* defina o nível de utilização que aciona recomendações ou ações de automação.</block>
+  <block id="e920df7cb27871af178ff85a428a8b4e" category="list-text">Em *Configuração avançada*, configure os parâmetros de gerenciamento de throughput:</block>
+  <block id="39122245b5363dc3871538d2ef59784e" category="list-text">*Janela de violação consecutiva (horas)*: duração de violações consecutivas antes da tomada de medidas</block>
+  <block id="a9d111294543c201d767519d991c1b8d" category="list-text">*Métricas de violação consecutiva (%)*: limite percentual para determinar violações consecutivas</block>
+  <block id="d385fd0ac858ff17553d407851f64c48" category="paragraph">Se o gerenciamento de capacidade de SSD estiver desativado, o gráfico mostrará apenas o uso passado e não exibirá recomendações nem decisões de automação.</block>
+  <block id="1de4de358ec9c3a1cd36180e2c13a443" category="list-text">Na guia *Visão geral*, selecione o nome de um sistema de arquivos na tabela. Na visualização de detalhes do cluster, selecione a opção *Taxa de transferência* ou *Capacidade do SSD* para alternar a exibição do gráfico.</block>
+  <block id="a01346bc61a98c025144199b0893e264" category="paragraph">Se você selecionar *Taxa de transferência*, o gráfico mostrará a taxa de transferência e a utilização do cliente para que você possa comparar a demanda com o nível de taxa de transferência e os limites configurados.</block>
+  <block id="e56ecd5b4053d7385c23bb7c3422bdd5" category="paragraph">Se você selecionar *Capacidade do SSD*, o gráfico mostrará o uso do SSD, incluindo tendências históricas de capacidade e pontos de decisão de capacidade.</block>
+  <block id="d73906b15c9fc84c1806084ce8720a42" category="paragraph">Selecione diferentes intervalos de tempo para visualizar as tendências de taxa de transferência ou capacidade em diferentes períodos. . Passe o cursor sobre os pontos de decisão no gráfico para visualizar detalhes sobre recomendações ou ações de automação em momentos específicos. . Use as informações do gráfico para: * Entender com que frequência os ajustes de capacidade são necessários * Avaliar se o modo de automação ou recomendação se adapta melhor aos seus padrões de carga de trabalho * Identificar restrições de capacidade recorrentes * Planejar as necessidades futuras de capacidade com base nas tendências de crescimento * Solucionar problemas em tentativas de automação malsucedidas</block>
+  <block id="d84848ea25e8f980ed30c066f0e2cab7" category="list-text"><block ref="d84848ea25e8f980ed30c066f0e2cab7" category="inline-link-macro-rx"></block></block>
+  <block id="3784e1d30d90c571998c16706c434e4f" category="list-text"><block ref="3784e1d30d90c571998c16706c434e4f" category="inline-link-macro-rx"></block></block>
+  <block id="274d09f174202ef30839bc1b86c8644b" category="list-text"><block ref="274d09f174202ef30839bc1b86c8644b" category="inline-link-macro-rx"></block></block>
+  <block id="a8f76ad42c3df15f6fbe9addd47ffe36" category="doc">Crie uma regra personalizada para o Workload Factory no NetApp Console</block>
+  <block id="f4014ae984242fefc2f0569e68611a2e" category="paragraph">Crie regras personalizadas para verificar seus recursos do FSx for ONTAP no Workload Factory. Descreva as regras em linguagem simples, e o construtor de regras com IA transformará sua solicitação em uma regra validada.</block>
+  <block id="4995e76cedbca110dbb7cefe85e61d77" category="paragraph">O processo de configuração de regras guia você por cada etapa: criação da regra, revisão de como a IA a interpretou e verificação dos resultados antes de agendar revisões periódicas. Você mantém o controle durante todo o processo. O sistema sugere uma regra com base na sua solicitação, mas nada acontece até que você a aprove.</block>
+  <block id="d87385efd143a7a589ef7be597c50809" category="admonition">Se o administrador da sua conta desativou os recursos de IA, você verá uma mensagem e não poderá criar ou editar regras personalizadas. Entre em contato com seu administrador ou <block ref="ba4e701e567767978f2b4fc32c409de8" category="inline-link-macro-rx"></block>.</block>
+  <block id="5d9b02c1296ee6f0b859a2db7ccf523b" category="list-text">Você configurou credenciais da AWS com acesso somente leitura.</block>
+  <block id="0876642abf2aedd4eb3ae76dd87f7586" category="list-text">Você possui credenciais ONTAP com permissões de visualizador.</block>
+  <block id="0e8e25fe832310f010ce2950b2110974" category="list-text">Você tem um link ou agente configurado para conectividade FSx for ONTAP.</block>
+  <block id="be31b56e3ba8f8ceee6d9deed7f5c112" category="list-text">Selecione o menu <block ref="438b712f6e6afc173ce78a756adc207c" category="inline-image-macro-rx" type="image"></block> e, em seguida, selecione Cargas de trabalho &gt; Bem arquitetado &gt; Construtor de regras.</block>
+  <block id="0cd216375fd6782b45d9f84efb6f3e84" category="list-text">Interpretação analisada</block>
+  <block id="9d009657b96c5aad9fa21f1828b73bcf" category="list-text">Como a IA entendeu sua solicitação em linguagem simples.</block>
+  <block id="e35d59c335e26445eed5e3cf4fc88047" category="list-text">Definição de regra</block>
+  <block id="69dc0eb643b0cd391da1782b1c0156e4" category="list-text">A regra estruturada, incluindo o tipo de recurso, a lógica da condição e os critérios de avaliação.</block>
+  <block id="87a222577e9c7b7a0739d92337f4fe46" category="list-text">Raciocínio</block>
+  <block id="22e3f2781979bb9f2227381c2a3c30ea" category="list-text">Por que a IA interpretou seu prompt dessa maneira.</block>
+  <block id="6e536680660f9f562a1a4ab7cdbba4e1" category="list-text">Indicador de confiança</block>
+  <block id="0f1a4e7b1fc79efcfb93a1a4b715f3d0" category="list-text">O grau de confiança do sistema na interpretação.</block>
+  <block id="1a5f54a69b5adde0f81c2cf7d6675df3" category="list-text">Verifique se a definição da regra está correta. Se a interpretação não estiver clara ou estiver incorreta, o sistema poderá fazer perguntas como:</block>
+  <block id="1f3c02b25897cff55c5d7894bed5c157" category="list-text">Qual recurso deve ser verificado?</block>
+  <block id="2d351367dd00ae9228b6503d57500015" category="list-text">Que valor ou limite define a conformidade?</block>
+  <block id="d24a425ef6891cb0134794ec6897a668" category="list-text">Com que frequência a regra deve ser executada?</block>
+  <block id="677aeb7441cfb06ed7138c57338cfd53" category="paragraph">Antes de salvar ou agendar a regra, execute um teste para verificar quais recursos ela afetará.</block>
+  <block id="31d7cb3d933c56805e03dca75c02893d" category="list-text">Recursos avaliados: número total de recursos verificados</block>
+  <block id="c3e6edb3feeaf77e1989872831656640" category="list-text">Em conformidade: recursos que atendem aos critérios da regra</block>
+  <block id="00d56e696324ec288953d4f8b2cfec0f" category="list-text">Não conformes: recursos que não atendem aos critérios</block>
+  <block id="bd86697cf08c2fc5775c698f872f3628" category="list-text">Avaliações com falha: recursos que não puderam ser avaliados (com detalhes do erro)</block>
+  <block id="cdac1db1869db85a5ed349854c63c6bf" category="paragraph">Após validar a sua regra, você pode salvá-la como rascunho ou configurá-la para ser executada regularmente.</block>
+  <block id="39a7241c7fb2f38f3a304dc5a7ddd33e" category="list-text">Para agendar avaliações regulares, defina a frequência de avaliação e selecione *Agendar*. A regra é ativada e executada na programação definida.</block>
+  <block id="9c85906f54c1b8a93d6470f07300ddfa" category="list-text">Para salvar após a validação sem agendamento, selecione *Salvar como rascunho*. A regra é salva, mas não é avaliada até que você a agende.</block>
+  <block id="4a5aaf656967e8a439bf519ae6b59880" category="list-text">Para excluir a regra, selecione *Excluir*.</block>
+  <block id="ac896c02d18100750fc4d290b272e808" category="paragraph">Sua regra personalizada foi criada e está listada no catálogo de regras. Se você definir um agendamento, ele verificará seus recursos do FSx for ONTAP na frequência especificada. Se você editar a regra posteriormente, o sistema guiará você pelas mesmas etapas, chat, revisão, aprovação e validação, antes de salvar a versão atualizada.</block>
+  <block id="8bc0878ae35d7f3c225b4bac0e907504" category="paragraph"><block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
+  <block id="0ef70b60892b97d12c2eebf7686872ca" category="paragraph">As regras personalizadas permitem que você defina, verifique e aplique seus próprios padrões de arquitetura, juntamente com as melhores práticas da NetApp, no painel well-architected.</block>
+  <block id="91b90f08c0d07c5aa66b502a1d12c868" category="paragraph">O Construtor de Regras permite criar regras personalizadas usando linguagem simples. Essas regras são verificadas em todos os seus recursos. As regras personalizadas ajudam a aplicar os padrões, limites de risco e requisitos operacionais da sua organização que as regras padrão podem não abranger.</block>
+  <block id="60a625f073158b990bcf2ad232af27aa" category="admonition">Se o administrador da sua conta desativou os recursos de IA, você não poderá criar novas regras nem editar as regras existentes. Todas as regras já agendadas continuam em execução. <block ref="fb4375aa776b206d4ba3c7bbae1bcfb2" category="inline-link-macro-rx"></block>.</block>
+  <block id="4edc72502b9f9929e41bae938a7490c1" category="paragraph">As regras personalizadas usam IA para transformar instruções em linguagem simples em regras claras e estruturadas. A IA traduz sua solicitação, sugere uma regra, explica como entendeu suas instruções e pede aprovação antes de salvar ou agendar a regra. Esse processo ajuda a garantir que:</block>
+  <block id="0465277e228b6cf7f37c1fab3872f9cd" category="list-text">A regra está claramente definida e verificada quanto a erros</block>
+  <block id="f2b92cb195f44b1f57205f66b9c1c992" category="list-text">Nenhum código personalizado é executado</block>
+  <block id="f6b50ace5a7da2eb893c9a1a1c3971be" category="list-text">Você pode revisar exatamente o que será avaliado antes de aprovar a regra</block>
+  <block id="110a917dc178ad706edce62d767a4196" category="list-text">Cada regra personalizada inclui o tipo de recurso a ser avaliado, a lógica da condição, a gravidade, o cronograma de avaliação e as orientações para correção.</block>
+  <block id="5eb43201405d6bbeac74bcd01d61e2e1" category="list-text">Acesso somente leitura ao seu ambiente AWS. Regras personalizadas exigem permissões somente leitura como limite de segurança. <block ref="1db25aada4bff8233b24c1d7b39230cd" category="inline-link-macro-rx"></block>.</block>
+  <block id="823a6e1d7fe661be55dd3af05f972b11" category="list-text">Credenciais ONTAP</block>
+  <block id="559e5220d6130b1d9f3af60fa24ff138" category="list-text">Usuário do visualizador do FSx com permissões somente leitura. O Workload Factory cria um usuário somente leitura em cada sistema de arquivos FSx for ONTAP, caso ainda não exista, permitindo que ele execute avaliações.</block>
+  <block id="04d1424a4b58f665f6537d166f4f9750" category="list-text">Link ou agente</block>
+  <block id="b68341d527b58582cc7cb537c3230cd8" category="inline-link-macro">Conecte-se a um sistema de arquivos FSx for ONTAP com um link</block>
+  <block id="d358f748048c3fa0487b8cd6d6410fb2" category="list-text">Necessário apenas para regras que precisam se conectar diretamente ao ONTAP para verificar configurações que as APIs da AWS não podem acessar <block ref="4c7cc50e5133efc728aaa88011208eda" category="inline-link-macro-rx"></block>.</block>
+  <block id="00d54cb4ae79a42990f001ca7b1eafd2" category="list-text">As regras não resolvem problemas automaticamente. Você precisa corrigir os recursos não conformes manualmente, seguindo as orientações fornecidas.</block>
+  <block id="e0ff3e32dbc4b668a800d5b59c47613b" category="list-text">Cada regra verifica apenas um tipo de recurso, mas pode ser aplicada a uma ampla gama de recursos. Por exemplo, uma regra pode avaliar volumes em várias regiões, em todas as regiões ou em várias contas. Para avaliar diferentes tipos de recursos, crie regras separadas.</block>
+  <block id="3f84490332db2de49bed3d46ab452bb0" category="list-text">As regras são executadas no máximo uma vez por hora para evitar varreduras excessivas.</block>
+  <block id="499ed12f9f73ef11f2d3afd859dacba5" category="list-text">As regras só podem ler o seu ambiente e não podem fazer alterações.</block>
+  <block id="7d178946e8d76597de91865cae420fb6" category="list-text">Você poderá atualizar essas configurações posteriormente no catálogo de regras.</block>
+  <block id="b6e0b0c90cfbddfe767f137f8066d1df" category="list-text">Em andamento</block>
+  <block id="d4008ffe54f55490997ab0d5940aafb3" category="list-text">Criando ou verificando regras.</block>
+  <block id="b75ff201f3276decaffcefb7b216622f" category="list-text">Falha ao criar</block>
+  <block id="db78d463a1f2fbb737aa54f862bd0d4b" category="list-text">Não foi possível criar a regra. Você pode reabrir a regra e continuar editando no chat.</block>
+  <block id="c4e6fec5ee0f22a348768aa087f15acb" category="list-text">Salvo, mas ainda não agendado.</block>
+  <block id="7401c14d073cd1188b475ef7f5e0cdc8" category="list-text">Rascunho validado</block>
+  <block id="de28b803b960b2c037e1abe4d18cf9d7" category="list-text">A validação foi aprovada e pode ser salva ou agendada.</block>
+  <block id="b1caf7f21c1b8899e11165a6aed71af9" category="list-text">Edição</block>
+  <block id="f25dfb15b911ed977033f485330ceadd" category="list-text">Atualizando uma cópia de rascunho de uma regra existente. A regra agendada atual continuará em execução até que você salve as alterações.</block>
+  <block id="2b7dabba0077abe3732e0418b048a56b" category="list-text">Agendado</block>
+  <block id="cf61937578a34d9f00c4f6dd6f175c05" category="list-text">Ativo e em execução conforme o cronograma definido.</block>
+  <block id="ca7e0b16936fbee3bd2dd7f992b32b4d" category="list-text">Pausado, mas não excluído. Pode ser reativado.</block>
+  <block id="71e78f13c09017bc4b63f46243d379b7" category="list-text">Removido permanentemente.</block>
+  <block id="cc36425e424f4c30e5d1dd8b4cf78a69" category="list-text">Proteção do volume de produção</block>
+  <block id="9beacae88b6d84f519d92cf003a30d57" category="list-text">Tiering de volumes de arquivamento</block>
+  <block id="ccf414cfce06645c55d0bcfd5f41608b" category="list-text">Padrões de nomenclatura do sistema de arquivos</block>
+  <block id="9b4ad9b41b7f7f63bf3258fc3894691a" category="paragraph"><block ref="a9a97108e6fef351f8c6a7a2af6f4937" category="inline-link-macro-rx"></block> <block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
+  <block id="71d671c8e1cf2aa5cf976dd7ff9d340b" category="summary">Visualize, edite, ative, desative e exclua regras arquitetônicas personalizadas do catálogo de regras.</block>
+  <block id="1cf051440b9604c5c57c4c6cab344202" category="doc">Gerencie regras personalizadas para o Workload Factory no NetApp Console</block>
+  <block id="8ef292d4be46fbc351d35b26b3ce8720" category="paragraph">O catálogo de regras é um local centralizado para gerenciar todas as suas regras personalizadas. Você pode revisar os detalhes das regras, editá-las, verificar os resultados e controlar se as regras serão executadas de acordo com uma programação.</block>
+  <block id="dbea8da43ac90f4152565d880d18e30e" category="paragraph">Você pode renomear uma regra a qualquer momento. Você também pode editar a descrição, o tipo de recurso, o agendamento, a gravidade, a lógica da condição, o escopo da avaliação e as orientações de correção de uma regra.</block>
+  <block id="8473633d69dc94d27429c2a37902fe75" category="paragraph">Você pode renomear uma regra no catálogo de regras ou no cartão de detalhes da regra. Para editar qualquer outra configuração da regra, comece pelo catálogo de regras.</block>
+  <block id="2dc19156fac0f6096a2db17a78fe0da8" category="list-text">Para renomear a regra, atualize o nome da regra no catálogo ou no cartão de detalhes da regra.</block>
+  <block id="4d3a6d0da6e18e9505524b8a39ca5bf1" category="list-text">Para editar outras configurações de regras, clique em *Editar*.</block>
+  <block id="01e52dae8e86fc149d714c3cdc94859d" category="paragraph">A regra é aberta no modo de chat com todo o seu histórico.</block>
+  <block id="91fa4b053658e4dedadb0d60014d7b3e" category="list-text">Solicite as alterações que deseja fazer, ou atualize a solicitação no chat.</block>
+  <block id="f5500860e31d724af72a4be713c2c1e5" category="paragraph">Caso a criação da regra tenha falhado anteriormente, você pode continuar a partir dessa regra e atualizar sua solicitação no chat.</block>
+  <block id="1f998f331ae48a1cf2b4056c154eff9f" category="list-text">Analise a explicação atualizada e o resumo das alterações.</block>
+  <block id="fc7c0f65a3d8f2f0a1da1c56bd143c30" category="paragraph">O sistema mostra o que mudou em relação à regra atual antes de você salvá-la.</block>
+  <block id="023ad31a6b18fc538747a36ab488e65c" category="list-text">Se a regra estiver em modo de rascunho, selecione *Validate rule* para testar a lógica atualizada.</block>
+  <block id="58b17236d18d0245f7322e360753f322" category="list-text">Para manter as alterações, clique em *Salvar* para substituir a regra atual. Se você alterou a programação, salve a programação atualizada. Se você não alterou a programação, ela permanecerá a mesma.</block>
+  <block id="a91166998826b450f2fb807ba450dbc4" category="list-text">Para descartar as alterações, clique em *Descartar alterações*. A regra retorna à versão anterior e sai do modo de edição.</block>
+  <block id="053ebf33b65f60110cd8e776b413ed79" category="paragraph">Enquanto você edita uma regra, ela aparece como *Em edição* para você. Outros usuários ainda veem a regra agendada atual e as execuções agendadas continuam normalmente até que você salve as alterações.</block>
+  <block id="8c5fb02c595607ff2d6a7bffe64be464" category="section-title">Pausar uma regra</block>
+  <block id="ad91e5fff3b8c62296713afbb3628a85" category="paragraph">Pause uma regra para interromper as avaliações sem excluir a regra. As regras pausadas permanecem no catálogo e podem ser reiniciadas a qualquer momento.</block>
+  <block id="6128c344ce68ca2256885ace5b47ff93" category="list-text">No catálogo de regras, clique na regra que você deseja pausar.</block>
+  <block id="082d380473aced66fdfe341c99cda5a8" category="list-text">Para pausar uma regra agendada, clique em *Pausar* e confirme. A regra para de ser executada conforme o agendamento.</block>
+  <block id="45967b1be5307f4c7a1110294cadcd04" category="list-text">Para retomar uma regra pausada, clique em *Retomar* e confirme. A regra retoma as avaliações regulares.</block>
+  <block id="505e9a4d5d793341b92e51caeffa198f" category="section-title">Excluir uma regra personalizada</block>
+  <block id="106aa9d3af8dd9fe811548be7c0ab934" category="paragraph">Exclua uma regra permanentemente quando não precisar mais dela. Esta ação não pode ser desfeita.</block>
+  <block id="0aec4bb39ad4e484e24dc1510d9772d1" category="list-text">No catálogo de regras, clique na regra que você deseja excluir.</block>
+  <block id="874db297b2254479eeb702a2d7fa8dab" category="list-text">Clique em *Delete*.</block>
+  <block id="a611c28af3d155e736c074bd926dc51b" category="list-text">Confirme que você deseja excluir a regra permanentemente.</block>
+  <block id="f36dd1b2731552458a4d8983a8bec074" category="paragraph">A regra foi removida do catálogo. Todo o histórico de avaliações foi apagado.</block>
+  <block id="ee46de54fef48d3ea00b2c8fc06cb58b" category="section-title">Faça um teste rápido</block>
+  <block id="bd472ca28321d77d062059272b456804" category="paragraph">Execute um teste rápido a qualquer momento para verificar a conformidade atual sem precisar esperar pela próxima execução agendada.</block>
+  <block id="5edd65680f750fa6f32b6e445f24fd27" category="list-text">No catálogo de regras, clique na regra que você deseja avaliar.</block>
+  <block id="ae7b417afa23cb538530e43e4b08cfff" category="list-text">Clique em *Validar*.</block>
+  <block id="b4b7ad5dbb1a5d746e0ac8936e3f4798" category="paragraph">O sistema avalia todos os recursos em escopo com base na lógica da regra.</block>
+  <block id="5cb57852939f164731c4f61fcca33dac" category="list-text">Analise os resultados para verificar o status atual de conformidade.</block>
+  <block id="2cc894218e78a9699920859cc698e5d7" category="paragraph">Os testes são auditados e constam no histórico de avaliação da regra.</block>
+  <block id="26a1c27f638f5372654511db0a450638" category="paragraph"><block ref="26a1c27f638f5372654511db0a450638" category="inline-link-macro-rx"></block></block>
+  <block id="9a8fccbd850aa8643a89826b7a8fb208" category="summary">Comece a usar o Google Cloud NetApp Volumes atribuindo funções do NetApp Console, adicionando credenciais e descobrindo um sistema.</block>
+  <block id="2999755d1730c0395dc6d69c2e4175da" category="paragraph">Comece a usar o Google Cloud NetApp Volumes atribuindo sua função no NetApp Console, adicionando credenciais e descobrindo um sistema.</block>
+  <block id="aa0b2ca9fbe37ff46d33ea907e58b677" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="4db55a1c8076378b257ee9e0511dd2d4" category="inline-link-macro-rx"></block></block>
+  <block id="0f391d5482822722d86585c248878517" category="inline-link-macro">Adicionar credenciais</block>
+  <block id="6f2763cd3e02476cb119778797369b0f" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="2fd3a5be9d6b1b1b584f1ac1aa0e2f8e" category="inline-link-macro-rx"></block></block>
+  <block id="77d5ddb0fb660aaf755b6ed1f614b0c5" category="paragraph">No NetApp Console, adicione as credenciais do Google Cloud NetApp Volumes.</block>
+  <block id="66db479b9f5558108a119367246238d1" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="8b88ff7d74af8bb26ccc5fa950b51632" category="inline-link-macro-rx"></block></block>
+  <block id="3d5dcea171c7a77f7cb0efa8c9a0cd1a" category="paragraph">No NetApp Console, descubra um sistema usando as credenciais, o projeto do Google Cloud e a região compatível.</block>
+  <block id="c04236280596e42d063458cddb934506" category="sidebar">Agentes de IA</block>
+  <block id="737f86fc6a3bb3563670dac4c0b49585" category="sidebar">O Workload Factory AIOps</block>
+  <block id="ff2cb9e669640d8f287be7fc339c4d78" category="sidebar">Saiba mais sobre agentes de IA</block>
+  <block id="64f2f595f7dd037774e1dbd99cb2ab7b" category="sidebar">Gerenciar configurações de agentes de IA</block>
 </blocks>

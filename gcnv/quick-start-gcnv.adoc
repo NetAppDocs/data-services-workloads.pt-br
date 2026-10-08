@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: gcnv/quick-start-gcnv.html 
 keywords: set up google cloud netapp volumes, quick start,system 
-summary: Comece a usar o Google Cloud NetApp Volumes configurando o Google Cloud e, em seguida, criando um sistema. 
+summary: Comece a usar o Google Cloud NetApp Volumes atribuindo funções do NetApp Console, adicionando credenciais e descobrindo um sistema. 
 ---
 = Guia rápido para Google Cloud NetApp Volumes
 :hardbreaks:
@@ -14,22 +14,16 @@ summary: Comece a usar o Google Cloud NetApp Volumes configurando o Google Cloud
 
 
 [role="lead"]
-Comece a usar o Google Cloud NetApp Volumes configurando o Google Cloud e, em seguida, criando um sistema.
+Comece a usar o Google Cloud NetApp Volumes atribuindo sua função no NetApp Console, adicionando credenciais e descobrindo um sistema.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] link:set-up.html["Configurar o Google Cloud NetApp Volumes"]
-[role="quick-margin-para"]
-Crie uma conta de serviço no Google.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"] link:add-roles.html["Atribuir funções"]
-[role="quick-margin-para"]
-Para começar a trabalhar com o Google Cloud NetApp Volumes, você precisa ter as permissões apropriadas e a função Google Cloud NetApp Volumes admin ou Google Cloud NetApp viewer atribuída a você.
-
-[role="quick-margin-para"]
-image:role_gcnv.png["Uma captura de tela da função do Google Cloud NetApp Volumes."]
-
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] link:../gcnv/add-roles.html["Atribuir funções"]
 [role="quick-margin-para"]
 No NetApp Console, atribua as funções corretas aos membros.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Três"] link:create-discover-systems.html["Adicionar um sistema"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"] link:https://docs.netapp.com/us-en/data-services-workloads/gcnv/add-credentials.html["Adicionar credenciais"]
 [role="quick-margin-para"]
-No NetApp Console, clique em *Adicionar sistema*, depois em *Google Cloud Platform*, em seguida em *Google Cloud NetApp Volumes* e, por fim, em *Descobrir*. Forneça os detalhes sobre a conta de serviço e o projeto do Google Cloud.
+No NetApp Console, adicione as credenciais do Google Cloud NetApp Volumes.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Três"] link:../gcnv/create-discover-systems.html["Adicionar um sistema"]
+[role="quick-margin-para"]
+No NetApp Console, descubra um sistema usando as credenciais, o projeto do Google Cloud e a região compatível.

@@ -28,7 +28,7 @@ Você precisa ter pelo menos um painel personalizado em sua conta do Workload Fa
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
-. No menu do NetApp Console, selecione *Cargas de trabalho* > *Visão geral das cargas de trabalho* > *Painéis personalizados*.
+. No menu, selecione *Visão geral das cargas de trabalho* e depois *Painéis personalizados*.
 +
 O catálogo de dashboards mostra todos os dashboards personalizados da sua conta do Workload Factory.
 
@@ -62,7 +62,30 @@ O painel de controle é atualizado imediatamente. O indicador de visibilidade no
 
 Os dados do painel são carregados quando você abre um painel. Você pode atualizá-lo para ver as informações mais recentes.
 
-O painel de controle recarrega os dados das suas cargas de trabalho. A hora da última atualização muda para mostrar quando os dados foram atualizados.
+O painel de controle recarrega os dados das suas cargas de trabalho.
+
+
+
+[[edit-dashboards]]
+== Editar painéis
+
+Você pode editar um painel para alterar o que ele exibe, incluindo as métricas, os gráficos e os intervalos de tempo.
+
+
+NOTE: Somente o criador do painel pode editá-lo. Enquanto você estiver editando, outros usuários não poderão ver suas alterações até que você as salve.
+
+.Passos
+. Na página *Painéis personalizados*, localize o painel que você deseja editar.
+. No menu *Ações* desse dashboard, selecione *Editar dashboard*.
+. Na caixa de diálogo com a IA, descreva as alterações que você deseja fazer.
++
+Esse processo é semelhante à criação de um novo painel. Você pode alterar as cargas de trabalho, métricas ou intervalos de tempo que o painel monitora.
+
+. Revise as alterações e selecione **Salvar**.
+
+
+.Resultado
+O painel de controle é atualizado com suas alterações. A data da última modificação também é atualizada.
 
 
 
@@ -85,6 +108,6 @@ O painel de controle é removido permanentemente da sua conta do Workload Factor
 [[related-information]]
 == Informações relacionadas
 
-* link:create-custom-dashboard-fsx.html["Crie painéis personalizados adicionais"]
-* link:troubleshoot-custom-dashboards-fsx.html["Solucionar problemas de painéis personalizados"]
+* link:../admin/create-custom-dashboard-fsx.html["Crie painéis personalizados adicionais"]
+* link:../admin/troubleshoot-custom-dashboards-fsx.html["Solucionar problemas de painéis personalizados"]
 

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: admin/manage-genai-features.html 
-keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration 
+keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, administration 
 summary: Controle o acesso aos recursos de IA baseados em Bedrock no Workload Factory. Você pode desativar os recursos de IA ou usar o AWS Bedrock gerenciado pela NetApp. 
 ---
-= Gerencie os recursos de IA para FSx for ONTAP na NetApp Workload Factory
+= Gerencie recursos de IA no NetApp Workload Factory
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: Controle o acesso aos recursos de IA baseados em Bedrock no Workload Fa
 
 
 [role="lead"]
-Controle o acesso aos recursos de IA para o FSx for ONTAP no Workload Factory. Você pode desativar os recursos de IA ou usar o AWS Bedrock gerenciado pela NetApp.
+Controle o acesso aos recursos de IA no Workload Factory. Você pode desativar os recursos de IA ou usar o AWS Bedrock gerenciado pela NetApp.
 
 
 
 [[about-ai-features]]
 == Sobre os recursos de IA
 
-O Workload Factory inclui diversos recursos com tecnologia de IA que melhoram sua experiência, como Ask Me, painéis personalizados e analisadores para EMS, logs de banco de dados e latência.
+O Workload Factory inclui diversos recursos com tecnologia de IA que aprimoram sua experiência, como o Ask Me, agentes de IA, painéis personalizados, o Rule builder e analisadores para EMS, logs de banco de dados e latência.
 
 Como administrador do Workload Factory, você pode controlar como esses recursos usam IA na página de configurações de IA.
 
@@ -41,7 +41,7 @@ NetApp-gerenciado Bedrock (Recomendado):: Utilize um serviço AWS Bedrock gerenc
 
 
 --
-Recursos do GenAI desativados:: Desativa todos os recursos de IA. Os usuários não poderão mais usar o Ask Me, analisadores, painéis personalizados, criador de regras ou outras ferramentas com tecnologia de IA.
+Recursos do GenAI desativados:: Desativa todos os recursos de IA. Os usuários não poderão mais usar o Ask Me, o AI Agent, analisadores, painéis personalizados, o criador de regras ou outras ferramentas com tecnologia de IA.
 
 
 
@@ -59,7 +59,7 @@ Recursos do GenAI desativados:: Desativa todos os recursos de IA. Os usuários n
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
-. No menu do NetApp Console, selecione *Cargas de trabalho* > *Administração* > *Configurações de IA*.
+. No menu, selecione *Administração* e depois *Configurações de IA*.
 . Na página *Configurações de IA*, selecione sua configuração preferida:
 +
 ** *NetApp-managed Bedrock (Recomendado)*: use o NetApp-managed AWS Bedrock.
@@ -136,7 +136,7 @@ O comportamento de encerramento pode variar de acordo com o recurso. Consulte a 
 == Informações relacionadas
 
 * link:../setup/learn-about-workload-factory.html["Saiba mais sobre os recursos do Workload Factory"]
-* link:learn-custom-dashboards-fsx.html["Saiba mais sobre painéis personalizados"]
+* link:../admin/learn-custom-dashboards-fsx.html["Saiba mais sobre painéis personalizados"]
 * link:../fsx-storage/add-credentials.html["Adicionar credenciais da AWS"]
 * link:../fsx-storage/permissions-reference-fsx.html["Referência de permissões"]
 
