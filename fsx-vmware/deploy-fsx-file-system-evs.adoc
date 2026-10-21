@@ -4,7 +4,7 @@ permalink: fsx-vmware/deploy-fsx-file-system-evs.html
 keywords: vm workloads, deploy fsx, deploy storage for vms, evs, elastic vmware service 
 summary: Após verificar se o sistema de arquivos recomendado do FSx for ONTAP, ou os sistemas de arquivos em alguns casos, atende aos seus requisitos exatos, você pode usar o Workload Factory para implantar o sistema em seu ambiente AWS. 
 ---
-= Implante o sistema de arquivos FSx for ONTAP recomendado
+= Implantar o FSx for ONTAP para o Amazon Exchange Virtual Server
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

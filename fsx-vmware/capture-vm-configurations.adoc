@@ -4,7 +4,7 @@ permalink: fsx-vmware/capture-vm-configurations.html
 keywords: vm workloads, capture vm details 
 summary: Você pode usar o script VM collector do Migration advisor ou o RVTools para capturar suas configurações atuais de VM. Recomendamos que você use o script VM collector do Migration advisor porque ele coleta dados de configuração e desempenho da VM para o plano mais preciso. 
 ---
-= Capture as configurações de suas VMs antes de migrar para a VMware Cloud com cargas de trabalho da VMware
+= Capture as configurações de VM para o VMware Cloud on AWS
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

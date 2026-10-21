@@ -4,7 +4,7 @@ permalink: fsx-vmware/launch-onboarding-advisor-native.html
 keywords: overview, concepts, features, use case, workloads, how Workload Factory works 
 summary: Faça login no NetApp Workload Factory para acessar o consultor de migração da VMware. Você seguirá as etapas do assistente para criar um plano de implantação ou um plano de migração personalizado para suas necessidades. 
 ---
-= Crie um plano de implantação para o Amazon EC2 usando o assistente de migração de cargas de trabalho da VMware
+= Crie um plano de implantação para o Amazon EC2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
