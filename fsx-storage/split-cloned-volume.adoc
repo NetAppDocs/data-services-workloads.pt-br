@@ -18,17 +18,17 @@ Os dados ficam acessíveis tanto no clone quanto no volume pai durante a divisã
 .Sobre esta tarefa
 A operação de divisão de clones envolve o seguinte:
 
-* Não é possível criar novas cópias de Snapshot do volume FlexClone durante a operação de divisão.
-* Um volume FlexClone não pode ser separado do volume pai se pertencer a uma relação de proteção de dados.
-* Se você colocar o volume FlexClone offline enquanto a divisão estiver em andamento, a operação de divisão será suspensa; quando você colocar o volume FlexClone online novamente, a operação de divisão será retomada.
+* Não é possível criar novas cópias instantâneas do volume FlexClone durante a operação de divisão.
+* Não é possível separar um volume FlexClone do seu volume pai se ele pertencer a uma relação de proteção de dados.
+* Se você colocar o volume FlexClone offline durante a divisão, a operação de divisão será suspensa. Quando você colocar o volume FlexClone novamente online, a operação de divisão será retomada.
 * Após a divisão, tanto o volume FlexVol pai quanto o clone exigem a alocação de espaço total determinada por suas garantias de volume.
-* Depois que um FlexClone volume é separado de seu volume pai, os dois não podem ser reunidos.
+* Depois de separar um volume FlexClone do seu volume pai, você não pode reuni-los novamente.
 
 
 .Antes de começar
 Considere o seguinte antes de dividir um volume clonado:
 
-* Para dividir um volume clonado, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+* Para dividir um volume clonado, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Depois de associar o link, retorne a esta operação.
 * O FlexClone volume deve estar online quando a operação de divisão começar.
 * O volume pai precisa estar online para que a divisão seja bem-sucedida.
 

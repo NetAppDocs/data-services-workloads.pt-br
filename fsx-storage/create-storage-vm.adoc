@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/create-storage-vm.html 
 keywords: create storage VM, create svm 
-summary: 'Você pode criar uma máquina virtual de armazenamento (SVM) do FSx for ONTAP para fornecer serviços de storage e dados para suas cargas de trabalho no NetApp Workload Factory.' 
+summary: 'Crie uma máquina virtual de storage (SVM) do FSx for ONTAP para fornecer serviços de storage e dados para suas cargas de trabalho na NetApp Workload Factory.' 
 ---
 = Crie uma VM de storage para um sistema de arquivos FSx for ONTAP
 :allow-uri-read: 
@@ -16,7 +16,7 @@ Crie uma máquina virtual de storage (SVM) para um sistema de arquivos FSx for O
 .Sobre esta tarefa
 As VMs de armazenamento são servidores de arquivos isolados que você pode usar para acessar os dados de cada carga de trabalho no Workload Factory Storage. Cada SVM possui suas próprias credenciais administrativas e endpoints para administrar e acessar os dados.
 
-Com SVMs, ao acessar dados no FSx for ONTAP, seus clientes e estações de trabalho montam um volume, compartilhamento CIFS/SMB ou LUN iSCSI hospedados por uma SVM usando o endpoint da SVM (endereço IP).
+Os clientes e as estações de trabalho acessam os dados no FSx for ONTAP montando um volume, um compartilhamento CIFS/SMB ou uma LUN iSCSI hospedada por uma SVM por meio do endpoint da SVM (endereço IP).
 
 .Antes de começar
 Verifique o número de VMs de storage compatível por sistema de arquivos. Consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html#max-svms["Gerenciando máquinas virtuais de armazenamento do FSx for ONTAP"^] na documentação da AWS para ver o número máximo de SVMs por sistema de arquivos.

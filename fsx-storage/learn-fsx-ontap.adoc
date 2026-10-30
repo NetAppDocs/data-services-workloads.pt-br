@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/learn-fsx-ontap.html 
 keywords: Amazon FSx for NetApp ONTAP, FSx, storage, aws 
-summary: O Amazon FSx for NetApp ONTAP é um serviço totalmente gerenciado que permite aos clientes iniciar e executar sistemas de arquivos como backend de storage para suas cargas de trabalho na Workload Factory. 
+summary: Saiba mais sobre o Amazon FSx for NetApp ONTAP, um serviço totalmente gerenciado que permite iniciar e executar sistemas de arquivos como backend de armazenamento para suas cargas de trabalho no Workload Factory. 
 ---
 = Saiba mais sobre o Amazon FSx for NetApp ONTAP no NetApp Workload Factory
 :allow-uri-read: 
@@ -26,7 +26,7 @@ O FSx for ONTAP oferece os seguintes recursos:
 
 * *Serviço totalmente gerenciado*: fornece um serviço totalmente gerenciado integrado ao console do Workload Factory.
 * *Alta disponibilidade*: oferece alta disponibilidade para cada sistema de arquivos do FSx for ONTAP, com suporte a implantações em zonas de disponibilidade única e múltiplas.
-* *Snapshots automatizados*: protegem os dados com snapshots automatizados e eficientes, que são cópias somente leitura de ponto no tempo, quase instantâneas e com uso eficiente de espaço, do sistema de arquivos ou dos volumes.
+* *Snapshots automatizados*: protege os dados com snapshots automatizados e eficientes, que são cópias somente leitura do sistema de arquivos ou de volumes, quase instantâneas, com uso eficiente de espaço e de ponto no tempo.
 * *Replicação de volume*: fornece recuperação de desastres com replicação entre regiões na Amazon Web Services.
 * *Backups eficientes*: adiciona uma camada extra de proteção com uma cópia dos dados em outra região para emergências.
 * *clonagem rápida*: acelera o desenvolvimento de aplicativos com clonagem rápida.
@@ -77,7 +77,7 @@ A AWS é responsável pela manutenção da sua conta do FSx for ONTAP, não a Wo
 [[regions]]
 == Regiões
 
-A Workload factory é compatível com todas as regiões comerciais onde o FSx for ONTAP é compatível. link:https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/["Veja as regiões da Amazon suportadas."^]
+O Workload Factory é compatível com todas as regiões comerciais onde o FSx for ONTAP tem suporte. link:https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/["Veja as regiões da Amazon suportadas."^]
 
 As seguintes regiões da AWS não são suportadas:
 

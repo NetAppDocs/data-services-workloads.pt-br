@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/manage-snapshots.html 
 keywords: snapshot, snapshots, manage snapshots, edit snapshots, access snapshots, delete snapshots, remove snapshots 
-summary: Edite as configurações de snapshots, habilite o acesso ao diretório e exclua snapshots para gerenciar seus snapshots e a proteção de dados no Workload Factory. 
+summary: Edite os nomes, os rótulos e os períodos de retenção dos snapshots, torne os snapshots imutáveis, habilite o acesso ao diretório de snapshots e exclua snapshots dos volumes do FSx for ONTAP. 
 ---
 = Gerenciar snapshots de um volume do FSx for ONTAP
 :allow-uri-read: 
@@ -26,7 +26,7 @@ Edite o nome, o rótulo e o período de retenção de um Snapshot. Se o Snapshot
 . Selecione o menu de ações do volume com o snapshot para editar.
 . Selecione *Ações de proteção de dados* e, em seguida, *Gerenciar Snapshots*.
 . Na página Gerenciar Snapshots, selecione o menu de ações do Snapshot que você deseja editar e, em seguida, selecione *Editar*.
-. Na caixa de diálogo Editar um Snapshot, você pode editar o seguinte:
+. Na caixa de diálogo "Edit a snapshot", edite as seguintes configurações:
 +
 .. Mude o nome.
 .. Altere o rótulo.
@@ -48,7 +48,7 @@ Aceite a declaração referente a Snapshots imutáveis.
 [[access-a-snapshot]]
 == Acesse um Snapshot
 
-Habilite o acesso ao diretório de snapshots para permitir que os usuários acessem os snapshots de forma autônoma.
+Habilite o acesso ao diretório de snapshots para que os usuários possam acessar os snapshots de forma autônoma.
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
@@ -56,7 +56,7 @@ Habilite o acesso ao diretório de snapshots para permitir que os usuários aces
 . Selecione o menu de ações do volume com o snapshot ao qual você deseja acessar.
 . Selecione *Ações de proteção de dados* e, em seguida, *Gerenciar Snapshots*.
 . Na página Gerenciar instantâneos, selecione o menu de ações do instantâneo que você deseja acessar e, em seguida, selecione *Acessar*.
-. Na caixa de diálogo Acessar Snapshot, selecione *Habilitar acesso ao diretório de Snapshot* para acessar este Snapshot do volume e todos os Snapshots do volume.
+. Na caixa de diálogo Access snapshot, selecione *Enable snapshot directory access* para acessar este snapshot do volume e todos os snapshots do volume.
 +
 ** Para volumes NFS: selecione *NFS access path* para visualizar o caminho NFS do snapshot.
 ** Para volumes SMB/CIFS: selecione *SMB access path* para visualizar o caminho SMB do Snapshot.
@@ -71,7 +71,7 @@ Habilite o acesso ao diretório de snapshots para permitir que os usuários aces
 [[restore-data-from-a-snapshot]]
 == Restaurar dados a partir de um Snapshot
 
-Você tem a opção de restaurar dados de um Snapshot para um volume existente ou para um novo volume.
+Você pode restaurar dados de um snapshot para um volume existente ou para um novo volume.
 
 link:use-snapshots.html["Restaurar um volume a partir de um snapshot"]
 
@@ -82,7 +82,7 @@ link:use-snapshots.html["Restaurar um volume a partir de um snapshot"]
 
 Exclua um Snapshot para liberar espaço.
 
-Os Snapshots imutáveis não podem ser excluídos até o fim do período de retenção.
+Você não pode excluir snapshots imutáveis até que o período de retenção termine.
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].

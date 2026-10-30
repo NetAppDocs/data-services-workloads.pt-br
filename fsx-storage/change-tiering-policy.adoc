@@ -31,11 +31,11 @@ Analise as políticas de tiering disponíveis antes de alterar a política de ti
 
 * *Equilibrado (Automático)*: política de disposição em camadas padrão ao criar um volume usando a interface de usuário. Mantém os dados acessados com frequência na camada de storage SSD e dispõe em camadas os dados acessados com pouca frequência e os Snapshots para a camada de storage do pool de capacidade após o término do período de resfriamento. Recomendado para cargas de trabalho primárias em geral.
 * *Otimizado para custo (Todos)*: agrupa todos os Snapshots e dados na camada de storage do pool de capacidade. Recomendado para destinos secundários.
-* *Otimizado para desempenho (somente Snapshots)*: organiza em camadas apenas os dados de Snapshot na camada de storage do pool de capacidade. Recomendado para cargas de trabalho de baixa latência, como bancos de dados de missão crítica.
+* *Otimizado para desempenho (somente snapshots)*: hierarquiza apenas os dados de snapshot na camada de storage do pool de capacidade. Recomendado para cargas de trabalho de baixa latência, como bancos de dados de missão crítica.
 * *Nenhum*: mantém os dados do volume na camada de armazenamento SSD, impedindo que sejam movidos para a camada de armazenamento do pool de capacidade.
 
 
-Observe que algumas políticas de armazenamento em camadas possuem um período mínimo de resfriamento associado, que define o tempo, ou _dias de resfriamento_, durante o qual dados de usuário em um volume devem permanecer inativos para serem considerados "frios" e movidos para a camada de armazenamento do pool de capacidade. O período de resfriamento começa quando os dados são gravados no disco.
+Algumas políticas de armazenamento em camadas têm um período mínimo de resfriamento associado que define o tempo, ou _dias de resfriamento_, durante o qual os dados de usuário em um volume devem permanecer inativos para serem considerados "frios" e movidos para a camada de storage do pool de capacidade. O período de resfriamento começa quando os dados são gravados no disco.
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].

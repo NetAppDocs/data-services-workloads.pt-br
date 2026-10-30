@@ -33,7 +33,7 @@ Você também pode carregar uma configuração salva.
 
 
 
-.. *Etiquetas*: opcionalmente, você pode adicionar até 50 etiquetas.
+.. *Etiquetas*: opcionalmente, adicione até 50 etiquetas.
 
 
 . Em detalhes do sistema de arquivos, forneça o seguinte:
@@ -47,8 +47,8 @@ Você também pode carregar uma configuração salva.
 .. *Capacidade de throughput por par de HA*: selecione a capacidade de throughput por número de pares de HA. Os sistemas de arquivos de primeira geração suportam apenas um par de HA.
 .. *IOPS provisionadas*: selecione uma das seguintes opções:
 +
-*** *Automático*: no modo automático, para cada GiB criado, 3 IOPS são adicionados.
-*** *Provisionado pelo usuário*: para provisionado pelo usuário, insira o valor de IOPS.
+*** *Automático*: adiciona 3 IOPS para cada GiB criado.
+*** *Provisionado pelo usuário*: insira o valor de IOPS.
 
 
 .. *Credenciais do ONTAP*: opcional. Insira seu nome de usuário e senha do ONTAP. A senha pode ser definida agora ou posteriormente.
@@ -63,7 +63,7 @@ Se o usuário que você fornecer não for o usuário fsxadmin e, posteriormente,
 ... *Nome NetBIOS do servidor SMB*: insira o nome NetBIOS do servidor SMB do objeto de computador do Active Directory a ser criado para sua VM de armazenamento. Este é o nome desta VM de armazenamento no Active Directory.
 ... *Nome de usuário*: insira o nome de usuário da conta de serviço no seu Active Directory existente.
 +
-Não inclua prefixo ou sufixo de domínio. Para  `EXAMPLE\ADMIN`, use  `ADMIN`.
+Não inclua prefixo ou sufixo de domínio. Para `EXAMPLE\ADMIN`, use `ADMIN`.
 
 ... *Senha*: digite a senha da conta de serviço.
 ... *Unidade organizacional*: opcionalmente, insira o nome da unidade organizacional na qual você pretende criar a conta de computador para o FSx for ONTAP. A OU é o nome do caminho distinto da unidade organizacional à qual você deseja associar o sistema de arquivos.

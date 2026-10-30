@@ -11,7 +11,7 @@ summary: Gerencie a política de exportação NFS de um volume que usa os tipos 
 
 
 [role="lead"]
-Gerencie a política de exportação NFS de um volume que usa os tipos de protocolo NFSv3 ou NFSv4.1 na NetApp Workload Factory.
+Gerencie a política de exportação NFS de um volume que usa os tipos de protocolo NFSv3 ou NFSv4.1 na NetApp Workload Factory para controlar quais clientes podem acessar o volume e qual acesso eles têm.
 
 .Sobre esta tarefa
 Gerenciar a política de exportação de um volume envolve adicionar regras de política de exportação que detalham a especificação do cliente, o controle de acesso, o acesso de superusuário e a versão de NFS. Você pode adicionar mais de uma política de exportação e priorizá-las.
@@ -30,7 +30,7 @@ Determine as especificações do cliente para as regras da política de exporta�
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
 . Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Volumes explorer*.
-. Selecione o menu de ações do volume para o qual deseja alterar a política de exportação NFS.
+. Selecione o menu de ações do volume cuja política de exportação NFS você deseja alterar.
 . Selecione *Ações avançadas* e, em seguida, *Editar política de exportação de NFS*.
 . Na página Editar política de exportação NFS, forneça o seguinte:
 +

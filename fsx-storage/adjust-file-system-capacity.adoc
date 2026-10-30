@@ -50,7 +50,7 @@ Para ajustar a capacidade de um sistema de arquivos, você deve primeiro <<Ative
 [[enable-automatic-capacity-and-inode-management]]
 == Ative o gerenciamento automático de capacidade e inodes
 
-Habilite o gerenciamento de capacidade e inodes para permitir que NetApp Workload Factory adicione automaticamente storage incremental, um sistema de arquivos do FSx for ONTAP e inodes (arquivos) a um volume conforme as necessidades de capacidade mudam ao longo do tempo. Esses recursos eliminam a necessidade de monitorar a capacidade e os inodes manualmente.
+Habilite o gerenciamento de capacidade e de inode para permitir que a NetApp Workload Factory adicione automaticamente storage incremental a um sistema de arquivos FSx for ONTAP e inodes (arquivos) a um volume, conforme as necessidades de capacidade mudam ao longo do tempo. Esses recursos eliminam a necessidade de monitorar manualmente a capacidade e os inodes.
 
 Apenas uma conta pode gerenciar esses recursos.
 
@@ -146,7 +146,7 @@ Considere o seguinte antes de começar:
 . Na página do FSx for ONTAP, selecione *Inventário*.
 . No *Inventário*, selecione o menu de ações do sistema de arquivos para ativar o gerenciamento automático de inodes.
 . Selecione *Gerenciar*.
-. Em Informações, selecione o ícone de lápis ao lado de *Gerenciamento automático de inodes*. O ícone de lápis aparece ao lado da seta da lista suspensa quando o cursor do mouse passa sobre a linha *Gerenciamento automático de inodes*.
+. Em Informações, selecione o ícone de lápis ao lado de *Gerenciamento automático de inodes*. O ícone de lápis aparece ao lado da seta do menu suspenso quando você passa o cursor do mouse sobre a linha *Gerenciamento automático de inodes*.
 . Na caixa de diálogo *Gerenciamento automático de inodes*, forneça o seguinte:
 +
 .. *Credenciais*: selecione as credenciais com permissões de _Automate_ no menu suspenso.

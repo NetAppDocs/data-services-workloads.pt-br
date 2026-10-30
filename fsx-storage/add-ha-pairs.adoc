@@ -14,31 +14,31 @@ summary: Adicione pares de HA a um sistema de arquivos no NetApp Workload Factor
 Adicione pares de HA para escalar horizontalmente um sistema de arquivos Single-AZ de segunda geração do FSx for ONTAP na NetApp Workload Factory para aumentar o desempenho e a capacidade. Essa expansão oferece mais escalabilidade de desempenho e flexibilidade em relação aos sistemas de arquivos de primeira geração.
 
 .Sobre esta tarefa
-Os novos pares de HA são adicionados usando o mesmo SKU e a mesma capacidade por par de HA.
+Os novos pares de HA usam o mesmo SKU e a mesma capacidade por par de HA.
 
 Não há suporte para adicionar pares de HA nos seguintes casos:
 
 * Implantações de par de HA Multi-AZ ou sistemas de arquivos do FSx for ONTAP de primeira geração
-* Sistemas de arquivos do FSx for ONTAP com mais de 5 VMs de storage
+* Sistemas de arquivos do FSx for ONTAP com mais de cinco VMs de storage
 * Sistemas de arquivos do FSx for ONTAP com LUNs iSCSI
 * Configurações que têm capacidade máxima ou próxima da capacidade máxima de SSD ou que atingiram os limites de alocação de E/S
 
 
 Considere o seguinte sobre a adição de pares de HA:
 
-* Remoção de par de HA: os pares de HA não podem ser removidos depois de serem adicionados ao sistema de arquivos.
-* Tempo de operação e limitações: a adição de pares de HA pode levar aproximadamente 30 minutos. Considere adicionar pares de HA durante uma janela de manutenção ou em períodos de baixa atividade. Além disso, a adição de pares de HA limita outras operações, como adicionar mais pares de HA, provisionar IOPS, aumentar a capacidade do SSD e atualizar a capacidade de throughput.
-* Alocação de IO: a alocação de IO automática depende da capacidade total de storage. A alocação de IO configurada pelo usuário é multiplicada pela quantidade de pares de HA adicionados.
+* Remoção de par de HA: você não pode remover pares de HA depois de adicioná-los ao sistema de arquivos.
+* Tempo de operação e limitações: a adição de pares de HA pode levar aproximadamente 30 minutos. Considere adicionar pares de HA durante uma janela de manutenção ou em períodos de baixa atividade. Além disso, a adição de pares de HA limita outras operações, como adicionar mais pares de HA, provisionar IOPS, aumentar a capacidade de SSD e atualizar a capacidade de throughput.
+* Alocação de IO: a alocação automática de IO depende da capacidade total de storage. A alocação de IO configurada por você é multiplicada pelo número de pares de HA adicionados.
 * Cache NVMe: ao adicionar pares de HA, o cache NVMe é ativado por padrão. Recomendamos desativar o cache NVMe para cargas de trabalho pesadas.
 * Número de pares de HA: recomendamos expandir seu sistema de arquivos para um número par de pares de HA para distribuição de dados equilibrada entre os pares de HA.
-* Criação de LUN: a criação de LUN só é possível em um sistema de arquivos Single-AZ de segunda geração se ainda não existirem LUNs no sistema de arquivos ao adicionar pares de HA. A criação de LUN é suportada apenas em um sistema de arquivos com 6 pares de HA ou menos.
+* Criação de LUN: a criação de LUN só é possível em um sistema de arquivos Single-AZ de segunda geração somente se ainda não existirem LUNs no sistema de arquivos ao adicionar pares de HA. A criação de LUN é suportada apenas em um sistema de arquivos com seis pares de HA ou menos.
 
 
 .Antes de começar
 Antes de adicionar pares de HA a um sistema de arquivos:
 
 * Remova todos os LUNs iSCSI para expandir o sistema de arquivos.
-* Certifique-se de que o sistema de arquivos não tenha mais de 5 VMs de storage.
+* Certifique-se de que o sistema de arquivos não tenha mais de cinco VMs de storage.
 
 
 .Passos

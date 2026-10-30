@@ -20,7 +20,7 @@ Após configurar seu sistema de arquivos FSx for ONTAP, crie volumes do FSx for 
 
 Os volumes do FSx para ONTAP agrupam dados virtualmente, determinam como os dados são armazenados e definem o tipo de acesso aos seus dados. Os volumes não consomem capacidade de storage do sistema de arquivos. Os dados armazenados em um volume consomem principalmente storage SSD. Dependendo da política de categorização em camadas do volume, os dados também podem consumir storage do pool de capacidade. Você define o tamanho de um volume ao criá-lo e pode alterá-lo posteriormente.
 
-Os seguintes protocolos podem ser usados para seus volumes:
+Você pode usar os seguintes protocolos para seus volumes:
 
 * SMB/CIFS: protocolo de storage de arquivos para sistemas operacionais Windows
 * NFS: protocolo de storage de arquivos para sistemas operacionais Unix
@@ -39,7 +39,7 @@ Esse recurso, também conhecido como SnapLock, está desativado por padrão. Ati
 
 * *Modos de retenção*: você pode selecionar entre dois modos de retenção: _Enterprise_ ou _Compliance_.
 +
-** No modo _Enterprise_, um administrador de arquivos imutáveis, ou SnapLock, pode excluir um arquivo durante seu período de retenção.
+** No modo _Enterprise_, um administrador do SnapLock pode excluir um arquivo durante seu período de retenção.
 ** No modo _Compliance_, um arquivo WORM não pode ser excluído antes que seu período de retenção expire. Da mesma forma, o volume imutável não pode ser excluído até que os períodos de retenção de todos os arquivos dentro do volume expirem.
 
 
@@ -48,9 +48,9 @@ Esse recurso, também conhecido como SnapLock, está desativado por padrão. Ati
 
 NOTE: Mesmo após o término do período de retenção, você não pode modificar um arquivo WORM. Você só pode excluí-lo ou definir um novo período de retenção para reativar a proteção WORM.
 
-* *Autocommit*: você terá a opção de habilitar o recurso de autocommit. O recurso de autocommit confirma um arquivo para o estado WORM em um volume de SnapLock se o arquivo não mudar durante o período de autocommit. O recurso de autocommit é desabilitado por padrão. Você deve garantir que os arquivos que deseja confirmar automaticamente estejam em um volume de SnapLock.
+* *Autocommit*: você pode habilitar o recurso de autocommit. O recurso de autocommit confirma um arquivo para o estado WORM em um volume de SnapLock se o arquivo não foi alterado durante a duração do período de autocommit. O recurso de autocommit está desabilitado por padrão. Você deve garantir que os arquivos para os quais deseja fazer autocommit estejam em um volume de SnapLock.
 * *Exclusão privilegiada*: um administrador do SnapLock pode ativar a exclusão privilegiada em um volume de SnapLock Enterprise para permitir que um arquivo seja excluído antes que o período de retenção do arquivo expire. Esse recurso está desativado por padrão.
-* *Modo de acréscimo de volume*: não é possível modificar dados existentes em um arquivo protegido por WORM. No entanto, arquivos imutáveis permitem manter a proteção dos dados existentes usando arquivos com acréscimo por WORM. Por exemplo, você pode gerar arquivos de log ou preservar dados de streaming de áudio ou vídeo enquanto grava dados neles de forma incremental. link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/worm-state.html#worm-state-append["Saiba mais sobre o modo volume-append"^] na documentação do Amazon FSx for NetApp ONTAP.
+* *Modo de anexação de volume*: não é possível modificar dados existentes em um arquivo protegido por WORM. No entanto, arquivos imutáveis permitem manter a proteção dos dados existentes usando arquivos anexáveis por WORM. Por exemplo, você pode gerar arquivos de log ou preservar dados de streaming de áudio ou vídeo enquanto grava dados neles incrementalmente. link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/worm-state.html#worm-state-append["Saiba mais sobre o modo volume-append"^] na documentação do Amazon FSx for NetApp ONTAP.
 
 
 
@@ -104,7 +104,7 @@ Opcionalmente, habilite o volume com crescimento automático. Essa opção está
 
 .. *Volume com crescimento automático*: opcionalmente, habilite o volume com crescimento automático para expandir automaticamente a capacidade do volume até que ele atinja o tamanho máximo. Esse recurso acomoda o aumento do uso de dados, garantindo operações ininterruptas.
 +
-Especifique o tamanho máximo de crescimento do volume e a unidade. Não é possível definir um tamanho máximo de crescimento menor que o tamanho do volume atual
+Especifique o tamanho máximo de crescimento do volume e a unidade. Não é possível definir um tamanho máximo de crescimento menor que o tamanho do volume atual.
 
 .. *Etiquetas*: opcionalmente, você pode adicionar até 50 etiquetas.
 
@@ -119,7 +119,7 @@ Preencha os campos a seguir para configurar o acesso a arquivos para o volume.
 
 
 
-.. *Política de exportação NFS*: forneça os seguintes detalhes para conceder acesso NFS:
+.. *Política de exportação NFS*: Forneça os seguintes detalhes para configurar o acesso NFS:
 +
 ... *Controle de acesso*: selecione uma *Política de exportação personalizada*, uma *Política de exportação existente* ou *Sem acesso ao volume* no menu suspenso.
 ... *Nome da política de exportação*:
@@ -230,7 +230,7 @@ _Balanced (Auto)_ é a política de tiering padrão ao criar um volume usando o 
 
 .. *ARP/AI*: NetApp A Proteção Autônoma contra Ransomware com IA (ARP/AI) é ativada por padrão quando um link é associado ao sistema de arquivos. link:ransomware-protection.html["Saiba mais sobre ARP/AI"]. Aceite a declaração para prosseguir.
 +
-Se a funcionalidade não estiver disponível, é por um dos seguintes motivos:
+O recurso pode estar indisponível por um dos seguintes motivos:
 
 +
 *** Não existe um link associado ao sistema de arquivos. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.

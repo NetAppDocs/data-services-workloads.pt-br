@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/quick-start-fsx.html 
 keywords: Amazon FSx for NetApp ONTAP, fsx, netapp, quick, get started, install, deploy, setup, launch, requirements, prerequisites, credentials, permissions, policy 
-summary: Você pode começar a usar o FSx for ONTAP no NetApp Workload Factory em apenas alguns passos. 
+summary: Comece a usar o FSx for ONTAP na NetApp Workload Factory fazendo login, adicionando credenciais e permissões e criando um sistema de arquivos. 
 ---
 = Guia de início rápido para Amazon FSx for NetApp ONTAP no NetApp Workload Factory
 :allow-uri-read: 

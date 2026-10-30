@@ -18,7 +18,7 @@ Durante a migração, os clientes acessam os dados do sistema de arquivos ONTAP.
 ** Recuperação de desastres a quente: garante alta disponibilidade e recuperação rápida de desastres para cargas de trabalho críticas
 ** Recuperação de desastres a frio ou de arquivamento:
 +
-*** Recuperação de desastres a frio: usa objetivos de tempo de recuperação (RTO) e objetivos de ponto de recuperação (RPO) mais longos para reduzir custos
+*** Recuperação de desastres a frio: utiliza objetivos de tempo de recuperação (RTO) e objetivos de ponto de recuperação (RPO) mais longos para reduzir custos
 *** Arquivo: replica dados para storage de longo prazo e conformidade
 
 
@@ -47,11 +47,11 @@ Quando os nomes das máquinas virtuais de armazenamento de origem e de destino s
 _Balanced (Auto)_ é a política de tiering padrão ao criar um volume usando o console do Workload Factory. Para obter mais informações sobre políticas de tiering de volume, consulte link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["Capacidade de storage do volume"^] na documentação do AWS FSx for NetApp ONTAP. Observe que o Workload Factory usa nomes baseados em casos de uso no console do Workload Factory para políticas de tiering e inclui os nomes das políticas de tiering do FSx for ONTAP entre parênteses.
 
 +
-Se você selecionou o caso de uso de migração, o Workload Factory seleciona automaticamente a opção de copiar a política de tiering do volume de origem para o volume de destino. Você pode desmarcar a opção de copiar a política de tiering e selecionar uma política de tiering que se aplique ao volume selecionado para replicação.
+Se você selecionou o caso de uso de migração, o Workload Factory seleciona automaticamente a opção de copiar a política de camadas do volume de origem para o volume de destino. Você pode desmarcar a opção de copiar a política de camadas e selecionar uma política de camadas que se aplique ao volume selecionado para replicação.
 
 . *Taxa de transferência máxima*: selecione *Limitada* e insira o limite máximo de transferência em MB/s. Como alternativa, selecione *Ilimitada*.
 +
-Sem um limite, o desempenho da rede e dos aplicativos pode ser prejudicado. Como alternativa, recomendamos uma taxa de transferência ilimitada para os sistemas de arquivos do FSx for ONTAP em cargas de trabalho críticas, por exemplo, aquelas usadas principalmente para recuperação de desastres.
+Sem um limite, o desempenho da rede e dos aplicativos pode ser prejudicado. No entanto, recomendamos uma taxa de transferência ilimitada para os sistemas de arquivos do FSx for ONTAP em cargas de trabalho críticas, como aquelas usadas principalmente para recuperação de desastres.
 
 +
 .. Nas configurações de replicação, forneça as seguintes informações:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/manage-snapshot-policy.html 
 keywords: manage snapshot policy, change snapshot policy, assign snapshot policy, remove snapshot policy, snapshot policies, snapshot schedule, update, snapshot long-term retention, enable long-term retention 
-summary: Gerencie as políticas do Snapshot para volumes do FSx for ONTAP no Workload Factory. Uma política do Snapshot define como o sistema cria Snapshots para um volume. 
+summary: Atribua, altere, remova e exclua políticas de snapshot, e habilite snapshots imutáveis e retenção de longo prazo para volumes do FSx for ONTAP no Workload Factory. 
 ---
 = Gerencie políticas de snapshots para volumes no NetApp Workload Factory
 :allow-uri-read: 
@@ -27,7 +27,7 @@ Por padrão, cada volume está associado à política do Snapshot do sistema de 
 Você pode atribuir uma política do Snapshot a um único volume para criar Snapshots agendados para esse volume.
 
 .Antes de começar
-Você precisa associar um link para atribuir uma política de instantâneo. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+Você precisa associar um link para atribuir uma política de instantâneo. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Depois de associar o link, retorne a esta operação.
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
@@ -39,7 +39,7 @@ Você precisa associar um link para atribuir uma política de instantâneo. link
 . Na página de gerenciamento da política do Snapshot, selecione o menu de ações da política do Snapshot e, em seguida, selecione *Atribuir política ao volume*.
 . Na caixa de diálogo Atribuir política do Snapshot, selecione uma política do Snapshot para atribuir ao volume e revise o agendamento da política.
 +
-Se a política contiver Snapshots imutáveis e você quiser usá-la, aceite a declaração.
+Se a política contiver snapshots imutáveis e você quiser usá-la, aceite a declaração.
 
 . Selecione *Atribuir*.
 
@@ -52,10 +52,10 @@ A política do Snapshot é atribuída ao volume.
 [[change-a-snapshot-policy]]
 == Alterar uma política do Snapshot
 
-Você pode alterar o nome da política do Snapshot, o agendamento e o número de cópias a serem retidas, além de habilitar ou desabilitar Snapshots imutáveis. Não é possível habilitar ou desabilitar o compartilhamento de políticas entre VMs de armazenamento. Essa opção está disponível somente durante a criação da política do Snapshot.
+Você pode alterar o nome da política de snapshot, o agendamento e o número de cópias a serem retidas, além de habilitar ou desabilitar snapshots imutáveis. Não é possível habilitar ou desabilitar o compartilhamento de políticas entre VMs de armazenamento. Essa opção só pode ser definida ao criar uma política de snapshot.
 
 .Antes de começar
-Para exibir as políticas de instantâneo existentes, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+Para exibir as políticas de instantâneo existentes, você deve associar um link. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Depois de associar o link, retorne a esta operação.
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
@@ -80,7 +80,7 @@ A política do Snapshot foi atualizada.
 Bloqueie os Snapshots para evitar que sejam excluídos durante o período de retenção.
 
 .Antes de começar
-Você precisa associar um link para habilitar snapshots imutáveis. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+Você precisa associar um link para habilitar snapshots imutáveis. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Depois de associar o link, retorne a esta operação.
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
@@ -148,7 +148,7 @@ NOTE: A edição da retenção de longo prazo não está disponível ao replicar
 Remova uma política do Snapshot de um volume porque você não quer mais snapshots do volume ou porque quer excluir uma política do Snapshot atribuída a vários volumes. Para <<Excluir uma política do Snapshot,excluir uma política do Snapshot>> atribuída a mais de um volume, você deve removê-la manualmente de todos os volumes.
 
 .Antes de começar
-Você precisa associar um link para remover uma política de instantâneo. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Após a associação do link, retorne a esta operação.
+Você precisa associar um link para remover uma política de instantâneo. link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"^]. Depois de associar o link, retorne a esta operação.
 
 .Passos
 . Faça login no link:https://console.netapp.com["NetApp Console"^].

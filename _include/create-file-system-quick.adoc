@@ -23,7 +23,7 @@ Essa configuração de par de HA único é recomendada para cargas de trabalho q
 
 
 
-.. *Etiquetas*: opcionalmente, você pode adicionar até 50 etiquetas.
+.. *Etiquetas*: opcionalmente, adicione até 50 etiquetas.
 
 
 . Em *Detalhes do sistema de arquivos*, forneça o seguinte:
@@ -45,7 +45,7 @@ Se o usuário que você fornecer não for o usuário fsxadmin e, posteriormente,
 ... *Nome NetBIOS do servidor SMB*: insira o nome NetBIOS do servidor SMB do objeto de computador do Active Directory a ser criado para sua VM de armazenamento. Este é o nome desta VM de armazenamento no Active Directory.
 ... *Nome de usuário*: insira o nome de usuário da conta de serviço no seu Active Directory existente.
 +
-Não inclua prefixo ou sufixo de domínio. Para  `EXAMPLE\ADMIN`, use  `ADMIN`.
+Não inclua prefixo ou sufixo de domínio. Para `EXAMPLE\ADMIN`, use `ADMIN`.
 
 ... *Senha*: digite a senha da conta de serviço.
 ... *Unidade organizacional*: opcionalmente, insira o nome da unidade organizacional na qual você pretende criar a conta de computador para o FSx for ONTAP. A OU é o nome do caminho distinto da unidade organizacional à qual você deseja associar o sistema de arquivos.
