@@ -7,7 +7,7 @@ summary: Atualize os detalhes do ponto de acesso S3, gerencie as tags e habilite
 = Edite os pontos de acesso S3 de um volume do FSx for ONTAP no NetApp Console
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

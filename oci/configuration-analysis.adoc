@@ -1,0 +1,129 @@
+---
+sidebar: sidebar 
+permalink: oci/configuration-analysis.html 
+keywords: configuration issues, issues, improve, analyze, storage configuration, OCI NSS, recommendation, recommendations 
+summary: A NetApp Workload Factory analisa regularmente as configurações do sistema OCI NSS para determinar se há problemas de configuração. 
+---
+= Análise de configuração para sistemas OCI NSS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O NetApp Workload Factory analisa regularmente as configurações do sistema OCI NSS para determinar se há algum problema de configuração. Quando o Workload Factory encontra problemas, ele mostra a você quais são esses problemas e explica o que mudar para que seu ambiente de storage alcance desempenho máximo, eficiência de custos e conformidade com as melhores práticas.
+
+Principais funcionalidades incluem:
+
+* Análise diária de configuração
+* Validações automáticas de melhores práticas
+* Observabilidade proativa
+* Insights para ação
+* Consultor do OCI Well-Architected Framework
+
+
+
+
+[[how-it-works]]
+== Como funciona
+
+O Workload Factory analisa suas cargas de trabalho em implantações compatíveis de storage de nuvem todos os dias. A análise fornece status de boa arquitetura, insights e recomendações.
+
+Após a conclusão da análise diária, as configurações aparecem como "otimizadas" ou "não otimizadas" no dashboard Well-architected da implantação. Você encontrará os problemas de configuração organizados por categoria, juntamente com recomendações. O Workload Factory fornece instruções detalhadas para ajudar você a implementar as alterações recomendadas.
+
+Você pode descartar a análise de configurações que não se aplicam aos seus ambientes. Isso evita alertas desnecessários e resultados de otimização imprecisos.
+
+
+
+[[why-it-matters]]
+== Por que isso importa
+
+O NetApp Workload Factory aplica as melhores práticas a grandes ambientes de storage, banco de dados e VMware, combinando avaliação contínua com insights de recomendações e remediação. As correções automatizadas reduzem erros humanos, garantem gerenciamento uniforme e preservam o desempenho e a confiabilidade em toda a sua infraestrutura de workloads.
+
+
+
+[[analysis-requirements]]
+== Requisitos de análise
+
+Para uma análise completa do sistema de arquivos, você deve fazer o seguinte:
+
+* Associe um link. A conectividade do link permite que o Workload Factory analise todas as configurações do sistema OCI NSS, como proteção de dados e desempenho.
++
+link:create-link.html["Aprenda como associar um link existente ou criar e associar um novo link"].
+
+* Conceda permissões de _visualização, planejamento e análise_ em sua conta OCI.
++
+link:add-credentials-oci.html["Aprenda como conceder permissões a uma conta da OCI"].
+
+
+
+
+
+[[best-practices-and-recommendations-for-storage-workloads]]
+== Melhores práticas e recomendações para cargas de trabalho de storage
+
+O painel de arquitetura bem projetada avalia as configurações de storage em relação às melhores práticas do ONTAP e ao AWS Well-Architected Framework. A avaliação também recomenda melhorias e correções.
+
+A análise bem arquitetada categoriza as configurações nos seguintes pilares da estrutura: _confiabilidade_, _segurança_, _excelência operacional_, _otimização de custos_ e _eficiência de desempenho_.
+
+
+NOTE: Atualmente, o Workload Factory não fornece recomendações específicas de carga de trabalho para todas as configurações. Adapte suas configurações às necessidades específicas de cada carga de trabalho.
+
+
+
+[[reliability]]
+=== Confiabilidade
+
+A confiabilidade garante que as workloads executem suas funções pretendidas de forma correta e consistente, mesmo quando ocorrem interrupções.
+
+* *Capacidade de objeto de arquivo*
++
+O limite de capacidade de arquivos deve ser aumentado para evitar atingir o limite de capacidade do volume. Uma baixa capacidade de arquivos (inodes) impede a gravação de dados adicionais no volume. O Workload Factory recomenda manter a utilização da capacidade de arquivos abaixo de 80% para permitir a criação de novos arquivos.
+
+* *política do Snapshot*
++
+Agende snapshots locais para backup eficiente e restaurações rápidas. Snapshots são imagens instantâneas de ponto no tempo dos seus volumes. Esta recomendação não se aplica a ambientes de banco de dados.
+
+* *Espaço livre de capacidade de SSD*
++
+A capacidade da camada de armazenamento SSD não deve exceder 80% de utilização. Isso pode afetar as operações de leitura e gravação de dados na camada de armazenamento do seu pool de capacidade e impactar a taxa de transferência do seu sistema de arquivos. Quando a capacidade se esgota, os volumes de dados tornam-se somente leitura. Os serviços que tentam gravar novos dados também falham.
+
+
+
+
+
+[[operational-excellence]]
+=== Excelência operacional
+
+A excelência operacional garante que as cargas de trabalho sejam operadas e monitoradas de forma eficaz e possam atender aos requisitos de seus usuários.
+
+* *Relatórios de capacidade visíveis para o host*
++
+Habilite a geração de relatórios de capacidade visíveis ao host para fornecer melhor visibilidade do uso de storage no nível do volume.
+
+* *Folga de capacidade do volume*
++
+A margem de capacidade do volume deve ser definida em 10% para permitir o crescimento e evitar problemas inesperados de capacidade.
+
+
+
+
+
+[[cost-optimization]]
+=== Otimização de custos
+
+A otimização de custos ajuda você a obter o máximo valor para o seu negócio enquanto mantém os custos baixos.
+
+* *Tiering de dados frios* Use a política de tiering somente de Snapshot, que move apenas os dados de Snapshot para a camada de capacidade, mantendo os dados ativos na camada SSD. Essa abordagem preserva o desempenho de baixa latência para cargas de trabalho de banco de dados, reduzindo os custos de storage. Faça o tiering dos dados de Snapshot após um período de resfriamento de 7 dias.
+* *Limpeza de Snapshot*
++
+Exclua snapshots antigos ou criados manualmente que você não precisa mais. A remoção deles pode reduzir custos e a desordem, especialmente se não forem necessários para o seu SLA ou para suas necessidades de recuperação.
+
+* *Eficiências de storage*
++
+Habilite as eficiências de armazenamento — compactação, compressão e deduplicação — para otimizar a utilização do storage e reduzir o custo da camada SSD.
+
+
+
+.O que vem a seguir
+link:improve-configurations.html["Implemente configurações bem arquitetadas do OCI NSS"]

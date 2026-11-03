@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: oci/improve-configurations.html 
+keywords: implement best practices, well-architected file system, Amazon FSx for NetApp ONTAP, FSx for ONTAP 
+summary: O Workload Factory analisa as configurações do Amazon FSx for NetApp ONTAP, fornecendo insights e recomendações para ajudar você a alcançar excelência operacional. 
+---
+= Implemente configurações de sistema OCI NSS bem arquitetadas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o Workload Factory para implementar as melhores práticas em seus sistemas Oracle Cloud Infrastructure NetApp Storage Service (OCI NSS). Você pode revisar facilmente o status da arquitetura, aprender sobre problemas nas suas configurações e corrigi-los para melhorar a arquitetura de quaisquer sistemas que não estejam otimizados para confiabilidade, segurança, eficiência, desempenho e custo.
+
+link:configuration-analysis.html["Saiba mais sobre a análise de configuração e o status de arquitetura bem projetada."]
+
+
+
+[[about-this-task]]
+== Sobre esta tarefa
+
+A Workload Factory analisa diariamente as configurações de implantação do sistema OCI NSS.
+
+Como os requisitos para configurações de armazenamento variam, você pode descartar a análise de configurações específicas que não se aplicam ao seu ambiente de storage.
+
+A conectividade de link permite que o NetApp Workload Factory verifique problemas de desempenho, proteção de dados e configurações. link:create-link.html["Conecte-se a um sistema OCI NSS usando um link"] para a análise mais completa dos recursos do seu sistema de arquivos.
+
+.O que é analisado
+O Workload Factory analisa o status de boa arquitetura das seguintes configurações para sistemas OCI NSS:
+
+* Confiabilidade: capacidade de objeto de arquivo, política de Snapshot e margem de capacidade do SSD
+* Excelência operacional: relatórios de capacidade visível ao host e margem de capacidade do volume
+* Otimização de custos: hierarquização de dados inativos, limpeza de snapshots e eficiências de storage
+
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+* Você deve link:add-credentials.html["conceder permissões de _operações e remediação_"] na sua conta da OCI.
+* link:create-link.html["Conecte-se a um sistema OCI NSS usando um link"] para a análise mais completa dos recursos do seu sistema de arquivos.
+
+
+
+
+[[fix-a-configuration-issue]]
+== Corrigir um problema de configuração
+
+Você pode corrigir problemas de configuração para um sistema OCI NSS ou para volumes selecionados em um sistema de arquivos. Você pode selecionar uma ou mais configurações para corrigir.
+
+As operações de correção podem causar indisponibilidade da instância ou interrupções de serviço. Analise cuidadosamente cada recomendação antes de corrigir um problema de configuração.
+
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Well-architected* > *OCI NSS system*.
+. Selecione *Visualizar e corrigir* para qualquer configuração. Certifique-se de revisar a recomendação cuidadosamente.
++
+A recomendação explica as melhores práticas e possíveis armadilhas de configurações não otimizadas.
+
+. Selecione os recursos e depois *Fix*.
++
+Algumas operações de correção estão disponíveis apenas para operações específicas e nem sempre para mais de um recurso. Por exemplo, talvez seja possível corrigir a configuração de um único volume, mas não de vários volumes.
+
+. Analise os itens de ação para saber sobre as consequências dessa correção, como períodos de inatividade da instância ou interrupções de serviço.
+. Selecione *Corrigir* se você quiser que o Workload Factory aplique as alterações recomendadas.
+
+
+.Resultado
+O processo de correção é iniciado. Selecione o menu de configurações da conta e, em seguida, selecione *Tracker* para visualizar o status da operação.
+
+
+
+[[dismiss-a-configuration-analysis]]
+== Descartar uma análise de configuração
+
+Interrompa indefinidamente uma análise de configuração para um ou mais recursos. Você pode reiniciar a análise quando necessário.
+
+Feche para interromper a análise de configuração de um ou mais sistemas ou volumes do OCI NSS. Você pode reiniciar a análise a qualquer momento.
+
+[role="tabbed-block"]
+====
+.Descartar uma análise de configuração para configurações
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Well-architected* > *OCI NSS system*.
+. Em Configurações, identifique a configuração que não se aplica ao seu ambiente.
+. Selecione image:icon-action.png["o ícone do menu de ações"] e depois selecione *Fechar*.
+. Na caixa de diálogo Dispensar configuração, selecione *Dispensar* para interromper a análise para a configuração.
+
+
+--
+.Descartar uma análise de configuração para seus recursos
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Well-architected* > *OCI NSS system*.
+. No painel de controle bem arquitetado do sistema OCI NSS, em Configurações, selecione a configuração que não se aplica ao seu ambiente.
+. Na página de configuração, selecione o(s) recurso(s) para dispensar da análise de configuração.
++
+** Para um recurso: selecione image:icon-action.png["o ícone do menu de ações"] e depois selecione *Dismiss*.
+** Para vários recursos: selecione os recursos e, em seguida, selecione *Ignorar* ao lado de Bulk action.
+
+
+. Na caixa de diálogo Dispensar recursos, selecione *Dispensar* para interromper a análise.
+
+
+--
+====
+.Resultado
+O Workload Factory interrompe a análise de configuração para as configurações selecionadas.
+
+
+
+[[reactivate-a-dismissed-configuration-analysis]]
+== Reative uma análise de configuração descartada
+
+Reative uma análise de configuração descartada a qualquer momento. Você pode selecionar uma ou mais configurações ou recursos para reativar.
+
+[role="tabbed-block"]
+====
+.Reative uma análise de configuração para configurações
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Well-architected* > *OCI NSS system*.
+. Selecione *Dismissed configurations*.
+. Identifique a(s) configuração(ões) que você deseja reativar e selecione *Reativar*.
+
+
+--
+.Reative uma análise de configuração para seus recursos
+--
+.Passos
+. Faça login no link:https://console.netapp.com["NetApp Console"^].
+. Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Workloads* > *Well-architected* > *OCI NSS system*.
+. No painel de controle bem arquitetado do sistema OCI NSS, em Configurações, selecione a configuração que não se aplica ao seu ambiente.
+. Na página de configuração, selecione *Configurações descartadas*.
+. Selecione o(s) recurso(s) para reativar.
++
+** Para um recurso: selecione image:icon-action.png["o ícone do menu de ações"] e depois selecione *Reativar*.
+** Para vários recursos: selecione os recursos e, em seguida, selecione *Reativar* ao lado de Bulk action.
+
+
+
+
+--
+====
+.Resultado
+O Workload Factory reativa a análise de configuração e executa uma nova análise todos os dias.

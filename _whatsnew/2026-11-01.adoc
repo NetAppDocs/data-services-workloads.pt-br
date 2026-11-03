@@ -1,0 +1,216 @@
+= Melhorias na administração do Workload Factory
+:allow-uri-read: 
+
+
+
+
+[[workload-factory-administration-enhancements]]
+=== Melhorias na administração do Workload Factory
+
+
+
+==== Verifique e atualize os dados do painel personalizado
+
+Agora você pode ver quando as métricas do seu painel personalizado foram atualizadas pela última vez e atualizá-las manualmente. Passe o cursor sobre *Atualizar dados* para ver a data e a hora da última atualização.
+
+Selecione *Atualizar dados* para iniciar uma nova verificação. Um banner confirma que a verificação foi iniciada, e o botão fica desativado até que a verificação seja concluída.
+
+Quando novos dados estiverem disponíveis, selecione *Carregar agora* no banner de notificação para atualizar o painel.
+
+Tanto *Atualizar dados* quanto *Carregar agora* criam eventos de coleta de dados no Tracker.
+
+link:admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["Aprenda como atualizar os dados do painel personalizado"]
+
+
+
+==== Especifique regiões para painéis personalizados
+
+Agora, os painéis personalizados solicitam que você selecione uma ou mais regiões caso sua solicitação não as inclua. Os dados do painel ficam limitados às regiões selecionadas.
+
+link:admin/create-custom-dashboard-fsx.html["Aprenda a criar um painel personalizado"]
+
+
+
+==== Política de IAM para a criação de links do FSx for ONTAP
+
+O modelo do CloudFormation e o código Terraform para criar links agora usam uma política do IAM em vez de permissões inline do Lambda.
+
+link:fsx-storage/create-link.html["Saiba como criar um link"]
+
+
+
+==== Auditoria e rastreamento das ações do agente de IA
+
+Agora você pode usar o Tracker para revisar as alterações nas configurações do agente de IA e, no modo de leitura/gravação, cada solicitação de aprovação, incluindo a pergunta do agente e a resposta do usuário.
+
+As alterações de recursos feitas por meio das APIs do Workload Factory são registradas pelo serviço do Workload Factory que executa a operação.
+
+link:admin/learn-agent.html#audit-and-tracking-for-agent-actions["Saiba mais sobre auditoria e rastreamento de ações de agentes"]
+
+
+
+[[amazon-fsx-for-netapp-ontap-enhancements]]
+=== Aprimoramentos do Amazon FSx for NetApp ONTAP
+
+
+
+==== Aprimoramentos no diagrama do grupo de iniciadores
+
+O diagrama que exibe os grupos de iniciadores para dispositivos de bloco na página Gerenciar acesso do cliente agora inclui mais detalhes sobre os hosts. Ao passar o cursor sobre um host no diagrama, os detalhes do host são exibidos, incluindo o nome do host, o ID da instância, o tipo de carga de trabalho, a região e o Nome Qualificado iSCSI (IQN).
+
+
+
+==== Aprimoramento de e-mail para problemas de boa arquitetura
+
+O novo design do e-mail fornece mais detalhes e contexto para os problemas de configuração detectados pelo Workload Factory. O e-mail inclui o número de recursos analisados, quantos apresentam avisos ou problemas críticos e quais são esses problemas. O e-mail também inclui um link para o painel bem arquitetado do FSx for ONTAP, para que você possa resolver os problemas imediatamente.
+
+
+
+==== Aprimoramentos do dashboard bem arquitetado
+
+
+
+===== Suporte para verificações de configuração selecionadas
+
+Você pode executar análises manualmente em configurações selecionadas para analisar apenas as configurações do seu interesse e reduzir o tempo de espera.
+
+
+
+===== Novas recomendações na análise well-architected
+
+O Workload Factory agora inclui as seguintes configurações na análise bem arquitetada para sistemas de arquivos FSx for ONTAP:
+
+Para cargas de trabalho de storage:
+
+* *Conectar host ao nó de failover*: verifica se os hosts estão conectados ao nó de failover em um sistema de arquivos FSx for ONTAP ativo-passivo para garantir a confiabilidade.
+* *Conectar host ao nó preferencial*: verifica se os hosts estão conectados aos seus dispositivos de bloco usando o nó preferencial para otimizar o desempenho.
+* *Lacuna na detecção de múltiplos dispositivos do ARP/AI*: o ARP/AI oferece cobertura de proteção completa quando um volume tem apenas um dispositivo de bloco conectado. Se um volume tiver vários dispositivos de bloco conectados, o Workload Factory move os dispositivos de bloco para novos volumes, para que cada volume tenha apenas um dispositivo de bloco.
+* *Limpeza de clones*: verifica se existem clones de volume com mais de 30 dias que podem ser excluídos para otimizar o uso do armazenamento e reduzir custos.
+* *Verificar se o sistema operacional do grupo iniciador (igroup) corresponde ao do host*: verifica se o sistema operacional do grupo iniciador (igroup) corresponde ao sistema operacional do host para evitar problemas de E/S ou de desempenho.
+
+
+Para cargas de trabalho do Kubernetes:
+
+* *Configuração de QoS*: verifica se os volumes persistentes do Kubernetes estão protegidos com uma política de QoS do ONTAP para eficiência de desempenho.
+* *VM de storage dedicada para Kubernetes*: verifica se o sistema de arquivos está usando uma VM de storage dedicada para workloads do Kubernetes para melhorar o isolamento e simplificar o gerenciamento de storage.
+* *Política de exportação dedicada do Kubernetes*: verifica se cada volume persistente do Kubernetes possui uma política de exportação dedicada que permite acesso apenas a partir dos nós de trabalho do cluster.
+* *CHAP bidirecional para backends iSCSI do Kubernetes*: verifica se os backends iSCSI do Trident têm autenticação CHAP mútua habilitada para segurança.
+* *Desativar `showmount` na VM de armazenamento do aplicativo*: verifica se `showmount` está desativado na VM de armazenamento do aplicativo para impedir que os clientes listem exportações às quais não têm acesso.
+
+
+Para cargas de trabalho de banco de dados:
+
+* *Política de snapshot do SAP HANA*: verifica se a política de snapshot está definida como "None" para volumes do SAP HANA, a fim de reduzir os custos de storage e melhorar o desempenho dos dados ativos do banco de dados.
+* *Política de snapshots do MySQL*: verifica se a política de snapshots está definida como "Nenhuma" para volumes do MySQL, a fim de reduzir os custos de armazenamento e melhorar o desempenho dos dados ativos do banco de dados.
+* *Política de snapshots do PostgreSQL*: verifica se a política de snapshots está definida como "None" para volumes do PostgreSQL, a fim de reduzir os custos de armazenamento e melhorar o desempenho dos dados ativos do banco de dados.
+
+
+
+
+===== Valores atuais e recomendados para configurações
+
+Você pode visualizar os valores atuais e recomendados para algumas configurações não otimizadas no dashboard well-architected. Isso indica qual é o valor recomendado antes de você corrigir o problema.
+
+* Hierarquização de dados frios
+* Política do Snapshot
+* Espaço livre de capacidade do SSD
+
+
+
+
+==== Melhorias de custo
+
+
+
+===== Previsão e análise de custos
+
+Agora você pode prever os custos dos seus sistemas de arquivos FSx for ONTAP usando o recurso de previsão de custos. Isso ajuda você a planejar seu orçamento e otimizar seus recursos com eficiência. Você também pode visualizar insights sobre seus custos e padrões de uso para identificar oportunidades de otimização de custos.
+
+
+
+===== Relatórios de custo e uso da AWS (CUR)
+
+O Workload Factory agora utiliza o AWS Cost and Usage Reports (CUR) em vez do AWS Cost Explorer para fornecer registros detalhados de faturamento entregues em buckets S3 de propriedade do cliente. O CUR oferece melhor granularidade de custos e serve como base para casos de uso avançados de FinOps, chargeback e alocação de custos.
+
+
+
+==== Melhorias na migração de Storage VM
+
+O Workload Factory oferece orientação aprimorada na interface de usuário para migrar VMs de storage. Isso inclui instruções passo a passo e uma execução de teste antes de confirmar a migração para produção.
+
+link:fsx-storage/create-replication.html["Saiba mais sobre a migração de VM de storage"]
+
+
+
+==== Melhoria na notificação por e-mail de atraso de replicação
+
+Quando ocorre um grande número de eventos relacionados de atraso de replicação, o Workload Factory os consolida automaticamente em uma única notificação por e-mail para que você não fique sobrecarregado com notificações.
+
+
+
+==== Aprimoramento do gerenciamento automático de capacidade
+
+Agora você pode ativar as notificações automáticas de gerenciamento de capacidade para testar o recurso antes de pedir ao Workload Factory que gerencie sua capacidade automaticamente. Você será notificado quando seu sistema de arquivos estiver com pouca capacidade.
+
+
+
+==== Configurações de banco de dados incluídas em um painel de controle bem arquitetado
+
+O painel bem arquitetado agora inclui recomendações para as configurações do seu banco de dados, permitindo que você avalie e otimize sua configuração com base nas melhores práticas. As primeiras configurações incluídas no painel são:
+
+* Hierarquização de dados frios
+* Eficiências de armazenamento
+* Política do Snapshot
+* Espaço livre de capacidade do SSD
+* Gerenciamento de espaço do dispositivo de bloco
+* Tipo de OS
+* Corresponda o tipo de sistema operacional do dispositivo de bloco ao host
+* Dispositivos de bloco inativos (LUNs)
+* Posicionamento de arquivos de dados (.mdf)
+* Posicionamento de arquivos de log (.ldf)
+* Status de E/S multipath
+* Tempo limite de E/S multipath
+* Quórum do cluster
+* Dimensionamento correto de computação
+
+
+Selecione o menu principal no console do Workload Factory e, em seguida, selecione *Well-architected* para encontrar o painel do Well-architected.
+
+image:well-architected-menu-option.png["Opção de menu bem arquitetada no console do NetApp Workload Factory"]
+
+
+
+==== Pontos de decisão da taxa de transferência
+
+Agora você pode ver as recomendações de taxa de transferência do cliente e os pontos de decisão de automação. Passe o cursor sobre um ponto de decisão para ver detalhes, como o SKU atual e o recomendado ou as métricas violadas na janela de tempo (%).
+
+
+
+[[google-cloud-netapp-volumes-enhancements]]
+=== Aprimoramentos do Google Cloud NetApp Volumes
+
+
+
+==== Veja os pools de storage do Google Cloud NetApp Volumes
+
+Agora você pode visualizar seus pools de storage do Google Cloud NetApp Volumes no NetApp Workload Factory. Filtre por projetos, credenciais e região e selecione o nome de um pool de storage para visualizar todos os detalhes, incluindo zona, zona de réplica, taxa de transferência, descrição e rótulos.
+
+
+
+[[oci-netapp-storage-service-enhancements]]
+=== Aprimoramentos do OCI NetApp Storage Service
+
+
+
+==== Análise bem arquitetada para sistemas OCI NSS
+
+A NetApp Workload Factory inclui a avaliação well-architected para sistemas OCI NSS. A avaliação fornece insights, recomendações e correções para ajudar você a alcançar excelência operacional.
+
+Avaliações de configuração estão disponíveis para os seguintes pilares do OCI Well-Architected Framework:
+
+* Confiabilidade: capacidade de objeto de arquivo, política de Snapshot e margem de capacidade do SSD
+* Excelência operacional: relatórios de capacidade visível ao host e margem de capacidade do volume
+* Otimização de custos: hierarquização de dados inativos, limpeza de snapshots e eficiências de storage
+
+
+Saiba mais sobre link:oci/configuration-analysis.html["a análise bem arquitetada para sistemas OCI NSS"] e sobre link:oci/improve-configurations.html["implementando configurações bem arquitetadas"].
