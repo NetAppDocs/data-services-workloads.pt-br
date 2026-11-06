@@ -96,7 +96,7 @@ A replicação entre regiões garante que seus dados sejam replicados para outra
 
 * *Espaço livre de capacidade de SSD*
 +
-A capacidade da camada de armazenamento SSD não deve exceder 80% de utilização. Isso pode afetar as operações de leitura e gravação de dados na camada de armazenamento do seu pool de capacidade e impactar a taxa de transferência do seu sistema de arquivos. Quando a capacidade se esgota, os volumes de dados tornam-se somente leitura. Os serviços que tentam gravar novos dados também falham.
+A capacidade da camada de armazenamento SSD não deve exceder 80% de utilização. Ultrapassar esse limite pode afetar as operações de leitura e gravação de dados na camada de armazenamento do seu pool de capacidade e reduzir a taxa de transferência do seu sistema de arquivos. Quando a capacidade se esgota, os volumes de dados se tornam somente para leitura. Os serviços que tentam gravar novos dados também falham.
 
 * *Rótulos de política de replicação*
 +

@@ -2875,7 +2875,6 @@
   <block id="75ef547803457d883c1ab7eec9dd8c12" category="paragraph">O Amazon FSx for NetApp ONTAP é compatível como origem e destino de cofre cibernético.</block>
   <block id="b672f52ade975e864ae6b58722c03689" category="paragraph-title">Implementação</block>
   <block id="e8e8dcbe97676a6fe5760aae822c6e61" category="paragraph">A Workload Factory oferece assistência na criação de uma arquitetura de cofre cibernético. Depois que você entrar em contato com a NetApp para manifestar seu interesse em implementar um cofre cibernético, um especialista da NetApp entrará em contato com você para discutir seus requisitos.</block>
-  <block id="9577a31ea32e2c5b58950150698f2a07" category="paragraph">Envie um e-mail para ng-FSx-CyberVault@netapp.com para começar.</block>
   <block id="a9541230016fd9f6de7895f1a32b75fb" category="inline-link-macro">Documentação do cofre cibernético do ONTAP</block>
   <block id="9241eb0a9aab7657dc2b300da8931da7" category="paragraph">Para obter mais informações sobre cofres cibernéticos e como configurar essa arquitetura, consulte o <block ref="5ee11ce3f9bfc218d47e808a1ac01a55" category="inline-link-macro-rx"></block>.</block>
   <block id="21b32a5531b6213c6f49c70cd4ba55c2" category="summary">Crie ou descubra sistemas de storage de nuvem para adicionar e gerenciar volumes e serviços de dados adicionais a partir do NetApp Console.</block>
@@ -7072,4 +7071,12 @@
   <block id="8b253c1d4259c21c8314fc85adcb31d6" category="section-title">01 de novembro de 2026</block>
   <block id="b6109a32079ec6b1674d08deef3b061a" category="sidebar">Análise de configuração para o OCI NetApp Storage Service</block>
   <block id="ccffb8af48fec4f0b06bcd53e8686fea" category="sidebar">Melhore as configurações do OCI NetApp Storage Service</block>
+  <block id="a2e83c1dd25f125287b17739cb38fd88" category="paragraph">A capacidade da camada de armazenamento SSD não deve exceder 80% de utilização. Ultrapassar esse limite pode afetar as operações de leitura e gravação de dados na camada de armazenamento do seu pool de capacidade e reduzir a taxa de transferência do seu sistema de arquivos. Quando a capacidade se esgota, os volumes de dados se tornam somente para leitura. Os serviços que tentam gravar novos dados também falham.</block>
+  <block id="1e1ba6e3e89c5c46a8b08f6bb7ca5b1e" category="paragraph">Envie um e-mail para ng-CyberVault@netapp.com para começar.</block>
+  <block id="377ba154ccba26a0c8629b61ddb6ed8e" category="doc">Proteja seus dados do OCI NetApp Storage Service com um cofre cibernético</block>
+  <block id="065ce2bbd0b2c80480729cc2db24ecf0" category="section-title">Cofres cibernéticos do OCI NetApp Storage Service</block>
+  <block id="1d36752b389e26db7ea175cfa8c55520" category="paragraph">O OCI NetApp Storage Service é compatível como origem e destino de cofre cibernético.</block>
+  <block id="aef8b94004154212084538bcd066fcd4" category="sidebar">Permissões para FSx for ONTAP</block>
+  <block id="84dd6c967c118d2d788a5e553796a8d0" category="sidebar">Use o OCI NetApp Storage Service no Workload Factory</block>
+  <block id="ce58205871372f591193549c18437f34" category="sidebar">Gerenciar recursos do OCI NetApp Storage Service</block>
 </blocks>
