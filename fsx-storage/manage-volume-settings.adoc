@@ -114,5 +114,5 @@ Você pode habilitar arquivos imutáveis somente durante link:create-volume.html
 * link:create-volume.html["Crie um volume no Workload Factory"]
 * link:manage-volume-capacity.html["Gerencie a capacidade de volume no NetApp Workload Factory"]
 * link:change-tiering-policy.html["Alterar a política de hierarquização de volumes no Workload Factory"]
-* link:manage-s3-access-points.html["Gerencie os pontos de acesso S3 na Workload Factory"]
+* link:edit-s3-access-points.html["Gerencie os pontos de acesso S3 na Workload Factory"]
 

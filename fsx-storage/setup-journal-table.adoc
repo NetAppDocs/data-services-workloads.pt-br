@@ -61,7 +61,7 @@ O {uuid} é um identificador aleatório de 8 caracteres gerado quando o modelo �
 Para ativar o recurso de tabela de diário, siga estes passos:
 
 * Possuo um volume existente com um ponto de acesso S3. link:create-volume.html["Crie um volume com um ponto de acesso S3"]
-* Defina a configuração de rede como *Internet* para o ponto de acesso S3. link:manage-s3-access-points.html["Editar a configuração de rede para o ponto de acesso S3"].
+* Defina a configuração de rede como *Internet* para o ponto de acesso S3. link:edit-s3-access-points.html["Editar a configuração de rede para o ponto de acesso S3"].
 * link:add-credentials.html["Conceda as permissões de _operações e remediação_"^]às suas credenciais do Workload Factory.
 * Adicione as seguintes permissões de política do IAM à conta da AWS que você usa para executar a implantação do CloudFormation para configurar a tabela Journal.
 +

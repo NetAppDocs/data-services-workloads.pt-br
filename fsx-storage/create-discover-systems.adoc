@@ -21,7 +21,7 @@ Crie ou descubra sistemas de arquivos do FSx for ONTAP de primeira e segunda ger
 [[create-a-storage-system]]
 == Crie um sistema de storage
 
-O primeiro passo é criar um sistema de storage. Se você já criou um sistema de storage no console do seu provedor de nuvem, você pode <<Descubra um sistema de storage de nuvem existente,descubra-o usando o NetApp Console>>.
+O primeiro passo é criar um sistema de storage. Se você já criou um sistema de storage no console do seu provedor de nuvem, você pode <<discover-system,descubra-o usando o NetApp Console>>.
 
 .Sobre esta tarefa
 Uma máquina virtual de armazenamento é criada quando você cria um sistema de arquivos.
@@ -246,6 +246,7 @@ Você pode gerenciar seus sistemas de arquivos FSx for ONTAP de várias maneiras
 
 
 [[discover-an-existing-fsx-for-ontap-file-system]]
+[[discover-system]]
 == Descubra um sistema de arquivos FSx for ONTAP existente
 
 Se você já forneceu suas credenciais para seu provedor de storage de nuvem no Workload Factory, poderá descobrir automaticamente seus sistemas de arquivos FSx for ONTAP na página Discoverable systems. Você também pode revisar os serviços de dados disponíveis.

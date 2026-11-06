@@ -254,5 +254,5 @@ O recurso pode estar indisponível por um dos seguintes motivos:
 .Informações relacionadas
 * link:manage-volume-capacity.html["Ajuste a capacidade do volume na Workload Factory"]
 * link:change-tiering-policy.html["Alterar a política de hierarquização de volumes no Workload Factory"]
-* link:manage-s3-access-points.html["Gerencie os pontos de acesso S3 na Workload Factory"]
+* link:edit-s3-access-points.html["Gerencie os pontos de acesso S3 na Workload Factory"]
 

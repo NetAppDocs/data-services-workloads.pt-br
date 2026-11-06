@@ -19,7 +19,7 @@ Quando novos dados estiverem disponíveis, selecione *Carregar agora* no banner 
 
 Tanto *Atualizar dados* quanto *Carregar agora* criam eventos de coleta de dados no Tracker.
 
-link:admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["Aprenda como atualizar os dados do painel personalizado"]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["Aprenda como atualizar os dados do painel personalizado"]
 
 
 
@@ -27,7 +27,7 @@ link:admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["Aprenda com
 
 Agora, os painéis personalizados solicitam que você selecione uma ou mais regiões caso sua solicitação não as inclua. Os dados do painel ficam limitados às regiões selecionadas.
 
-link:admin/create-custom-dashboard-fsx.html["Aprenda a criar um painel personalizado"]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/create-custom-dashboard-fsx.html["Aprenda a criar um painel personalizado"]
 
 
 
@@ -35,7 +35,7 @@ link:admin/create-custom-dashboard-fsx.html["Aprenda a criar um painel personali
 
 O modelo do CloudFormation e o código Terraform para criar links agora usam uma política do IAM em vez de permissões inline do Lambda.
 
-link:fsx-storage/create-link.html["Saiba como criar um link"]
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-storage/create-link.html["Saiba como criar um link"]
 
 
 
@@ -45,7 +45,7 @@ Agora você pode usar o Tracker para revisar as alterações nas configurações
 
 As alterações de recursos feitas por meio das APIs do Workload Factory são registradas pelo serviço do Workload Factory que executa a operação.
 
-link:admin/learn-agent.html#audit-and-tracking-for-agent-actions["Saiba mais sobre auditoria e rastreamento de ações de agentes"]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/learn-agent.html["Saiba mais sobre auditoria e rastreamento de ações de agentes"]
 
 
 
@@ -213,4 +213,4 @@ Avaliações de configuração estão disponíveis para os seguintes pilares do 
 * Otimização de custos: hierarquização de dados inativos, limpeza de snapshots e eficiências de storage
 
 
-Saiba mais sobre link:oci/configuration-analysis.html["a análise bem arquitetada para sistemas OCI NSS"] e sobre link:oci/improve-configurations.html["implementando configurações bem arquitetadas"].
+Saiba mais sobre link:https://docs.netapp.com/us-en/data-services-workloads/oci/add-credentials-oci.html["a análise bem arquitetada para sistemas OCI NSS"] e sobre link:https://docs.netapp.com/us-en/data-services-workloads/oci/improve-configurations.html["implementando configurações bem arquitetadas"].

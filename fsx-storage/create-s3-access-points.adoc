@@ -52,4 +52,4 @@ Opcionalmente, você pode usar o recurso de tabela de registro (Journal table) c
 
 Outros tópicos relacionados:
 
-link:manage-s3-access-points.html["Edite ou exclua pontos de acesso S3 para um volume na NetApp Workload Factory"]
+link:edit-s3-access-points.html["Edite ou exclua pontos de acesso S3 para um volume na NetApp Workload Factory"]
