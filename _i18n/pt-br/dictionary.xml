@@ -1833,11 +1833,6 @@
   <block id="8eb98f7a0459d22ab367426190a3fb48" category="admonition">Você só poderá visualizar a análise detalhada dos componentes quando houver um link associado ao sistema de arquivos FSx for ONTAP. Caso não haja link, você ainda poderá visualizar gráficos de latência, IOPS e taxa de transferência.</block>
   <block id="eb40849137a407e18ca35f8df5165003" category="admonition">Os valores de latência da análise de QoS do ONTAP e do CloudWatch podem diferir ligeiramente porque eles coletam dados de maneiras diferentes. A análise básica usa dados do ONTAP para identificar a causa raiz.</block>
   <block id="6373f94eea8c31352a32986b39528f84" category="section-title">Análise AI</block>
-  <block id="a0e9b8268d276ba4360cd030f4a16beb" category="paragraph">Embora uma análise básica possa identificar a origem da latência, situações mais complexas envolvendo dados ou componentes de cluster geralmente exigem uma investigação mais aprofundada. A análise por IA proporciona essa solução de problemas mais detalhada, encontrando problemas como volumes sobrecarregados, configuração inadequada ou a necessidade de adicionar mais capacidade, problemas que uma análise básica pode não detectar.</block>
-  <block id="8aa7f64b5600149a4f1b16f3cd4cdf44" category="paragraph">A disponibilidade da análise por IA depende da configuração da sua conta:</block>
-  <block id="79280f8412f92a7b9f71d47cf17b93e8" category="list-text">*NetApp-créditos de IA gerenciados ativados*: você pode executar análises de IA sem configuração adicional do Bedrock.</block>
-  <block id="b22abc9ad9d115a1ead6c959afc1a6d3" category="list-text">*Desativado pelo administrador*: As opções de IA não estão disponíveis.</block>
-  <block id="10fe983c3658bd7369e2e51b32dd02b0" category="paragraph">Se os créditos de IA gerenciados pela NetApp estiverem ativados, mas seu orçamento mensal for atingido, a análise de IA ficará indisponível e uma mensagem será exibida.</block>
   <block id="f7cc2329f80f5595e6165f0ae01f89d8" category="paragraph">Ao executar a análise de IA, o sistema fornece:</block>
   <block id="f825ff4432099d6f44cdb5f8f4bfc6db" category="list-text">*Possível causa raiz*: Explicação detalhada do que está causando o problema de latência</block>
   <block id="102e5bfcdb00d2737ee47f8cfa62267e" category="list-text">*Clientes afetados*: Lista de nomes de instâncias EC2 impactadas pela latência</block>
@@ -2047,29 +2042,23 @@
   <block id="2edaf9b54abbf5ae956607d1cce3419f" category="doc">Guia rápido do Workload Factory para EDA</block>
   <block id="0595b103e9174c24b7fffa0491687cc5" category="paragraph">Comece a usar o Workload Factory para EDA configurando seu ambiente, ativando os painéis de monitoramento e configurando a análise de latência para otimizar o desempenho do FSx para ONTAP em suas cargas de trabalho de EDA.</block>
   <block id="3d784fb83da69a092542ad97e84229a1" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Faça login no Workload Factory</block>
-  <block id="1283af7cc983573ed4713cdd57866991" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Adicione credenciais e permissões para a carga de trabalho do EDA</block>
   <block id="ccfaa839e768aad68d8df43945f3981f" category="inline-link-macro">crie as políticas de IAM para as permissões necessárias</block>
   <block id="c4f56d16dd663e4eddc3092f24840c99" category="paragraph"><block ref="ba3df41527d282ff668fde47559ede13" category="inline-link-macro-rx"></block> que inclui selecionar a capacidade de workload de EDA e <block ref="130ddacc98dcbb955ac32d7d05051cd1" category="inline-link-macro-rx"></block>.</block>
-  <block id="9d416a07e693910e3f444835dcc86a81" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>Configure seu ambiente para atender aos requisitos da EDA</block>
   <block id="fecfde27c537152de469ba41e82d7a28" category="paragraph">Você precisará de um sistema de arquivos FSx for ONTAP implantado e descoberto que contenha pelo menos um volume configurado como um compartilhamento NFS.</block>
   <block id="7601729d359de4f5cd6af27402c9e70e" category="inline-link-macro">Saiba mais sobre os requisitos de EDA</block>
   <block id="5e94cb9cffa115d28cda939423c02585" category="paragraph"><block ref="633f3927c4cf021a7edd95ab9b5813a6" category="inline-link-macro-rx"></block>.</block>
-  <block id="76fe6a2921854a310876f2886d0744fa" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block>Ative o painel de visão geral</block>
   <block id="208586cd32a8a0d00042653ba4659b8e" category="paragraph">Ative o painel Visão geral para monitorar a integridade, a capacidade e a taxa de transferência dos seus clusters FSx for ONTAP. Aceite a solicitação de consentimento para permitir que o Workload Factory comece a coletar métricas do CloudWatch.</block>
   <block id="9c2a400f16596db71684b7bf853679f6" category="inline-link-macro">Aprenda como ativar o painel de Overview</block>
   <block id="ba484746496fd986236ce05e4941b11e" category="paragraph"><block ref="b8ebfe6424e9d27bf3ad5b5b28bbc547" category="inline-link-macro-rx"></block>.</block>
-  <block id="6a95e8fe1af51766347f08a14a5010e7" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block>Configurar o painel de Projetos</block>
   <block id="ac8c955f7158cbf6e26b2fe132a5da5a" category="paragraph">Configure o painel de controle de Projetos para monitorar a integridade do sistema, o desempenho e o uso de storage, permitindo que você otimize seu ambiente EDA de forma eficaz.</block>
   <block id="cdf7ca0f732e877c2df79adf8b2dec38" category="inline-link-macro">Aprenda a configurar o painel de controle de Projetos</block>
   <block id="54aae42a8d9b94a669be4faf760989f4" category="paragraph"><block ref="df110d106150b671a1fd119c3817e75e" category="inline-link-macro-rx"></block>.</block>
   <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">Seis</block>
-  <block id="47fc6ce38b51022ce7378bb818bcbdbc" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block>Configurar FSx para análise de latência do ONTAP</block>
   <block id="eccc4e57aadb72693d5183af6a022273" category="paragraph">Defina limites de latência para identificar e resolver proativamente problemas de desempenho antes que eles afetem o tempo de execução da simulação. Configure alertas de aviso e críticos, configure notificações por e-mail ou SNS para receber alertas em tempo real, aproveite a análise básica automatizada e, opcionalmente, use análise de IA para cenários complexos.</block>
   <block id="7a13522750dff612c4af95a525a5075b" category="inline-link-macro">Aprenda como configurar o monitoramento de latência</block>
   <block id="e92f1fd565b0115330969e68f1df5c93" category="inline-link-macro">analisar tendências de latência</block>
   <block id="679aabdd1ec95ed7b75c71ce374528d5" category="paragraph"><block ref="fb26305f25ca1288ccacde22bbaccb07" category="inline-link-macro-rx"></block>. Após a detecção de eventos, você pode <block ref="17d96e1b2696eabecce662ae85cda8e7" category="inline-link-macro-rx"></block> usar o gráfico interativo.</block>
   <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">Sete</block>
-  <block id="28d16b2155b937481f163959c1136c11" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block> Integrar com outros serviços</block>
   <block id="434c0bf5962496285865a6a2af2512b4" category="paragraph">Integre o EDA com outros serviços, como um portal de serviços como serviço ou o Perforce Helix Core, usando a API REST.</block>
   <block id="dce6d9a52d216801c96ea309acf6ac73" category="inline-link-macro">Aprenda como integrar o EDA com Perforce</block>
   <block id="79d86c078f10e35b854431eab12b31a6" category="paragraph"><block ref="46b2e9ce515b7538a0db67e1aa1bc892" category="inline-link-macro-rx"></block>.</block>
@@ -2130,7 +2119,6 @@
   <block id="e83c229f37cf36a4d502c243dffb6c3d" category="list-text">São exibidos no máximo 200 eventos. Os eventos mais antigos são removidos à medida que novos eventos são adicionados.</block>
   <block id="3378724912de6e334800d398b5316fcf" category="list-text">Os eventos aparecem mesmo sem um link de sistema de arquivos. Um link é necessário para visualizar detalhes básicos de análise ou executar análise de IA.</block>
   <block id="85af8e40cac423345858be0210476d20" category="list-text">Selecione a guia *Latência*.</block>
-  <block id="f06921222f3510361d45443110e72880" category="list-text">Revise as informações de cada evento na tabela.</block>
   <block id="391d5001f0e7f63a7def2cbcdfbf9795" category="list-text">Para visualizar os detalhes de um evento de latência, selecione o evento na coluna *Gravidade*. Isso abrirá um painel de análise de latência para esse evento.</block>
   <block id="256e5511799cf87e5ea3d5686def55a5" category="list-text">Para classificar a tabela, selecione qualquer cabeçalho de coluna. Por padrão, os eventos críticos são exibidos primeiro, classificados por horário, seguidos pelos eventos de aviso, também classificados por horário.</block>
   <block id="039dfdde9abd9ac1aa8a2a98cfb44323" category="inline-image-macro">O ícone do menu de ações</block>
@@ -2290,10 +2278,6 @@
   <block id="5626a4ecac9741d9b0e61d578ebf1561" category="list-text">Ao atualizar as seleções de filtro, todas as informações são atualizadas para mostrar apenas os sistemas de arquivos correspondentes.</block>
   <block id="fb3123e7d905f809c3bdf82e3ceca6af" category="section-title">Visualizar o estado de saúde do cluster</block>
   <block id="9a30a7ccabea3f518b310e693e0fc96d" category="paragraph">Na parte superior do painel, você vê um resumo da integridade e da atividade dos sistemas de arquivos que você selecionou. Isso aparece somente quando pelo menos um link FSx for ONTAP está conectado aos seus sistemas de arquivos.</block>
-  <block id="7da261fafbc98c685b2c0c780ccdbcf1" category="paragraph">O estado de saúde do cluster inclui as seguintes áreas principais:</block>
-  <block id="ac97fe213f96cc9db6b4ee38d70f798b" category="list-text">*Latência*: Número de eventos de latência detectados</block>
-  <block id="3e245db3deb2fe7b566f9dfe8f122ad3" category="list-text">*Elasticidade do sistema de arquivos*:</block>
-  <block id="a51f6183fddbec434723cff9a6cb22f0" category="list-text">*Eventos ONTAP*: Número de eventos EMS por categoria (Capacidade, Disponibilidade e proteção, Segurança e outros)</block>
   <block id="c569953f651916e8d6fb2a2e26996486" category="list-text">Verifique o estado de integridade do cluster na parte superior do painel de controle.</block>
   <block id="45cd3072594a40004f1648f957b11b4f" category="list-text">Para visualizar eventos de latência:</block>
   <block id="9bab24fe4c951c13841b658922a21a8b" category="list-text">Selecione *Revisar* para navegar até a aba *Latência*</block>
@@ -2329,11 +2313,6 @@
   <block id="91455d18a42b79b1a34df0d97bfbaffd" category="list-text">*Latência mínima (ms)*: limiar de latência usado para determinar o aumento da taxa de transferência</block>
   <block id="0a2daf37cc4cac8c9a3da95290e9a399" category="list-text">*Throughput máximo (SKUs)*: SKU de throughput máximo permitido</block>
   <block id="6b482ace535080820ca5dea3bb557cb6" category="paragraph">Os sistemas de arquivos selecionados alternam imediatamente para o novo modo de taxa de transferência.</block>
-  <block id="84a7874f129070a914f70dd3d70a6716" category="section-title">Analisar tendências de capacidade e pontos de decisão</block>
-  <block id="65bd457971cf8d44b2a0e065d040b668" category="paragraph">Use o gráfico de utilização do SSD para ver como o uso do storage muda ao longo do tempo e identificar padrões.</block>
-  <block id="4dbca2bab9fb0222adee0d079e0d2127" category="paragraph">Os pontos de decisão no gráfico indicam quando:</block>
-  <block id="232af3ec8ca37d39f0b49ddb6c81830a" category="list-text">*Pontos de decisão de recomendação*: O algoritmo de recomendação de capacidade identificou que é necessária capacidade adicional de SSD.</block>
-  <block id="adcae559988943cef6bf4b9ce78904b2" category="list-text">*Pontos de decisão da automação*: O sistema de automação tentou aumentar a capacidade do SSD. Esses pontos mostram se a ação foi bem-sucedida ou falhou.</block>
   <block id="e307894bdae8efc4f4fdacf666cf2573" category="section-title">Use a tabela de clusters</block>
   <block id="27e86a81d2f78cd7f4181479163bbbeb" category="paragraph">A tabela de clusters fornece uma visão detalhada de cada sistema de arquivos FSx for ONTAP com métricas de desempenho e uso.</block>
   <block id="88dc1144edaa697995919551780b6e93" category="list-text">Na aba *Visão geral*, revise a tabela de clusters.</block>
@@ -6497,11 +6476,8 @@
   <block id="e920df7cb27871af178ff85a428a8b4e" category="list-text">Em *Configuração avançada*, configure os parâmetros de gerenciamento de throughput:</block>
   <block id="39122245b5363dc3871538d2ef59784e" category="list-text">*Janela de violação consecutiva (horas)*: duração de violações consecutivas antes da tomada de medidas</block>
   <block id="a9d111294543c201d767519d991c1b8d" category="list-text">*Métricas de violação consecutiva (%)*: limite percentual para determinar violações consecutivas</block>
-  <block id="d385fd0ac858ff17553d407851f64c48" category="paragraph">Se o gerenciamento de capacidade de SSD estiver desativado, o gráfico mostrará apenas o uso passado e não exibirá recomendações nem decisões de automação.</block>
-  <block id="1de4de358ec9c3a1cd36180e2c13a443" category="list-text">Na guia *Visão geral*, selecione o nome de um sistema de arquivos na tabela. Na visualização de detalhes do cluster, selecione a opção *Taxa de transferência* ou *Capacidade do SSD* para alternar a exibição do gráfico.</block>
   <block id="a01346bc61a98c025144199b0893e264" category="paragraph">Se você selecionar *Taxa de transferência*, o gráfico mostrará a taxa de transferência e a utilização do cliente para que você possa comparar a demanda com o nível de taxa de transferência e os limites configurados.</block>
   <block id="e56ecd5b4053d7385c23bb7c3422bdd5" category="paragraph">Se você selecionar *Capacidade do SSD*, o gráfico mostrará o uso do SSD, incluindo tendências históricas de capacidade e pontos de decisão de capacidade.</block>
-  <block id="d73906b15c9fc84c1806084ce8720a42" category="paragraph">Selecione diferentes intervalos de tempo para visualizar as tendências de taxa de transferência ou capacidade em diferentes períodos. . Passe o cursor sobre os pontos de decisão no gráfico para visualizar detalhes sobre recomendações ou ações de automação em momentos específicos. . Use as informações do gráfico para: * Entender com que frequência os ajustes de capacidade são necessários * Avaliar se o modo de automação ou recomendação se adapta melhor aos seus padrões de carga de trabalho * Identificar restrições de capacidade recorrentes * Planejar as necessidades futuras de capacidade com base nas tendências de crescimento * Solucionar problemas em tentativas de automação malsucedidas</block>
   <block id="d84848ea25e8f980ed30c066f0e2cab7" category="list-text"><block ref="d84848ea25e8f980ed30c066f0e2cab7" category="inline-link-macro-rx"></block></block>
   <block id="3784e1d30d90c571998c16706c434e4f" category="list-text"><block ref="3784e1d30d90c571998c16706c434e4f" category="inline-link-macro-rx"></block></block>
   <block id="274d09f174202ef30839bc1b86c8644b" category="list-text"><block ref="274d09f174202ef30839bc1b86c8644b" category="inline-link-macro-rx"></block></block>
@@ -7079,4 +7055,54 @@
   <block id="8ffb616052b2a6d32c605e71b735673b" category="list-text"><block ref="8ffb616052b2a6d32c605e71b735673b" category="inline-link-macro-rx"></block></block>
   <block id="58ff05ec25b45f54f79eb1afc9e31b9c" category="list-text">Defina a configuração de rede como *Internet* para o ponto de acesso S3. <block ref="f5b1c6fb53ebc8db45e1c55bd4e00f01" category="inline-link-macro-rx"></block>.</block>
   <block id="97ae532f4c2d5ecc574a56c593c13125" category="list-text">Você deve <block ref="87275d1fa5a6199604efc8de3f9418ba" category="inline-link-macro-rx"></block> na sua conta da OCI.</block>
+  <block id="da3e6d90947db5a87778a986ff1db5ba" category="section-title">A Workload Factory para melhorias em EDA</block>
+  <block id="0c8274ed6d395bfacc0daf3070e64c0c" category="paragraph">Essas melhorias abrangem detalhes de volumes na análise de latência, uma verificação de pressão do sistema de arquivos, pontos de decisão de throughput e a execução de uma nova análise de latência.</block>
+  <block id="f65838a0505e6828c4b2c1ae8ce1218d" category="section-title">Visualize os detalhes do volume durante a análise de latência</block>
+  <block id="34649924d5b9e1477b2428d04da725a3" category="paragraph">Você pode ver mais detalhes do volume no Workload Factory enquanto analisa um evento de latência, para entender como o volume está configurado. A página de análise detalhada da latência mostra o *Tipo de volume* (RW ou DP) e o *Estilo de volume* (o FlexVol ou o FlexGroup).</block>
+  <block id="7d36db06649fc95af5dde34418ae17ae" category="inline-link-macro">Aprenda a analisar tendências de latência</block>
+  <block id="10686b705e0e365002c272bd2719b69a" category="paragraph"><block ref="10686b705e0e365002c272bd2719b69a" category="inline-link-macro-rx"></block></block>
+  <block id="59d6e00f849e1dd27d91bb4c786299b8" category="section-title">Verifique a pressão do sistema de arquivos para um evento de latência</block>
+  <block id="6f204454acf5d87a64a6daf9900777eb" category="paragraph">No Workload Factory, você pode verificar se a pressão no sistema de arquivos afetou o desempenho quando ocorreu um evento de latência, para que você possa decidir se deve investigar o sistema de arquivos. Para um volume com um alerta de latência, você pode visualizar os dados do CloudWatch dos 40 minutos anteriores ao evento e abrir o sistema de arquivos para investigar mais a fundo.</block>
+  <block id="dfa004f6c9736368068fe71bacbee74e" category="inline-link-macro">Saiba mais sobre as verificações de pressão do sistema de arquivos</block>
+  <block id="c6351fb1f8b9c7124503e2dd773f4a6f" category="paragraph"><block ref="c6351fb1f8b9c7124503e2dd773f4a6f" category="inline-link-macro-rx"></block></block>
+  <block id="f8240ccc3d3033d0a4d027c0acb6a2fd" category="section-title">Analise os pontos de decisão de taxa de transferência para EDA</block>
+  <block id="8591045ae6ed3a89acd6e3756c7561dc" category="paragraph">Você pode revisar os pontos de decisão de throughput do cliente no painel Visão geral do EDA para ver quando o Workload Factory recomendou ou aplicou uma alteração de throughput. Passe o cursor sobre um ponto de decisão para visualizar detalhes, como o SKU atual e o recomendado ou as métricas violadas na janela de tempo.</block>
+  <block id="8f60994adbdba3c89dc164460dbd5fe7" category="inline-link-macro">Aprenda a analisar os pontos de decisão da taxa de transferência</block>
+  <block id="08935aa85ac8d6983a754c391dc22299" category="paragraph"><block ref="08935aa85ac8d6983a754c391dc22299" category="inline-link-macro-rx"></block></block>
+  <block id="afaff13c48c5bdfb3e3a3820005ef966" category="section-title">Execute uma análise de latência novamente</block>
+  <block id="b70ddd63a19670949b4be40fd2900e16" category="paragraph">Você pode executar novamente uma análise de latência no Workload Factory para um volume, de forma a atualizar os resultados após investigar ou fazer uma alteração. Selecione *Executar análise novamente* para iniciar uma nova análise e atualizar os resultados.</block>
+  <block id="fcd2af0b46a1f067a85293a63ec8e674" category="inline-link-macro">Aprenda a analisar problemas de latência</block>
+  <block id="5e2edfccf304d8ab47ad0fd4e7d469b9" category="paragraph"><block ref="5e2edfccf304d8ab47ad0fd4e7d469b9" category="inline-link-macro-rx"></block></block>
+  <block id="224009967bde255805cbcd6d65368b81" category="paragraph">Embora uma análise básica possa identificar a origem da latência, situações mais complexas envolvendo dados ou componentes do cluster geralmente exigem uma investigação mais aprofundada. A análise por IA proporciona essa solução de problemas mais detalhada, encontrando problemas como volumes sobrecarregados, configuração inadequada ou a necessidade de adicionar mais capacidade, problemas que uma análise básica pode não detectar.</block>
+  <block id="faffdafc286086cc0dbf1bbb1be9ad24" category="section-title">Pressão do sistema de arquivos</block>
+  <block id="b174f2d4d910ae1039afecd55cf7605d" category="paragraph">Para volumes com um alerta de latência, você pode executar uma verificação sob demanda para ver se o sistema de arquivos estava sob pressão suficiente para afetar o desempenho quando o evento ocorreu. A verificação analisa os 40 minutos de dados do CloudWatch anteriores ao evento e retorna *Pressured* ou *Not pressured*. Um resultado *Pressured* significa que há mais de 80% de chance de que a pressão no sistema de arquivos tenha afetado o desempenho e a latência. A verificação também inclui um link para o recurso do FSx for ONTAP para que você possa revisar as métricas relacionadas.</block>
+  <block id="e886df54588d52e0380fc881467880b0" category="section-title">Entendendo os pontos de decisão da taxa de transferência</block>
+  <block id="d5b00b16ab6db83fdf23282158c24ffc" category="paragraph">O gráfico de taxa de transferência do cliente mostra quando a taxa de transferência recomendada pelo sistema muda ou é ajustada automaticamente. Esses marcadores também aparecem na legenda do gráfico. Se o gerenciamento de taxa de transferência estiver desativado, o gráfico mostra apenas a taxa de transferência passada e não exibe recomendações nem alterações automáticas.</block>
+  <block id="1478d9dba08b46cdbef08e98cdb80335" category="list-text">Exibido quando o sistema detecta que a taxa de transferência precisa ser aumentada. Passe o cursor sobre um ponto de decisão para ver os detalhes. Se várias recomendações ocorrerem no mesmo carimbo de data/hora, o ponto mostra o número de recomendações e os detalhes da mais recente.</block>
+  <block id="0c990789e7c8c34746cdf8245924ae90" category="list-text">Exibido quando o sistema de automação tenta aumentar a taxa de transferência. Passe o cursor sobre um ponto de decisão para ver os detalhes. Se o aumento for bem-sucedido, o novo SKU também será exibido. Se falhar, uma breve explicação será exibida. Se várias falhas ocorrerem ao mesmo tempo, o ponto mostrará o número de falhas e os detalhes da mais recente.</block>
+  <block id="c6f02cbeb83957a98e034aa44ac8d06b" category="paragraph">Use o gráfico de throughput do cliente para:</block>
+  <block id="bcc32ea0c2c748a56864977ad681aae4" category="list-text">Veja com que frequência você precisa de maior taxa de transferência</block>
+  <block id="627aca367632fb159e4a6c08e87b8226" category="list-text">Escolha se o modo de automação ou o modo de recomendação atende melhor às suas necessidades</block>
+  <block id="c44c2990e89eee02f130dbf8adf9df07" category="list-text">Identifique limites recorrentes de taxa de transferência</block>
+  <block id="47c3141ddd1f9f9483f34cdb8af8ae43" category="list-text">Planeje as necessidades futuras de taxa de transferência à medida que o uso crescer ao longo do tempo</block>
+  <block id="2825d743c065d395cd4879e2dfe972bd" category="paragraph-title"><block ref="b89db254b5f489dc0a965897dd00fa63" category="inline-image-macro-rx" type="image"></block> Adicione credenciais e permissões para a carga de trabalho do EDA</block>
+  <block id="c5da6783663d36c551b7323656ca0692" category="paragraph-title"><block ref="4b6bbaeae9b6799ee02ea5158d279251" category="inline-image-macro-rx" type="image"></block>Configure seu ambiente para atender aos requisitos da EDA</block>
+  <block id="017f2723eafcf7cc580b9fe943460a85" category="paragraph-title"><block ref="569b2be0fb2eea776857d64ee5106536" category="inline-image-macro-rx" type="image"></block>Ative o painel de visão geral</block>
+  <block id="02ce3aa38a5f2efb9553af62a0a5e716" category="paragraph-title"><block ref="f610d23a86677ccfb4c33a40915b9811" category="inline-image-macro-rx" type="image"></block>Configurar o painel de Projetos</block>
+  <block id="b64c4174569364d10f20f68eab56a270" category="paragraph-title"><block ref="f09591425c0f3fd757475086b083ff7d" category="inline-image-macro-rx" type="image"></block>Configurar FSx para análise de latência do ONTAP</block>
+  <block id="f5b334c5b74f89dabdc34df73fc51042" category="paragraph-title"><block ref="16098bde15117a589097874ab29ed657" category="inline-image-macro-rx" type="image"></block> Integrar com outros serviços</block>
+  <block id="77940ad0aaabd15b52dda5e8a86f480b" category="list-text">Para atualizar os resultados, selecione *Executar análise novamente*. Uma nova análise é iniciada para o volume, e o painel é atualizado quando a análise é concluída.</block>
+  <block id="6f751f6512545197043d490e308e9992" category="section-title">Analisar as tendências de capacidade e taxa de transferência e os pontos de decisão</block>
+  <block id="67033c99fa50f0a89f11f15d3c03c253" category="paragraph">Analise as tendências de capacidade e taxa de transferência ao longo do tempo para identificar padrões e planejar alterações na capacidade ou na taxa de transferência.</block>
+  <block id="322cceacdd52c951c88a1d93df7f0dd8" category="list-text">Na guia *Visão geral*, selecione o nome de um sistema de arquivos na tabela.</block>
+  <block id="ddbda74454b43f792ee3816b12e08af9" category="list-text">Na visualização de detalhes do cluster, selecione a opção *Taxa de transferência* ou *Capacidade do SSD* para alternar a exibição do gráfico.</block>
+  <block id="d92136d041599b752e93710c829f0583" category="list-text">Selecione diferentes intervalos de tempo para visualizar as tendências de taxa de transferência ou capacidade em diferentes períodos.</block>
+  <block id="8d33ce28efafbfe7600930c556bcfd55" category="list-text">Passe o cursor sobre os pontos de decisão no gráfico para visualizar detalhes sobre recomendações ou ações de automação em momentos específicos.</block>
+  <block id="4d43a6d1e695bf0a99e5bc33d3ca3fda" category="list-text">Utilize as informações do gráfico para:</block>
+  <block id="8aa0b0a22cf225f503177c8f1de7df3c" category="list-text">Entenda com que frequência são necessários ajustes de capacidade</block>
+  <block id="dc036d0aefd6c43f7e0e90f879128e16" category="list-text">Avalie se o modo de automação ou o modo de recomendação se adapta melhor aos seus padrões de carga de trabalho</block>
+  <block id="274e06045627d8934cd9bb52e8c64f53" category="list-text">Identificar restrições de capacidade recorrentes</block>
+  <block id="38e979158d55ae25a36aba4d97b0a8b4" category="list-text">Planeje as necessidades futuras de capacidade com base nas tendências de crescimento</block>
+  <block id="2814ccd9bf1ef1faffa5931e29ee7f74" category="list-text">Solucionar problemas em tentativas de automação malsucedidas</block>
+  <block id="f2abe5914eba19478c3b813d9def8548" category="sidebar">FSx para análise de latência do ONTAP</block>
 </blocks>

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: fsx-eda/task-analyze-latency-issues.html 
-keywords: latency analysis, analyze latency, latency events, root cause analysis, QoS delay center, AI analysis, latency troubleshooting, volume latency, basic analysis, affected clients, remediation steps, iops, throughput 
+keywords: latency analysis, analyze latency, latency events, root cause analysis, QoS delay center, AI analysis, latency troubleshooting, volume latency, basic analysis, affected clients, remediation steps, iops, throughput, analysis status 
 summary: Visualize e analise eventos de latência para encontrar problemas de desempenho com volumes FSx for ONTAP. Use análise básica e, opcionalmente, análise de IA para identificar a causa raiz e correções sugeridas. 
 ---
 = Analise problemas de latência no Workload Factory para EDA
@@ -37,7 +37,6 @@ A tabela "Volumes com latência acima do limite" mostra os volumes que ultrapass
 . Faça login no link:https://console.netapp.com["NetApp Console"^].
 . Selecione o menu image:workloads-menu-icon.png["O ícone do menu hambúrguer é usado para navegar até \"Workloads\", o item de menu do Workload Factory"], *Cargas de trabalho* > *EDA*.
 . Selecione a guia *Latência*.
-. Revise as informações de cada evento na tabela.
 . Para visualizar os detalhes de um evento de latência, selecione o evento na coluna *Gravidade*. Isso abrirá um painel de análise de latência para esse evento.
 . Para classificar a tabela, selecione qualquer cabeçalho de coluna. Por padrão, os eventos críticos são exibidos primeiro, classificados por horário, seguidos pelos eventos de aviso, também classificados por horário.
 . Para descartar um ou mais eventos, ao lado de cada evento selecione image:icon-action.png["O ícone do menu de ações"]*Descartar*.
@@ -76,11 +75,7 @@ Um gráfico interativo de latência das métricas do CloudWatch para o volume af
 
 Para obter instruções detalhadas sobre como usar os gráficos, consulte link:task-analyze-latency-trends.html["Analisar tendências de latência"].
 
-
-
-[[steps]]
-=== Passos
-
+.Passos
 . Na aba *Latência*, localize o evento que deseja analisar.
 . Na coluna *Gravidade*, selecione um evento de latência para abrir um painel de análise para esse evento.
 . Revise a guia *Básico*. Se um link estiver conectado, abra a análise detalhada do componente para ver de onde vem o atraso. Se nenhum link estiver conectado, selecione o prompt para conectar um e assim você poderá analisar os componentes.
@@ -95,6 +90,7 @@ Revise os resultados incluindo:
 
 
 . Selecione *Ver análise completa* para visualizar os resultados completos da análise de IA, incluindo gráficos de desempenho que mostram latência, IOPS e taxa de transferência das métricas do CloudWatch durante o período selecionado.
+. Para atualizar os resultados, selecione *Executar análise novamente*. Uma nova análise é iniciada para o volume, e o painel é atualizado quando a análise é concluída.
 . Siga os passos recomendados para corrigir o problema de latência.
 . Após efetuar as alterações, verifique a tabela de eventos de latência para confirmar se o problema foi resolvido.
 
