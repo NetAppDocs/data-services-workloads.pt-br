@@ -186,6 +186,23 @@ Agora você pode ver as recomendações de taxa de transferência do cliente e o
 
 
 
+[[workload-factory-for-vmware-enhancements]]
+=== Aprimoramentos do Workload Factory para VMware
+
+Essas melhorias abrangem a calculadora de TCO do Exchange Virtual Server para migrações do VMware.
+
+
+
+==== Suporte para instâncias i7i.metal-24xl e i7i.metal-48xl na calculadora de TCO do Exchange Virtual Server
+
+A calculadora de TCO do Exchange Virtual Server agora oferece suporte a instâncias EC2 AWS i7i.metal-24xl e i7i.metal-48xl como hosts de cluster. Comparadas às configurações i4i.metal, as instâncias i7i.metal-24xl reduzem o custo inicial do Exchange Virtual Server em cerca de 33% para computação e 25% para armazenamento vSAN.
+
+A calculadora compara todos os tipos de instância e seleciona automaticamente a opção de menor custo. Uma nova seção de comparação exibe as configurações de host do Exchange Virtual Server lado a lado, facilitando a escolha da melhor configuração para suas necessidades.
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-vmware/calculate-evs-savings.html["Calcule a economia estimada para Exchange Virtual Server"]
+
+
+
 [[workload-factory-for-eda-enhancements]]
 === A Workload Factory para melhorias em EDA
 
